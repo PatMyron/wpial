@@ -10,6 +10,13 @@
 		xhr.open('GET', url);
 		xhr.send();
 	}
+	function addLink(url) {
+		var xhr = new XMLHttpRequest();
+		xhr.onload = function () {
+			document.getElementById('contentsHyperlink').textContent = url;
+		};
+		xhr.send();
+	}
 	</script>
 	<title>WPIAL website</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -22,7 +29,7 @@
 		</div>
 		<div class="left_block block_1">
 			<div class="content">
-				<select name="school" size="40"  style="font-size: 18;" onChange="var1=this.value;populatePre('data/'+var1);"> 
+				<select name="school" size="40"  style="font-size: 18;" onChange="var1=this.value;populatePre('data/'+var1);addLink('data/'+var1);"> 
 					<option value="all">ALL SCHOOLS</option>
 					<option value="">--------------------------</option>
 					<option value="Albert Gallatin">Albert Gallatin</option>
@@ -171,7 +178,7 @@
 			</div>
 		</div>
 		<div class="background block_2">
-			<select name="sport" size="9"  style="font-size: 18;" onChange="var1=this.value;populatePre('data/'+var1);">  
+			<select name="sport" size="9"  style="font-size: 18;" onChange="var1=this.value;populatePre('data/'+var1);addLink('data/'+var1);">  
 				<option value="all">all sports</option>
 				<option value="">--------------------</option>
 				<option value="2">BASEBALL</option>
