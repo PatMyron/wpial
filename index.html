@@ -11,13 +11,11 @@
 		xhr.send();
 	}
 	function addLink(url) {
-		var xhr = new XMLHttpRequest();
-		xhr.onload = function () {
-			document.getElementById('contentsHyperlink').textContent = "<a href=\"http://patmyron.github.io/WPIAL/"+url+">Permanent Data Link</a>";
-		};
-		xhr.open('GET', url);
-		xhr.send();
+	  var str = "Permanent Data Link";
+	 var result = str.link("http://patmyron.github.io/WPIAL/"+url);
+	    document.getElementById("contentsHyperlink").innerHTML = result;
 	}
+</script>
 	</script>
 	<title>WPIAL website</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
