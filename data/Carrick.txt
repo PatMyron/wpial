@@ -1,0 +1,15 @@
+Carrick
+FOOTBALL:           GP: 112  W:  27 T:  0 L:  85  F:  1471 A:  3309 Dif: -1838  Pct:  24.1 %  GF/GP: 13.13 GA/GP: 29.54 +/-: -16.41
+
+BASEBALL:           GP: 211  W:  92 T:  0 L: 119  F:  1278 A:  1261 Dif:    17  Pct:  43.6 %  GF/GP:  6.06 GA/GP:  5.98 +/-:   0.08
+
+BASKETBALL:         GP: 262  W:  99 T:  0 L: 163  F: 14765 A: 15948 Dif: -1183  Pct:  37.8 %  GF/GP: 56.35 GA/GP: 60.87 +/-:  -4.52
+
+WOMENS BASKETBALL:  GP: 240  W:  67 T:  0 L: 173  F:  8932 A: 12035 Dif: -3103  Pct:  27.9 %  GF/GP: 37.22 GA/GP: 50.15 +/-: -12.93
+
+WOMENS SOFTBALL:    GP: 178  W:  95 T:  0 L:  83  F:  1089 A:  1033 Dif:    56  Pct:  53.4 %  GF/GP:  6.12 GA/GP:  5.80 +/-:   0.31
+
+SOCCER:             GP: 200  W:  57 T:  6 L: 137  F:   396 A:   922 Dif:  -526  Pct:  30.0 %  GF/GP:  1.98 GA/GP:  4.61 +/-:  -2.63
+
+WOMENS SOCCER:      GP: 175  W:  30 T:  2 L: 143  F:   213 A:   935 Dif:  -722  Pct:  17.7 %  GF/GP:  1.22 GA/GP:  5.34 +/-:  -4.13
+

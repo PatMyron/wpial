@@ -1,0 +1,22 @@
+Jeannette
+FOOTBALL:           GP: 141  W: 114 T:  0 L:  27  F:  5081 A:  2148 Dif:  2933  Pct:  80.9 %  GF/GP: 36.04 GA/GP: 15.23 +/-:  20.80
+
+BASEBALL:           GP: 182  W:  72 T:  0 L: 110  F:  1008 A:  1346 Dif:  -338  Pct:  39.6 %  GF/GP:  5.54 GA/GP:  7.40 +/-:  -1.86
+
+BASKETBALL:         GP: 295  W: 223 T:  0 L:  72  F: 19624 A: 15654 Dif:  3970  Pct:  75.6 %  GF/GP: 66.52 GA/GP: 53.06 +/-:  13.46
+
+WOMENS BASKETBALL:  GP: 261  W: 126 T:  0 L: 135  F: 12768 A: 13155 Dif:  -387  Pct:  48.3 %  GF/GP: 48.92 GA/GP: 50.40 +/-:  -1.48
+
+WOMENS SOFTBALL:    GP: 177  W:  86 T:  0 L:  91  F:  1181 A:   992 Dif:   189  Pct:  48.6 %  GF/GP:  6.67 GA/GP:  5.60 +/-:   1.07
+
+HTTP error fetching URL
+HTTP error fetching URL
+HTTP error fetching URL
+HTTP error fetching URL
+HTTP error fetching URL
+HTTP error fetching URL
+HTTP error fetching URL
+SOCCER:             GP:  71  W:  12 T:  0 L:  59  F:    68 A:   313 Dif:  -245  Pct:  16.9 %  GF/GP:  0.96 GA/GP:  4.41 +/-:  -3.45
+
+WOMENS SOCCER:      GP: 211  W:  87 T: 10 L: 114  F:   475 A:   651 Dif:  -176  Pct:  43.6 %  GF/GP:  2.25 GA/GP:  3.09 +/-:  -0.83
+

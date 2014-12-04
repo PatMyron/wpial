@@ -1,0 +1,16 @@
+Sewickley Academy
+BASEBALL:           GP: 170  W:  62 T:  0 L: 108  F:   932 A:  1310 Dif:  -378  Pct:  36.5 %  GF/GP:  5.48 GA/GP:  7.71 +/-:  -2.22
+
+BASKETBALL:         GP: 267  W: 163 T:  0 L: 104  F: 14852 A: 13407 Dif:  1445  Pct:  61.0 %  GF/GP: 55.63 GA/GP: 50.21 +/-:   5.41
+
+WOMENS BASKETBALL:  GP: 234  W: 101 T:  0 L: 133  F:  8733 A:  9907 Dif: -1174  Pct:  43.2 %  GF/GP: 37.32 GA/GP: 42.34 +/-:  -5.02
+
+HTTP error fetching URL
+HTTP error fetching URL
+HTTP error fetching URL
+WOMENS SOFTBALL:    GP:  89  W:  36 T:  0 L:  53  F:   540 A:   766 Dif:  -226  Pct:  40.4 %  GF/GP:  6.07 GA/GP:  8.61 +/-:  -2.54
+
+SOCCER:             GP: 272  W: 188 T: 16 L:  68  F:   799 A:   258 Dif:   541  Pct:  72.1 %  GF/GP:  2.94 GA/GP:  0.95 +/-:   1.99
+
+WOMENS SOCCER:      GP: 261  W: 170 T: 17 L:  74  F:   611 A:   299 Dif:   312  Pct:  68.4 %  GF/GP:  2.34 GA/GP:  1.15 +/-:   1.20
+

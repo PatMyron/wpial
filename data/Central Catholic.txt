@@ -1,0 +1,9 @@
+Central Catholic
+FOOTBALL:           GP: 157  W: 137 T:  0 L:  20  F:  5072 A:  1731 Dif:  3341  Pct:  87.3 %  GF/GP: 32.31 GA/GP: 11.03 +/-:  21.28
+
+BASEBALL:           GP: 213  W: 135 T:  1 L:  77  F:  1451 A:   964 Dif:   487  Pct:  63.6 %  GF/GP:  6.81 GA/GP:  4.53 +/-:   2.29
+
+BASKETBALL:         GP: 280  W: 180 T:  0 L: 100  F: 17312 A: 15793 Dif:  1519  Pct:  64.3 %  GF/GP: 61.83 GA/GP: 56.40 +/-:   5.43
+
+SOCCER:             GP: 237  W: 160 T: 13 L:  64  F:   671 A:   249 Dif:   422  Pct:  70.3 %  GF/GP:  2.83 GA/GP:  1.05 +/-:   1.78
+

@@ -1,0 +1,11 @@
+Aliquippa
+FOOTBALL:           GP: 159  W: 141 T:  0 L:  18  F:  5651 A:  1765 Dif:  3886  Pct:  88.7 %  GF/GP: 35.54 GA/GP: 11.10 +/-:  24.44
+
+BASEBALL:           GP: 161  W:   7 T:  1 L: 153  F:   447 A:  2159 Dif: -1712  Pct:   4.7 %  GF/GP:  2.78 GA/GP: 13.41 +/-: -10.63
+
+BASKETBALL:         GP: 295  W: 203 T:  0 L:  92  F: 19817 A: 16434 Dif:  3383  Pct:  68.8 %  GF/GP: 67.18 GA/GP: 55.71 +/-:  11.47
+
+WOMENS BASKETBALL:  GP: 245  W:  83 T:  0 L: 162  F: 10546 A: 12783 Dif: -2237  Pct:  33.9 %  GF/GP: 43.04 GA/GP: 52.18 +/-:  -9.13
+
+WOMENS SOFTBALL:    GP: 170  W:   4 T:  0 L: 166  F:   312 A:  2871 Dif: -2559  Pct:   2.4 %  GF/GP:  1.84 GA/GP: 16.89 +/-: -15.05
+

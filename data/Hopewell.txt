@@ -1,0 +1,15 @@
+Hopewell
+FOOTBALL:           GP: 123  W:  67 T:  0 L:  56  F:  2977 A:  2699 Dif:   278  Pct:  54.5 %  GF/GP: 24.20 GA/GP: 21.94 +/-:   2.26
+
+BASEBALL:           GP: 227  W: 141 T:  0 L:  86  F:  1472 A:  1032 Dif:   440  Pct:  62.1 %  GF/GP:  6.48 GA/GP:  4.55 +/-:   1.94
+
+BASKETBALL:         GP: 263  W: 133 T:  0 L: 130  F: 15443 A: 15176 Dif:   267  Pct:  50.6 %  GF/GP: 58.72 GA/GP: 57.70 +/-:   1.02
+
+WOMENS BASKETBALL:  GP: 301  W: 242 T:  0 L:  59  F: 16777 A: 11837 Dif:  4940  Pct:  80.4 %  GF/GP: 55.74 GA/GP: 39.33 +/-:  16.41
+
+WOMENS SOFTBALL:    GP: 193  W:  33 T:  0 L: 160  F:   623 A:  1633 Dif: -1010  Pct:  17.1 %  GF/GP:  3.23 GA/GP:  8.46 +/-:  -5.23
+
+SOCCER:             GP: 217  W:  81 T:  5 L: 131  F:   387 A:   548 Dif:  -161  Pct:  38.5 %  GF/GP:  1.78 GA/GP:  2.53 +/-:  -0.74
+
+WOMENS SOCCER:      GP: 239  W: 142 T: 16 L:  81  F:   720 A:   380 Dif:   340  Pct:  62.8 %  GF/GP:  3.01 GA/GP:  1.59 +/-:   1.42
+

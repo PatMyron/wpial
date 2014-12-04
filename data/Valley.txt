@@ -1,0 +1,15 @@
+Valley
+FOOTBALL:           GP: 116  W:  54 T:  0 L:  62  F:  2218 A:  2467 Dif:  -249  Pct:  46.6 %  GF/GP: 19.12 GA/GP: 21.27 +/-:  -2.15
+
+BASEBALL:           GP: 186  W:  81 T:  0 L: 105  F:   964 A:  1041 Dif:   -77  Pct:  43.5 %  GF/GP:  5.18 GA/GP:  5.60 +/-:  -0.41
+
+BASKETBALL:         GP: 252  W: 123 T:  0 L: 129  F: 13737 A: 13870 Dif:  -133  Pct:  48.8 %  GF/GP: 54.51 GA/GP: 55.04 +/-:  -0.53
+
+WOMENS BASKETBALL:  GP: 225  W:  49 T:  0 L: 176  F:  8573 A: 11792 Dif: -3219  Pct:  21.8 %  GF/GP: 38.10 GA/GP: 52.41 +/-: -14.31
+
+WOMENS SOFTBALL:    GP: 204  W: 145 T:  1 L:  58  F:  1073 A:   498 Dif:   575  Pct:  71.3 %  GF/GP:  5.26 GA/GP:  2.44 +/-:   2.82
+
+SOCCER:             GP: 208  W:  48 T: 15 L: 145  F:   225 A:   729 Dif:  -504  Pct:  26.7 %  GF/GP:  1.08 GA/GP:  3.50 +/-:  -2.42
+
+WOMENS SOCCER:      GP: 203  W:  19 T:  5 L: 179  F:   166 A:  1156 Dif:  -990  Pct:  10.6 %  GF/GP:  0.82 GA/GP:  5.69 +/-:  -4.88
+

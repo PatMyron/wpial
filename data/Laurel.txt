@@ -1,0 +1,11 @@
+Laurel
+FOOTBALL:           GP: 117  W:  68 T:  0 L:  49  F:  2817 A:  2177 Dif:   640  Pct:  58.1 %  GF/GP: 24.08 GA/GP: 18.61 +/-:   5.47
+
+BASEBALL:           GP: 211  W: 128 T:  0 L:  83  F:  1406 A:   994 Dif:   412  Pct:  60.7 %  GF/GP:  6.66 GA/GP:  4.71 +/-:   1.95
+
+BASKETBALL:         GP: 243  W:  94 T:  0 L: 149  F: 12955 A: 14173 Dif: -1218  Pct:  38.7 %  GF/GP: 53.31 GA/GP: 58.33 +/-:  -5.01
+
+WOMENS BASKETBALL:  GP: 234  W:  82 T:  0 L: 152  F:  9980 A: 11087 Dif: -1107  Pct:  35.0 %  GF/GP: 42.65 GA/GP: 47.38 +/-:  -4.73
+
+WOMENS SOFTBALL:    GP: 196  W:  99 T:  0 L:  97  F:  1233 A:  1012 Dif:   221  Pct:  50.5 %  GF/GP:  6.29 GA/GP:  5.16 +/-:   1.13
+

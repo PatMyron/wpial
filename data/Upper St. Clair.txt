@@ -1,0 +1,15 @@
+Upper St. Clair
+FOOTBALL:           GP: 141  W: 111 T:  0 L:  30  F:  4372 A:  1776 Dif:  2596  Pct:  78.7 %  GF/GP: 31.01 GA/GP: 12.60 +/-:  18.41
+
+BASEBALL:           GP: 215  W: 126 T:  0 L:  89  F:  1513 A:  1116 Dif:   397  Pct:  58.6 %  GF/GP:  7.04 GA/GP:  5.19 +/-:   1.85
+
+BASKETBALL:         GP: 275  W: 195 T:  0 L:  80  F: 16286 A: 14137 Dif:  2149  Pct:  70.9 %  GF/GP: 59.22 GA/GP: 51.41 +/-:   7.81
+
+WOMENS BASKETBALL:  GP: 272  W: 159 T:  0 L: 113  F: 14114 A: 13191 Dif:   923  Pct:  58.5 %  GF/GP: 51.89 GA/GP: 48.50 +/-:   3.39
+
+WOMENS SOFTBALL:    GP: 185  W:  39 T:  0 L: 146  F:   466 A:  1380 Dif:  -914  Pct:  21.1 %  GF/GP:  2.52 GA/GP:  7.46 +/-:  -4.94
+
+SOCCER:             GP: 275  W: 215 T: 16 L:  44  F:   799 A:   200 Dif:   599  Pct:  81.1 %  GF/GP:  2.91 GA/GP:  0.73 +/-:   2.18
+
+WOMENS SOCCER:      GP: 246  W: 164 T: 18 L:  64  F:   762 A:   210 Dif:   552  Pct:  70.3 %  GF/GP:  3.10 GA/GP:  0.85 +/-:   2.24
+

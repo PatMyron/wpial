@@ -1,0 +1,15 @@
+Yough
+FOOTBALL:           GP: 115  W:  46 T:  0 L:  69  F:  2523 A:  3165 Dif:  -642  Pct:  40.0 %  GF/GP: 21.94 GA/GP: 27.52 +/-:  -5.58
+
+BASEBALL:           GP: 210  W:  84 T:  1 L: 125  F:  1198 A:  1484 Dif:  -286  Pct:  40.2 %  GF/GP:  5.70 GA/GP:  7.07 +/-:  -1.36
+
+BASKETBALL:         GP: 249  W: 102 T:  0 L: 147  F: 12965 A: 14235 Dif: -1270  Pct:  41.0 %  GF/GP: 52.07 GA/GP: 57.17 +/-:  -5.10
+
+WOMENS BASKETBALL:  GP: 246  W:  76 T:  0 L: 170  F:  9113 A: 12180 Dif: -3067  Pct:  30.9 %  GF/GP: 37.04 GA/GP: 49.51 +/-: -12.47
+
+WOMENS SOFTBALL:    GP: 198  W: 119 T:  0 L:  79  F:  1153 A:   734 Dif:   419  Pct:  60.1 %  GF/GP:  5.82 GA/GP:  3.71 +/-:   2.12
+
+SOCCER:             GP: 214  W:  59 T: 10 L: 145  F:   295 A:   829 Dif:  -534  Pct:  29.9 %  GF/GP:  1.38 GA/GP:  3.87 +/-:  -2.50
+
+WOMENS SOCCER:      GP: 228  W: 107 T:  6 L: 115  F:   583 A:   529 Dif:    54  Pct:  48.2 %  GF/GP:  2.56 GA/GP:  2.32 +/-:   0.24
+

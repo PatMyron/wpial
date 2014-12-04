@@ -1,0 +1,15 @@
+Allderdice
+FOOTBALL:           GP: 122  W:  50 T:  0 L:  72  F:  2144 A:  2875 Dif:  -731  Pct:  41.0 %  GF/GP: 17.57 GA/GP: 23.57 +/-:  -5.99
+
+BASEBALL:           GP: 198  W: 127 T:  0 L:  71  F:  1590 A:   910 Dif:   680  Pct:  64.1 %  GF/GP:  8.03 GA/GP:  4.60 +/-:   3.43
+
+BASKETBALL:         GP: 278  W: 176 T:  0 L: 102  F: 15887 A: 14368 Dif:  1519  Pct:  63.3 %  GF/GP: 57.15 GA/GP: 51.68 +/-:   5.46
+
+WOMENS BASKETBALL:  GP: 281  W: 169 T:  0 L: 112  F: 14420 A: 12451 Dif:  1969  Pct:  60.1 %  GF/GP: 51.32 GA/GP: 44.31 +/-:   7.01
+
+WOMENS SOFTBALL:    GP: 189  W:  80 T:  0 L: 109  F:  1060 A:  1329 Dif:  -269  Pct:  42.3 %  GF/GP:  5.61 GA/GP:  7.03 +/-:  -1.42
+
+SOCCER:             GP: 238  W: 165 T: 10 L:  63  F:   836 A:   300 Dif:   536  Pct:  71.4 %  GF/GP:  3.51 GA/GP:  1.26 +/-:   2.25
+
+WOMENS SOCCER:      GP: 218  W: 128 T:  8 L:  82  F:   638 A:   407 Dif:   231  Pct:  60.6 %  GF/GP:  2.93 GA/GP:  1.87 +/-:   1.06
+

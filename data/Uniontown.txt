@@ -1,0 +1,15 @@
+Uniontown
+FOOTBALL:           GP: 113  W:  39 T:  0 L:  74  F:  2109 A:  3127 Dif: -1018  Pct:  34.5 %  GF/GP: 18.66 GA/GP: 27.67 +/-:  -9.01
+
+BASEBALL:           GP: 189  W:  61 T:  1 L: 127  F:   950 A:  1411 Dif:  -461  Pct:  32.5 %  GF/GP:  5.03 GA/GP:  7.47 +/-:  -2.44
+
+BASKETBALL:         GP: 252  W: 167 T:  0 L:  85  F: 16811 A: 14360 Dif:  2451  Pct:  66.3 %  GF/GP: 66.71 GA/GP: 56.98 +/-:   9.73
+
+WOMENS BASKETBALL:  GP: 248  W: 149 T:  0 L:  99  F: 12910 A: 10857 Dif:  2053  Pct:  60.1 %  GF/GP: 52.06 GA/GP: 43.78 +/-:   8.28
+
+WOMENS SOFTBALL:    GP: 165  W:  38 T:  0 L: 127  F:   619 A:  1417 Dif:  -798  Pct:  23.0 %  GF/GP:  3.75 GA/GP:  8.59 +/-:  -4.84
+
+SOCCER:             GP: 201  W:  29 T:  5 L: 167  F:   215 A:  1156 Dif:  -941  Pct:  15.7 %  GF/GP:  1.07 GA/GP:  5.75 +/-:  -4.68
+
+WOMENS SOCCER:      GP: 203  W:  39 T:  6 L: 158  F:   238 A:  1040 Dif:  -802  Pct:  20.7 %  GF/GP:  1.17 GA/GP:  5.12 +/-:  -3.95
+

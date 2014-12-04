@@ -1,0 +1,11 @@
+Carmichaels
+FOOTBALL:           GP: 118  W:  67 T:  0 L:  51  F:  2795 A:  2441 Dif:   354  Pct:  56.8 %  GF/GP: 23.69 GA/GP: 20.69 +/-:   3.00
+
+BASEBALL:           GP: 224  W: 163 T:  0 L:  61  F:  1640 A:   840 Dif:   800  Pct:  72.8 %  GF/GP:  7.32 GA/GP:  3.75 +/-:   3.57
+
+BASKETBALL:         GP: 246  W: 149 T:  0 L:  97  F: 13291 A: 11692 Dif:  1599  Pct:  60.6 %  GF/GP: 54.03 GA/GP: 47.53 +/-:   6.50
+
+WOMENS BASKETBALL:  GP: 256  W: 141 T:  0 L: 115  F: 11900 A: 11078 Dif:   822  Pct:  55.1 %  GF/GP: 46.48 GA/GP: 43.27 +/-:   3.21
+
+WOMENS SOFTBALL:    GP: 205  W: 160 T:  0 L:  45  F:  1649 A:   540 Dif:  1109  Pct:  78.0 %  GF/GP:  8.04 GA/GP:  2.63 +/-:   5.41
+

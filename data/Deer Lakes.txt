@@ -1,0 +1,15 @@
+Deer Lakes
+FOOTBALL:           GP: 111  W:  29 T:  0 L:  82  F:  1609 A:  3086 Dif: -1477  Pct:  26.1 %  GF/GP: 14.50 GA/GP: 27.80 +/-: -13.31
+
+BASEBALL:           GP: 203  W: 125 T:  0 L:  78  F:  1210 A:   893 Dif:   317  Pct:  61.6 %  GF/GP:  5.96 GA/GP:  4.40 +/-:   1.56
+
+BASKETBALL:         GP: 241  W:  75 T:  0 L: 166  F: 11823 A: 14084 Dif: -2261  Pct:  31.1 %  GF/GP: 49.06 GA/GP: 58.44 +/-:  -9.38
+
+WOMENS BASKETBALL:  GP: 254  W: 113 T:  0 L: 141  F: 10563 A: 11201 Dif:  -638  Pct:  44.5 %  GF/GP: 41.59 GA/GP: 44.10 +/-:  -2.51
+
+WOMENS SOFTBALL:    GP: 199  W: 142 T:  0 L:  57  F:  1342 A:   463 Dif:   879  Pct:  71.4 %  GF/GP:  6.74 GA/GP:  2.33 +/-:   4.42
+
+SOCCER:             GP: 226  W:  89 T: 15 L: 122  F:   368 A:   517 Dif:  -149  Pct:  42.7 %  GF/GP:  1.63 GA/GP:  2.29 +/-:  -0.66
+
+WOMENS SOCCER:      GP: 227  W: 105 T: 16 L: 106  F:   492 A:   489 Dif:     3  Pct:  49.8 %  GF/GP:  2.17 GA/GP:  2.15 +/-:   0.01
+

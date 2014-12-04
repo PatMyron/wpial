@@ -1,0 +1,15 @@
+Neshannock
+FOOTBALL:           GP: 121  W:  61 T:  0 L:  60  F:  2680 A:  2590 Dif:    90  Pct:  50.4 %  GF/GP: 22.15 GA/GP: 21.40 +/-:   0.74
+
+BASEBALL:           GP: 237  W: 176 T:  0 L:  61  F:  1936 A:   987 Dif:   949  Pct:  74.3 %  GF/GP:  8.17 GA/GP:  4.16 +/-:   4.00
+
+BASKETBALL:         GP: 260  W: 153 T:  0 L: 107  F: 15954 A: 14915 Dif:  1039  Pct:  58.8 %  GF/GP: 61.36 GA/GP: 57.37 +/-:   4.00
+
+WOMENS BASKETBALL:  GP: 263  W: 158 T:  0 L: 105  F: 12408 A: 11262 Dif:  1146  Pct:  60.1 %  GF/GP: 47.18 GA/GP: 42.82 +/-:   4.36
+
+WOMENS SOFTBALL:    GP: 221  W: 166 T:  0 L:  55  F:  1832 A:   693 Dif:  1139  Pct:  75.1 %  GF/GP:  8.29 GA/GP:  3.14 +/-:   5.15
+
+SOCCER:             GP: 206  W:  85 T:  9 L: 112  F:   396 A:   479 Dif:   -83  Pct:  43.4 %  GF/GP:  1.92 GA/GP:  2.33 +/-:  -0.40
+
+WOMENS SOCCER:      GP: 216  W: 126 T: 16 L:  74  F:   589 A:   328 Dif:   261  Pct:  62.0 %  GF/GP:  2.73 GA/GP:  1.52 +/-:   1.21
+

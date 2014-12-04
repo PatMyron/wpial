@@ -1,0 +1,15 @@
+Bethel Park
+FOOTBALL:           GP: 133  W:  85 T:  0 L:  48  F:  3276 A:  2587 Dif:   689  Pct:  63.9 %  GF/GP: 24.63 GA/GP: 19.45 +/-:   5.18
+
+BASEBALL:           GP: 219  W: 131 T:  0 L:  88  F:  1413 A:  1041 Dif:   372  Pct:  59.8 %  GF/GP:  6.45 GA/GP:  4.75 +/-:   1.70
+
+BASKETBALL:         GP: 267  W: 153 T:  0 L: 114  F: 15216 A: 14033 Dif:  1183  Pct:  57.3 %  GF/GP: 56.99 GA/GP: 52.56 +/-:   4.43
+
+WOMENS BASKETBALL:  GP: 289  W: 223 T:  0 L:  66  F: 14964 A: 11606 Dif:  3358  Pct:  77.2 %  GF/GP: 51.78 GA/GP: 40.16 +/-:  11.62
+
+WOMENS SOFTBALL:    GP: 188  W:  92 T:  0 L:  96  F:   917 A:   760 Dif:   157  Pct:  48.9 %  GF/GP:  4.88 GA/GP:  4.04 +/-:   0.84
+
+SOCCER:             GP: 247  W: 167 T: 13 L:  67  F:   840 A:   213 Dif:   627  Pct:  70.2 %  GF/GP:  3.40 GA/GP:  0.86 +/-:   2.54
+
+WOMENS SOCCER:      GP: 239  W: 149 T: 22 L:  68  F:   698 A:   253 Dif:   445  Pct:  66.9 %  GF/GP:  2.92 GA/GP:  1.06 +/-:   1.86
+

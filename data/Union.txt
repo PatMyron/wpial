@@ -1,0 +1,11 @@
+Union
+FOOTBALL:           GP: 111  W:  34 T:  0 L:  77  F:  1753 A:  2907 Dif: -1154  Pct:  30.6 %  GF/GP: 15.79 GA/GP: 26.19 +/-: -10.40
+
+BASEBALL:           GP: 207  W: 119 T:  1 L:  87  F:  1583 A:  1209 Dif:   374  Pct:  57.7 %  GF/GP:  7.65 GA/GP:  5.84 +/-:   1.81
+
+BASKETBALL:         GP: 249  W: 123 T:  0 L: 126  F: 14418 A: 14250 Dif:   168  Pct:  49.4 %  GF/GP: 57.90 GA/GP: 57.23 +/-:   0.67
+
+WOMENS BASKETBALL:  GP: 234  W:  57 T:  0 L: 177  F:  8374 A: 11859 Dif: -3485  Pct:  24.4 %  GF/GP: 35.79 GA/GP: 50.68 +/-: -14.89
+
+WOMENS SOFTBALL:    GP: 182  W:  96 T:  0 L:  86  F:  1381 A:  1253 Dif:   128  Pct:  52.7 %  GF/GP:  7.59 GA/GP:  6.88 +/-:   0.70
+

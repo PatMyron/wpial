@@ -1,0 +1,15 @@
+Seton-La Salle
+FOOTBALL:           GP: 132  W: 102 T:  0 L:  30  F:  3935 A:  1835 Dif:  2100  Pct:  77.3 %  GF/GP: 29.81 GA/GP: 13.90 +/-:  15.91
+
+BASEBALL:           GP: 210  W: 138 T:  1 L:  71  F:  1505 A:   980 Dif:   525  Pct:  66.0 %  GF/GP:  7.17 GA/GP:  4.67 +/-:   2.50
+
+BASKETBALL:         GP: 265  W: 139 T:  0 L: 126  F: 15757 A: 15173 Dif:   584  Pct:  52.5 %  GF/GP: 59.46 GA/GP: 57.26 +/-:   2.20
+
+WOMENS BASKETBALL:  GP: 310  W: 251 T:  0 L:  59  F: 18240 A: 12881 Dif:  5359  Pct:  81.0 %  GF/GP: 58.84 GA/GP: 41.55 +/-:  17.29
+
+WOMENS SOFTBALL:    GP: 185  W: 101 T:  0 L:  84  F:  1059 A:   810 Dif:   249  Pct:  54.6 %  GF/GP:  5.72 GA/GP:  4.38 +/-:   1.35
+
+SOCCER:             GP: 260  W: 208 T:  8 L:  44  F:   932 A:   257 Dif:   675  Pct:  81.5 %  GF/GP:  3.58 GA/GP:  0.99 +/-:   2.60
+
+WOMENS SOCCER:      GP: 225  W: 136 T:  5 L:  84  F:   589 A:   317 Dif:   272  Pct:  61.6 %  GF/GP:  2.62 GA/GP:  1.41 +/-:   1.21
+

@@ -1,0 +1,15 @@
+Charleroi
+FOOTBALL:           GP: 112  W:  39 T:  0 L:  73  F:  1877 A:  3036 Dif: -1159  Pct:  34.8 %  GF/GP: 16.76 GA/GP: 27.11 +/-: -10.35
+
+BASEBALL:           GP: 188  W:  65 T:  1 L: 122  F:  1060 A:  1556 Dif:  -496  Pct:  34.8 %  GF/GP:  5.64 GA/GP:  8.28 +/-:  -2.64
+
+BASKETBALL:         GP: 242  W: 116 T:  0 L: 126  F: 12290 A: 12883 Dif:  -593  Pct:  47.9 %  GF/GP: 50.79 GA/GP: 53.24 +/-:  -2.45
+
+WOMENS BASKETBALL:  GP: 252  W: 153 T:  0 L:  99  F: 11669 A: 10537 Dif:  1132  Pct:  60.7 %  GF/GP: 46.31 GA/GP: 41.81 +/-:   4.49
+
+WOMENS SOFTBALL:    GP: 186  W:  32 T:  0 L: 154  F:   559 A:  1940 Dif: -1381  Pct:  17.2 %  GF/GP:  3.01 GA/GP: 10.43 +/-:  -7.42
+
+SOCCER:             GP: 204  W:  90 T:  9 L: 105  F:   407 A:   441 Dif:   -34  Pct:  46.3 %  GF/GP:  2.00 GA/GP:  2.16 +/-:  -0.17
+
+WOMENS SOCCER:      GP: 220  W: 114 T: 12 L:  94  F:   555 A:   468 Dif:    87  Pct:  54.5 %  GF/GP:  2.52 GA/GP:  2.13 +/-:   0.40
+

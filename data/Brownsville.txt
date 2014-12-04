@@ -1,0 +1,26 @@
+Brownsville
+FOOTBALL:           GP: 110  W:  14 T:  0 L:  96  F:  1090 A:  3891 Dif: -2801  Pct:  12.7 %  GF/GP:  9.91 GA/GP: 35.37 +/-: -25.46
+
+BASEBALL:           GP: 203  W: 123 T:  0 L:  80  F:  1391 A:  1110 Dif:   281  Pct:  60.6 %  GF/GP:  6.85 GA/GP:  5.47 +/-:   1.38
+
+BASKETBALL:         GP: 253  W:  96 T:  0 L: 157  F: 13598 A: 14954 Dif: -1356  Pct:  37.9 %  GF/GP: 53.75 GA/GP: 59.11 +/-:  -5.36
+
+WOMENS BASKETBALL:  GP: 245  W: 108 T:  0 L: 137  F: 11124 A: 12013 Dif:  -889  Pct:  44.1 %  GF/GP: 45.40 GA/GP: 49.03 +/-:  -3.63
+
+WOMENS SOFTBALL:    GP: 186  W:  71 T:  0 L: 115  F:   874 A:  1205 Dif:  -331  Pct:  38.2 %  GF/GP:  4.70 GA/GP:  6.48 +/-:  -1.78
+
+SOCCER:             GP: 213  W:  26 T:  7 L: 180  F:   248 A:  1116 Dif:  -868  Pct:  13.8 %  GF/GP:  1.16 GA/GP:  5.24 +/-:  -4.08
+
+HTTP error fetching URL
+HTTP error fetching URL
+HTTP error fetching URL
+HTTP error fetching URL
+HTTP error fetching URL
+HTTP error fetching URL
+HTTP error fetching URL
+HTTP error fetching URL
+HTTP error fetching URL
+HTTP error fetching URL
+HTTP error fetching URL
+WOMENS SOCCER:      GP:  18  W:   5 T:  1 L:  12  F:    24 A:    78 Dif:   -54  Pct:  30.6 %  GF/GP:  1.33 GA/GP:  4.33 +/-:  -3.00
+

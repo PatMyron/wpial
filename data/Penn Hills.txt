@@ -1,0 +1,15 @@
+Penn Hills
+FOOTBALL:           GP: 129  W:  81 T:  0 L:  48  F:  3175 A:  2274 Dif:   901  Pct:  62.8 %  GF/GP: 24.61 GA/GP: 17.63 +/-:   6.98
+
+BASEBALL:           GP: 192  W:  73 T:  0 L: 119  F:   934 A:  1309 Dif:  -375  Pct:  38.0 %  GF/GP:  4.86 GA/GP:  6.82 +/-:  -1.95
+
+BASKETBALL:         GP: 257  W: 121 T:  0 L: 136  F: 14845 A: 14870 Dif:   -25  Pct:  47.1 %  GF/GP: 57.76 GA/GP: 57.86 +/-:  -0.10
+
+WOMENS BASKETBALL:  GP: 258  W: 104 T:  0 L: 154  F: 11760 A: 13324 Dif: -1564  Pct:  40.3 %  GF/GP: 45.58 GA/GP: 51.64 +/-:  -6.06
+
+WOMENS SOFTBALL:    GP: 173  W:  53 T:  0 L: 120  F:   631 A:  1196 Dif:  -565  Pct:  30.6 %  GF/GP:  3.65 GA/GP:  6.91 +/-:  -3.27
+
+SOCCER:             GP: 215  W:  66 T: 12 L: 137  F:   333 A:   582 Dif:  -249  Pct:  33.5 %  GF/GP:  1.55 GA/GP:  2.71 +/-:  -1.16
+
+WOMENS SOCCER:      GP: 220  W: 107 T:  7 L: 106  F:   533 A:   415 Dif:   118  Pct:  50.2 %  GF/GP:  2.42 GA/GP:  1.89 +/-:   0.54
+

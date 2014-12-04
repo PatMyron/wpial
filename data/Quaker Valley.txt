@@ -1,0 +1,15 @@
+Quaker Valley
+FOOTBALL:           GP: 113  W:  30 T:  0 L:  83  F:  1779 A:  3520 Dif: -1741  Pct:  26.5 %  GF/GP: 15.74 GA/GP: 31.15 +/-: -15.41
+
+BASEBALL:           GP: 206  W: 117 T:  0 L:  89  F:  1327 A:  1191 Dif:   136  Pct:  56.8 %  GF/GP:  6.44 GA/GP:  5.78 +/-:   0.66
+
+BASKETBALL:         GP: 289  W: 204 T:  0 L:  85  F: 18453 A: 15218 Dif:  3235  Pct:  70.6 %  GF/GP: 63.85 GA/GP: 52.66 +/-:  11.19
+
+WOMENS BASKETBALL:  GP: 250  W: 101 T:  0 L: 149  F: 10347 A: 11260 Dif:  -913  Pct:  40.4 %  GF/GP: 41.39 GA/GP: 45.04 +/-:  -3.65
+
+WOMENS SOFTBALL:    GP: 183  W:  53 T:  0 L: 130  F:   828 A:  1539 Dif:  -711  Pct:  29.0 %  GF/GP:  4.52 GA/GP:  8.41 +/-:  -3.89
+
+SOCCER:             GP: 255  W: 162 T:  9 L:  84  F:   684 A:   221 Dif:   463  Pct:  65.3 %  GF/GP:  2.68 GA/GP:  0.87 +/-:   1.82
+
+WOMENS SOCCER:      GP: 243  W: 156 T: 14 L:  73  F:   758 A:   290 Dif:   468  Pct:  67.1 %  GF/GP:  3.12 GA/GP:  1.19 +/-:   1.93
+

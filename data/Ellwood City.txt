@@ -1,0 +1,11 @@
+Ellwood City
+FOOTBALL:           GP: 114  W:  36 T:  0 L:  78  F:  2162 A:  3140 Dif:  -978  Pct:  31.6 %  GF/GP: 18.96 GA/GP: 27.54 +/-:  -8.58
+
+BASEBALL:           GP: 222  W: 106 T:  0 L: 116  F:  1314 A:  1320 Dif:    -6  Pct:  47.7 %  GF/GP:  5.92 GA/GP:  5.95 +/-:  -0.03
+
+BASKETBALL:         GP: 249  W:  69 T:  0 L: 180  F: 12409 A: 14575 Dif: -2166  Pct:  27.7 %  GF/GP: 49.84 GA/GP: 58.53 +/-:  -8.70
+
+WOMENS BASKETBALL:  GP: 231  W:  64 T:  0 L: 167  F:  9067 A: 12832 Dif: -3765  Pct:  27.7 %  GF/GP: 39.25 GA/GP: 55.55 +/-: -16.30
+
+WOMENS SOFTBALL:    GP: 201  W: 131 T:  0 L:  70  F:  1015 A:   660 Dif:   355  Pct:  65.2 %  GF/GP:  5.05 GA/GP:  3.28 +/-:   1.77
+

@@ -1,0 +1,15 @@
+Derry Area
+FOOTBALL:           GP: 115  W:  23 T:  0 L:  92  F:  1534 A:  3424 Dif: -1890  Pct:  20.0 %  GF/GP: 13.34 GA/GP: 29.77 +/-: -16.43
+
+BASEBALL:           GP: 198  W:  94 T:  0 L: 104  F:  1155 A:  1194 Dif:   -39  Pct:  47.5 %  GF/GP:  5.83 GA/GP:  6.03 +/-:  -0.20
+
+BASKETBALL:         GP: 241  W:  66 T:  0 L: 175  F: 11307 A: 14066 Dif: -2759  Pct:  27.4 %  GF/GP: 46.92 GA/GP: 58.37 +/-: -11.45
+
+WOMENS BASKETBALL:  GP: 245  W:  88 T:  0 L: 157  F: 10673 A: 12106 Dif: -1433  Pct:  35.9 %  GF/GP: 43.56 GA/GP: 49.41 +/-:  -5.85
+
+WOMENS SOFTBALL:    GP: 160  W:  35 T:  0 L: 125  F:   514 A:  1474 Dif:  -960  Pct:  21.9 %  GF/GP:  3.21 GA/GP:  9.21 +/-:  -6.00
+
+SOCCER:             GP: 215  W:  45 T: 10 L: 160  F:   259 A:   682 Dif:  -423  Pct:  23.3 %  GF/GP:  1.20 GA/GP:  3.17 +/-:  -1.97
+
+WOMENS SOCCER:      GP: 214  W:  35 T:  3 L: 176  F:   204 A:   983 Dif:  -779  Pct:  17.1 %  GF/GP:  0.95 GA/GP:  4.59 +/-:  -3.64
+

@@ -1,0 +1,15 @@
+Brashear
+FOOTBALL:           GP: 131  W:  85 T:  0 L:  46  F:  3177 A:  2189 Dif:   988  Pct:  64.9 %  GF/GP: 24.25 GA/GP: 16.71 +/-:   7.54
+
+BASEBALL:           GP: 186  W: 112 T:  0 L:  74  F:  1373 A:   967 Dif:   406  Pct:  60.2 %  GF/GP:  7.38 GA/GP:  5.20 +/-:   2.18
+
+BASKETBALL:         GP: 259  W: 102 T:  0 L: 157  F: 15053 A: 16386 Dif: -1333  Pct:  39.4 %  GF/GP: 58.12 GA/GP: 63.27 +/-:  -5.15
+
+WOMENS BASKETBALL:  GP: 256  W:  84 T:  0 L: 172  F:  9793 A: 12938 Dif: -3145  Pct:  32.8 %  GF/GP: 38.25 GA/GP: 50.54 +/-: -12.29
+
+WOMENS SOFTBALL:    GP: 187  W: 140 T:  0 L:  47  F:  1462 A:   493 Dif:   969  Pct:  74.9 %  GF/GP:  7.82 GA/GP:  2.64 +/-:   5.18
+
+SOCCER:             GP: 214  W:  89 T:  6 L: 119  F:   581 A:   633 Dif:   -52  Pct:  43.0 %  GF/GP:  2.71 GA/GP:  2.96 +/-:  -0.24
+
+WOMENS SOCCER:      GP: 195  W:  69 T:  3 L: 123  F:   315 A:   629 Dif:  -314  Pct:  36.2 %  GF/GP:  1.62 GA/GP:  3.23 +/-:  -1.61
+

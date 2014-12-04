@@ -1,0 +1,11 @@
+Ford City
+FOOTBALL:           GP: 126  W:  88 T:  0 L:  38  F:  3337 A:  1809 Dif:  1528  Pct:  69.8 %  GF/GP: 26.48 GA/GP: 14.36 +/-:  12.13
+
+BASEBALL:           GP: 188  W: 107 T:  1 L:  80  F:  1335 A:   906 Dif:   429  Pct:  57.2 %  GF/GP:  7.10 GA/GP:  4.82 +/-:   2.28
+
+BASKETBALL:         GP: 258  W: 120 T:  0 L: 138  F: 13446 A: 13680 Dif:  -234  Pct:  46.5 %  GF/GP: 52.12 GA/GP: 53.02 +/-:  -0.91
+
+WOMENS BASKETBALL:  GP: 274  W: 200 T:  0 L:  74  F: 13597 A: 10221 Dif:  3376  Pct:  73.0 %  GF/GP: 49.62 GA/GP: 37.30 +/-:  12.32
+
+WOMENS SOFTBALL:    GP: 187  W:  89 T:  0 L:  98  F:  1202 A:  1066 Dif:   136  Pct:  47.6 %  GF/GP:  6.43 GA/GP:  5.70 +/-:   0.73
+

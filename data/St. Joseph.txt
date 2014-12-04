@@ -1,0 +1,18 @@
+St. Joseph
+BASEBALL:           GP: 166  W:  42 T:  0 L: 124  F:   808 A:  1555 Dif:  -747  Pct:  25.3 %  GF/GP:  4.87 GA/GP:  9.37 +/-:  -4.50
+
+BASKETBALL:         GP: 270  W: 155 T:  0 L: 115  F: 16485 A: 15514 Dif:   971  Pct:  57.4 %  GF/GP: 61.06 GA/GP: 57.46 +/-:   3.60
+
+WOMENS BASKETBALL:  GP: 264  W: 151 T:  0 L: 113  F: 12784 A: 11978 Dif:   806  Pct:  57.2 %  GF/GP: 48.42 GA/GP: 45.37 +/-:   3.05
+
+WOMENS SOFTBALL:    GP: 150  W:  12 T:  0 L: 138  F:   338 A:  2040 Dif: -1702  Pct:   8.0 %  GF/GP:  2.25 GA/GP: 13.60 +/-: -11.35
+
+SOCCER:             GP: 212  W:  87 T: 11 L: 114  F:   438 A:   493 Dif:   -55  Pct:  43.6 %  GF/GP:  2.07 GA/GP:  2.33 +/-:  -0.26
+
+HTTP error fetching URL
+HTTP error fetching URL
+HTTP error fetching URL
+HTTP error fetching URL
+HTTP error fetching URL
+WOMENS SOCCER:      GP: 119  W:  28 T:  3 L:  88  F:   174 A:   465 Dif:  -291  Pct:  24.8 %  GF/GP:  1.46 GA/GP:  3.91 +/-:  -2.45
+

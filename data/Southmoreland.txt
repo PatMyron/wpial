@@ -1,0 +1,15 @@
+Southmoreland
+FOOTBALL:           GP: 112  W:  32 T:  0 L:  80  F:  1883 A:  3711 Dif: -1828  Pct:  28.6 %  GF/GP: 16.81 GA/GP: 33.13 +/-: -16.32
+
+BASEBALL:           GP: 199  W:  63 T:  0 L: 136  F:   929 A:  1437 Dif:  -508  Pct:  31.7 %  GF/GP:  4.67 GA/GP:  7.22 +/-:  -2.55
+
+BASKETBALL:         GP: 248  W:  90 T:  0 L: 158  F: 12505 A: 14497 Dif: -1992  Pct:  36.3 %  GF/GP: 50.42 GA/GP: 58.46 +/-:  -8.03
+
+WOMENS BASKETBALL:  GP: 254  W: 118 T:  0 L: 136  F: 10268 A: 12295 Dif: -2027  Pct:  46.5 %  GF/GP: 40.43 GA/GP: 48.41 +/-:  -7.98
+
+WOMENS SOFTBALL:    GP: 166  W:  61 T:  0 L: 105  F:   825 A:  1009 Dif:  -184  Pct:  36.7 %  GF/GP:  4.97 GA/GP:  6.08 +/-:  -1.11
+
+SOCCER:             GP: 219  W: 140 T: 10 L:  69  F:   746 A:   288 Dif:   458  Pct:  66.2 %  GF/GP:  3.41 GA/GP:  1.32 +/-:   2.09
+
+WOMENS SOCCER:      GP: 220  W: 140 T:  9 L:  71  F:   715 A:   327 Dif:   388  Pct:  65.7 %  GF/GP:  3.25 GA/GP:  1.49 +/-:   1.76
+

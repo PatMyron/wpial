@@ -1,0 +1,15 @@
+McGuffey
+FOOTBALL:           GP: 115  W:  49 T:  0 L:  66  F:  2323 A:  2563 Dif:  -240  Pct:  42.6 %  GF/GP: 20.20 GA/GP: 22.29 +/-:  -2.09
+
+BASEBALL:           GP: 177  W:  31 T:  0 L: 146  F:   680 A:  1456 Dif:  -776  Pct:  17.5 %  GF/GP:  3.84 GA/GP:  8.23 +/-:  -4.38
+
+BASKETBALL:         GP: 245  W:  66 T:  0 L: 179  F: 12144 A: 15033 Dif: -2889  Pct:  26.9 %  GF/GP: 49.57 GA/GP: 61.36 +/-: -11.79
+
+WOMENS BASKETBALL:  GP: 258  W: 100 T:  0 L: 158  F: 11938 A: 12958 Dif: -1020  Pct:  38.8 %  GF/GP: 46.27 GA/GP: 50.22 +/-:  -3.95
+
+WOMENS SOFTBALL:    GP: 187  W: 115 T:  1 L:  71  F:  1108 A:   691 Dif:   417  Pct:  61.8 %  GF/GP:  5.93 GA/GP:  3.70 +/-:   2.23
+
+SOCCER:             GP: 218  W: 106 T: 10 L: 102  F:   571 A:   391 Dif:   180  Pct:  50.9 %  GF/GP:  2.62 GA/GP:  1.79 +/-:   0.83
+
+WOMENS SOCCER:      GP: 205  W:  88 T: 12 L: 105  F:   404 A:   443 Dif:   -39  Pct:  45.9 %  GF/GP:  1.97 GA/GP:  2.16 +/-:  -0.19
+

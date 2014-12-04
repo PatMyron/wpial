@@ -1,0 +1,15 @@
+Gateway
+FOOTBALL:           GP: 140  W: 104 T:  0 L:  36  F:  4617 A:  2070 Dif:  2547  Pct:  74.3 %  GF/GP: 32.98 GA/GP: 14.79 +/-:  18.19
+
+BASEBALL:           GP: 197  W:  77 T:  1 L: 119  F:  1053 A:  1332 Dif:  -279  Pct:  39.3 %  GF/GP:  5.35 GA/GP:  6.76 +/-:  -1.42
+
+BASKETBALL:         GP: 270  W: 151 T:  0 L: 119  F: 15346 A: 14721 Dif:   625  Pct:  55.9 %  GF/GP: 56.84 GA/GP: 54.52 +/-:   2.31
+
+WOMENS BASKETBALL:  GP: 275  W: 164 T:  0 L: 111  F: 13350 A: 12083 Dif:  1267  Pct:  59.6 %  GF/GP: 48.55 GA/GP: 43.94 +/-:   4.61
+
+WOMENS SOFTBALL:    GP: 196  W:  78 T:  1 L: 117  F:   989 A:  1178 Dif:  -189  Pct:  40.1 %  GF/GP:  5.05 GA/GP:  6.01 +/-:  -0.96
+
+SOCCER:             GP: 222  W: 105 T: 10 L: 107  F:   456 A:   400 Dif:    56  Pct:  49.5 %  GF/GP:  2.05 GA/GP:  1.80 +/-:   0.25
+
+WOMENS SOCCER:      GP: 234  W: 122 T: 25 L:  87  F:   481 A:   317 Dif:   164  Pct:  57.5 %  GF/GP:  2.06 GA/GP:  1.35 +/-:   0.70
+

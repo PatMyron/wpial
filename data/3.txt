@@ -1,0 +1,3 @@
+BASKETBALL
+Chartiers Valley:            GP: 309  W: 259 T:  0 L:  50  F: 21548 A: 16583 Dif: 4965  Pct:  83.8 %  GF/GP: 69.73 GA/GP: 53.67 +/-: 16.07
+Obama Academy (few games):   GP:  65  W:  55 T:  0 L:  10  F:  4556 A:  3663 Dif:  893  Pct:  84.6 %  GF/GP: 70.09 GA/GP: 56.35 +/-: 13.74

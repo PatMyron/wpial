@@ -1,0 +1,15 @@
+Burrell
+FOOTBALL:           GP: 116  W:  63 T:  0 L:  53  F:  2936 A:  2479 Dif:   457  Pct:  54.3 %  GF/GP: 25.31 GA/GP: 21.37 +/-:   3.94
+
+BASEBALL:           GP: 204  W: 143 T:  0 L:  61  F:  1406 A:   787 Dif:   619  Pct:  70.1 %  GF/GP:  6.89 GA/GP:  3.86 +/-:   3.03
+
+BASKETBALL:         GP: 253  W: 129 T:  0 L: 124  F: 12945 A: 12602 Dif:   343  Pct:  51.0 %  GF/GP: 51.17 GA/GP: 49.81 +/-:   1.36
+
+WOMENS BASKETBALL:  GP: 256  W: 137 T:  0 L: 119  F: 11469 A: 10609 Dif:   860  Pct:  53.5 %  GF/GP: 44.80 GA/GP: 41.44 +/-:   3.36
+
+WOMENS SOFTBALL:    GP: 204  W: 140 T:  0 L:  64  F:  1477 A:   658 Dif:   819  Pct:  68.6 %  GF/GP:  7.24 GA/GP:  3.23 +/-:   4.01
+
+SOCCER:             GP: 228  W: 143 T: 15 L:  70  F:   601 A:   379 Dif:   222  Pct:  66.0 %  GF/GP:  2.64 GA/GP:  1.66 +/-:   0.97
+
+WOMENS SOCCER:      GP: 216  W: 107 T:  4 L: 105  F:   500 A:   459 Dif:    41  Pct:  50.5 %  GF/GP:  2.31 GA/GP:  2.13 +/-:   0.19
+

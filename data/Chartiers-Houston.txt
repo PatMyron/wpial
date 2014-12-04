@@ -1,0 +1,15 @@
+Chartiers-Houston
+FOOTBALL:           GP: 119  W:  66 T:  0 L:  53  F:  2530 A:  2442 Dif:    88  Pct:  55.5 %  GF/GP: 21.26 GA/GP: 20.52 +/-:   0.74
+
+BASEBALL:           GP: 216  W: 152 T:  0 L:  64  F:  1706 A:   878 Dif:   828  Pct:  70.4 %  GF/GP:  7.90 GA/GP:  4.06 +/-:   3.83
+
+BASKETBALL:         GP: 253  W: 132 T:  0 L: 121  F: 13732 A: 13446 Dif:   286  Pct:  52.2 %  GF/GP: 54.28 GA/GP: 53.15 +/-:   1.13
+
+WOMENS BASKETBALL:  GP: 254  W: 114 T:  0 L: 140  F: 11439 A: 11987 Dif:  -548  Pct:  44.9 %  GF/GP: 45.04 GA/GP: 47.19 +/-:  -2.16
+
+WOMENS SOFTBALL:    GP: 250  W: 210 T:  0 L:  40  F:  1897 A:   423 Dif:  1474  Pct:  84.0 %  GF/GP:  7.59 GA/GP:  1.69 +/-:   5.90
+
+SOCCER:             GP: 233  W:  89 T:  9 L: 135  F:   513 A:   631 Dif:  -118  Pct:  40.1 %  GF/GP:  2.20 GA/GP:  2.71 +/-:  -0.51
+
+WOMENS SOCCER:      GP: 232  W: 104 T:  8 L: 120  F:   534 A:   623 Dif:   -89  Pct:  46.6 %  GF/GP:  2.30 GA/GP:  2.69 +/-:  -0.38
+

@@ -1,0 +1,15 @@
+Beaver Area
+FOOTBALL:           GP: 127  W:  85 T:  0 L:  42  F:  3527 A:  2072 Dif:  1455  Pct:  66.9 %  GF/GP: 27.77 GA/GP: 16.31 +/-:  11.46
+
+BASEBALL:           GP: 207  W: 124 T:  0 L:  83  F:  1468 A:  1156 Dif:   312  Pct:  59.9 %  GF/GP:  7.09 GA/GP:  5.58 +/-:   1.51
+
+BASKETBALL:         GP: 249  W:  98 T:  0 L: 151  F: 12576 A: 13705 Dif: -1129  Pct:  39.4 %  GF/GP: 50.51 GA/GP: 55.04 +/-:  -4.53
+
+WOMENS BASKETBALL:  GP: 262  W: 164 T:  0 L:  98  F: 13097 A: 10802 Dif:  2295  Pct:  62.6 %  GF/GP: 49.99 GA/GP: 41.23 +/-:   8.76
+
+WOMENS SOFTBALL:    GP: 187  W:  80 T:  0 L: 107  F:   871 A:   984 Dif:  -113  Pct:  42.8 %  GF/GP:  4.66 GA/GP:  5.26 +/-:  -0.60
+
+SOCCER:             GP: 237  W: 168 T:  8 L:  61  F:   907 A:   255 Dif:   652  Pct:  72.6 %  GF/GP:  3.83 GA/GP:  1.08 +/-:   2.75
+
+WOMENS SOCCER:      GP: 233  W: 136 T:  6 L:  91  F:   733 A:   423 Dif:   310  Pct:  59.7 %  GF/GP:  3.15 GA/GP:  1.82 +/-:   1.33
+

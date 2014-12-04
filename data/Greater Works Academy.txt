@@ -1,0 +1,9 @@
+Greater Works Academy
+BASKETBALL:         GP:  48  W:  10 T:  0 L:  38  F:  2253 A:  3073 Dif:  -820  Pct:  20.8 %  GF/GP: 46.94 GA/GP: 64.02 +/-: -17.08
+
+WOMENS BASKETBALL:  GP:  49  W:   7 T:  0 L:  42  F:  1928 A:  2852 Dif:  -924  Pct:  14.3 %  GF/GP: 39.35 GA/GP: 58.20 +/-: -18.86
+
+HTTP error fetching URL
+HTTP error fetching URL
+SOCCER:             GP:   2  W:   0 T:  0 L:   2  F:     3 A:    20 Dif:   -17  Pct:   0.0 %  GF/GP:  1.50 GA/GP: 10.00 +/-:  -8.50
+

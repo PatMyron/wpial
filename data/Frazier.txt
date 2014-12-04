@@ -1,0 +1,11 @@
+Frazier
+FOOTBALL:           GP: 113  W:  53 T:  0 L:  60  F:  2375 A:  2577 Dif:  -202  Pct:  46.9 %  GF/GP: 21.02 GA/GP: 22.81 +/-:  -1.79
+
+BASEBALL:           GP: 194  W:  83 T:  1 L: 110  F:  1167 A:  1259 Dif:   -92  Pct:  43.0 %  GF/GP:  6.02 GA/GP:  6.49 +/-:  -0.47
+
+BASKETBALL:         GP: 247  W:  89 T:  0 L: 158  F: 13446 A: 15155 Dif: -1709  Pct:  36.0 %  GF/GP: 54.44 GA/GP: 61.36 +/-:  -6.92
+
+WOMENS BASKETBALL:  GP: 249  W:  82 T:  0 L: 167  F:  8999 A: 12012 Dif: -3013  Pct:  32.9 %  GF/GP: 36.14 GA/GP: 48.24 +/-: -12.10
+
+WOMENS SOFTBALL:    GP: 190  W: 103 T:  0 L:  87  F:  1151 A:   988 Dif:   163  Pct:  54.2 %  GF/GP:  6.06 GA/GP:  5.20 +/-:   0.86
+

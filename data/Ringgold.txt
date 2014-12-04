@@ -1,0 +1,15 @@
+Ringgold
+FOOTBALL:           GP: 123  W:  64 T:  0 L:  59  F:  3060 A:  2843 Dif:   217  Pct:  52.0 %  GF/GP: 24.88 GA/GP: 23.11 +/-:   1.76
+
+BASEBALL:           GP: 198  W:  76 T:  2 L: 120  F:  1052 A:  1304 Dif:  -252  Pct:  38.9 %  GF/GP:  5.31 GA/GP:  6.59 +/-:  -1.27
+
+BASKETBALL:         GP: 250  W:  82 T:  0 L: 168  F: 12709 A: 15041 Dif: -2332  Pct:  32.8 %  GF/GP: 50.84 GA/GP: 60.16 +/-:  -9.33
+
+WOMENS BASKETBALL:  GP: 252  W: 120 T:  0 L: 132  F: 11208 A: 11350 Dif:  -142  Pct:  47.6 %  GF/GP: 44.48 GA/GP: 45.04 +/-:  -0.56
+
+WOMENS SOFTBALL:    GP: 180  W:  62 T:  0 L: 118  F:   590 A:   959 Dif:  -369  Pct:  34.4 %  GF/GP:  3.28 GA/GP:  5.33 +/-:  -2.05
+
+SOCCER:             GP: 227  W: 120 T: 13 L:  94  F:   593 A:   407 Dif:   186  Pct:  55.7 %  GF/GP:  2.61 GA/GP:  1.79 +/-:   0.82
+
+WOMENS SOCCER:      GP: 229  W: 112 T: 11 L: 106  F:   647 A:   432 Dif:   215  Pct:  51.3 %  GF/GP:  2.83 GA/GP:  1.89 +/-:   0.94
+

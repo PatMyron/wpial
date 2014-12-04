@@ -1,0 +1,15 @@
+Albert Gallatin
+FOOTBALL:           GP: 110  W:  19 T:  0 L:  91  F:  1492 A:  3774 Dif: -2282  Pct:  17.3 %  GF/GP: 13.56 GA/GP: 34.31 +/-: -20.75
+
+BASEBALL:           GP: 203  W:  61 T:  0 L: 142  F:   923 A:  1600 Dif:  -677  Pct:  30.0 %  GF/GP:  4.55 GA/GP:  7.88 +/-:  -3.33
+
+BASKETBALL:         GP: 254  W:  92 T:  0 L: 162  F: 13379 A: 15635 Dif: -2256  Pct:  36.2 %  GF/GP: 52.67 GA/GP: 61.56 +/-:  -8.88
+
+WOMENS BASKETBALL:  GP: 244  W:  50 T:  0 L: 194  F:  9613 A: 13895 Dif: -4282  Pct:  20.5 %  GF/GP: 39.40 GA/GP: 56.95 +/-: -17.55
+
+WOMENS SOFTBALL:    GP: 173  W:  50 T:  0 L: 123  F:   636 A:  1084 Dif:  -448  Pct:  28.9 %  GF/GP:  3.68 GA/GP:  6.27 +/-:  -2.59
+
+SOCCER:             GP: 207  W:  24 T:  1 L: 182  F:   185 A:  1316 Dif: -1131  Pct:  11.8 %  GF/GP:  0.89 GA/GP:  6.36 +/-:  -5.46
+
+WOMENS SOCCER:      GP: 205  W:  14 T:  7 L: 184  F:   128 A:  1407 Dif: -1279  Pct:   8.5 %  GF/GP:  0.62 GA/GP:  6.86 +/-:  -6.24
+

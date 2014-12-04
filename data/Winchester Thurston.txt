@@ -1,0 +1,13 @@
+Winchester Thurston
+HTTP error fetching URL
+BASKETBALL:         GP:  73  W:  23 T:  0 L:  50  F:  3386 A:  4016 Dif:  -630  Pct:  31.5 %  GF/GP: 46.38 GA/GP: 55.01 +/-:  -8.63
+
+WOMENS BASKETBALL:  GP: 187  W:  83 T:  0 L: 104  F:  8348 A:  9212 Dif:  -864  Pct:  44.4 %  GF/GP: 44.64 GA/GP: 49.26 +/-:  -4.62
+
+SOCCER:             GP: 208  W: 100 T: 10 L:  98  F:   465 A:   492 Dif:   -27  Pct:  50.5 %  GF/GP:  2.24 GA/GP:  2.37 +/-:  -0.13
+
+HTTP error fetching URL
+HTTP error fetching URL
+HTTP error fetching URL
+WOMENS SOCCER:      GP:   0  W:   0 T:  0 L:   0  F:     0 A:     0 Dif:     0  Pct:   NaN %  GF/GP:   NaN GA/GP:   NaN +/-:    NaN
+
