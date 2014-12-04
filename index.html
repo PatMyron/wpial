@@ -15,7 +15,8 @@
 		xhr.onload = function () {
 			document.getElementById('contentsHyperlink').textContent = url;
 		};
-		
+		xhr.open('GET', url);
+		xhr.send();
 	}
 	</script>
 	<title>WPIAL website</title>
