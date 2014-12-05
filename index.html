@@ -3,6 +3,7 @@
 <head>
 	<script>
 	function populatePre(url) {
+		url = url+".txt";
 		var xhr = new XMLHttpRequest();
 		xhr.onload = function () {
 			document.getElementById('contents').textContent = this.responseText;
