@@ -23,14 +23,18 @@
 	<link href="style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-<script>var var1="all";</script>
+<script>
+	var sport="";
+	var school="";
+	populatePre('data/all');addLink('data/all');
+</script>
 	<div class="content">
 		<div class="background block_1">
 		</div>
 		<div class="left_block block_1">
 			<div class="content">
-				<select name="school" size="40"  style="font-size: 18;" onChange="var1=this.value;populatePre('data/'+var1);addLink('data/'+var1);"> 
-					<option value="all">ALL SCHOOLS</option>
+				<select name="school" size="40"  style="font-size: 18;" onChange="school=this.value;populatePre('data/'+school);addLink('data/'+school);"> 
+					<option value="">ALL SCHOOLS</option>
 					<option value="">--------------------------</option>
 					<option value="Albert Gallatin">Albert Gallatin</option>
 					<option value="Aliquippa">Aliquippa</option>
@@ -178,8 +182,8 @@
 			</div>
 		</div>
 		<div class="background block_2">
-			<select name="sport" size="9"  style="font-size: 18;" onChange="var1=this.value;populatePre('data/'+var1);addLink('data/'+var1);">  
-				<option value="all">all sports</option>
+			<select name="sport" size="9"  style="font-size: 18;" onChange="sport=this.value;populatePre('data/'+var1);addLink('data/'+var1);">  
+				<option value="">all sports</option>
 				<option value="">--------------------</option>
 				<option value="2">BASEBALL</option>
 				<option value="3">BASKETBALL</option>
@@ -206,7 +210,6 @@
 					</div>
 					<div class="right">
 						<pre style="font-size=16" id="contents"></pre><p style="font-size=16" id="contentsHyperlink"></p>
-						<script>populatePre('data/'+var1);addLink('data/'+var1);</script>
 					</div>
 				</div>
 			</div>
