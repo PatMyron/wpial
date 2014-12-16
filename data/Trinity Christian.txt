@@ -1,5 +1,4 @@
 Trinity Christian
-HTTP error fetching URL
 BASEBALL:           GP:   1  W:   0 T:  0 L:   1  F:     3 A:    13 Dif:   -10  Pct:   0.0 %  GF/GP:  3.00 GA/GP: 13.00 +/-: -10.00
 
 BASKETBALL:         GP: 245  W:  73 T:  0 L: 172  F: 11520 A: 14092 Dif: -2572  Pct:  29.8 %  GF/GP: 47.02 GA/GP: 57.52 +/-: -10.50

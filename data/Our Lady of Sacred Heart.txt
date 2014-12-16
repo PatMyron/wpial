@@ -1,11 +1,4 @@
 Our Lady of Sacred Heart
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
 FOOTBALL:           GP:  45  W:  13 T:  0 L:  32  F:   680 A:  1344 Dif:  -664  Pct:  28.9 %  GF/GP: 15.11 GA/GP: 29.87 +/-: -14.76
 
 BASEBALL:           GP: 206  W: 124 T:  0 L:  82  F:  1397 A:  1075 Dif:   322  Pct:  60.2 %  GF/GP:  6.78 GA/GP:  5.22 +/-:   1.56

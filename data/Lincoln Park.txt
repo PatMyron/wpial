@@ -1,20 +1,5 @@
 Lincoln Park
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
 BASKETBALL:         GP: 193  W: 149 T:  0 L:  44  F: 13525 A: 10090 Dif:  3435  Pct:  77.2 %  GF/GP: 70.08 GA/GP: 52.28 +/-:  17.80
 
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
 WOMENS BASKETBALL:  GP:   0  W:   0 T:  0 L:   0  F:     0 A:     0 Dif:     0  Pct:   NaN %  GF/GP:   NaN GA/GP:   NaN +/-:    NaN
 

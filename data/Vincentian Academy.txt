@@ -1,13 +1,4 @@
 Vincentian Academy
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
 FOOTBALL:           GP:  28  W:   7 T:  0 L:  21  F:   488 A:   920 Dif:  -432  Pct:  25.0 %  GF/GP: 17.43 GA/GP: 32.86 +/-: -15.43
 
 BASEBALL:           GP: 214  W: 132 T:  1 L:  81  F:  1675 A:  1172 Dif:   503  Pct:  61.9 %  GF/GP:  7.83 GA/GP:  5.48 +/-:   2.35

@@ -9,10 +9,5 @@ WOMENS SOFTBALL:    GP: 150  W:  12 T:  0 L: 138  F:   338 A:  2040 Dif: -1702  
 
 SOCCER:             GP: 212  W:  87 T: 11 L: 114  F:   438 A:   493 Dif:   -55  Pct:  43.6 %  GF/GP:  2.07 GA/GP:  2.33 +/-:  -0.26
 
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
 WOMENS SOCCER:      GP: 119  W:  28 T:  3 L:  88  F:   174 A:   465 Dif:  -291  Pct:  24.8 %  GF/GP:  1.46 GA/GP:  3.91 +/-:  -2.45
 

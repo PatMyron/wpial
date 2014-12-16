@@ -5,8 +5,5 @@ BASEBALL:           GP: 164  W:   7 T:  0 L: 157  F:   278 A:  2205 Dif: -1927  
 
 BASKETBALL:         GP: 254  W: 115 T:  0 L: 139  F: 15904 A: 16364 Dif:  -460  Pct:  45.3 %  GF/GP: 62.61 GA/GP: 64.43 +/-:  -1.81
 
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
 WOMENS BASKETBALL:  GP:   0  W:   0 T:  0 L:   0  F:     0 A:     0 Dif:     0  Pct:   NaN %  GF/GP:   NaN GA/GP:   NaN +/-:    NaN
 

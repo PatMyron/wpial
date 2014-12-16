@@ -9,13 +9,6 @@ WOMENS BASKETBALL:  GP: 261  W: 126 T:  0 L: 135  F: 12768 A: 13155 Dif:  -387  
 
 WOMENS SOFTBALL:    GP: 177  W:  86 T:  0 L:  91  F:  1181 A:   992 Dif:   189  Pct:  48.6 %  GF/GP:  6.67 GA/GP:  5.60 +/-:   1.07
 
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
-HTTP error fetching URL
 SOCCER:             GP:  71  W:  12 T:  0 L:  59  F:    68 A:   313 Dif:  -245  Pct:  16.9 %  GF/GP:  0.96 GA/GP:  4.41 +/-:  -3.45
 
 WOMENS SOCCER:      GP: 211  W:  87 T: 10 L: 114  F:   475 A:   651 Dif:  -176  Pct:  43.6 %  GF/GP:  2.25 GA/GP:  3.09 +/-:  -0.83
