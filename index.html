@@ -1,8 +1,9 @@
 <!doctype html>
-<html>
+<html lang="en-US">
 <head>
 	<script>
 	function populatePre(url) {
+		url = url+".txt";
 		var xhr = new XMLHttpRequest();
 		xhr.onload = function () {
 			document.getElementById('contents').textContent = this.responseText;
@@ -12,12 +13,12 @@
 	}
 	function addLink(url) {
 	  var str = "Permanent Data Link";
-	 var result = str.link("http://patmyron.github.io/WPIAL/"+url+".txt");
+	 var result = str.link("http://patmyron.github.io/wpial/"+url+".txt");
 	    document.getElementById("contentsHyperlink").innerHTML = result;
 	}
 </script>
 	</script>
-	<title>WPIAL website</title>
+	<title>WPIAL statistics</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link href="style.css" type="text/css" rel="stylesheet" />
 </head>
@@ -196,6 +197,9 @@
 							<div class="content">
 								<p>
 									created by Pat Myron
+								</p>
+								<p>
+									stats from 2003-2014
 								</p>
 							</div>
 						</div>
