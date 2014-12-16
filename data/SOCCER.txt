@@ -1,0 +1,5 @@
+SOCCER
+South Park:                  GP: 285  W: 231 T: 11 L:  43  F:  1222 A:   181 Dif: 1041  Pct:  83.0 %  GF/GP:  4.29 GA/GP:  0.64 +/-:  3.65
+Seton-La Salle:              GP: 260  W: 208 T:  8 L:  44  F:   932 A:   257 Dif:  675  Pct:  81.5 %  GF/GP:  3.58 GA/GP:  0.99 +/-:  2.60
+Peters Township:             GP: 279  W: 219 T: 15 L:  45  F:   763 A:   209 Dif:  554  Pct:  81.2 %  GF/GP:  2.73 GA/GP:  0.75 +/-:  1.99
+Upper St. Clair:             GP: 275  W: 215 T: 16 L:  44  F:   799 A:   200 Dif:  599  Pct:  81.1 %  GF/GP:  2.91 GA/GP:  0.73 +/-:  2.18

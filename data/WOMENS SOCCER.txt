@@ -1,0 +1,4 @@
+WOMENS SOCCER
+Peters Township:             GP: 286  W: 240 T: 13 L:  33  F:  1228 A:   176 Dif: 1052  Pct:  86.2 %  GF/GP:  4.29 GA/GP:  0.62 +/-:  3.68
+Greensburg Central Catholic: GP: 273  W: 231 T:  6 L:  36  F:  1436 A:   222 Dif: 1214  Pct:  85.7 %  GF/GP:  5.26 GA/GP:  0.81 +/-:  4.45
+Moon:                        GP: 265  W: 219 T:  9 L:  37  F:  1121 A:   173 Dif:  948  Pct:  84.3 %  GF/GP:  4.23 GA/GP:  0.65 +/-:  3.58
