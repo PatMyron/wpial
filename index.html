@@ -56,7 +56,7 @@
 			
 		var xhr = new XMLHttpRequest();
 		xhr.onload = function () {
-			document.getElementById('contentsP').textContent = this.responseText;
+			document.getElementById('contentsP').innerHTML = this.responseText;
 		};
 		xhr.open('GET', url);
 		xhr.send();
