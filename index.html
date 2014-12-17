@@ -2,8 +2,16 @@
 <html lang="en-US">
 <head>
 	<script>
-	function populatePre(url) {
-		url = url+".txt";
+	function populatePre(school,sport) {
+		var url; 
+		if(school=="all" && sport=="all")
+			url = "data/all.txt"
+		else if (school=="all")
+			url = "data/"+sport+".txt";
+		else if (sport=="all")
+			url = "data/"+school+".txt";
+		else
+			url = "data/specificData/"+school+"+"+sport+"/seasons.txt";
 		var xhr = new XMLHttpRequest();
 		xhr.onload = function () {
 			document.getElementById('contents').textContent = this.responseText;
@@ -11,29 +19,40 @@
 		xhr.open('GET', url);
 		xhr.send();
 	}
-	function addLink(url) {
-	  var str = "Permanent Data Link";
-	 var result = str.link("http://patmyron.github.io/wpial/"+url+".txt");
-	    document.getElementById("contentsHyperlink").innerHTML = result;
+	function addLink(school,sport) {
+		var url; 
+		if(school=="all" && sport=="all")
+			url = "data/all.txt"
+		else if (school=="all")
+			url = "data/"+sport+".txt";
+		else if (sport=="all")
+			url = "data/"+school+".txt";
+		else
+			url = "data/specificData/"+school+"+"+sport+"/seasons.txt";
+		var str;
+		str = "Permanent Data Link";
+		var result;
+		result = str.link("http://patmyron.github.io/wpial/"+url+".txt");
+		document.getElementById("contentsHyperlink").innerHTML = result;
 	}
-</script>
 	</script>
-	<title>WPIAL statistics</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link href="style.css" type="text/css" rel="stylesheet" />
+</script>
+<title>WPIAL statistics</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-<script>
-	var sport="";
-	var school="";
-	populatePre('data/all');addLink('data/all');
-</script>
+	<script>
+	var sport="all";
+	var school="all";
+	populatePre(school,sport);addLink(school,sport);
+	</script>
 	<div class="content">
 		<div class="background block_1">
 		</div>
 		<div class="left_block block_1">
 			<div class="content">
-				<select name="school" size="40"  style="font-size: 18;" onChange="school=this.value;populatePre('data/'+school);addLink('data/'+school);"> 
+				<select name="school" size="40"  style="font-size: 18;" onChange="school=this.value;populatePre(school,sport);addLink(school,sport);"> 
 					<option value="all">ALL SCHOOLS</option>
 					<option value="">--------------------------</option>
 					<option value="Albert Gallatin">Albert Gallatin</option>
@@ -182,7 +201,7 @@
 			</div>
 		</div>
 		<div class="background block_2">
-			<select name="sport" size="9"  style="font-size: 18;" onChange="sport=this.value;populatePre('data/'+sport);addLink('data/'+sport);">  
+			<select name="sport" size="9"  style="font-size: 18;" onChange="sport=this.value;populatePre(school,sport);addLink(school,sport);">  
 				<option value="all">all sports</option>
 				<option value="">--------------------</option>
 				<option value="BASEBALL">BASEBALL</option>
