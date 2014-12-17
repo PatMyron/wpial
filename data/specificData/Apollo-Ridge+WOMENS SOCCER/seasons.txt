@@ -1,0 +1,2 @@
+year: 2014   GP:   1  W:   1 T:  0 L:   0  F:     2 A:     1 Dif:     1  Pct: 100.0 %  GF/GP:  2.00 GA/GP:  1.00 +/-:   1.00
+total:       GP:   1  W:   1 T:  0 L:   0  F:     2 A:     1 Dif:     1  Pct: 100.0 %  GF/GP:  2.00 GA/GP:  1.00 +/-:   1.00

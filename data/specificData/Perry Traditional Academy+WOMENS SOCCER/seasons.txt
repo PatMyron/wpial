@@ -1,0 +1,4 @@
+year: 2012   GP:   0  W:   0 T:  0 L:   0  F:     0 A:     0 Dif:     0  Pct:   NaN %  GF/GP:   NaN GA/GP:   NaN +/-:    NaN
+year: 2013   GP:   2  W:   0 T:  0 L:   2  F:     0 A:    14 Dif:   -14  Pct:   0.0 %  GF/GP:  0.00 GA/GP:  7.00 +/-:  -7.00
+year: 2014   GP:   0  W:   0 T:  0 L:   0  F:     0 A:     0 Dif:     0  Pct:   NaN %  GF/GP:   NaN GA/GP:   NaN +/-:    NaN
+total:       GP:   2  W:   0 T:  0 L:   2  F:     0 A:    14 Dif:   -14  Pct:   0.0 %  GF/GP:  0.00 GA/GP:  7.00 +/-:  -7.00

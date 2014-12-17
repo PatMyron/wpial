@@ -1,6 +1,0 @@
-FOOTBALL
-Clairton:                    GP: 167  W: 150 T:  0 L:  17  F:  6644 A:  1498 Dif: 5146  Pct:  89.8 %  GF/GP: 39.78 GA/GP:  8.97 +/-: 30.81
-Thomas Jefferson:            GP: 160  W: 143 T:  0 L:  17  F:  5707 A:  1697 Dif: 4010  Pct:  89.4 %  GF/GP: 35.67 GA/GP: 10.61 +/-: 25.06
-Aliquippa:                   GP: 159  W: 141 T:  0 L:  18  F:  5651 A:  1765 Dif: 3886  Pct:  88.7 %  GF/GP: 35.54 GA/GP: 11.10 +/-: 24.44
-Central Catholic:            GP: 157  W: 137 T:  0 L:  20  F:  5072 A:  1731 Dif: 3341  Pct:  87.3 %  GF/GP: 32.31 GA/GP: 11.03 +/-: 21.28
-Jeannette:                   GP: 141  W: 114 T:  0 L:  27  F:  5081 A:  2148 Dif: 2933  Pct:  80.9 %  GF/GP: 36.04 GA/GP: 15.23 +/-: 20.80

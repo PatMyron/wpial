@@ -1,0 +1,2 @@
+year: 2014   GP:  17  W:   5 T:  2 L:  10  F:    17 A:    34 Dif:   -17  Pct:  35.3 %  GF/GP:  1.00 GA/GP:  2.00 +/-:  -1.00
+total:       GP:  17  W:   5 T:  2 L:  10  F:    17 A:    34 Dif:   -17  Pct:  35.3 %  GF/GP:  1.00 GA/GP:  2.00 +/-:  -1.00

@@ -1,0 +1,12 @@
+year: 2003   GP:  15  W:   1 T:  0 L:  14  F:    23 A:   126 Dif:  -103  Pct:   6.7 %  GF/GP:  1.53 GA/GP:  8.40 +/-:  -6.87
+year: 2004   GP:  19  W:   8 T:  0 L:  11  F:    77 A:    71 Dif:     6  Pct:  42.1 %  GF/GP:  4.05 GA/GP:  3.74 +/-:   0.32
+year: 2005   GP:  20  W:  12 T:  0 L:   8  F:   116 A:    67 Dif:    49  Pct:  60.0 %  GF/GP:  5.80 GA/GP:  3.35 +/-:   2.45
+year: 2006   GP:  17  W:  13 T:  0 L:   4  F:   120 A:    50 Dif:    70  Pct:  76.5 %  GF/GP:  7.06 GA/GP:  2.94 +/-:   4.12
+year: 2007   GP:  18  W:   9 T:  0 L:   9  F:    97 A:    66 Dif:    31  Pct:  50.0 %  GF/GP:  5.39 GA/GP:  3.67 +/-:   1.72
+year: 2008   GP:  17  W:   5 T:  0 L:  12  F:    52 A:   115 Dif:   -63  Pct:  29.4 %  GF/GP:  3.06 GA/GP:  6.76 +/-:  -3.71
+year: 2009   GP:  18  W:   1 T:  0 L:  17  F:    38 A:   179 Dif:  -141  Pct:   5.6 %  GF/GP:  2.11 GA/GP:  9.94 +/-:  -7.83
+year: 2010   GP:  16  W:   0 T:  0 L:  16  F:     4 A:   238 Dif:  -234  Pct:   0.0 %  GF/GP:  0.25 GA/GP: 14.88 +/-: -14.63
+year: 2011   GP:  17  W:   3 T:  0 L:  14  F:    73 A:   177 Dif:  -104  Pct:  17.6 %  GF/GP:  4.29 GA/GP: 10.41 +/-:  -6.12
+year: 2012   GP:  15  W:   7 T:  0 L:   8  F:    84 A:    99 Dif:   -15  Pct:  46.7 %  GF/GP:  5.60 GA/GP:  6.60 +/-:  -1.00
+year: 2013   GP:  13  W:   5 T:  0 L:   8  F:    58 A:    78 Dif:   -20  Pct:  38.5 %  GF/GP:  4.46 GA/GP:  6.00 +/-:  -1.54
+total:       GP: 185  W:  64 T:  0 L: 121  F:   742 A:  1266 Dif:  -524  Pct:  34.6 %  GF/GP:  4.01 GA/GP:  6.84 +/-:  -2.83

@@ -1,0 +1,4 @@
+year: 2003   GP:  10  W:   0 T:  0 L:  10  F:     5 A:   106 Dif:  -101  Pct:   0.0 %  GF/GP:  0.50 GA/GP: 10.60 +/-: -10.10
+year: 2004   GP:  10  W:   1 T:  0 L:   9  F:    14 A:   112 Dif:   -98  Pct:  10.0 %  GF/GP:  1.40 GA/GP: 11.20 +/-:  -9.80
+year: 2005   GP:  10  W:   0 T:  0 L:  10  F:    10 A:   139 Dif:  -129  Pct:   0.0 %  GF/GP:  1.00 GA/GP: 13.90 +/-: -12.90
+total:       GP:  30  W:   1 T:  0 L:  29  F:    29 A:   357 Dif:  -328  Pct:   3.3 %  GF/GP:  0.97 GA/GP: 11.90 +/-: -10.93

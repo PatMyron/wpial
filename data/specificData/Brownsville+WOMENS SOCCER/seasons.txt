@@ -1,0 +1,2 @@
+year: 2014   GP:  18  W:   5 T:  1 L:  12  F:    24 A:    78 Dif:   -54  Pct:  30.6 %  GF/GP:  1.33 GA/GP:  4.33 +/-:  -3.00
+total:       GP:  18  W:   5 T:  1 L:  12  F:    24 A:    78 Dif:   -54  Pct:  30.6 %  GF/GP:  1.33 GA/GP:  4.33 +/-:  -3.00

@@ -1,0 +1,2 @@
+year: 2005   GP:   2  W:   0 T:  0 L:   2  F:     3 A:    20 Dif:   -17  Pct:   0.0 %  GF/GP:  1.50 GA/GP: 10.00 +/-:  -8.50
+total:       GP:   2  W:   0 T:  0 L:   2  F:     3 A:    20 Dif:   -17  Pct:   0.0 %  GF/GP:  1.50 GA/GP: 10.00 +/-:  -8.50
