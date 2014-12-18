@@ -18,6 +18,7 @@
 	</style>
 	<script>
 	function populatePre(school,sport) {
+		document.getElementById('contentsP').textContent = "";
 		var url; 
 		if(school=="all" && sport=="all")
 			url = "data/all.txt"
