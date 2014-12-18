@@ -1,5 +1,185 @@
-year: 2011   GP:  16  W:   9 T:  0 L:   7  F:    52 A:    18 Dif:    34  Pct:  56.3 %  GF/GP:  3.25 GA/GP:  1.13 +/-:   2.13
-year: 2012   GP:  20  W:   4 T:  0 L:  16  F:    33 A:    69 Dif:   -36  Pct:  20.0 %  GF/GP:  1.65 GA/GP:  3.45 +/-:  -1.80
-year: 2013   GP:  15  W:   8 T:  0 L:   7  F:    46 A:    41 Dif:     5  Pct:  53.3 %  GF/GP:  3.07 GA/GP:  2.73 +/-:   0.33
-year: 2014   GP:  17  W:   9 T:  0 L:   8  F:    63 A:    38 Dif:    25  Pct:  52.9 %  GF/GP:  3.71 GA/GP:  2.24 +/-:   1.47
-total:       GP:  68  W:  30 T:  0 L:  38  F:   194 A:   166 Dif:    28  Pct:  44.1 %  GF/GP:  2.85 GA/GP:  2.44 +/-:   0.41
+<table style="width:100%">
+  <tr>
+    <th>Year</th>
+    <th>Games</th>
+    <th>W</th>
+    <th>T</th>
+    <th>L</th>
+    <th>For</th>
+    <th>Against</th>
+    <th>Diff</th>
+    <th>Pct</th>
+    <th>F/GP</th>
+    <th>A/GP</th>
+    <th>+/-</th>
+  </tr><tr>
+<td>
+2011
+</td>
+<td>
+16
+</td>
+<td>
+9
+</td>
+<td>
+0
+</td>
+<td>
+7
+</td>
+<td>
+52
+</td>
+<td>
+18
+</td>
+<td>
+34
+</td>
+<td>
+ 56.3 %</td>
+<td>
+ 3.25</td>
+<td>
+ 1.13</td>
+<td>
+  2.13</td>
+</tr>
+<tr>
+<td>
+2012
+</td>
+<td>
+20
+</td>
+<td>
+4
+</td>
+<td>
+0
+</td>
+<td>
+16
+</td>
+<td>
+33
+</td>
+<td>
+69
+</td>
+<td>
+-36
+</td>
+<td>
+ 20.0 %</td>
+<td>
+ 1.65</td>
+<td>
+ 3.45</td>
+<td>
+ -1.80</td>
+</tr>
+<tr>
+<td>
+2013
+</td>
+<td>
+15
+</td>
+<td>
+8
+</td>
+<td>
+0
+</td>
+<td>
+7
+</td>
+<td>
+46
+</td>
+<td>
+41
+</td>
+<td>
+5
+</td>
+<td>
+ 53.3 %</td>
+<td>
+ 3.07</td>
+<td>
+ 2.73</td>
+<td>
+  0.33</td>
+</tr>
+<tr>
+<td>
+2014
+</td>
+<td>
+17
+</td>
+<td>
+9
+</td>
+<td>
+0
+</td>
+<td>
+8
+</td>
+<td>
+63
+</td>
+<td>
+38
+</td>
+<td>
+25
+</td>
+<td>
+ 52.9 %</td>
+<td>
+ 3.71</td>
+<td>
+ 2.24</td>
+<td>
+  1.47</td>
+</tr>
+<tr>
+<td>
+TOTAL
+</td>
+<td>
+68
+</td>
+<td>
+30
+</td>
+<td>
+0
+</td>
+<td>
+38
+</td>
+<td>
+194
+</td>
+<td>
+166
+</td>
+<td>
+28
+</td>
+<td>
+ 44.1 %</td>
+<td>
+ 2.85</td>
+<td>
+ 2.44</td>
+<td>
+  0.41</td>
+</tr>
+</table>

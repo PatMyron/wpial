@@ -1,12 +1,423 @@
-year: 2003   GP:  18  W:   8 T:  0 L:  10  F:    85 A:    95 Dif:   -10  Pct:  44.4 %  GF/GP:  4.72 GA/GP:  5.28 +/-:  -0.56
-year: 2004   GP:  19  W:  10 T:  0 L:   9  F:   107 A:    87 Dif:    20  Pct:  52.6 %  GF/GP:  5.63 GA/GP:  4.58 +/-:   1.05
-year: 2005   GP:  18  W:  11 T:  0 L:   7  F:   114 A:    72 Dif:    42  Pct:  61.1 %  GF/GP:  6.33 GA/GP:  4.00 +/-:   2.33
-year: 2006   GP:  23  W:  17 T:  0 L:   6  F:   192 A:   100 Dif:    92  Pct:  73.9 %  GF/GP:  8.35 GA/GP:  4.35 +/-:   4.00
-year: 2007   GP:  16  W:   7 T:  0 L:   9  F:   124 A:   109 Dif:    15  Pct:  43.8 %  GF/GP:  7.75 GA/GP:  6.81 +/-:   0.94
-year: 2008   GP:  20  W:  15 T:  0 L:   5  F:   145 A:    57 Dif:    88  Pct:  75.0 %  GF/GP:  7.25 GA/GP:  2.85 +/-:   4.40
-year: 2009   GP:  20  W:  15 T:  0 L:   5  F:   143 A:    67 Dif:    76  Pct:  75.0 %  GF/GP:  7.15 GA/GP:  3.35 +/-:   3.80
-year: 2010   GP:  20  W:  15 T:  0 L:   5  F:   143 A:    74 Dif:    69  Pct:  75.0 %  GF/GP:  7.15 GA/GP:  3.70 +/-:   3.45
-year: 2011   GP:  22  W:  16 T:  0 L:   6  F:   175 A:    90 Dif:    85  Pct:  72.7 %  GF/GP:  7.95 GA/GP:  4.09 +/-:   3.86
-year: 2012   GP:  18  W:  10 T:  0 L:   8  F:    71 A:    72 Dif:    -1  Pct:  55.6 %  GF/GP:  3.94 GA/GP:  4.00 +/-:  -0.06
-year: 2013   GP:  17  W:   4 T:  0 L:  13  F:   107 A:   171 Dif:   -64  Pct:  23.5 %  GF/GP:  6.29 GA/GP: 10.06 +/-:  -3.76
-total:       GP: 211  W: 128 T:  0 L:  83  F:  1406 A:   994 Dif:   412  Pct:  60.7 %  GF/GP:  6.66 GA/GP:  4.71 +/-:   1.95
+<table style="width:100%">
+  <tr>
+    <th>Year</th>
+    <th>Games</th>
+    <th>W</th>
+    <th>T</th>
+    <th>L</th>
+    <th>For</th>
+    <th>Against</th>
+    <th>Diff</th>
+    <th>Pct</th>
+    <th>F/GP</th>
+    <th>A/GP</th>
+    <th>+/-</th>
+  </tr><tr>
+<td>
+2003
+</td>
+<td>
+18
+</td>
+<td>
+8
+</td>
+<td>
+0
+</td>
+<td>
+10
+</td>
+<td>
+85
+</td>
+<td>
+95
+</td>
+<td>
+-10
+</td>
+<td>
+ 44.4 %</td>
+<td>
+ 4.72</td>
+<td>
+ 5.28</td>
+<td>
+ -0.56</td>
+</tr>
+<tr>
+<td>
+2004
+</td>
+<td>
+19
+</td>
+<td>
+10
+</td>
+<td>
+0
+</td>
+<td>
+9
+</td>
+<td>
+107
+</td>
+<td>
+87
+</td>
+<td>
+20
+</td>
+<td>
+ 52.6 %</td>
+<td>
+ 5.63</td>
+<td>
+ 4.58</td>
+<td>
+  1.05</td>
+</tr>
+<tr>
+<td>
+2005
+</td>
+<td>
+18
+</td>
+<td>
+11
+</td>
+<td>
+0
+</td>
+<td>
+7
+</td>
+<td>
+114
+</td>
+<td>
+72
+</td>
+<td>
+42
+</td>
+<td>
+ 61.1 %</td>
+<td>
+ 6.33</td>
+<td>
+ 4.00</td>
+<td>
+  2.33</td>
+</tr>
+<tr>
+<td>
+2006
+</td>
+<td>
+23
+</td>
+<td>
+17
+</td>
+<td>
+0
+</td>
+<td>
+6
+</td>
+<td>
+192
+</td>
+<td>
+100
+</td>
+<td>
+92
+</td>
+<td>
+ 73.9 %</td>
+<td>
+ 8.35</td>
+<td>
+ 4.35</td>
+<td>
+  4.00</td>
+</tr>
+<tr>
+<td>
+2007
+</td>
+<td>
+16
+</td>
+<td>
+7
+</td>
+<td>
+0
+</td>
+<td>
+9
+</td>
+<td>
+124
+</td>
+<td>
+109
+</td>
+<td>
+15
+</td>
+<td>
+ 43.8 %</td>
+<td>
+ 7.75</td>
+<td>
+ 6.81</td>
+<td>
+  0.94</td>
+</tr>
+<tr>
+<td>
+2008
+</td>
+<td>
+20
+</td>
+<td>
+15
+</td>
+<td>
+0
+</td>
+<td>
+5
+</td>
+<td>
+145
+</td>
+<td>
+57
+</td>
+<td>
+88
+</td>
+<td>
+ 75.0 %</td>
+<td>
+ 7.25</td>
+<td>
+ 2.85</td>
+<td>
+  4.40</td>
+</tr>
+<tr>
+<td>
+2009
+</td>
+<td>
+20
+</td>
+<td>
+15
+</td>
+<td>
+0
+</td>
+<td>
+5
+</td>
+<td>
+143
+</td>
+<td>
+67
+</td>
+<td>
+76
+</td>
+<td>
+ 75.0 %</td>
+<td>
+ 7.15</td>
+<td>
+ 3.35</td>
+<td>
+  3.80</td>
+</tr>
+<tr>
+<td>
+2010
+</td>
+<td>
+20
+</td>
+<td>
+15
+</td>
+<td>
+0
+</td>
+<td>
+5
+</td>
+<td>
+143
+</td>
+<td>
+74
+</td>
+<td>
+69
+</td>
+<td>
+ 75.0 %</td>
+<td>
+ 7.15</td>
+<td>
+ 3.70</td>
+<td>
+  3.45</td>
+</tr>
+<tr>
+<td>
+2011
+</td>
+<td>
+22
+</td>
+<td>
+16
+</td>
+<td>
+0
+</td>
+<td>
+6
+</td>
+<td>
+175
+</td>
+<td>
+90
+</td>
+<td>
+85
+</td>
+<td>
+ 72.7 %</td>
+<td>
+ 7.95</td>
+<td>
+ 4.09</td>
+<td>
+  3.86</td>
+</tr>
+<tr>
+<td>
+2012
+</td>
+<td>
+18
+</td>
+<td>
+10
+</td>
+<td>
+0
+</td>
+<td>
+8
+</td>
+<td>
+71
+</td>
+<td>
+72
+</td>
+<td>
+-1
+</td>
+<td>
+ 55.6 %</td>
+<td>
+ 3.94</td>
+<td>
+ 4.00</td>
+<td>
+ -0.06</td>
+</tr>
+<tr>
+<td>
+2013
+</td>
+<td>
+17
+</td>
+<td>
+4
+</td>
+<td>
+0
+</td>
+<td>
+13
+</td>
+<td>
+107
+</td>
+<td>
+171
+</td>
+<td>
+-64
+</td>
+<td>
+ 23.5 %</td>
+<td>
+ 6.29</td>
+<td>
+10.06</td>
+<td>
+ -3.76</td>
+</tr>
+<tr>
+<td>
+TOTAL
+</td>
+<td>
+211
+</td>
+<td>
+128
+</td>
+<td>
+0
+</td>
+<td>
+83
+</td>
+<td>
+1406
+</td>
+<td>
+994
+</td>
+<td>
+412
+</td>
+<td>
+ 60.7 %</td>
+<td>
+ 6.66</td>
+<td>
+ 4.71</td>
+<td>
+  1.95</td>
+</tr>
+</table>

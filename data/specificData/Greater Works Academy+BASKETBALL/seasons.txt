@@ -1,4 +1,151 @@
-year: 2003   GP:  20  W:   7 T:  0 L:  13  F:  1023 A:  1279 Dif:  -256  Pct:  35.0 %  GF/GP: 51.15 GA/GP: 63.95 +/-: -12.80
-year: 2004   GP:  23  W:   3 T:  0 L:  20  F:  1049 A:  1462 Dif:  -413  Pct:  13.0 %  GF/GP: 45.61 GA/GP: 63.57 +/-: -17.96
-year: 2005   GP:   5  W:   0 T:  0 L:   5  F:   181 A:   332 Dif:  -151  Pct:   0.0 %  GF/GP: 36.20 GA/GP: 66.40 +/-: -30.20
-total:       GP:  48  W:  10 T:  0 L:  38  F:  2253 A:  3073 Dif:  -820  Pct:  20.8 %  GF/GP: 46.94 GA/GP: 64.02 +/-: -17.08
+<table style="width:100%">
+  <tr>
+    <th>Year</th>
+    <th>Games</th>
+    <th>W</th>
+    <th>T</th>
+    <th>L</th>
+    <th>For</th>
+    <th>Against</th>
+    <th>Diff</th>
+    <th>Pct</th>
+    <th>F/GP</th>
+    <th>A/GP</th>
+    <th>+/-</th>
+  </tr><tr>
+<td>
+2003
+</td>
+<td>
+20
+</td>
+<td>
+7
+</td>
+<td>
+0
+</td>
+<td>
+13
+</td>
+<td>
+1023
+</td>
+<td>
+1279
+</td>
+<td>
+-256
+</td>
+<td>
+ 35.0 %</td>
+<td>
+51.15</td>
+<td>
+63.95</td>
+<td>
+-12.80</td>
+</tr>
+<tr>
+<td>
+2004
+</td>
+<td>
+23
+</td>
+<td>
+3
+</td>
+<td>
+0
+</td>
+<td>
+20
+</td>
+<td>
+1049
+</td>
+<td>
+1462
+</td>
+<td>
+-413
+</td>
+<td>
+ 13.0 %</td>
+<td>
+45.61</td>
+<td>
+63.57</td>
+<td>
+-17.96</td>
+</tr>
+<tr>
+<td>
+2005
+</td>
+<td>
+5
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+5
+</td>
+<td>
+181
+</td>
+<td>
+332
+</td>
+<td>
+-151
+</td>
+<td>
+  0.0 %</td>
+<td>
+36.20</td>
+<td>
+66.40</td>
+<td>
+-30.20</td>
+</tr>
+<tr>
+<td>
+TOTAL
+</td>
+<td>
+48
+</td>
+<td>
+10
+</td>
+<td>
+0
+</td>
+<td>
+38
+</td>
+<td>
+2253
+</td>
+<td>
+3073
+</td>
+<td>
+-820
+</td>
+<td>
+ 20.8 %</td>
+<td>
+46.94</td>
+<td>
+64.02</td>
+<td>
+-17.08</td>
+</tr>
+</table>

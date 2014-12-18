@@ -1,2 +1,83 @@
-year: 2012   GP:   1  W:   0 T:  0 L:   1  F:     0 A:     5 Dif:    -5  Pct:   0.0 %  GF/GP:  0.00 GA/GP:  5.00 +/-:  -5.00
-total:       GP:   1  W:   0 T:  0 L:   1  F:     0 A:     5 Dif:    -5  Pct:   0.0 %  GF/GP:  0.00 GA/GP:  5.00 +/-:  -5.00
+<table style="width:100%">
+  <tr>
+    <th>Year</th>
+    <th>Games</th>
+    <th>W</th>
+    <th>T</th>
+    <th>L</th>
+    <th>For</th>
+    <th>Against</th>
+    <th>Diff</th>
+    <th>Pct</th>
+    <th>F/GP</th>
+    <th>A/GP</th>
+    <th>+/-</th>
+  </tr><tr>
+<td>
+2012
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+5
+</td>
+<td>
+-5
+</td>
+<td>
+  0.0 %</td>
+<td>
+ 0.00</td>
+<td>
+ 5.00</td>
+<td>
+ -5.00</td>
+</tr>
+<tr>
+<td>
+TOTAL
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+5
+</td>
+<td>
+-5
+</td>
+<td>
+  0.0 %</td>
+<td>
+ 0.00</td>
+<td>
+ 5.00</td>
+<td>
+ -5.00</td>
+</tr>
+</table>

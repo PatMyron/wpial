@@ -1,5 +1,185 @@
-year: 2011   GP:  10  W:   0 T:  0 L:  10  F:     3 A:   107 Dif:  -104  Pct:   0.0 %  GF/GP:  0.30 GA/GP: 10.70 +/-: -10.40
-year: 2012   GP:  18  W:   2 T:  1 L:  15  F:    12 A:   118 Dif:  -106  Pct:  13.9 %  GF/GP:  0.67 GA/GP:  6.56 +/-:  -5.89
-year: 2013   GP:  18  W:   7 T:  0 L:  11  F:    30 A:    66 Dif:   -36  Pct:  38.9 %  GF/GP:  1.67 GA/GP:  3.67 +/-:  -2.00
-year: 2014   GP:  18  W:   2 T:  0 L:  16  F:    18 A:   139 Dif:  -121  Pct:  11.1 %  GF/GP:  1.00 GA/GP:  7.72 +/-:  -6.72
-total:       GP:  64  W:  11 T:  1 L:  52  F:    63 A:   430 Dif:  -367  Pct:  18.0 %  GF/GP:  0.98 GA/GP:  6.72 +/-:  -5.73
+<table style="width:100%">
+  <tr>
+    <th>Year</th>
+    <th>Games</th>
+    <th>W</th>
+    <th>T</th>
+    <th>L</th>
+    <th>For</th>
+    <th>Against</th>
+    <th>Diff</th>
+    <th>Pct</th>
+    <th>F/GP</th>
+    <th>A/GP</th>
+    <th>+/-</th>
+  </tr><tr>
+<td>
+2011
+</td>
+<td>
+10
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+10
+</td>
+<td>
+3
+</td>
+<td>
+107
+</td>
+<td>
+-104
+</td>
+<td>
+  0.0 %</td>
+<td>
+ 0.30</td>
+<td>
+10.70</td>
+<td>
+-10.40</td>
+</tr>
+<tr>
+<td>
+2012
+</td>
+<td>
+18
+</td>
+<td>
+2
+</td>
+<td>
+1
+</td>
+<td>
+15
+</td>
+<td>
+12
+</td>
+<td>
+118
+</td>
+<td>
+-106
+</td>
+<td>
+ 13.9 %</td>
+<td>
+ 0.67</td>
+<td>
+ 6.56</td>
+<td>
+ -5.89</td>
+</tr>
+<tr>
+<td>
+2013
+</td>
+<td>
+18
+</td>
+<td>
+7
+</td>
+<td>
+0
+</td>
+<td>
+11
+</td>
+<td>
+30
+</td>
+<td>
+66
+</td>
+<td>
+-36
+</td>
+<td>
+ 38.9 %</td>
+<td>
+ 1.67</td>
+<td>
+ 3.67</td>
+<td>
+ -2.00</td>
+</tr>
+<tr>
+<td>
+2014
+</td>
+<td>
+18
+</td>
+<td>
+2
+</td>
+<td>
+0
+</td>
+<td>
+16
+</td>
+<td>
+18
+</td>
+<td>
+139
+</td>
+<td>
+-121
+</td>
+<td>
+ 11.1 %</td>
+<td>
+ 1.00</td>
+<td>
+ 7.72</td>
+<td>
+ -6.72</td>
+</tr>
+<tr>
+<td>
+TOTAL
+</td>
+<td>
+64
+</td>
+<td>
+11
+</td>
+<td>
+1
+</td>
+<td>
+52
+</td>
+<td>
+63
+</td>
+<td>
+430
+</td>
+<td>
+-367
+</td>
+<td>
+ 18.0 %</td>
+<td>
+ 0.98</td>
+<td>
+ 6.72</td>
+<td>
+ -5.73</td>
+</tr>
+</table>

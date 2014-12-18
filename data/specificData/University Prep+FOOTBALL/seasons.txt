@@ -1,5 +1,185 @@
-year: 2011   GP:  13  W:  11 T:  0 L:   2  F:   342 A:    73 Dif:   269  Pct:  84.6 %  GF/GP: 26.31 GA/GP:  5.62 +/-:  20.69
-year: 2012   GP:  11  W:   7 T:  0 L:   4  F:   351 A:   204 Dif:   147  Pct:  63.6 %  GF/GP: 31.91 GA/GP: 18.55 +/-:  13.36
-year: 2013   GP:  10  W:   9 T:  0 L:   1  F:   370 A:   126 Dif:   244  Pct:  90.0 %  GF/GP: 37.00 GA/GP: 12.60 +/-:  24.40
-year: 2014   GP:   7  W:   4 T:  0 L:   3  F:   192 A:   183 Dif:     9  Pct:  57.1 %  GF/GP: 27.43 GA/GP: 26.14 +/-:   1.29
-total:       GP:  41  W:  31 T:  0 L:  10  F:  1255 A:   586 Dif:   669  Pct:  75.6 %  GF/GP: 30.61 GA/GP: 14.29 +/-:  16.32
+<table style="width:100%">
+  <tr>
+    <th>Year</th>
+    <th>Games</th>
+    <th>W</th>
+    <th>T</th>
+    <th>L</th>
+    <th>For</th>
+    <th>Against</th>
+    <th>Diff</th>
+    <th>Pct</th>
+    <th>F/GP</th>
+    <th>A/GP</th>
+    <th>+/-</th>
+  </tr><tr>
+<td>
+2011
+</td>
+<td>
+13
+</td>
+<td>
+11
+</td>
+<td>
+0
+</td>
+<td>
+2
+</td>
+<td>
+342
+</td>
+<td>
+73
+</td>
+<td>
+269
+</td>
+<td>
+ 84.6 %</td>
+<td>
+26.31</td>
+<td>
+ 5.62</td>
+<td>
+ 20.69</td>
+</tr>
+<tr>
+<td>
+2012
+</td>
+<td>
+11
+</td>
+<td>
+7
+</td>
+<td>
+0
+</td>
+<td>
+4
+</td>
+<td>
+351
+</td>
+<td>
+204
+</td>
+<td>
+147
+</td>
+<td>
+ 63.6 %</td>
+<td>
+31.91</td>
+<td>
+18.55</td>
+<td>
+ 13.36</td>
+</tr>
+<tr>
+<td>
+2013
+</td>
+<td>
+10
+</td>
+<td>
+9
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+370
+</td>
+<td>
+126
+</td>
+<td>
+244
+</td>
+<td>
+ 90.0 %</td>
+<td>
+37.00</td>
+<td>
+12.60</td>
+<td>
+ 24.40</td>
+</tr>
+<tr>
+<td>
+2014
+</td>
+<td>
+7
+</td>
+<td>
+4
+</td>
+<td>
+0
+</td>
+<td>
+3
+</td>
+<td>
+192
+</td>
+<td>
+183
+</td>
+<td>
+9
+</td>
+<td>
+ 57.1 %</td>
+<td>
+27.43</td>
+<td>
+26.14</td>
+<td>
+  1.29</td>
+</tr>
+<tr>
+<td>
+TOTAL
+</td>
+<td>
+41
+</td>
+<td>
+31
+</td>
+<td>
+0
+</td>
+<td>
+10
+</td>
+<td>
+1255
+</td>
+<td>
+586
+</td>
+<td>
+669
+</td>
+<td>
+ 75.6 %</td>
+<td>
+30.61</td>
+<td>
+14.29</td>
+<td>
+ 16.32</td>
+</tr>
+</table>

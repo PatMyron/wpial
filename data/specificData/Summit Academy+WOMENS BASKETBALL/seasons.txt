@@ -1,1 +1,49 @@
-total:       GP:   0  W:   0 T:  0 L:   0  F:     0 A:     0 Dif:     0  Pct:   NaN %  GF/GP:   NaN GA/GP:   NaN +/-:    NaN
+<table style="width:100%">
+  <tr>
+    <th>Year</th>
+    <th>Games</th>
+    <th>W</th>
+    <th>T</th>
+    <th>L</th>
+    <th>For</th>
+    <th>Against</th>
+    <th>Diff</th>
+    <th>Pct</th>
+    <th>F/GP</th>
+    <th>A/GP</th>
+    <th>+/-</th>
+  </tr><tr>
+<td>
+TOTAL
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+  NaN %</td>
+<td>
+  NaN</td>
+<td>
+  NaN</td>
+<td>
+   NaN</td>
+</tr>
+</table>

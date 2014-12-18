@@ -1,2 +1,83 @@
-year: 2014   GP:   1  W:   1 T:  0 L:   0  F:     2 A:     1 Dif:     1  Pct: 100.0 %  GF/GP:  2.00 GA/GP:  1.00 +/-:   1.00
-total:       GP:   1  W:   1 T:  0 L:   0  F:     2 A:     1 Dif:     1  Pct: 100.0 %  GF/GP:  2.00 GA/GP:  1.00 +/-:   1.00
+<table style="width:100%">
+  <tr>
+    <th>Year</th>
+    <th>Games</th>
+    <th>W</th>
+    <th>T</th>
+    <th>L</th>
+    <th>For</th>
+    <th>Against</th>
+    <th>Diff</th>
+    <th>Pct</th>
+    <th>F/GP</th>
+    <th>A/GP</th>
+    <th>+/-</th>
+  </tr><tr>
+<td>
+2014
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+2
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+100.0 %</td>
+<td>
+ 2.00</td>
+<td>
+ 1.00</td>
+<td>
+  1.00</td>
+</tr>
+<tr>
+<td>
+TOTAL
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+2
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+100.0 %</td>
+<td>
+ 2.00</td>
+<td>
+ 1.00</td>
+<td>
+  1.00</td>
+</tr>
+</table>
