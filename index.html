@@ -19,6 +19,8 @@
 	<script>
 	function populatePre(school,sport) {
 		document.getElementById('contentsP').textContent = "";
+		document.getElementById('contentsOpponentTable1').textContent = "";
+		document.getElementById('contentsOpponentTable2').textContent = "";
 		var url; 
 		if(school=="all" && sport=="all")
 			url = "data/all.txt"
