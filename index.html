@@ -42,22 +42,27 @@
 	}
 	function populateP(school,sport) {
 		var url; 
-		/*
-		if(school=="all" && sport=="all")
-			url = "data/all.txt"
-		else if (school=="all")
-			url = "data/"+sport+".txt";
-		else if (sport=="all")
-			url = "data/"+school+".txt";
-		else{
-			*/
-			url = "data/specificData/"+school+"+"+sport+"/seasons.html";
-			
-		// }
-			
+		url = "data/specificData/"+school+"+"+sport+"/seasons.html";
+						
 		var xhr = new XMLHttpRequest();
 		xhr.onload = function () {
 			document.getElementById('contentsP').innerHTML = this.responseText;
+		};
+		xhr.open('GET', url);
+		xhr.send();
+
+		url = "data/specificData/"+school+"+"+sport+"/opponentsABC.html";	
+		xhr = new XMLHttpRequest();
+		xhr.onload = function () {
+			document.getElementById('contentsOpponentTable1').innerHTML = this.responseText;
+		};
+		xhr.open('GET', url);
+		xhr.send();
+
+		url = "data/specificData/"+school+"+"+sport+"/opponentsGP.html";	
+		xhr = new XMLHttpRequest();
+		xhr.onload = function () {
+			document.getElementById('contentsOpponentTable2').innerHTML = this.responseText;
 		};
 		xhr.open('GET', url);
 		xhr.send();
@@ -274,7 +279,11 @@
 						</div>
 					</div>
 					<div class="right">
-						<pre style="font-size=16" id="contents"></pre><p style="font-size=14" id="contentsP"></p><p style="font-size=16" id="contentsHyperlink"></p>
+						<pre style="font-size=16" id="contents"></pre>
+						<p style="font-size=14" id="contentsP"></p>
+						<p style="font-size=14" id="contentsOpponentTable1"></p>
+						<p style="font-size=14" id="contentsOpponentTable2"></p>
+						<p style="font-size=16" id="contentsHyperlink"></p>
 					</div>
 				</div>
 			</div>
