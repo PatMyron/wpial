@@ -34,7 +34,7 @@
 			document.getElementById('contents').textContent = "";
 			return;
 		}
-			
+
 		var xhr = new XMLHttpRequest();
 		xhr.onload = function () {
 			document.getElementById('contents').textContent = this.responseText;
@@ -45,7 +45,7 @@
 	function populateP(school,sport) {
 		var url; 
 		url = "data/specificData/"+school+"+"+sport+"/seasons.html";
-						
+
 		var xhr = new XMLHttpRequest();
 		xhr.onload = function () {
 			document.getElementById('contentsP').innerHTML = this.responseText;
@@ -266,17 +266,24 @@
 				<div class="content">
 					<select>  
 						<option value=""></option>
+						<p>
+							created by Pat Myron
+						</p>
+						<p>
+							stats from 2003-2014
+						</p>
+						<p>
+							updated thrice a year
+						</p>
+						<p>
+							seasons are listed by the year at the beginning of that school year 
+						</p>
+						<p>
+							contact: pmyron09@gmail.com
+						</p>
 						<div class="bottom_block block_6">
 							<div class="content">
-								<p>
-									created by Pat Myron
-								</p>
-								<p>
-									stats from 2003-2014
-								</p>
-								<p>
-									seasons are listed by the year at the beginning of that school year 
-								</p>
+								
 							</div>
 						</div>
 					</div>
