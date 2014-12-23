@@ -24,8 +24,11 @@
 		var url; 
 		if(school=="all" && sport=="all")
 			url = "data/all.txt"
-		else if (school=="all")
-			url = "data/"+sport+".txt";
+		else if (school=="all"){
+			populateSportP(school,sport);
+			document.getElementById('contents').textContent = "";
+			return;
+		}
 		else if (sport=="all")
 			url = "data/"+school+".txt";
 		else{
@@ -38,6 +41,17 @@
 		var xhr = new XMLHttpRequest();
 		xhr.onload = function () {
 			document.getElementById('contents').textContent = this.responseText;
+		};
+		xhr.open('GET', url);
+		xhr.send();
+	}
+	function populateSportP(school,sport) {
+		var url; 
+		url = "data/dataBySport/"+sport+"/sortByBest.html";
+
+		var xhr = new XMLHttpRequest();
+		xhr.onload = function () {
+			document.getElementById('contentsP').innerHTML = this.responseText;
 		};
 		xhr.open('GET', url);
 		xhr.send();
