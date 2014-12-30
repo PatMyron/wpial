@@ -84,6 +84,7 @@ function populateP(school, sport) {
 	xhr.send();
 }
 function addLink(school, sport) {
+	/*
 	var url,str,result; 
 	if (school==="all" && sport==="all") {
 		url = "data/all.txt";
@@ -100,4 +101,5 @@ function addLink(school, sport) {
 	str = "Permanent Data Link";
 	result = str.link("http://patmyron.github.io/wpial/"+url);
 	document.getElementById("contentsHyperlink").innerHTML = result;
+	*/
 }
