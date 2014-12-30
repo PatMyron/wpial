@@ -63,6 +63,7 @@
  	padding-bottom: 0;
  	left: 0;
  	width: 194px;
+ 	background-color: #F0F0F0;
  }
 
  .block_1 {
@@ -77,6 +78,7 @@
  	left: 0;
  	width: 167px;
  	margin-left: 194px; 
+ 	background-color: #F0F0F0;
  }
 
  .block_2 {
@@ -90,6 +92,7 @@
  .block_6 {
  	width: 100%;
  	height: 50%;
+ 	background-color: #F0F0F0;
  }
 
  .right {
