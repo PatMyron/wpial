@@ -1,3 +1,0 @@
-University Prep
-FOOTBALL:           GP:  41  W:  31 T:  0 L:  10  F:  1255 A:   586 Dif:   669  Pct:  75.6 %  GF/GP: 30.61 GA/GP: 14.29 +/-:  16.32
-

@@ -1,7 +1,0 @@
-Ellis School
-WOMENS BASKETBALL:  GP: 216  W:  70 T:  0 L: 146  F:  7195 A:  9518 Dif: -2323  Pct:  32.4 %  GF/GP: 33.31 GA/GP: 44.06 +/-: -10.75
-
-WOMENS SOFTBALL:    GP: 144  W:  31 T:  0 L: 113  F:   624 A:  1621 Dif:  -997  Pct:  21.5 %  GF/GP:  4.33 GA/GP: 11.26 +/-:  -6.92
-
-WOMENS SOCCER:      GP: 107  W:  31 T:  5 L:  71  F:   167 A:   330 Dif:  -163  Pct:  31.3 %  GF/GP:  1.56 GA/GP:  3.08 +/-:  -1.52
-

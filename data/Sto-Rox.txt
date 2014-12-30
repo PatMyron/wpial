@@ -1,7 +1,0 @@
-Sto-Rox
-FOOTBALL:           GP: 127  W:  90 T:  0 L:  37  F:  3893 A:  2412 Dif:  1481  Pct:  70.9 %  GF/GP: 30.65 GA/GP: 18.99 +/-:  11.66
-
-BASKETBALL:         GP: 268  W: 156 T:  0 L: 112  F: 16003 A: 14583 Dif:  1420  Pct:  58.2 %  GF/GP: 59.71 GA/GP: 54.41 +/-:   5.30
-
-WOMENS BASKETBALL:  GP: 259  W: 142 T:  0 L: 117  F: 11391 A: 10346 Dif:  1045  Pct:  54.8 %  GF/GP: 43.98 GA/GP: 39.95 +/-:   4.03
-
