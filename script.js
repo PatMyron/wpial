@@ -6,7 +6,14 @@ function populatePre(school, sport) {
 	document.getElementById('contents').textContent = "";
 	var url; 
 	if (school==="all" && sport==="all") {
-		url = "data/all.txt";
+		var url; 
+		url = "data/all.html";
+		var xhr = new XMLHttpRequest();
+		xhr.onload = function () {
+			document.getElementById('contentsP').innerHTML = this.responseText;
+		};
+		xhr.open('GET', url);
+		xhr.send();
 	}
 	else {
 		if (school==="all") { // sport
@@ -25,13 +32,6 @@ function populatePre(school, sport) {
 		}
 		
 	}
-
-	var xhr = new XMLHttpRequest();
-	xhr.onload = function () {
-		document.getElementById('contents').textContent = this.responseText;
-	};
-	xhr.open('GET', url);
-	xhr.send();
 }
 
 function populateSportP(sport) {
