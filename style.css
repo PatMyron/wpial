@@ -55,6 +55,7 @@
  	height: 100%;
  	width: auto;
  	padding-bottom: 0px;
+ 	position: fixed;
  }
 
  .background.block_2 {
@@ -72,6 +73,7 @@
  	padding-bottom: 0px;
  	rheight: 328;
  	margin-left: 196px;
+ 	position: fixed;
  }
 
  .right {
@@ -116,7 +118,7 @@
  	}
  	.right {
  		margin-left: 50%;
- 		
+
  	}
  }
 
