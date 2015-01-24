@@ -5,7 +5,7 @@ website to display WPIAL statistics
 
 <a href="http://patmyron.com/wpial">www.patmyron.com/wpial</a>
 
-<img src="https://raw.githubusercontent.com/PatMyron/wpial/master/photos/example.png" alt="wpial statistics website screenshot" width="100%" height="auto">
+<img src="https://raw.githubusercontent.com/PatMyron/wpial/gh-pages/photos/example.png" alt="wpial statistics website screenshot" width="100%" height="auto">
 
 <p>
     Two dropdown menus gather input for the user's choice of school and sport.
