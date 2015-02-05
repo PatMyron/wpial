@@ -101,25 +101,28 @@
  @media screen and (max-width: 320px) {
 
  	.background.block_1 {
- 		width: 25%;
+ 		width: 50%;
  	}
 
  	.block_1 {
- 		width: 25%;
+ 		width: 50%;
  	}
  	.background.block_2 {
- 		width: 25%;
- 		margin-left: 25%;
+ 		width: 50%;
+ 		margin-left: 50%;
  	}
 
  	.block_2 {
- 		width: 25%;
- 		margin-left: 25%;
+ 		width: 50%;
+ 		margin-left: 50%;
  	}
  	.right {
- 		margin-left: 50%;
-
+ 		margin-left: 0%;
  	}
+ 	.select {
+ 		width: 100%;
+ 	}
+
  }
 
  /* --------  iphone landscape-----------  */
@@ -127,26 +130,27 @@
  @media screen and (min-width: 321px) and (max-width: 480px) {
 
  	.background.block_1 {
- 		width: 25%;
+ 		width: 50%;
  	}
 
  	.block_1 {
- 		width: 25%;
+ 		width: 50%;
  	}
  	.background.block_2 {
- 		width: 25%;
- 		margin-left: 25%;
+ 		width: 50%;
+ 		margin-left: 50%;
  	}
 
  	.block_2 {
- 		width: 25%;
- 		margin-left: 25%;
+ 		width: 50%;
+ 		margin-left: 50%;
  	}
  	.right {
- 		margin-left: 50%;
- 		
+ 		margin-left: 0%;
  	}
-
+ 	.select {
+ 		width: 100%;
+ 	}
  }
 
 
