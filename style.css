@@ -122,7 +122,6 @@
  	select {
  		width: 100%;
  		height: auto;
- 		position: fixed;
  	}
 
  }
@@ -153,7 +152,6 @@
  	select {
  		width: 100%;
  		height: auto;
- 		position: fixed;
  	}
  }
 
