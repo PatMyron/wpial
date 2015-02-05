@@ -131,7 +131,7 @@
 
  /* --------  phone landscape-----------  */
 
- @media screen and (min-width: 321px) and (max-width: 600px) {
+ @media screen and (min-width: 321px) and (max-width: 641px) {
 
  	.background.block_1 {
  		width: 50%;
