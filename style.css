@@ -118,10 +118,8 @@
  	}
  	.right {
  		margin-left: 50%;
-
  	}
  }
-
  /* --------  iphone landscape-----------  */
 
  @media screen and (min-width: 321px) and (max-width: 480px) {
