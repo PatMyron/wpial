@@ -116,12 +116,15 @@
  		width: 50%;
  		margin-left: 50%;
  	}
+ 	.block_2 p {
+ 		color: transparent;
+ 		font-size: 0;
+ 	}
  	.right {
  		margin-left: 0%;
  	}
  	select {
  		width: 100%;
- 		height: auto;
  	}
 
  }
@@ -145,6 +148,10 @@
  	.block_2 {
  		width: 50%;
  		margin-left: 50%;
+ 	}
+ 	.block_2 p {
+ 		color: transparent;
+ 		font-size: 0;
  	}
  	.right {
  		margin-left: 0%;
