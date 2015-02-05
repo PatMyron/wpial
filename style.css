@@ -96,7 +96,7 @@
 
  /*  ---       MEDIA QUERIES         ----   */
 
- /* --------- iphone portrait -----------  */
+ /* --------- phone portrait -----------  */
 
  @media screen and (max-width: 320px) {
 
@@ -129,9 +129,9 @@
 
  }
 
- /* --------  iphone landscape-----------  */
+ /* --------  phone landscape-----------  */
 
- @media screen and (min-width: 321px) and (max-width: 480px) {
+ @media screen and (min-width: 321px) and (max-width: 600px) {
 
  	.background.block_1 {
  		width: 50%;
