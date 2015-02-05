@@ -119,8 +119,9 @@
  	.right {
  		margin-left: 0%;
  	}
- 	.select {
+ 	select {
  		width: 100%;
+ 		height: auto;
  	}
 
  }
@@ -148,8 +149,9 @@
  	.right {
  		margin-left: 0%;
  	}
- 	.select {
+ 	select {
  		width: 100%;
+ 		height: auto;
  	}
  }
 
