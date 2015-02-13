@@ -74,6 +74,8 @@
  	rheight: 328;
  	margin-left: 196px;
  	position: fixed;
+ 	background-color: #F0F0F0;
+ 	height: 100%;
  }
 
  .right {
@@ -93,6 +95,9 @@
  td {
  	text-align: right;
  }
+
+
+
 
  /*  ---       MEDIA QUERIES         ----   */
 
