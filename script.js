@@ -103,3 +103,23 @@ function addLink(school, sport) {
 	document.getElementById("contentsHyperlink").innerHTML = result;
 	*/
 }
+// media query event handler
+if (matchMedia) {
+	var mq = window.matchMedia("(max-width: 641px)");
+	mq.addListener(WidthChange);
+	WidthChange(mq);
+}
+
+// media query change
+function WidthChange(mq) {
+
+	if (mq.matches) { // window width is less than 641px
+		document.getElementById("schoolSelect").size = "1";
+		document.getElementById("sportSelect").size = "1";
+	}
+	else { 	// window width is over 641px
+		document.getElementById("schoolSelect").size = "100";
+		document.getElementById("sportSelect").size = "9";
+	}
+
+}

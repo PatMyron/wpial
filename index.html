@@ -19,7 +19,7 @@
 	</script>
 	<div class="content">
 		<div class="left_block block_1">
-			<select name="school" size="100%"  style="max-height: 100%; font-size: 18; overflow-y: scroll;" onChange="school=this.value;populatePre(school,sport);addLink(school,sport);"> 
+			<select id="schoolSelect" name="school" size="100%"  style="max-height: 100%; font-size: 18; overflow-y: scroll;" onChange="school=this.value;populatePre(school,sport);addLink(school,sport);"> 
 				<option value="all">ALL SCHOOLS</option>
 				<option value="">--------------------------</option>
 				<option value="Albert Gallatin">Albert Gallatin</option>
@@ -181,7 +181,7 @@
 			</select>
 		</div>
 		<div class="block_2">
-			<select name="sport" size="9"  style="font-size: 18;" onChange="sport=this.value;populatePre(school,sport);addLink(school,sport);">  
+			<select id="sportSelect" name="sport" size="9"  style="font-size: 18;" onChange="sport=this.value;populatePre(school,sport);addLink(school,sport);">  
 				<option value="all">all sports</option>
 				<option value="">--------------------</option>
 				<option value="BASEBALL">BASEBALL</option>
