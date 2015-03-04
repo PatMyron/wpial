@@ -134,7 +134,10 @@
  	select {
  		width: 100%;
  	}
-
+ 	iframe {
+ 		height: 0 !important;
+ 		width: !important 0;
+ 	}
  }
 
  /* --------  phone landscape-----------  */
@@ -170,6 +173,10 @@
  	select {
  		width: 100%;
  		height: auto;
+ 	}
+ 	iframe {
+ 		height: 0 !important;
+ 		width: !important 0;
  	}
  }
 
