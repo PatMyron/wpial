@@ -96,7 +96,10 @@
  	text-align: right;
  }
 
-
+iframe {
+	width: !important 56px;
+	height: !important 20px;
+}
 
 
  /*  ---       MEDIA QUERIES         ----   */
