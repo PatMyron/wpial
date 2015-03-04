@@ -97,8 +97,8 @@
  }
 
 iframe {
-	width: !important 56px;
-	height: !important 20px;
+	width: 56px !important;
+	height: 20px !important;
 }
 
 
@@ -139,7 +139,7 @@ iframe {
  	}
  	iframe {
  		height: 0 !important;
- 		width: !important 0;
+ 		width: 0 !important;
  	}
  }
 
@@ -179,7 +179,7 @@ iframe {
  	}
  	iframe {
  		height: 0 !important;
- 		width: !important 0;
+ 		width: 0 !important;
  	}
  }
 
