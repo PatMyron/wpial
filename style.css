@@ -8,6 +8,9 @@
  *   email: info@jmholding.ru
  *  twitter: @jmholding
  */
+ select {
+ 	width: 200px;
+ }
  html, body {
  	margin: 0;
  	padding: 0;
@@ -62,24 +65,24 @@
  	height: 100%;
  	padding-bottom: 0;
  	left: 0;
- 	width: 167px;
- 	margin-left: 196px; 
+ 	width: 200px;
+ 	margin-left: 200px; 
  	background-color: #F0F0F0;
  }
 
  .block_2 {
  	height: auto;
- 	width: 167px;
+ 	width: 200px;
  	padding-bottom: 0px;
  	rheight: 328;
- 	margin-left: 196px;
+ 	margin-left: 200px;
  	position: fixed;
  	background-color: #F0F0F0;
  	height: 100%;
  }
 
  .right {
- 	margin-left: 361px;
+ 	margin-left: 400px;
  	
  }
  table, th, td {
