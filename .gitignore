@@ -2,6 +2,7 @@
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
+*/.mtj.tmp/*
 
 # Package Files #
 *.jar
@@ -18,13 +19,16 @@ hs_err_pid*
 
 .gradle
 bin/
+*/bin/*
 tmp/
+*/tmp/*
 *.tmp
 *.bak
 *.swp
 *~.nib
 local.properties
 .settings/
+*/.settings/*
 .loadpath
 
 # Eclipse Core
