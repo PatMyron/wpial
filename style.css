@@ -99,7 +99,7 @@
  	text-align: right;
  }
 
-iframe {
+iframe.social {
 	width: 56px !important;
 	height: 20px !important;
 }
