@@ -63,3 +63,8 @@ local.properties
 */UscSoccer/data*
 */UscSoccer/tablesOLD/*
 */UscSoccer/specificData/*
+
+*UscSoccer/all/*.txt
+*UscSoccer/data*
+*UscSoccer/tablesOLD/*
+*UscSoccer/specificData/*
