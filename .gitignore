@@ -68,3 +68,5 @@ local.properties
 *UscSoccer/data*
 *UscSoccer/tablesOLD/*
 *UscSoccer/specificData/*
+*/errors/*.txt
+*errors.txt
