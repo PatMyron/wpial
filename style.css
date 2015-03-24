@@ -140,7 +140,7 @@ iframe.social {
  	select {
  		width: 100%;
  	}
- 	iframe {
+ 	iframe.social {
  		height: 0 !important;
  		width: 0 !important;
  	}
@@ -180,7 +180,7 @@ iframe.social {
  		width: 100%;
  		height: auto;
  	}
- 	iframe {
+ 	iframe.social {
  		height: 0 !important;
  		width: 0 !important;
  	}
