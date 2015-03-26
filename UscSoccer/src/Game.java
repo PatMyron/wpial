@@ -10,10 +10,10 @@ public class Game {
 	public String result;   // could be char    (remember F and PPD)
 	public int goalsFor;
 	public int goalsAgainst;
-	public String matchType; //include later
+	public String matchType; // not used yet
 	public boolean conferenceGame; // include playoffs?
 	public int goalDifferential;
-	public boolean playoffGame;
+	public boolean playoffGame; // not used yet 
 
 	public Game(){
 		goalsFor = 0;
@@ -27,8 +27,18 @@ public class Game {
 		opponent=opponent_;
 		site=site_;
 		result=result_;
-		goalsFor=goalsFor_;
-		goalsAgainst=goalsAgainst_;
+		if (goalsFor_ > -1) {
+			goalsFor=goalsFor_;
+		}
+		else {
+			System.out.println("ERROR. NEGATIVE GOALS FOR");
+		}
+		if (goalsAgainst_ > -1) {
+			goalsAgainst=goalsAgainst_;
+		}
+		else {
+			System.out.println("ERROR. NEGATIVE GOALS AGAINST");
+		}
 		conferenceGame=conferenceGame_;   
 		goalDifferential = goalsFor_-goalsAgainst_;
 	}
