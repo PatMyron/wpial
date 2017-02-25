@@ -18,25 +18,17 @@ function populatePre(school, sport) {
 	else {
 		if (school==="all") { // sport
 			populateSportP(sport);
-			return;
-		}
-		
-		if (sport==="all") { // school
+		} else if (sport==="all") { // school
 			populateSchoolP(school);
-			return;
-		}
-		else { // specific team
-			// url = "data/specificData/"+school+"+"+sport+"/seasons.html";
+		} else { // specific team
 			populateP(school, sport);
-			return;
-		}
-		
+		}		
 	}
 }
 
 function populateSportP(sport) {
 	var url; 
-	url = "data/dataBySport/"+sport+"/sortByBest.html";
+	url = "data/dataBySport/"+sport+".html";
 
 	var xhr = new XMLHttpRequest();
 	xhr.onload = function () {
@@ -74,7 +66,7 @@ function populateP(school, sport) {
 	};
 	xhr.open('GET', url);
 	xhr.send();
-*/
+	*/
 	url = "data/specificData/"+school+"+"+sport+"/opponentsGP.html";	
 	xhr = new XMLHttpRequest();
 	xhr.onload = function () {
