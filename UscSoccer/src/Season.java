@@ -75,7 +75,6 @@ class Season {
 		writer.println("</td>");
 	}
 
-
 	private void writeDouble(PrintWriter writer, double d) {
 		writer.println("<td>");
 		writer.printf("%6.2f", d);
