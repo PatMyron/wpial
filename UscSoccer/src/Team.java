@@ -27,8 +27,8 @@ class Team {
 	void addGame(Game g) {
 		if (!g.result.contains("PPD")) {
 			GP++;
-			GF += (g.goalsFor);
-			GA += (g.goalsAgainst);
+			GF += g.goalsFor;
+			GA += g.goalsAgainst;
 		}
 		if (g.result.contains("W"))
 			w++;
