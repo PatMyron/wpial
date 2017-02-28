@@ -12,8 +12,8 @@ class TotalRecord {
 	private double goalsForPerGame;
 	private double goalsAgainstPerGame;
 	private double goalDiffPerGame;
-	private String schoolName;
-	private int teamtypeid;
+	private final String schoolName;
+	private final int teamtypeid;
 
 	TotalRecord(String name, Integer typeid) {
 		GP = 0;

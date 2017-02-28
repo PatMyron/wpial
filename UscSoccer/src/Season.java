@@ -7,7 +7,7 @@ class Season {
 	private int l;
 	private int GF;
 	private int GA;
-	private int year;
+	private final int year;
 	private double winPct;
 	private int goalDifferential;
 	private double goalsForPerGame;
