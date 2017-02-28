@@ -13,11 +13,10 @@ public class Main {
 		Map<Integer, String> sportNumbers = new TreeMap<>();                     // enum 1=FOOTBALL etc.
 		TreeMap<Integer, TreeMap<String, String>> teamids = new TreeMap<>();     // Keys: sport#,school   V: website code
 		TreeSet<String> allSchoolNames = new TreeSet<>();                             // all WPIAL schools (142 of them)
-		TreeSet<Integer> allSportNums = new TreeSet<>();
 		java.util.Date date = new java.util.Date();
 		PrintWriter eWriter = new PrintWriter("errors/errors" + date.getMonth() + date.getDate() + date.getHours() + date.getMinutes() + ".txt");
 		teamIdsFiller(teamids, allSchoolNames, eWriter);                              // fills schools set and teamids double map ( for new data)
-		fillSportsNumber(sportNumbers, allSportNums);                        // fills enum map sport # and set
+		fillSportsNumber(sportNumbers);                        // fills enum map sport # and set
 		org.jsoup.nodes.Element table;
 		double pctDone = 0;
 		PrintWriter schoolWriter = new PrintWriter("WPIAL schools.txt");
@@ -27,7 +26,7 @@ public class Main {
 			System.out.printf("%3.1f", pctDone += 0.7);
 			System.out.println(" %");
 			continue;
-			for (Integer teamtypeid : allSportNums) {        // iterates through all sports
+			for (Integer teamtypeid : sportNumbers.keySet()) {        // iterates through all sports
 				for (int year = 3; year < 15; year++) { // go from '03-'04 to '14-'15
 					if (year == 14 && teamtypeid != 1 && teamtypeid != 8 && teamtypeid != 9) // hasn't happened yet
 						continue;
@@ -66,7 +65,7 @@ public class Main {
 		return gameRowCounter;
 	}
 
-	private static void fillSportsNumber(Map<Integer, String> sportNumbers, TreeSet<Integer> allSportNums) {
+	private static void fillSportsNumber(Map<Integer, String> sportNumbers) {
 		sportNumbers.put(1, "FOOTBALL");
 		sportNumbers.put(2, "BASEBALL");
 		sportNumbers.put(3, "BASKETBALL");
@@ -74,9 +73,6 @@ public class Main {
 		sportNumbers.put(4, "WOMENS BASKETBALL");
 		sportNumbers.put(5, "WOMENS SOFTBALL");
 		sportNumbers.put(9, "WOMENS SOCCER");
-		for (int i = 1; i < 10; i++) {
-			allSportNums.add(i);
-		}
 	}
 
 	private static void teamIdsFiller(TreeMap<Integer, TreeMap<String, String>> teamids, TreeSet<String> allSchoolNames, PrintWriter errorWriter) { // for new data
