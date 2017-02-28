@@ -12,7 +12,7 @@ public class Game {
     public String matchType; // not used yet
     public boolean conferenceGame; // include playoffs?
     public int goalDifferential;
-    public boolean playoffGame; // not used yet 
+    public boolean playoffGame; // not used yet
 
     public Game() {
         goalsFor = 0;
