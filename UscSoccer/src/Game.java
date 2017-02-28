@@ -8,16 +8,8 @@ class Game {
 	public String result;   // could be char    (remember F and PPD)
 	public int goalsFor;
 	public int goalsAgainst;
-	public String matchType; // not used yet
 	private boolean conferenceGame; // include playoffs?
 	public int goalDifferential;
-	public boolean playoffGame; // not used yet
-
-	public Game() {
-		goalsFor = 0;
-		goalsAgainst = 0;
-		goalDifferential = 0;
-	}
 
 	public Game(Date date_, String opponent_, String site_, String result_, int goalsFor_, int goalsAgainst_, boolean conferenceGame_) {
 		date = date_;

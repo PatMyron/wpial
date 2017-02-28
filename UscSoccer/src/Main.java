@@ -68,8 +68,7 @@ public class Main {
 					List<Team> opposingTeams = new ArrayList<>(opponents.size());
 					for (int i = 0; i < opponents.size(); i++)
 						opposingTeams.add(new Team());
-					setupOpponentAlphabetically(g, g.size(), opponents, teamMap, opposingTeams); // alphabetical into opposingTeams
-					minMaxHighestScoringGames(g, g.size()); // can be used with/without writer
+					setupOpponentAlphabetically(g, opponents, teamMap, opposingTeams); // alphabetical into opposingTeams
 					sortOpponentsByGP(opposingTeams); // sorts by games played into opposingTeams
 				}
 			} // end inner for loop
@@ -100,56 +99,6 @@ public class Main {
 
 	private static void tableBeginning(PrintWriter writer, String firstColumnTitle) {
 		writer.print("<table style=\"width:100%\">\n  <tr>\n    <th>" + firstColumnTitle + "</th>\n    <th>Games</th>\n    <th>W</th>\n    <th>T</th>\n    <th>L</th>\n    <th>Pct</th>\n    <th>For</th>\n    <th>Against</th>\n    <th>Diff</th>\n    <th>F/GP</th>\n    <th>A/GP</th>\n    <th>+/-</th>\n  </tr>");
-	}
-
-	private static void minMaxHighestScoringGames(ArrayList<Game> g, int totalGameCounter, PrintWriter writer) {
-		int min = minGame(g, totalGameCounter);
-		int max = maxGame(g);
-		int high = highestScoringGame(g);
-		writer.println("BEST GAME:");
-		/*
-		g[max].print(writer);
-		writer.println("WORST GAME:");
-		g[min].print(writer);
-		writer.println("BEST OFFENSIVE GAME:");
-		g[high].print(writer);
-		 */
-	}
-
-	private static void minMaxHighestScoringGames(ArrayList<Game> g, int totalGameCounter) {
-		int min = minGame(g, totalGameCounter);
-		int max = maxGame(g);
-		int high = highestScoringGame(g);
-		// System.out.println("BEST GAME:");
-		// g[max].print();
-		// System.out.println("WORST GAME:");
-		// g[min].print();
-		// System.out.println("BEST OFFENSIVE GAME:");
-		// g[high].print();
-	}
-
-	private static int minGame(ArrayList<Game> g, int totalGameCounter) {
-		int minimum = 0;
-		for (Game game : g) {
-			if ((game.goalDifferential) < g.get(minimum).goalDifferential) minimum = g.indexOf(game);
-		}
-		return minimum;
-	}
-
-	private static int highestScoringGame(ArrayList<Game> g) {
-		int max = 0;
-		for (Game game : g) {
-			if ((game.goalsFor) > g.get(max).goalsFor) max = g.indexOf(game);
-		}
-		return max;
-	}
-
-	private static int maxGame(ArrayList<Game> g) {
-		int max = 0;
-		for (Game game : g) {
-			if ((game.goalDifferential) > g.get(max).goalDifferential) max = g.indexOf(game);
-		}
-		return max;
 	}
 
 	private static int getTableData(Elements trs, String[][] trtd, int[] gameRow) {
@@ -313,7 +262,7 @@ public class Main {
 		return doc.select("table").first();
 	}
 
-	private static void setupOpponentAlphabetically(ArrayList<Game> g, int totalGameCounter, TreeSet<String> opponents, TreeMap<String, Team> teamMap, List<Team> teams) {
+	private static void setupOpponentAlphabetically(ArrayList<Game> g, TreeSet<String> opponents, TreeMap<String, Team> teamMap, List<Team> teams) {
 		Iterator<String> it1 = opponents.iterator();
 		Iterator<Team> it2 = teams.iterator();
 		while (it1.hasNext() && it2.hasNext()) {
