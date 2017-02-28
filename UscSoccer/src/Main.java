@@ -204,6 +204,7 @@ public class Main {
 			month = Integer.parseInt(tokens0[0]) - 1;
 			day = Integer.parseInt(tokens0[1]);
 		}
+		//noinspection deprecation
 		return new Date(year + 100, month, day, hrs, min);
 	}
 
