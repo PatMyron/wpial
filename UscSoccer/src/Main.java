@@ -13,7 +13,7 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		// TreeMap<Integer,TreeMap<String,String>> teamids  = new TreeMap<Integer,TreeMap<String,String>>(); // Keys: sport#,school   V: website code
-		//teamIdsFiller(teamids,allSchoolNames,eWriter);                              // fills schools set and teamids double map ( for new data)
+		// teamIdsFiller(teamids,allSchoolNames,eWriter); // fills schools set and teamids double map ( for new data)
 		fillSportEnumsAndSchoolNames();
 		Element table;
 		for (String schoolName : allSchoolNames) {
@@ -23,9 +23,9 @@ public class Main {
 			for (Integer teamtypeid : sportEnums.keySet()) { // iterates through all sports
 				if (schoolName.contains("Apollo") && teamtypeid == 9) // idk whats up with this team
 					continue;
-				//PrintWriter writerAlpha = new PrintWriter("specificData/"+schoolName+"+"+sportEnums.get(teamtypeid)+"/opponentsABC.html", "UTF-8");
-				//PrintWriter writerSort = new PrintWriter("specificData/"+schoolName+"+"+sportEnums.get(teamtypeid)+"/opponentsGP.html", "UTF-8");
-				//writerSpecificSeasons.println(schoolName+" "+sportEnums.get(teamtypeid));writerSpecificSeasons.println();
+				// PrintWriter writerAlpha = new PrintWriter("specificData/"+schoolName+"+"+sportEnums.get(teamtypeid)+"/opponentsABC.html", "UTF-8");
+				// PrintWriter writerSort = new PrintWriter("specificData/"+schoolName+"+"+sportEnums.get(teamtypeid)+"/opponentsGP.html", "UTF-8");
+				// writerSpecificSeasons.println(schoolName+" "+sportEnums.get(teamtypeid));writerSpecificSeasons.println();
 				ArrayList<Game> g = new ArrayList<>(); // all games a team has played
 				Season seasons[] = new Season[15];
 				totalRecords.add(new TotalRecord(schoolName));
@@ -80,7 +80,7 @@ public class Main {
 		for (int i = 0; i < gamesInSeason; i++) {
 			if (trtd[gameRow[i]][3].contains("W") || trtd[gameRow[i]][3].contains("T") || trtd[gameRow[i]][3].contains("L")) {
 				if (!trtd[gameRow[i]][3].contains("PPD")) {
-					g.add(gameInformation(trtd, i, year, gameRow)); // ( opponent, site, result, goalsFor, goalsAgainst, conferenceGame )
+					g.add(gameInformation(trtd, i, year, gameRow));
 					seasons[year].addGame(g.get(totalGameCounter));
 					totalRecords.get(schoolNum).addGame(g.get(totalGameCounter)); // for total count
 					totalGameCounter++;
