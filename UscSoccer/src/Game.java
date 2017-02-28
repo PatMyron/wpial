@@ -39,7 +39,7 @@ public class Game {
         conferenceGame = conferenceGame_;
         goalDifferential = goalsFor_ - goalsAgainst_;
     }
-    
+
     public void print() {
         System.out.printf("%32s%40s%32s%32s%32s\n\n%30s%44s%66s\r\n", "date: " + date, "opponent: " + opponent, "result: " + result, "goalsFor: " + goalsFor, "goalsAgainst: " + goalsAgainst, "conferenceGame: " + conferenceGame, "site: " + site, "gdiff:" + goalDifferential);
     }
