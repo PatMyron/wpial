@@ -7,7 +7,7 @@ class Team {
 	private int GF;
 	private int GA;
 	private int goalDifferential;
-	private double pct;
+	private double winPct;
 	private double goalsForPerGame;
 	private double goalsAgainstPerGame;
 	private double goalDiffPerGame;
@@ -39,7 +39,8 @@ class Team {
 	}
 
 	void endOfSeason() {
-		pct = (w + 0.5 * t) / (GP) * 100;
+		GP = w + t + l;
+		winPct = (w + 0.5 * t) / (GP) * 100;
 		goalDifferential = GF - GA;
 		goalsForPerGame = (double) GF / GP;
 		goalsAgainstPerGame = (double) GA / GP;
