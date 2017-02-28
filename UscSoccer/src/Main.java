@@ -72,7 +72,7 @@ public class Main {
 			*/
 			writerSchool.println("</table>");
 			writerSchool.close();
-		} // end outer for loop
+		}
 	}
 
 	private static int addGames(String[][] trtd, int[] gameRow, int year, Season[] seasons, ArrayList<Game> g, int gamesInSeason,
