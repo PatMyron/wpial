@@ -50,34 +50,16 @@ class Season {
 		writer.println("<tr>");
 
 		if (year != -1)
-			writeData(writer, year);
+			Game.writeDataToHTMLTable(writer, new Object[]{year, GP, w, t, l, GF, GA, goalDifferential});
 		else
-			writeData(writer, "TOTAL");
-
-		for (int i : new int[]{GP, w, t, l, GF, GA, goalDifferential}) {
-			writeData(writer, i);
-		}
+			Game.writeDataToHTMLTable(writer, new Object[]{"TOTAL", GP, w, t, l, GF, GA, goalDifferential});
 
 		writer.println("<td>");
 		writer.printf("%5.1f %%", winPct);
 		writer.println("</td>");
 
-		writeDouble(writer, new double[]{goalsForPerGame, goalsAgainstPerGame, goalDiffPerGame});
+		Game.writeDoublesToHTMLTable(writer, new double[]{goalsForPerGame, goalsAgainstPerGame, goalDiffPerGame});
 
 		writer.println("</tr>");
-	}
-
-	private void writeData(PrintWriter writer, final Object o) {
-		writer.println("<td>");
-		writer.println(o);
-		writer.println("</td>");
-	}
-
-	private void writeDouble(PrintWriter writer, final double[] arr) {
-		for (double d : arr) {
-			writer.println("<td>");
-			writer.printf("%6.2f", d);
-			writer.println("</td>");
-		}
 	}
 }

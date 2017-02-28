@@ -50,53 +50,13 @@ class Team {
 	public void printTeamToTable(PrintWriter writer) {
 		writer.println("<tr>");
 
-		writer.print("<td>");
-		writer.print(name);
-		writer.print("</td>");
-
-		writer.println("<td>");
-		writer.println(GP);
-		writer.println("</td>");
-
-		writer.println("<td>");
-		writer.println(w);
-		writer.println("</td>");
-
-		writer.println("<td>");
-		writer.println(t);
-		writer.println("</td>");
-
-		writer.println("<td>");
-		writer.println(l);
-		writer.println("</td>");
+		Game.writeDataToHTMLTable(writer, new Object[]{name, GP, w, t, l, GF, GA, goalDifferential});
 
 		writer.println("<td>");
 		writer.printf("%5.1f %%", pct);
 		writer.println("</td>");
 
-		writer.println("<td>");
-		writer.println(GF);
-		writer.println("</td>");
-
-		writer.println("<td>");
-		writer.println(GA);
-		writer.println("</td>");
-
-		writer.println("<td>");
-		writer.println(goalDifferential);
-		writer.println("</td>");
-
-		writer.println("<td>");
-		writer.printf("%5.2f", goalsForPerGame);
-		writer.println("</td>");
-
-		writer.println("<td>");
-		writer.printf("%5.2f", goalsAgainstPerGame);
-		writer.println("</td>");
-
-		writer.println("<td>");
-		writer.printf("%6.2f", goalDiffPerGame);
-		writer.println("</td>");
+		Game.writeDoublesToHTMLTable(writer, new double[]{goalsForPerGame, goalsAgainstPerGame, goalDiffPerGame});
 
 		writer.println("</tr>");
 	}
