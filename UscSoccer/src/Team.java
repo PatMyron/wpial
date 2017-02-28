@@ -1,6 +1,6 @@
 class Team {
 	int GP;
-	String name;
+	private String name;
 	private int w;
 	private int t;
 	private int l;

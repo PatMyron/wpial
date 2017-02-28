@@ -7,8 +7,8 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-	private static Map<Integer, String> sportEnums = new TreeMap<>(); // enum 1=FOOTBALL etc.
-	private static TreeSet<String> allSchoolNames = new TreeSet<>(); // all WPIAL schools (142 of them)
+	private static final Map<Integer, String> sportEnums = new TreeMap<>(); // enum 1=FOOTBALL etc.
+	private static final TreeSet<String> allSchoolNames = new TreeSet<>(); // all WPIAL schools (142 of them)
 
 	public static void main(String[] args) throws IOException {
 		// TreeMap<Integer,TreeMap<String,String>> teamids  = new TreeMap<Integer,TreeMap<String,String>>(); // Keys: sport#,school   V: website code
