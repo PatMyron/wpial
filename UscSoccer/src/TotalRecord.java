@@ -1,4 +1,5 @@
 import java.io.PrintWriter;
+
 public class TotalRecord {
 	public int GP;
 	public int w;
@@ -19,62 +20,68 @@ public class TotalRecord {
 	public double goalDiffPerGame;
 	public String schoolName;
 	public int teamtypeid;
+
 	public TotalRecord() {
-		GP=0;
-		w=0;
-		t=0;
-		l=0;
-		PPD=0;
-		GF=0;
-		GA=0;
-		goalDifferential=0;
+		GP = 0;
+		w = 0;
+		t = 0;
+		l = 0;
+		PPD = 0;
+		GF = 0;
+		GA = 0;
+		goalDifferential = 0;
 	}
+
 	public TotalRecord(String name) {
-		GP=0;
-		w=0;
-		t=0;
-		l=0;
-		PPD=0;
-		GF=0;
-		GA=0;
-		goalDifferential=0;
+		GP = 0;
+		w = 0;
+		t = 0;
+		l = 0;
+		PPD = 0;
+		GF = 0;
+		GA = 0;
+		goalDifferential = 0;
 		schoolName = name;
 	}
+
 	public TotalRecord(String name, Integer typeid) {
-		GP=0;
-		w=0;
-		t=0;
-		l=0;
-		PPD=0;
-		GF=0;
-		GA=0;
-		goalDifferential=0;
+		GP = 0;
+		w = 0;
+		t = 0;
+		l = 0;
+		PPD = 0;
+		GF = 0;
+		GA = 0;
+		goalDifferential = 0;
 		schoolName = name;
 		teamtypeid = typeid;
 	}
-	public void endOfSeason(){
-		GP=w+t+l;
-		winPct = (w+0.5*t)/(GP)*100;
-		goalDifferential = GF-GA;
-		goalsForPerGame = (double)GF/GP;
-		goalsAgainstPerGame = (double)GA/GP;
-		goalDiffPerGame = (double)goalDifferential/GP;
+
+	public void endOfSeason() {
+		GP = w + t + l;
+		winPct = (w + 0.5 * t) / (GP) * 100;
+		goalDifferential = GF - GA;
+		goalsForPerGame = (double) GF / GP;
+		goalsAgainstPerGame = (double) GA / GP;
+		goalDiffPerGame = (double) goalDifferential / GP;
 	}
-	public void addGame(Game g){
+
+	public void addGame(Game g) {
 		GP++;
-		if(g.result.contains("W"))
+		if (g.result.contains("W"))
 			w++;
-		if(g.result.contains("T"))
+		if (g.result.contains("T"))
 			t++;
-		if(g.result.contains("L"))
+		if (g.result.contains("L"))
 			l++;
-		if(g.result.contains("PPD"))
+		if (g.result.contains("PPD"))
 			PPD++;
-		GF+=g.goalsFor;
-		GA+=g.goalsAgainst;
+		GF += g.goalsFor;
+		GA += g.goalsAgainst;
 	}
-	public void printSeasonToTable(PrintWriter writer,boolean printSchoolName){
-		if ( printSchoolName ){
+
+	public void printSeasonToTable(PrintWriter writer, boolean printSchoolName) {
+		if (printSchoolName) {
 			writer.println("<tr>");
 
 			writer.println("<td>");
@@ -98,7 +105,7 @@ public class TotalRecord {
 			writer.println("</td>");
 
 			writer.println("<td>");
-			writer.printf("%5.1f %%",winPct);
+			writer.printf("%5.1f %%", winPct);
 			writer.println("</td>");
 
 			writer.println("<td>");
@@ -114,21 +121,19 @@ public class TotalRecord {
 			writer.println("</td>");
 
 			writer.println("<td>");
-			writer.printf("%5.2f",goalsForPerGame);
+			writer.printf("%5.2f", goalsForPerGame);
 			writer.println("</td>");
 
 			writer.println("<td>");
-			writer.printf("%5.2f",goalsAgainstPerGame);
+			writer.printf("%5.2f", goalsAgainstPerGame);
 			writer.println("</td>");
 
 			writer.println("<td>");
-			writer.printf("%6.2f",goalDiffPerGame);
+			writer.printf("%6.2f", goalDiffPerGame);
 			writer.println("</td>");
-
 
 			writer.println("</tr>");
-		}
-		else{
+		} else {
 			writer.println("<tr>");
 
 			writer.println("<td>");
@@ -164,26 +169,26 @@ public class TotalRecord {
 			writer.println("</td>");
 
 			writer.println("<td>");
-			writer.printf("%5.1f %%",winPct);
+			writer.printf("%5.1f %%", winPct);
 			writer.println("</td>");
 
 			writer.println("<td>");
-			writer.printf("%5.2f",goalsForPerGame);
+			writer.printf("%5.2f", goalsForPerGame);
 			writer.println("</td>");
 
 			writer.println("<td>");
-			writer.printf("%5.2f",goalsAgainstPerGame);
+			writer.printf("%5.2f", goalsAgainstPerGame);
 			writer.println("</td>");
 
 			writer.println("<td>");
-			writer.printf("%6.2f",goalDiffPerGame);
+			writer.printf("%6.2f", goalDiffPerGame);
 			writer.println("</td>");
-
 
 			writer.println("</tr>");
 		}
 	}
-	public void printSeasonToTable(PrintWriter writer,String firstColumnData){
+
+	public void printSeasonToTable(PrintWriter writer, String firstColumnData) {
 		writer.println("<tr>");
 
 		writer.println("<td>");
@@ -207,7 +212,7 @@ public class TotalRecord {
 		writer.println("</td>");
 
 		writer.println("<td>");
-		writer.printf("%5.1f %%",winPct);
+		writer.printf("%5.1f %%", winPct);
 		writer.println("</td>");
 
 		writer.println("<td>");
@@ -223,29 +228,28 @@ public class TotalRecord {
 		writer.println("</td>");
 
 		writer.println("<td>");
-		writer.printf("%5.2f",goalsForPerGame);
+		writer.printf("%5.2f", goalsForPerGame);
 		writer.println("</td>");
 
 		writer.println("<td>");
-		writer.printf("%5.2f",goalsAgainstPerGame);
+		writer.printf("%5.2f", goalsAgainstPerGame);
 		writer.println("</td>");
 
 		writer.println("<td>");
-		writer.printf("%6.2f",goalDiffPerGame);
+		writer.printf("%6.2f", goalDiffPerGame);
 		writer.println("</td>");
-
 
 		writer.println("</tr>");
 	}
-	public int compareTo(TotalRecord o)
-	{
+
+	public int compareTo(TotalRecord o) {
 		int returnVal = 0;
-		if(winPct < o.winPct ){
-			returnVal =  -1;
-		}else if(winPct > o.winPct ){
-			returnVal =  1;
-		}else if(winPct == o.winPct){
-			returnVal =  0;
+		if (winPct < o.winPct) {
+			returnVal = -1;
+		} else if (winPct > o.winPct) {
+			returnVal = 1;
+		} else if (winPct == o.winPct) {
+			returnVal = 0;
 		}
 		return returnVal;
 	}
