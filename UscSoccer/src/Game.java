@@ -2,7 +2,7 @@ import java.io.PrintWriter;
 
 class Game {
 	final String opponent;
-	final String result;   // could be char    (remember F and PPD)
+	final String result;   // (remember F and PPD)
 	int goalsFor;
 	int goalsAgainst;
 
