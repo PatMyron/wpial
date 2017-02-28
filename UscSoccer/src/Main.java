@@ -11,7 +11,7 @@ public class Main {
 	private static Map<Integer, String> sportNumbers = new TreeMap<>(); // enum 1=FOOTBALL etc.
 
 	public static void main(String[] args) throws IOException {
-		// TreeMap<Integer,TreeMap<String,String>>        teamids  = new TreeMap<Integer,TreeMap<String,String>>();     // Keys: sport#,school   V: website code
+		// TreeMap<Integer,TreeMap<String,String>> teamids  = new TreeMap<Integer,TreeMap<String,String>>(); // Keys: sport#,school   V: website code
 		TreeSet<String> allSchoolNames = new TreeSet<>(); // all WPIAL schools (142 of them)
 		//teamIdsFiller(teamids,allSchoolNames,eWriter);                              // fills schools set and teamids double map ( for new data)
 		BufferedReader reader = new BufferedReader(new FileReader("WPIAL schools.txt"));
