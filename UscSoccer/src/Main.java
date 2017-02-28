@@ -4,7 +4,6 @@ import org.jsoup.select.Elements;
 import java.io.*;
 import java.util.*;
 
-// possibly add longest winning and losing streak
 // change throws IOException to print error to error file
 public class Main {
 	public static void main(String[] args) throws IOException {
