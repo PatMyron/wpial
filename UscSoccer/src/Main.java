@@ -8,28 +8,24 @@ import java.util.*;
 
 // change throws IOException to print error to error file
 public class Main {
-	private static Map<Integer, String> sportNumbers = new TreeMap<>(); // enum 1=FOOTBALL etc.
+	private static Map<Integer, String> sportEnums = new TreeMap<>(); // enum 1=FOOTBALL etc.
+	private static TreeSet<String> allSchoolNames = new TreeSet<>(); // all WPIAL schools (142 of them)
 
 	public static void main(String[] args) throws IOException {
 		// TreeMap<Integer,TreeMap<String,String>> teamids  = new TreeMap<Integer,TreeMap<String,String>>(); // Keys: sport#,school   V: website code
-		TreeSet<String> allSchoolNames = new TreeSet<>(); // all WPIAL schools (142 of them)
 		//teamIdsFiller(teamids,allSchoolNames,eWriter);                              // fills schools set and teamids double map ( for new data)
-		BufferedReader reader = new BufferedReader(new FileReader("WPIAL schools.txt"));
-		for (String line; (line = reader.readLine()) != null; )
-			allSchoolNames.add(line);
-		reader.close();
-		fillSportsNumber(); // fills enum map sport # and set
+		fillSportEnumsAndSchoolNames();
 		Element table;
 		for (String schoolName : allSchoolNames) { // iterates through all schools
 			PrintWriter writerSchool = new PrintWriter("dataBySchool/" + schoolName + ".html", "UTF-8");
 			tableBeginning(writerSchool, "Sport");
 			List<TotalRecord> totalRecords = new ArrayList<>();
-			for (Integer teamtypeid : sportNumbers.keySet()) { // iterates through all sports
+			for (Integer teamtypeid : sportEnums.keySet()) { // iterates through all sports
 				if (schoolName.contains("Apollo") && teamtypeid == 9) // idk whats up with this team
 					continue;
-				//PrintWriter writerAlpha = new PrintWriter("specificData/"+schoolName+"+"+sportNumbers.get(teamtypeid)+"/opponentsABC.html", "UTF-8");
-				//PrintWriter writerSort = new PrintWriter("specificData/"+schoolName+"+"+sportNumbers.get(teamtypeid)+"/opponentsGP.html", "UTF-8");
-				//writerSpecificSeasons.println(schoolName+" "+sportNumbers.get(teamtypeid));writerSpecificSeasons.println();
+				//PrintWriter writerAlpha = new PrintWriter("specificData/"+schoolName+"+"+sportEnums.get(teamtypeid)+"/opponentsABC.html", "UTF-8");
+				//PrintWriter writerSort = new PrintWriter("specificData/"+schoolName+"+"+sportEnums.get(teamtypeid)+"/opponentsGP.html", "UTF-8");
+				//writerSpecificSeasons.println(schoolName+" "+sportEnums.get(teamtypeid));writerSpecificSeasons.println();
 				ArrayList<Game> g = new ArrayList<>(); // all games a team has played
 				Season seasons[] = new Season[15];
 				totalRecords.add(new TotalRecord(schoolName));
@@ -38,7 +34,7 @@ public class Main {
 					if (year == 14 && teamtypeid != 1 && teamtypeid != 8 && teamtypeid != 9) // hasn't happened yet
 						continue;
 					seasons[year] = new Season(year + 2000);
-					File f = new File("tables/" + schoolName + sportNumbers.get(teamtypeid) + year + ".html");
+					File f = new File("tables/" + schoolName + sportEnums.get(teamtypeid) + year + ".html");
 					if (f.exists() && !f.isDirectory()) {
 						Document doc = Jsoup.parse(f, "UTF-8");
 						table = doc.select("table").first();
@@ -55,7 +51,7 @@ public class Main {
 					totalRecords.remove(totalRecords.size() - 1);
 				} else {
 					totalRecords.get(totalRecords.size() - 1).endOfSeason();
-					totalRecords.get(totalRecords.size() - 1).printSeasonToTable(writerSchool, sportNumbers.get(teamtypeid));
+					totalRecords.get(totalRecords.size() - 1).printSeasonToTable(writerSchool, sportEnums.get(teamtypeid));
 					TreeSet<String> opponents = new TreeSet<>();
 					for (Game games : g) {
 						if (!games.result.contains("PPD"))
@@ -113,14 +109,19 @@ public class Main {
 		return gameRowCounter;
 	}
 
-	private static void fillSportsNumber() {
-		sportNumbers.put(1, "FOOTBALL");
-		sportNumbers.put(2, "BASEBALL");
-		sportNumbers.put(3, "BASKETBALL");
-		sportNumbers.put(8, "SOCCER");
-		sportNumbers.put(4, "WOMENS BASKETBALL");
-		sportNumbers.put(5, "WOMENS SOFTBALL");
-		sportNumbers.put(9, "WOMENS SOCCER");
+	private static void fillSportEnumsAndSchoolNames() throws IOException {
+		sportEnums.put(1, "FOOTBALL");
+		sportEnums.put(2, "BASEBALL");
+		sportEnums.put(3, "BASKETBALL");
+		sportEnums.put(8, "SOCCER");
+		sportEnums.put(4, "WOMENS BASKETBALL");
+		sportEnums.put(5, "WOMENS SOFTBALL");
+		sportEnums.put(9, "WOMENS SOCCER");
+
+		BufferedReader reader = new BufferedReader(new FileReader("WPIAL schools.txt"));
+		for (String line; (line = reader.readLine()) != null; )
+			allSchoolNames.add(line);
+		reader.close();
 	}
 
 	private static Game gameInformation(String[][] trtd, int i, int year,
@@ -197,11 +198,11 @@ public class Main {
 		return new Date(year + 100, month, day, hrs, min);
 	}
 
-	public static void teamIdsFiller(TreeMap<Integer, TreeMap<String, String>> teamids, TreeSet<String> allSchoolNames, PrintWriter errorWriter) { // for new data
+	public static void teamIdsFiller(TreeMap<Integer, TreeMap<String, String>> teamids, PrintWriter errorWriter) { // for new data
 		// only call when getting new data
 		Document lookupDoc;
 
-		for (int sportNum : sportNumbers.keySet()) {
+		for (int sportNum : sportEnums.keySet()) {
 			teamids.put(sportNum, new TreeMap<>());
 			try {
 				lookupDoc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_lookup.asp?teamtypeid=" + sportNum).get();
