@@ -1,5 +1,3 @@
-import java.io.PrintWriter;
-
 class Team {
 	int GP;
 	String name;
@@ -45,19 +43,5 @@ class Team {
 		goalsForPerGame = (double) GF / GP;
 		goalsAgainstPerGame = (double) GA / GP;
 		goalDiffPerGame = (double) goalDifferential / GP;
-	}
-
-	public void printTeamToTable(PrintWriter writer) {
-		writer.println("<tr>");
-
-		Game.writeDataToHTMLTable(writer, new Object[]{name, GP, w, t, l, GF, GA, goalDifferential});
-
-		writer.println("<td>");
-		writer.printf("%5.1f %%", pct);
-		writer.println("</td>");
-
-		Game.writeDoublesToHTMLTable(writer, new double[]{goalsForPerGame, goalsAgainstPerGame, goalDiffPerGame});
-
-		writer.println("</tr>");
 	}
 }
