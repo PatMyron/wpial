@@ -178,7 +178,7 @@ public class Main {
 		if (trtd[gameRow[i]][1].contains("*")) conferenceGame = true;
 		String site = trtd[gameRow[i]][2]; // SITE
 
-		return new Game(d1, opponent, site, result, goalsFor, goalsAgainst, conferenceGame); // MISSING MATCHTYPE
+		return new Game(opponent, result, goalsFor, goalsAgainst); // MISSING MATCHTYPE
 	}
 
 	private static Date DateTimeGetter(String[][] trtd, int i, int year, int[] gameRow) {

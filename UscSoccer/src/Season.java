@@ -62,17 +62,9 @@ class Season {
 		writer.printf("%5.1f %%", winPct);
 		writer.println("</td>");
 
-		writer.println("<td>");
-		writer.printf("%5.2f", goalsForPerGame);
-		writer.println("</td>");
-
-		writer.println("<td>");
-		writer.printf("%5.2f", goalsAgainstPerGame);
-		writer.println("</td>");
-
-		writer.println("<td>");
-		writer.printf("%6.2f", goalDiffPerGame);
-		writer.println("</td>");
+		for (double d : new double[]{goalsForPerGame, goalsAgainstPerGame, goalDiffPerGame}) {
+			writeDouble(writer, d);
+		}
 
 		writer.println("</tr>");
 	}
@@ -83,24 +75,10 @@ class Season {
 		writer.println("</td>");
 	}
 
-	public void print() {
-		if (year == -1) // not actually year, just total count
-			System.out.printf("TOTAL:       GP: %3d  W: %3d T: %2d L: %3d  F: %5d A: %5d Dif: %5d  Pct: %5.1f %%  GF/GP: %5.2f GA/GP: %5.2f +/-: %6.2f\n", GP, w, t, l, GF, GA, goalDifferential, winPct, goalsForPerGame, goalsAgainstPerGame, goalDiffPerGame);
-		else
-			System.out.printf("year: %4d   GP: %3d  W: %3d T: %2d L: %3d  F: %5d A: %5d Dif: %5d  Pct: %5.1f %%  GF/GP: %5.2f GA/GP: %5.2f +/-: %6.2f\n", year, GP, w, t, l, GF, GA, goalDifferential, winPct, goalsForPerGame, goalsAgainstPerGame, goalDiffPerGame);
-	}
 
-	public void print(PrintWriter writer, String sport) {
-		if (year == -1) // not actually year, just total count
-			writer.printf("%-18s  GP: %3d  W: %3d T: %2d L: %3d  F: %5d A: %5d Dif: %5d  Pct: %5.1f %%  GF/GP: %5.2f GA/GP: %5.2f +/-: %6.2f\n", sport + ":", GP, w, t, l, GF, GA, goalDifferential, winPct, goalsForPerGame, goalsAgainstPerGame, goalDiffPerGame);
-		else
-			writer.printf("year: %4d   GP: %3d  W: %3d T: %2d L: %3d  F: %5d A: %5d Dif: %5d  Pct: %5.1f %%  GF/GP: %5.2f GA/GP: %5.2f +/-: %6.2f\n", year, GP, w, t, l, GF, GA, goalDifferential, winPct, goalsForPerGame, goalsAgainstPerGame, goalDiffPerGame);
-	}
-
-	public void print(PrintWriter writer) {
-		if (year == -1) // not actually year, just total count
-			writer.printf("%-11s  GP: %3d  W: %3d T: %2d L: %3d  F: %5d A: %5d Dif: %5d  Pct: %5.1f %%  GF/GP: %5.2f GA/GP: %5.2f +/-: %6.2f\r\n", "total:", GP, w, t, l, GF, GA, goalDifferential, winPct, goalsForPerGame, goalsAgainstPerGame, goalDiffPerGame);
-		else
-			writer.printf("year: %4d   GP: %3d  W: %3d T: %2d L: %3d  F: %5d A: %5d Dif: %5d  Pct: %5.1f %%  GF/GP: %5.2f GA/GP: %5.2f +/-: %6.2f\r\n", year, GP, w, t, l, GF, GA, goalDifferential, winPct, goalsForPerGame, goalsAgainstPerGame, goalDiffPerGame);
+	private void writeDouble(PrintWriter writer, double d) {
+		writer.println("<td>");
+		writer.printf("%6.2f", d);
+		writer.println("</td>");
 	}
 }
