@@ -1,10 +1,6 @@
 package makingIndexFiles;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -56,7 +52,7 @@ public class Main {
             out.println(middle2);
             // print middle1 then custom part then middle2
             out.println(endingString);
-        } catch (IOException e) {
+        } catch (IOException ignored) {
         }
     }
 }
