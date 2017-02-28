@@ -1,4 +1,6 @@
 import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.*;
@@ -6,8 +8,9 @@ import java.util.*;
 
 // change throws IOException to print error to error file
 public class Main {
+	private static Map<Integer, String> sportNumbers = new TreeMap<>(); // enum 1=FOOTBALL etc.
+
 	public static void main(String[] args) throws IOException {
-		Map<Integer, String> sportNumbers = new TreeMap<>(); // enum 1=FOOTBALL etc.
 		// TreeMap<Integer,TreeMap<String,String>>        teamids  = new TreeMap<Integer,TreeMap<String,String>>();     // Keys: sport#,school   V: website code
 		TreeSet<String> allSchoolNames = new TreeSet<>(); // all WPIAL schools (142 of them)
 		//teamIdsFiller(teamids,allSchoolNames,eWriter);                              // fills schools set and teamids double map ( for new data)
@@ -16,15 +19,15 @@ public class Main {
 		while ((line = reader.readLine()) != null)
 			allSchoolNames.add(line);
 		reader.close();
-		fillSportsNumber(sportNumbers); // fills enum map sport # and set
-		org.jsoup.nodes.Element table;
+		fillSportsNumber(); // fills enum map sport # and set
+		Element table;
 		double pctDone = 0;
 		for (String schoolName : allSchoolNames) { // iterates through all schools
 			PrintWriter writerSchool = new PrintWriter("dataBySchool/" + schoolName + ".html", "UTF-8");
 			tableBeginning(writerSchool, "Sport");
 			List<TotalRecord> totalRecords = new ArrayList<>();
 			for (Integer teamtypeid : sportNumbers.keySet()) { // iterates through all sports
-				if (schoolName.contains("Apollo") && teamtypeid == 9) // idk whats up with this team haha
+				if (schoolName.contains("Apollo") && teamtypeid == 9) // idk whats up with this team
 					continue;
 				System.out.printf("%3.1f", pctDone += 0.1);
 				System.out.println(" %");
@@ -41,7 +44,7 @@ public class Main {
 					seasons[year] = new Season(year + 2000);
 					File f = new File("tables/" + schoolName + sportNumbers.get(teamtypeid) + year + ".html");
 					if (f.exists() && !f.isDirectory()) {
-						org.jsoup.nodes.Document doc = Jsoup.parse(f, "UTF-8");
+						Document doc = Jsoup.parse(f, "UTF-8");
 						table = doc.select("table").first();
 					} else continue;
 					if (table == null) continue;
@@ -114,7 +117,7 @@ public class Main {
 		return gameRowCounter;
 	}
 
-	private static void fillSportsNumber(Map<Integer, String> sportNumbers) {
+	private static void fillSportsNumber() {
 		sportNumbers.put(1, "FOOTBALL");
 		sportNumbers.put(2, "BASEBALL");
 		sportNumbers.put(3, "BASKETBALL");
@@ -200,10 +203,9 @@ public class Main {
 
 	public static void teamIdsFiller(TreeMap<Integer, TreeMap<String, String>> teamids, TreeSet<String> allSchoolNames, PrintWriter errorWriter) { // for new data
 		// only call when getting new data
-		org.jsoup.nodes.Document lookupDoc;
+		Document lookupDoc;
 
-		for (int sportNum = 1; sportNum < 10; sportNum++) {
-			if (sportNum == 6 || sportNum == 7) continue; //dont know why... but no sports for #6 or #7
+		for (int sportNum : sportNumbers.keySet()) {
 			teamids.put(sportNum, new TreeMap<>());
 			try {
 				lookupDoc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_lookup.asp?teamtypeid=" + sportNum).get();
@@ -212,7 +214,7 @@ public class Main {
 				System.out.println("Missed entire sport for getting allSchoolNames. Sport #: " + sportNum);
 				continue;
 			}
-			org.jsoup.nodes.Element table = lookupDoc.select("table").first();
+			Element table = lookupDoc.select("table").first();
 			Elements trs = table.select("tr");
 			String[][] trtd = new String[trs.size()][];
 			for (int r = 0; r < trs.size(); r++) {
@@ -232,11 +234,11 @@ public class Main {
 		}
 	}
 
-	public static org.jsoup.nodes.Element getTable(int year, TreeMap<Integer, TreeMap<String, String>> teamids, int teamtypeid, String schoolName, PrintWriter eWriter) { // for new data
+	public static Element getTable(int year, TreeMap<Integer, TreeMap<String, String>> teamids, int teamtypeid, String schoolName, PrintWriter eWriter) { // for new data
 		// gets Table from site.. only use when there is new data
 		// // called this way
 		//		table = getTable(year,teamids,teamtypeid,schoolName,eWriter);
-		org.jsoup.nodes.Document doc;
+		Document doc;
 		String teamid = teamids.get(teamtypeid).get(schoolName);
 		try {
 			if (year < 10)
@@ -266,7 +268,7 @@ public class Main {
 			teamMap.get(games.opponent).addGame(games);
 		}
 		for (Map.Entry<String, Team> entry : teamMap.entrySet()) {
-			entry.getValue().endCalcs();
+			entry.getValue().endOfSeason();
 		}
 	}
 

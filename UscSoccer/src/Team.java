@@ -37,7 +37,7 @@ class Team {
 			l++;
 	}
 
-	void endCalcs() {
+	void endOfSeason() {
 		pct = (w + 0.5 * t) / (GP) * 100;
 		goalDifferential = GF - GA;
 		goalsForPerGame = (double) GF / GP;
