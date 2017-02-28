@@ -20,7 +20,6 @@ public class Main {
 		reader.close();
 		fillSportsNumber(); // fills enum map sport # and set
 		Element table;
-		double pctDone = 0;
 		for (String schoolName : allSchoolNames) { // iterates through all schools
 			PrintWriter writerSchool = new PrintWriter("dataBySchool/" + schoolName + ".html", "UTF-8");
 			tableBeginning(writerSchool, "Sport");
@@ -28,8 +27,6 @@ public class Main {
 			for (Integer teamtypeid : sportNumbers.keySet()) { // iterates through all sports
 				if (schoolName.contains("Apollo") && teamtypeid == 9) // idk whats up with this team
 					continue;
-				System.out.printf("%3.1f", pctDone += 0.1);
-				System.out.println(" %");
 				//PrintWriter writerAlpha = new PrintWriter("specificData/"+schoolName+"+"+sportNumbers.get(teamtypeid)+"/opponentsABC.html", "UTF-8");
 				//PrintWriter writerSort = new PrintWriter("specificData/"+schoolName+"+"+sportNumbers.get(teamtypeid)+"/opponentsGP.html", "UTF-8");
 				//writerSpecificSeasons.println(schoolName+" "+sportNumbers.get(teamtypeid));writerSpecificSeasons.println();
