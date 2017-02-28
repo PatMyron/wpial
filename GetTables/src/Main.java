@@ -3,7 +3,6 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.TreeSet;
@@ -19,7 +18,7 @@ public class Main {
 		PrintWriter eWriter = new PrintWriter("errors/errors" + date.getMonth() + date.getDate() + date.getHours() + date.getMinutes() + ".txt");
 		teamIdsFiller(teamids, allSchoolNames, eWriter);                              // fills schools set and teamids double map ( for new data)
 		fillSportsNumber(sportNumbers, allSportNums);                        // fills enum map sport # and set
-		org.jsoup.nodes.Element table = null;
+		org.jsoup.nodes.Element table;
 		double pctDone = 0;
 		PrintWriter schoolWriter = new PrintWriter("WPIAL schools.txt");
 		for (String schoolName : allSchoolNames) {        // iterates through all schools
@@ -27,8 +26,7 @@ public class Main {
 
 			System.out.printf("%3.1f", pctDone += 0.7);
 			System.out.println(" %");
-			if (1 == 1)
-				continue;
+			continue;
 			for (Integer teamtypeid : allSportNums) {        // iterates through all sports
 				for (int year = 3; year < 15; year++) { // go from '03-'04 to '14-'15
 					if (year == 14 && teamtypeid != 1 && teamtypeid != 8 && teamtypeid != 9) // hasn't happened yet
@@ -81,10 +79,10 @@ public class Main {
 		}
 	}
 
-	public static void teamIdsFiller(TreeMap<Integer, TreeMap<String, String>> teamids, TreeSet<String> allSchoolNames, PrintWriter errorWriter) { // for new data
+	private static void teamIdsFiller(TreeMap<Integer, TreeMap<String, String>> teamids, TreeSet<String> allSchoolNames, PrintWriter errorWriter) { // for new data
 		// only call when getting new data
 		double pctDone = 0;
-		org.jsoup.nodes.Document lookupDoc = null;
+		org.jsoup.nodes.Document lookupDoc;
 		for (int sportNum = 1; sportNum < 10; sportNum++) {
 			if (sportNum == 6 || sportNum == 7) continue; //dont know why... but no sports for #6 or #7
 			teamids.put(sportNum, new TreeMap<>());
@@ -149,8 +147,7 @@ public class Main {
 		}
 	}
 
-	public static boolean tableExists(int year, TreeMap<Integer, TreeMap<String, String>> teamids, int teamtypeid, String schoolName, PrintWriter eWriter) {
-		boolean tableExists = true;
+	private static boolean tableExists(int year, TreeMap<Integer, TreeMap<String, String>> teamids, int teamtypeid, String schoolName, PrintWriter eWriter) {
 		org.jsoup.nodes.Document doc;
 		String teamid = teamids.get(teamtypeid).get(schoolName);
 		try {
@@ -174,10 +171,10 @@ public class Main {
 			System.out.println("table is null. " + " school: " + schoolName + " year: " + year + " sport: " + teamtypeid);
 			return false;
 		}
-		return tableExists;
+		return true;
 	}
 
-	public static org.jsoup.nodes.Element getTable(int year, TreeMap<Integer, TreeMap<String, String>> teamids, int teamtypeid, String schoolName, PrintWriter eWriter) { // for new data
+	private static org.jsoup.nodes.Element getTable(int year, TreeMap<Integer, TreeMap<String, String>> teamids, int teamtypeid, String schoolName, PrintWriter eWriter) { // for new data
 		// gets Table from site.. only use when there is new data
 		// // called this way
 		//		table = getTable(year,teamids,teamtypeid,schoolName,eWriter);
@@ -198,12 +195,6 @@ public class Main {
 			// System.out.println("error message: "+e.getMessage()+" school: "+schoolName+" year: "+year+" sport: "+teamtypeid);
 			return null;
 		}
-		org.jsoup.nodes.Element table = doc.select("table").first();
-		return table;
-	}
-
-	public static boolean contains(final int[] array, final int key) {
-		Arrays.sort(array);
-		return Arrays.binarySearch(array, key) != -1;
+		return doc.select("table").first();
 	}
 }
