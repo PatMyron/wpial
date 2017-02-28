@@ -1,6 +1,7 @@
 import java.io.PrintWriter;
 
 class TotalRecord {
+	private final String schoolName;
 	int GP;
 	double winPct;
 	private int w;
@@ -12,7 +13,6 @@ class TotalRecord {
 	private double goalsForPerGame;
 	private double goalsAgainstPerGame;
 	private double goalDiffPerGame;
-	private final String schoolName;
 
 	TotalRecord(String name) {
 		GP = 0;
@@ -54,37 +54,17 @@ class TotalRecord {
 			writer.println(schoolName);
 			writer.println("</td>");
 
-			writer.println("<td>");
-			writer.println(GP);
-			writer.println("</td>");
-
-			writer.println("<td>");
-			writer.println(w);
-			writer.println("</td>");
-
-			writer.println("<td>");
-			writer.println(t);
-			writer.println("</td>");
-
-			writer.println("<td>");
-			writer.println(l);
-			writer.println("</td>");
+			for (int i : new int[]{GP, w, t, l}) {
+				writeData(writer, i);
+			}
 
 			writer.println("<td>");
 			writer.printf("%5.1f %%", winPct);
 			writer.println("</td>");
 
-			writer.println("<td>");
-			writer.println(GF);
-			writer.println("</td>");
-
-			writer.println("<td>");
-			writer.println(GA);
-			writer.println("</td>");
-
-			writer.println("<td>");
-			writer.println(goalDifferential);
-			writer.println("</td>");
+			for (int i : new int[]{GF, GA, goalDifferential}) {
+				writeData(writer, i);
+			}
 
 			writer.println("<td>");
 			writer.printf("%5.2f", goalsForPerGame);
@@ -106,33 +86,9 @@ class TotalRecord {
 			writer.println("TOTAL");
 			writer.println("</td>");
 
-			writer.println("<td>");
-			writer.println(GP);
-			writer.println("</td>");
-
-			writer.println("<td>");
-			writer.println(w);
-			writer.println("</td>");
-
-			writer.println("<td>");
-			writer.println(t);
-			writer.println("</td>");
-
-			writer.println("<td>");
-			writer.println(l);
-			writer.println("</td>");
-
-			writer.println("<td>");
-			writer.println(GF);
-			writer.println("</td>");
-
-			writer.println("<td>");
-			writer.println(GA);
-			writer.println("</td>");
-
-			writer.println("<td>");
-			writer.println(goalDifferential);
-			writer.println("</td>");
+			for (int i : new int[]{GP, w, t, l, GF, GA, goalDifferential}) {
+				writeData(writer, i);
+			}
 
 			writer.println("<td>");
 			writer.printf("%5.1f %%", winPct);
@@ -154,6 +110,12 @@ class TotalRecord {
 		}
 	}
 
+	private void writeData(PrintWriter writer, final int i) {
+		writer.println("<td>");
+		writer.println(i);
+		writer.println("</td>");
+	}
+
 	void printSeasonToTable(PrintWriter writer, String firstColumnData) {
 		writer.println("<tr>");
 
@@ -161,37 +123,17 @@ class TotalRecord {
 		writer.println(firstColumnData);
 		writer.println("</td>");
 
-		writer.println("<td>");
-		writer.println(GP);
-		writer.println("</td>");
-
-		writer.println("<td>");
-		writer.println(w);
-		writer.println("</td>");
-
-		writer.println("<td>");
-		writer.println(t);
-		writer.println("</td>");
-
-		writer.println("<td>");
-		writer.println(l);
-		writer.println("</td>");
+		for (int i : new int[]{GP, w, t, l}) {
+			writeData(writer, i);
+		}
 
 		writer.println("<td>");
 		writer.printf("%5.1f %%", winPct);
 		writer.println("</td>");
 
-		writer.println("<td>");
-		writer.println(GF);
-		writer.println("</td>");
-
-		writer.println("<td>");
-		writer.println(GA);
-		writer.println("</td>");
-
-		writer.println("<td>");
-		writer.println(goalDifferential);
-		writer.println("</td>");
+		for (int i : new int[]{GF, GA, goalDifferential}) {
+			writeData(writer, i);
+		}
 
 		writer.println("<td>");
 		writer.printf("%5.2f", goalsForPerGame);
