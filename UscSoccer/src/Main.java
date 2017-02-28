@@ -55,9 +55,14 @@ public class Main {
 						if (!games.result.contains("PPD"))
 							opponents.add(games.opponent); // initializing with all opponents
 					}
+					TreeMap<String, Team> teamMap = new TreeMap<>();
 					List<Team> opposingTeams = new ArrayList<>(opponents.size());
-					for (int i = 0; i < opponents.size(); i++)
-						opposingTeams.add(new Team());
+					for (String opponent : opponents) {
+						Team t = new Team(opponent);
+						opposingTeams.add(t);
+						teamMap.put(opponent, t);
+					}
+					setupOpponentAlphabetically(g, teamMap); // alphabetical into opposingTeams
 					sortOpponentsByGP(opposingTeams); // sorts by games played into opposingTeams
 				}
 			} // end inner for loop
@@ -246,6 +251,15 @@ public class Main {
 			return null;
 		}
 		return doc.select("table").first();
+	}
+
+	private static void setupOpponentAlphabetically(ArrayList<Game> g, TreeMap<String, Team> teamMap) {
+		for (Game games : g) {
+			teamMap.get(games.opponent).addGame(games);
+		}
+		for (Map.Entry<String, Team> entry : teamMap.entrySet()) {
+			entry.getValue().endOfSeason();
+		}
 	}
 
 	private static void sortOpponentsByGP(List<Team> teams) {

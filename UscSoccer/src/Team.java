@@ -12,7 +12,7 @@ class Team {
 	private double goalsAgainstPerGame;
 	private double goalDiffPerGame;
 
-	Team() {
+	Team(String opponent) {
 		GP = 0;
 		w = 0;
 		t = 0;
@@ -21,6 +21,7 @@ class Team {
 		GA = 0;
 		name = "";
 		goalDifferential = 0;
+		name = opponent;
 	}
 
 	void addGame(Game g) {
