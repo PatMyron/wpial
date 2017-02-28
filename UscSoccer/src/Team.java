@@ -1,16 +1,5 @@
-class Team {
-	int GP;
+class Team extends SeasonTemplate {
 	private String name;
-	private int w;
-	private int t;
-	private int l;
-	private int GF;
-	private int GA;
-	private int goalDifferential;
-	private double winPct;
-	private double goalsForPerGame;
-	private double goalsAgainstPerGame;
-	private double goalDiffPerGame;
 
 	Team(String opponent) {
 		GP = 0;
@@ -22,28 +11,5 @@ class Team {
 		name = "";
 		goalDifferential = 0;
 		name = opponent;
-	}
-
-	void addGame(Game g) {
-		if (!g.result.contains("PPD")) {
-			GP++;
-			GF += g.goalsFor;
-			GA += g.goalsAgainst;
-		}
-		if (g.result.contains("W"))
-			w++;
-		if (g.result.contains("T"))
-			t++;
-		if (g.result.contains("L"))
-			l++;
-	}
-
-	void endOfSeason() {
-		GP = w + t + l;
-		winPct = (w + 0.5 * t) / (GP) * 100;
-		goalDifferential = GF - GA;
-		goalsForPerGame = (double) GF / GP;
-		goalsAgainstPerGame = (double) GA / GP;
-		goalDiffPerGame = (double) goalDifferential / GP;
 	}
 }

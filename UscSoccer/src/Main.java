@@ -45,7 +45,7 @@ public class Main {
 					totalGameCounter = addGames(trtd, gameRow, year, seasons, g, gamesInSeason, totalRecords, totalRecords.size() - 1, totalGameCounter); // adds to g, individual season, and total record
 					seasons[year].endOfSeason();
 				} // END YEAR LOOP
-				if (totalRecords.get(totalRecords.size() - 1).GP == 0) {
+				if (totalRecords.get(totalRecords.size() - 1).GP == 0) { // TODO private
 					totalRecords.remove(totalRecords.size() - 1);
 				} else {
 					totalRecords.get(totalRecords.size() - 1).endOfSeason();
@@ -263,12 +263,12 @@ public class Main {
 	}
 
 	private static void sortOpponentsByGP(List<Team> teams) {
-		teams.sort((o1, o2) -> o2.GP - o1.GP);
+		teams.sort((o1, o2) -> o2.GP - o1.GP); // TODO private
 	}
 
 	private static void sortTotalRecords(List<TotalRecord> totalRecords) {
 		totalRecords.sort((o1, o2) -> {
-			if (o1.winPct == o2.winPct) return 0;
+			if (o1.winPct == o2.winPct) return 0; // TODO private
 			return (o1.winPct > o2.winPct) ? -1 : 1;
 		});
 	}
