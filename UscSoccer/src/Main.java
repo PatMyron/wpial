@@ -22,7 +22,6 @@ public class Main {
 			for (Integer teamtypeid : sportEnums.keySet()) { // iterates through all sports
 				if (schoolName.contains("Apollo") && teamtypeid == 9) // idk whats up with this team
 					continue;
-				// PrintWriter writerAlpha = new PrintWriter("specificData/"+schoolName+"+"+sportEnums.get(teamtypeid)+"/opponentsABC.html", "UTF-8");
 				// PrintWriter writerSort = new PrintWriter("specificData/"+schoolName+"+"+sportEnums.get(teamtypeid)+"/opponentsGP.html", "UTF-8");
 				// writerSpecificSeasons.println(schoolName+" "+sportEnums.get(teamtypeid));writerSpecificSeasons.println();
 				ArrayList<Game> g = new ArrayList<>(); // all games a team has played
@@ -56,11 +55,9 @@ public class Main {
 						if (!games.result.contains("PPD"))
 							opponents.add(games.opponent); // initializing with all opponents
 					}
-					TreeMap<String, Team> teamMap = new TreeMap<>();
 					List<Team> opposingTeams = new ArrayList<>(opponents.size());
 					for (int i = 0; i < opponents.size(); i++)
 						opposingTeams.add(new Team());
-					setupOpponentAlphabetically(g, opponents, teamMap, opposingTeams); // alphabetical into opposingTeams
 					sortOpponentsByGP(opposingTeams); // sorts by games played into opposingTeams
 				}
 			} // end inner for loop
@@ -249,23 +246,6 @@ public class Main {
 			return null;
 		}
 		return doc.select("table").first();
-	}
-
-	private static void setupOpponentAlphabetically(ArrayList<Game> g, TreeSet<String> opponents, TreeMap<String, Team> teamMap, List<Team> teams) {
-		Iterator<String> it1 = opponents.iterator();
-		Iterator<Team> it2 = teams.iterator();
-		while (it1.hasNext() && it2.hasNext()) {
-			String s = it1.next();
-			Team t = it2.next();
-			teamMap.put(s, t);
-			teamMap.get(s).name = s;
-		}
-		for (Game games : g) {
-			teamMap.get(games.opponent).addGame(games);
-		}
-		for (Map.Entry<String, Team> entry : teamMap.entrySet()) {
-			entry.getValue().endOfSeason();
-		}
 	}
 
 	private static void sortOpponentsByGP(List<Team> teams) {
