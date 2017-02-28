@@ -58,15 +58,7 @@ function populateP(school, sport) {
 	};
 	xhr.open('GET', url);
 	xhr.send();
-/*
-	url = "data/specificData/"+school+"+"+sport+"/opponentsABC.html";	
-	xhr = new XMLHttpRequest();
-	xhr.onload = function () {
-		document.getElementById('contentsOpponentTable2').innerHTML = this.responseText;
-	};
-	xhr.open('GET', url);
-	xhr.send();
-	*/
+	
 	url = "data/specificData/"+school+"+"+sport+"/opponentsGP.html";	
 	xhr = new XMLHttpRequest();
 	xhr.onload = function () {
