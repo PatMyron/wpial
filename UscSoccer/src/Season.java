@@ -1,24 +1,24 @@
 import java.io.PrintWriter;
 
-public class Season {
-	public int GP;
-	public int w;
-	public int t;
-	public int l;
-	public int PPD; //postponed games
-	public int GF;
-	public int GA;
-	public int year;
-	public double winPct;
+class Season {
+	private int GP;
+	private int w;
+	private int t;
+	private int l;
+	private int PPD; //postponed games
+	private int GF;
+	private int GA;
+	private int year;
+	private double winPct;
 	public double regPct;
 	public double playoffPct;
 	public String outcome;
 	public boolean madePlayoffs;
 	public boolean madeStates;
-	public int goalDifferential;
-	public double goalsForPerGame;
-	public double goalsAgainstPerGame;
-	public double goalDiffPerGame;
+	private int goalDifferential;
+	private double goalsForPerGame;
+	private double goalsAgainstPerGame;
+	private double goalDiffPerGame;
 	public String schoolName;
 	public int teamtypeid;
 

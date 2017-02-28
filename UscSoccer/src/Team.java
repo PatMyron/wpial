@@ -1,19 +1,19 @@
 import java.io.PrintWriter;
 
-public class Team {
+class Team {
 	public int GP;
-	public int w;
-	public int t;
-	public int l;
-	public int PPD; //postponed games (not doing yet)
-	public int GF;
-	public int GA;
-	public int goalDifferential;
+	private int w;
+	private int t;
+	private int l;
+	private int PPD; //postponed games (not doing yet)
+	private int GF;
+	private int GA;
+	private int goalDifferential;
 	public String name;
-	public double pct;
-	public double goalsForPerGame;
-	public double goalsAgainstPerGame;
-	public double goalDiffPerGame;
+	private double pct;
+	private double goalsForPerGame;
+	private double goalsAgainstPerGame;
+	private double goalDiffPerGame;
 
 	public Team() {
 		GP = 0;

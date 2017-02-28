@@ -8,10 +8,10 @@ import java.util.*;
 // change throws IOException to print error to error file
 public class Main {
 	public static void main(String[] args) throws IOException {
-		Map<Integer, String> sportNumbers = new TreeMap<Integer, String>(); // enum 1=FOOTBALL etc.
+		Map<Integer, String> sportNumbers = new TreeMap<>(); // enum 1=FOOTBALL etc.
 		// TreeMap<Integer,TreeMap<String,String>>        teamids  = new TreeMap<Integer,TreeMap<String,String>>();     // Keys: sport#,school   V: website code
-		TreeSet<String> allSchoolNames = new TreeSet<String>(); // all WPIAL schools (142 of them)
-		TreeSet<Integer> allSportNums = new TreeSet<Integer>();
+		TreeSet<String> allSchoolNames = new TreeSet<>(); // all WPIAL schools (142 of them)
+		TreeSet<Integer> allSportNums = new TreeSet<>();
 		//teamIdsFiller(teamids,allSchoolNames,eWriter);                              // fills schools set and teamids double map ( for new data)
 		String line;
 		BufferedReader reader = new BufferedReader(new FileReader("WPIAL schools.txt"));
@@ -24,7 +24,7 @@ public class Main {
 		for (String schoolName : allSchoolNames) { // iterates through all schools
 			PrintWriter writerSchool = new PrintWriter("dataBySchool/" + schoolName + ".html", "UTF-8");
 			tableBeginning(writerSchool, "Sport");
-			List<TotalRecord> totalRecords = new ArrayList<TotalRecord>();
+			List<TotalRecord> totalRecords = new ArrayList<>();
 			for (Integer teamtypeid : allSportNums) { // iterates through all sports
 				if (schoolName.contains("Apollo") && teamtypeid == 9) // idk whats up with this team haha
 					continue;
@@ -33,7 +33,7 @@ public class Main {
 				//PrintWriter writerAlpha = new PrintWriter("specificData/"+schoolName+"+"+sportNumbers.get(teamtypeid)+"/opponentsABC.html", "UTF-8");
 				//PrintWriter writerSort = new PrintWriter("specificData/"+schoolName+"+"+sportNumbers.get(teamtypeid)+"/opponentsGP.html", "UTF-8");
 				//writerSpecificSeasons.println(schoolName+" "+sportNumbers.get(teamtypeid));writerSpecificSeasons.println();
-				ArrayList<Game> g = new ArrayList<Game>(); // all games a team has played
+				ArrayList<Game> g = new ArrayList<>(); // all games a team has played
 				Season seasons[] = new Season[15];
 				totalRecords.add(new TotalRecord(schoolName, teamtypeid));
 				int totalGameCounter = 0;
@@ -59,13 +59,13 @@ public class Main {
 				} else {
 					totalRecords.get(totalRecords.size() - 1).endOfSeason();
 					totalRecords.get(totalRecords.size() - 1).printSeasonToTable(writerSchool, sportNumbers.get(teamtypeid));
-					TreeSet<String> opponents = new TreeSet<String>();
+					TreeSet<String> opponents = new TreeSet<>();
 					for (Game games : g) {
 						if (!games.result.contains("PPD"))
 							opponents.add(games.opponent); // initializing with all opponents
 					}
-					TreeMap<String, Team> teamMap = new TreeMap<String, Team>();
-					List<Team> opposingTeams = new ArrayList<Team>(opponents.size());
+					TreeMap<String, Team> teamMap = new TreeMap<>();
+					List<Team> opposingTeams = new ArrayList<>(opponents.size());
 					for (int i = 0; i < opponents.size(); i++)
 						opposingTeams.add(new Team());
 					setupOpponentAlphabetically(g, g.size(), opponents, teamMap, opposingTeams); // alphabetical into opposingTeams
@@ -104,8 +104,8 @@ public class Main {
 
 	private static void minMaxHighestScoringGames(ArrayList<Game> g, int totalGameCounter, PrintWriter writer) {
 		int min = minGame(g, totalGameCounter);
-		int max = maxGame(g, totalGameCounter);
-		int high = highestScoringGame(g, totalGameCounter);
+		int max = maxGame(g);
+		int high = highestScoringGame(g);
 		writer.println("BEST GAME:");
 		/*
 		g[max].print(writer);
@@ -118,8 +118,8 @@ public class Main {
 
 	private static void minMaxHighestScoringGames(ArrayList<Game> g, int totalGameCounter) {
 		int min = minGame(g, totalGameCounter);
-		int max = maxGame(g, totalGameCounter);
-		int high = highestScoringGame(g, totalGameCounter);
+		int max = maxGame(g);
+		int high = highestScoringGame(g);
 		// System.out.println("BEST GAME:");
 		// g[max].print();
 		// System.out.println("WORST GAME:");
@@ -136,7 +136,7 @@ public class Main {
 		return minimum;
 	}
 
-	private static int highestScoringGame(ArrayList<Game> g, int totalGameCounter) {
+	private static int highestScoringGame(ArrayList<Game> g) {
 		int max = 0;
 		for (Game game : g) {
 			if ((game.goalsFor) > g.get(max).goalsFor) max = g.indexOf(game);
@@ -144,7 +144,7 @@ public class Main {
 		return max;
 	}
 
-	private static int maxGame(ArrayList<Game> g, int totalGameCounter) {
+	private static int maxGame(ArrayList<Game> g) {
 		int max = 0;
 		for (Game game : g) {
 			if ((game.goalDifferential) > g.get(max).goalDifferential) max = g.indexOf(game);
@@ -264,7 +264,7 @@ public class Main {
 
 		for (int sportNum = 1; sportNum < 10; sportNum++) {
 			if (sportNum == 6 || sportNum == 7) continue; //dont know why... but no sports for #6 or #7
-			teamids.put(sportNum, new TreeMap<String, String>());
+			teamids.put(sportNum, new TreeMap<>());
 			try {
 				lookupDoc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_lookup.asp?teamtypeid=" + sportNum).get();
 			} catch (IOException e) {
@@ -310,11 +310,10 @@ public class Main {
 			System.out.println("error message: " + e.getMessage() + " school: " + schoolName + " year: " + year + " sport: " + teamtypeid);
 			return null;
 		}
-		org.jsoup.nodes.Element table = doc.select("table").first();
-		return table;
+		return doc.select("table").first();
 	}
 
-	public static void setupOpponentAlphabetically(ArrayList<Game> g, int totalGameCounter, TreeSet<String> opponents, TreeMap<String, Team> teamMap, List<Team> teams) {
+	private static void setupOpponentAlphabetically(ArrayList<Game> g, int totalGameCounter, TreeSet<String> opponents, TreeMap<String, Team> teamMap, List<Team> teams) {
 		Iterator<String> it1 = opponents.iterator();
 		Iterator<Team> it2 = teams.iterator();
 		while (it1.hasNext() && it2.hasNext()) {
@@ -331,26 +330,14 @@ public class Main {
 		}
 	}
 
-	public static void sortOpponentsByGP(List<Team> teams) {
-		Collections.sort(teams, new Comparator<Team>() {
-			public int compare(Team o1, Team o2) {
-				return o2.GP - o1.GP;
-			}
-		});
+	private static void sortOpponentsByGP(List<Team> teams) {
+		teams.sort((o1, o2) -> o2.GP - o1.GP);
 	}
 
 	private static void sortTotalRecords(List<TotalRecord> totalRecords) {
-		Collections.sort(totalRecords, new Comparator<TotalRecord>() {
-			public int compare(TotalRecord o1, TotalRecord o2) {
-				if (o1.winPct == o2.winPct) return 0;
-				return (o1.winPct > o2.winPct) ? -1 : 1;
-
-			}
+		totalRecords.sort((o1, o2) -> {
+			if (o1.winPct == o2.winPct) return 0;
+			return (o1.winPct > o2.winPct) ? -1 : 1;
 		});
-	}
-
-	public static boolean contains(final int[] array, final int key) {
-		Arrays.sort(array);
-		return Arrays.binarySearch(array, key) != -1;
 	}
 }
