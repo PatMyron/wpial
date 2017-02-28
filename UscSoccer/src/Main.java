@@ -6,7 +6,6 @@ import org.jsoup.select.Elements;
 import java.io.*;
 import java.util.*;
 
-// change throws IOException to print error to error file
 public class Main {
 	private static Map<Integer, String> sportEnums = new TreeMap<>(); // enum 1=FOOTBALL etc.
 	private static TreeSet<String> allSchoolNames = new TreeSet<>(); // all WPIAL schools (142 of them)
