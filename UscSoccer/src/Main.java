@@ -15,7 +15,7 @@ public class Main {
 		TreeSet<String> allSchoolNames = new TreeSet<>(); // all WPIAL schools (142 of them)
 		//teamIdsFiller(teamids,allSchoolNames,eWriter);                              // fills schools set and teamids double map ( for new data)
 		BufferedReader reader = new BufferedReader(new FileReader("WPIAL schools.txt"));
-		for (String line; (line = reader.readLine()) != null;)
+		for (String line; (line = reader.readLine()) != null; )
 			allSchoolNames.add(line);
 		reader.close();
 		fillSportsNumber(); // fills enum map sport # and set
