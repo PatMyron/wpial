@@ -35,15 +35,17 @@ class TotalRecord {
 	}
 
 	void addGame(Game g) {
-		GP++;
+		if (!g.result.contains("PPD")) {
+			GP++;
+			GF += g.goalsFor;
+			GA += g.goalsAgainst;
+		}
 		if (g.result.contains("W"))
 			w++;
 		if (g.result.contains("T"))
 			t++;
 		if (g.result.contains("L"))
 			l++;
-		GF += g.goalsFor;
-		GA += g.goalsAgainst;
 	}
 
 	void printSeasonToTable(PrintWriter writer, String firstColumnData) {
