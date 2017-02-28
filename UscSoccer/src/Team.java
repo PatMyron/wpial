@@ -1,33 +1,31 @@
 import java.io.PrintWriter;
 
 class Team {
-	public int GP;
+	int GP;
+	String name;
 	private int w;
 	private int t;
 	private int l;
-	private int PPD; //postponed games (not doing yet)
 	private int GF;
 	private int GA;
 	private int goalDifferential;
-	public String name;
 	private double pct;
 	private double goalsForPerGame;
 	private double goalsAgainstPerGame;
 	private double goalDiffPerGame;
 
-	public Team() {
+	Team() {
 		GP = 0;
 		w = 0;
 		t = 0;
 		l = 0;
-		PPD = 0;
 		GF = 0;
 		GA = 0;
 		name = "";
 		goalDifferential = 0;
 	}
 
-	public void addGame(Game g) {
+	void addGame(Game g) {
 		if (!g.result.contains("PPD")) {
 			GP++;
 			GF += (g.goalsFor);
@@ -41,7 +39,7 @@ class Team {
 			l++;
 	}
 
-	public void endCalcs() {
+	void endCalcs() {
 		pct = (w + 0.5 * t) / (GP) * 100;
 		goalDifferential = GF - GA;
 		goalsForPerGame = (double) GF / GP;

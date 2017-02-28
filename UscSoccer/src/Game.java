@@ -2,16 +2,16 @@ import java.io.PrintWriter;
 import java.util.Date;
 
 class Game {
-	private Date date; //includes time as well
-	public String opponent;
-	private String site; // could be char
-	public String result;   // could be char    (remember F and PPD)
-	public int goalsFor;
-	public int goalsAgainst;
-	private boolean conferenceGame; // include playoffs?
-	public int goalDifferential;
+	final String opponent;
+	final String result;   // could be char    (remember F and PPD)
+	private final Date date; //includes time as well
+	private final String site; // could be char
+	private final boolean conferenceGame; // include playoffs?
+	private final int goalDifferential;
+	int goalsFor;
+	int goalsAgainst;
 
-	public Game(Date date_, String opponent_, String site_, String result_, int goalsFor_, int goalsAgainst_, boolean conferenceGame_) {
+	Game(Date date_, String opponent_, String site_, String result_, int goalsFor_, int goalsAgainst_, boolean conferenceGame_) {
 		date = date_;
 		opponent = opponent_;
 		site = site_;

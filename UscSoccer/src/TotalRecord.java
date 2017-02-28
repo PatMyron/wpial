@@ -1,19 +1,13 @@
 import java.io.PrintWriter;
 
 class TotalRecord {
-	public int GP;
+	int GP;
+	double winPct;
 	private int w;
 	private int t;
 	private int l;
-	private int PPD; //postponed games
 	private int GF;
 	private int GA;
-	public double winPct;
-	public double regPct;
-	public double playoffPct;
-	public String outcome;
-	public boolean madePlayoffs;
-	public boolean madeStates;
 	private int goalDifferential;
 	private double goalsForPerGame;
 	private double goalsAgainstPerGame;
@@ -21,35 +15,11 @@ class TotalRecord {
 	private String schoolName;
 	private int teamtypeid;
 
-	public TotalRecord() {
+	TotalRecord(String name, Integer typeid) {
 		GP = 0;
 		w = 0;
 		t = 0;
 		l = 0;
-		PPD = 0;
-		GF = 0;
-		GA = 0;
-		goalDifferential = 0;
-	}
-
-	public TotalRecord(String name) {
-		GP = 0;
-		w = 0;
-		t = 0;
-		l = 0;
-		PPD = 0;
-		GF = 0;
-		GA = 0;
-		goalDifferential = 0;
-		schoolName = name;
-	}
-
-	public TotalRecord(String name, Integer typeid) {
-		GP = 0;
-		w = 0;
-		t = 0;
-		l = 0;
-		PPD = 0;
 		GF = 0;
 		GA = 0;
 		goalDifferential = 0;
@@ -57,7 +27,7 @@ class TotalRecord {
 		teamtypeid = typeid;
 	}
 
-	public void endOfSeason() {
+	void endOfSeason() {
 		GP = w + t + l;
 		winPct = (w + 0.5 * t) / (GP) * 100;
 		goalDifferential = GF - GA;
@@ -66,7 +36,7 @@ class TotalRecord {
 		goalDiffPerGame = (double) goalDifferential / GP;
 	}
 
-	public void addGame(Game g) {
+	void addGame(Game g) {
 		GP++;
 		if (g.result.contains("W"))
 			w++;
@@ -74,8 +44,6 @@ class TotalRecord {
 			t++;
 		if (g.result.contains("L"))
 			l++;
-		if (g.result.contains("PPD"))
-			PPD++;
 		GF += g.goalsFor;
 		GA += g.goalsAgainst;
 	}
@@ -188,7 +156,7 @@ class TotalRecord {
 		}
 	}
 
-	public void printSeasonToTable(PrintWriter writer, String firstColumnData) {
+	void printSeasonToTable(PrintWriter writer, String firstColumnData) {
 		writer.println("<tr>");
 
 		writer.println("<td>");

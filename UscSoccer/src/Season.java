@@ -5,47 +5,27 @@ class Season {
 	private int w;
 	private int t;
 	private int l;
-	private int PPD; //postponed games
 	private int GF;
 	private int GA;
 	private int year;
 	private double winPct;
-	public double regPct;
-	public double playoffPct;
-	public String outcome;
-	public boolean madePlayoffs;
-	public boolean madeStates;
 	private int goalDifferential;
 	private double goalsForPerGame;
 	private double goalsAgainstPerGame;
 	private double goalDiffPerGame;
-	public String schoolName;
-	public int teamtypeid;
 
-	public Season() {
-		GP = 0;
-		w = 0;
-		t = 0;
-		l = 0;
-		PPD = 0;
-		GF = 0;
-		GA = 0;
-		goalDifferential = 0;
-	}
-
-	public Season(int year_) {
+	Season(int year_) {
 		year = year_;
 		GP = 0;
 		w = 0;
 		t = 0;
 		l = 0;
-		PPD = 0;
 		GF = 0;
 		GA = 0;
 		goalDifferential = 0;
 	}
 
-	public void endOfSeason() {
+	void endOfSeason() {
 		GP = w + t + l;
 		winPct = (w + 0.5 * t) / (GP) * 100;
 		goalDifferential = GF - GA;
@@ -54,7 +34,7 @@ class Season {
 		goalDiffPerGame = (double) goalDifferential / GP;
 	}
 
-	public void addGame(Game g) {
+	void addGame(Game g) {
 		GP++;
 		if (g.result.contains("W"))
 			w++;
@@ -62,8 +42,6 @@ class Season {
 			t++;
 		if (g.result.contains("L"))
 			l++;
-		if (g.result.contains("PPD"))
-			PPD++;
 		GF += g.goalsFor;
 		GA += g.goalsAgainst;
 	}
