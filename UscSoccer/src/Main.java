@@ -35,7 +35,7 @@ public class Main {
 				//writerSpecificSeasons.println(schoolName+" "+sportNumbers.get(teamtypeid));writerSpecificSeasons.println();
 				ArrayList<Game> g = new ArrayList<>(); // all games a team has played
 				Season seasons[] = new Season[15];
-				totalRecords.add(new TotalRecord(schoolName, teamtypeid));
+				totalRecords.add(new TotalRecord(schoolName));
 				int totalGameCounter = 0;
 				for (int year = 3; year < 15; year++) { // go from '03-'04 to '14-'15
 					if (year == 14 && teamtypeid != 1 && teamtypeid != 8 && teamtypeid != 9) // hasn't happened yet

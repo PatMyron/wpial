@@ -13,9 +13,8 @@ class TotalRecord {
 	private double goalsAgainstPerGame;
 	private double goalDiffPerGame;
 	private final String schoolName;
-	private final int teamtypeid;
 
-	TotalRecord(String name, Integer typeid) {
+	TotalRecord(String name) {
 		GP = 0;
 		w = 0;
 		t = 0;
@@ -24,7 +23,6 @@ class TotalRecord {
 		GA = 0;
 		goalDifferential = 0;
 		schoolName = name;
-		teamtypeid = typeid;
 	}
 
 	void endOfSeason() {
