@@ -16,7 +16,7 @@ public class Main {
 		//teamIdsFiller(teamids,allSchoolNames,eWriter);                              // fills schools set and teamids double map ( for new data)
 		fillSportEnumsAndSchoolNames();
 		Element table;
-		for (String schoolName : allSchoolNames) { // iterates through all schools
+		for (String schoolName : allSchoolNames) {
 			PrintWriter writerSchool = new PrintWriter("dataBySchool/" + schoolName + ".html", "UTF-8");
 			tableBeginning(writerSchool, "Sport");
 			List<TotalRecord> totalRecords = new ArrayList<>();
