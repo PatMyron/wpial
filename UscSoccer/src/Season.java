@@ -49,12 +49,10 @@ class Season {
 	public void printSeasonToTable(PrintWriter writer) {
 		writer.println("<tr>");
 
-		writer.println("<td>");
 		if (year != -1)
-			writer.println(year);
+			writeData(writer, year);
 		else
-			writer.println("TOTAL");
-		writer.println("</td>");
+			writeData(writer, "TOTAL");
 
 		for (int i : new int[]{GP, w, t, l, GF, GA, goalDifferential}) {
 			writeData(writer, i);
@@ -79,9 +77,9 @@ class Season {
 		writer.println("</tr>");
 	}
 
-	private void writeData(PrintWriter writer, int i) {
+	private void writeData(PrintWriter writer, Object o) {
 		writer.println("<td>");
-		writer.println(i);
+		writer.println(o);
 		writer.println("</td>");
 	}
 

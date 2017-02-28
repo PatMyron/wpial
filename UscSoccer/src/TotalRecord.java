@@ -50,11 +50,7 @@ class TotalRecord {
 		if (printSchoolName) {
 			writer.println("<tr>");
 
-			writer.println("<td>");
-			writer.println(schoolName);
-			writer.println("</td>");
-
-			for (int i : new int[]{GP, w, t, l}) {
+			for (Object i : new Object[]{schoolName, GP, w, t, l}) {
 				writeData(writer, i);
 			}
 
@@ -82,11 +78,7 @@ class TotalRecord {
 		} else {
 			writer.println("<tr>");
 
-			writer.println("<td>");
-			writer.println("TOTAL");
-			writer.println("</td>");
-
-			for (int i : new int[]{GP, w, t, l, GF, GA, goalDifferential}) {
+			for (Object i : new Object[]{"TOTAL", GP, w, t, l, GF, GA, goalDifferential}) {
 				writeData(writer, i);
 			}
 
@@ -110,20 +102,16 @@ class TotalRecord {
 		}
 	}
 
-	private void writeData(PrintWriter writer, final int i) {
+	private void writeData(PrintWriter writer, final Object o) {
 		writer.println("<td>");
-		writer.println(i);
+		writer.println(o);
 		writer.println("</td>");
 	}
 
 	void printSeasonToTable(PrintWriter writer, String firstColumnData) {
 		writer.println("<tr>");
 
-		writer.println("<td>");
-		writer.println(firstColumnData);
-		writer.println("</td>");
-
-		for (int i : new int[]{GP, w, t, l}) {
+		for (Object i : new Object[]{firstColumnData, GP, w, t, l}) {
 			writeData(writer, i);
 		}
 
