@@ -75,7 +75,7 @@ public class Main {
 			/*
 			sortTotalRecords(totalRecords);
 			for(TotalRecord tr: totalRecords)
-				tr.printSeasonToTable(writerSportSorted,Boolean.TRUE);
+				tr.printSeasonToTable(writerSportSorted,tr.schoolName);
 			*/
 			writerSchool.println("</table>");
 			writerSchool.close();
@@ -174,8 +174,7 @@ public class Main {
 
 		// /////////////////////////////////////////////////////////////////////
 
-		boolean conferenceGame = false; // CONFERENCE GAME
-		if (trtd[gameRow[i]][1].contains("*")) conferenceGame = true;
+		boolean conferenceGame = (trtd[gameRow[i]][1].contains("*")); // CONFERENCE GAME
 		String site = trtd[gameRow[i]][2]; // SITE
 
 		return new Game(opponent, result, goalsFor, goalsAgainst); // MISSING MATCHTYPE

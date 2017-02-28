@@ -62,22 +62,22 @@ class Season {
 		writer.printf("%5.1f %%", winPct);
 		writer.println("</td>");
 
-		for (double d : new double[]{goalsForPerGame, goalsAgainstPerGame, goalDiffPerGame}) {
-			writeDouble(writer, d);
-		}
+		writeDouble(writer, new double[]{goalsForPerGame, goalsAgainstPerGame, goalDiffPerGame});
 
 		writer.println("</tr>");
 	}
 
-	private void writeData(PrintWriter writer, Object o) {
+	private void writeData(PrintWriter writer, final Object o) {
 		writer.println("<td>");
 		writer.println(o);
 		writer.println("</td>");
 	}
 
-	private void writeDouble(PrintWriter writer, double d) {
-		writer.println("<td>");
-		writer.printf("%6.2f", d);
-		writer.println("</td>");
+	private void writeDouble(PrintWriter writer, final double[] arr) {
+		for (double d : arr) {
+			writer.println("<td>");
+			writer.printf("%6.2f", d);
+			writer.println("</td>");
+		}
 	}
 }
