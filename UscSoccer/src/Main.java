@@ -19,7 +19,7 @@ public class Main {
 			allSchoolNames.add(line);
 		reader.close();
 		fillSportsNumber(sportNumbers, allSportNums); // fills enum map sport # and set
-		org.jsoup.nodes.Element table = null;
+		org.jsoup.nodes.Element table;
 		double pctDone = 0;
 		for (String schoolName : allSchoolNames) { // iterates through all schools
 			PrintWriter writerSchool = new PrintWriter("dataBySchool/" + schoolName + ".html", "UTF-8");
@@ -147,7 +147,7 @@ public class Main {
 		// RESULT GOALS FOR/AGAINST      // /////////////////////////////////////
 		String result;
 		int goalsFor, goalsAgainst;
-		delims = "[\\(]";
+		delims = "[(]";
 		String[] tokens3 = trtd[gameRow[i]][3].split(delims);
 		delims = "[ -]+";
 		tokens3 = tokens3[0].split(delims);
@@ -209,7 +209,7 @@ public class Main {
 
 	public static void teamIdsFiller(TreeMap<Integer, TreeMap<String, String>> teamids, TreeSet<String> allSchoolNames, PrintWriter errorWriter) { // for new data
 		// only call when getting new data
-		org.jsoup.nodes.Document lookupDoc = null;
+		org.jsoup.nodes.Document lookupDoc;
 
 		for (int sportNum = 1; sportNum < 10; sportNum++) {
 			if (sportNum == 6 || sportNum == 7) continue; //dont know why... but no sports for #6 or #7
