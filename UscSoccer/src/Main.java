@@ -10,21 +10,20 @@ public class Main {
 		Map<Integer, String> sportNumbers = new TreeMap<>(); // enum 1=FOOTBALL etc.
 		// TreeMap<Integer,TreeMap<String,String>>        teamids  = new TreeMap<Integer,TreeMap<String,String>>();     // Keys: sport#,school   V: website code
 		TreeSet<String> allSchoolNames = new TreeSet<>(); // all WPIAL schools (142 of them)
-		TreeSet<Integer> allSportNums = new TreeSet<>();
 		//teamIdsFiller(teamids,allSchoolNames,eWriter);                              // fills schools set and teamids double map ( for new data)
 		String line;
 		BufferedReader reader = new BufferedReader(new FileReader("WPIAL schools.txt"));
 		while ((line = reader.readLine()) != null)
 			allSchoolNames.add(line);
 		reader.close();
-		fillSportsNumber(sportNumbers, allSportNums); // fills enum map sport # and set
+		fillSportsNumber(sportNumbers); // fills enum map sport # and set
 		org.jsoup.nodes.Element table;
 		double pctDone = 0;
 		for (String schoolName : allSchoolNames) { // iterates through all schools
 			PrintWriter writerSchool = new PrintWriter("dataBySchool/" + schoolName + ".html", "UTF-8");
 			tableBeginning(writerSchool, "Sport");
 			List<TotalRecord> totalRecords = new ArrayList<>();
-			for (Integer teamtypeid : allSportNums) { // iterates through all sports
+			for (Integer teamtypeid : sportNumbers.keySet()) { // iterates through all sports
 				if (schoolName.contains("Apollo") && teamtypeid == 9) // idk whats up with this team haha
 					continue;
 				System.out.printf("%3.1f", pctDone += 0.1);
@@ -115,7 +114,7 @@ public class Main {
 		return gameRowCounter;
 	}
 
-	private static void fillSportsNumber(Map<Integer, String> sportNumbers, TreeSet<Integer> allSportNums) {
+	private static void fillSportsNumber(Map<Integer, String> sportNumbers) {
 		sportNumbers.put(1, "FOOTBALL");
 		sportNumbers.put(2, "BASEBALL");
 		sportNumbers.put(3, "BASKETBALL");
@@ -123,13 +122,6 @@ public class Main {
 		sportNumbers.put(4, "WOMENS BASKETBALL");
 		sportNumbers.put(5, "WOMENS SOFTBALL");
 		sportNumbers.put(9, "WOMENS SOCCER");
-		allSportNums.add(1);
-		allSportNums.add(2);
-		allSportNums.add(3);
-		allSportNums.add(4);
-		allSportNums.add(5);
-		allSportNums.add(8);
-		allSportNums.add(9);
 	}
 
 	private static Game gameInformation(String[][] trtd, int i, int year,
