@@ -137,16 +137,4 @@ class TotalRecord {
 
 		writer.println("</tr>");
 	}
-
-	public int compareTo(TotalRecord o) {
-		int returnVal = 0;
-		if (winPct < o.winPct) {
-			returnVal = -1;
-		} else if (winPct > o.winPct) {
-			returnVal = 1;
-		} else if (winPct == o.winPct) {
-			returnVal = 0;
-		}
-		return returnVal;
-	}
 }
