@@ -3,6 +3,7 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.TreeSet;
@@ -15,7 +16,7 @@ public class Main {
 		Map<Integer, String> sportNumbers = new TreeMap<>();                     // enum 1=FOOTBALL etc.
 		TreeMap<Integer, TreeMap<String, String>> teamids = new TreeMap<>();     // Keys: sport#,school   V: website code
 		TreeSet<String> allSchoolNames = new TreeSet<>();                             // all WPIAL schools (142 of them)
-		java.util.Date date = new java.util.Date();
+		Date date = new Date();
 		PrintWriter eWriter = new PrintWriter("errors/errors" + date.getMonth() + date.getDate() + date.getHours() + date.getMinutes() + ".txt");
 		teamIdsFiller(teamids, allSchoolNames, eWriter);                              // fills schools set and teamids double map ( for new data)
 		fillSportsNumber(sportNumbers);                        // fills enum map sport #
