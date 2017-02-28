@@ -100,12 +100,4 @@ class Team {
 
 		writer.println("</tr>");
 	}
-
-	public void print() {
-		System.out.printf("%-38s GP: %2d      W: %2d  T: %2d  L: %2d     win pct.: %3.0f%%   GF: %4d  GA: %4d   +/-: %4d\n", name, GP, w, t, l, pct, GF, GA, goalDifferential);
-	}
-
-	public void print(PrintWriter writer) {
-		writer.printf("%-38s GP: %2d      W: %2d  T: %2d  L: %2d     win pct.: %3.0f%%   GF: %4d  GA: %4d   +/-: %4d\r\n", name, GP, w, t, l, pct, GF, GA, goalDifferential);
-	}
 }
