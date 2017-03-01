@@ -3,6 +3,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.*;
@@ -10,21 +11,23 @@ import java.util.*;
 public class Main {
 	private static final int timeoutTime = 70000;
 	private static final Map<Integer, String> sportNumbers = new TreeMap<>(); // enum 1=FOOTBALL etc.
+	private static final File errorFile = new File("errors/" + new Date().toInstant() + ".txt");
+	private static PrintWriter errorWriter;
 
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws IOException {
 		fillSportsNumber();
-		TreeMap<Integer, TreeMap<String, String>> teamids = new TreeMap<>();     // Keys: sport#,school   V: website code
+		errorWriter = new PrintWriter(errorFile);
+		TreeMap<Integer, TreeMap<String, String>> teamids = new TreeMap<>(); // Keys: sport#,school   V: website code
 		TreeSet<String> allSchoolNames = new TreeSet<>();  // all WPIAL schools (142 of them)
-		PrintWriter errorWriter = new PrintWriter("errors/errors" + new Date().toInstant() + ".txt");
-		teamIdsFiller(teamids, allSchoolNames, errorWriter); // fills schools set and teamids double map (for new data)
+		teamIdsFiller(teamids, allSchoolNames); // fills schools set and teamids double map (for new data)
 		PrintWriter schoolWriter = new PrintWriter("WPIAL schools.txt");
 		for (String schoolName : allSchoolNames) {
 			schoolWriter.println(schoolName);
 			for (Integer teamtypeid : sportNumbers.keySet()) {
 				for (int year = 3; year < 17; year++) { // from '03-'04
-					if (tableExists(year, teamids, teamtypeid, schoolName, errorWriter)) {
-						Element table = getTable(year, teamids, teamtypeid, schoolName, errorWriter);
+					if (tableExists(year, teamids, teamtypeid, schoolName)) {
+						Element table = getTable(year, teamids, teamtypeid, schoolName);
 						PrintWriter tWriter = new PrintWriter("tables/" + schoolName + sportNumbers.get(teamtypeid) + year + ".html");
 						tWriter.println(table);
 						tWriter.close();
@@ -46,8 +49,7 @@ public class Main {
 		sportNumbers.put(9, "WOMENS SOCCER");
 	}
 
-	private static void teamIdsFiller(TreeMap<Integer, TreeMap<String, String>> teamids, TreeSet<String> allSchoolNames, PrintWriter errorWriter) {
-		// only call when getting new data
+	private static void teamIdsFiller(TreeMap<Integer, TreeMap<String, String>> teamids, TreeSet<String> allSchoolNames) {
 		Document lookupDoc;
 		for (int sportNum : sportNumbers.keySet()) {
 			teamids.put(sportNum, new TreeMap<>());
@@ -110,7 +112,7 @@ public class Main {
 		}
 	}
 
-	private static boolean tableExists(int year, TreeMap<Integer, TreeMap<String, String>> teamids, int teamtypeid, String schoolName, PrintWriter eWriter) {
+	private static boolean tableExists(int year, TreeMap<Integer, TreeMap<String, String>> teamids, int teamtypeid, String schoolName) {
 		Document doc;
 		String teamid = teamids.get(teamtypeid).get(schoolName);
 		try {
@@ -124,22 +126,20 @@ public class Main {
 				doc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_record.asp?teamtypeid=" + teamtypeid + "&teamid={" + teamid + "}&py=20"
 						+ year).timeout(timeoutTime).get();
 		} catch (IOException e) {
-			eWriter.println("error message: " + e.getMessage() + " school: " + schoolName + " year: " + year + " sport: " + teamtypeid);
+			errorWriter.println("error message: " + e.getMessage() + " school: " + schoolName + " year: " + year + " sport: " + teamtypeid);
 			System.out.println("error message: " + e.getMessage() + " school: " + schoolName + " year: " + year + " sport: " + teamtypeid);
 			return false;
 		}
 		Element table = doc.select("table").first();
 		if (table == null) {
-			eWriter.println("table is null. " + " school: " + schoolName + " year: " + year + " sport: " + teamtypeid);
+			errorWriter.println("table is null. " + " school: " + schoolName + " year: " + year + " sport: " + teamtypeid);
 			System.out.println("table is null. " + " school: " + schoolName + " year: " + year + " sport: " + teamtypeid);
 			return false;
 		}
 		return true;
 	}
 
-	private static Element getTable(int year, TreeMap<Integer, TreeMap<String, String>> teamids, int teamtypeid, String schoolName, PrintWriter eWriter) {
-		// gets Table from site.. only use when there is new data
-		//		table = getTable(year,teamids,teamtypeid,schoolName,eWriter);
+	private static Element getTable(int year, TreeMap<Integer, TreeMap<String, String>> teamids, int teamtypeid, String schoolName) {
 		Document doc;
 		String teamid = teamids.get(teamtypeid).get(schoolName);
 		try {
@@ -153,7 +153,7 @@ public class Main {
 				doc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_record.asp?teamtypeid="
 						+ teamtypeid + "&teamid={" + teamid + "}&py=20" + year).timeout(timeoutTime).get();
 		} catch (IOException e) {
-			// eWriter.println("error message: "+e.getMessage()+" school: "+schoolName+" year: "+year+" sport: "+teamtypeid);
+			// errorWriter.println("error message: "+e.getMessage()+" school: "+schoolName+" year: "+year+" sport: "+teamtypeid);
 			// System.out.println("error message: "+e.getMessage()+" school: "+schoolName+" year: "+year+" sport: "+teamtypeid);
 			return null;
 		}
