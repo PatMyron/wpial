@@ -8,7 +8,7 @@ import java.io.PrintWriter;
 import java.util.*;
 
 public class Main {
-	private static final int timeoutTime = 60000;
+	private static final int timeoutTime = 70000;
 
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws IOException {
