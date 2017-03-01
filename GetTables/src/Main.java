@@ -10,6 +10,7 @@ import java.util.*;
 
 public class Main {
 	private static final int timeoutTime = 70000;
+	private static final int END_OF_CURRENT_SEASON = 2017;
 	private static final Map<Integer, String> sportNumbers = new TreeMap<>(); // enum 1=FOOTBALL etc.
 	private static final File errorFile = new File("errors/" + new Date().toInstant() + ".txt");
 	private static PrintWriter errorWriter;
@@ -25,7 +26,7 @@ public class Main {
 		for (String schoolName : allSchoolNames) {
 			schoolWriter.println(schoolName);
 			for (Integer teamtypeid : sportNumbers.keySet()) {
-				for (int year = 2003; year < 2017; year++) { // from '03-'04
+				for (int year = 2003; year < END_OF_CURRENT_SEASON; year++) { // from '03-'04
 					Element table = getTable(year, teamids, teamtypeid, schoolName);
 					if (table == null) {
 						log("table is null. " + " school: " + schoolName + " year: " + year + " sport: " + teamtypeid);
@@ -79,9 +80,9 @@ public class Main {
 					allSchoolNames.add(teamName);
 				}
 			}
-			for (int year = 2003; year < 2017; year++) {
+			for (int year = 2003; year < END_OF_CURRENT_SEASON; year++) {
 				try {
-					if (year < 16)
+					if (year < END_OF_CURRENT_SEASON-1)
 						lookupDoc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/statsPrevYears/team_lookup.asp?teamtypeid="
 								+ sportNum + "&py=" + year).timeout(timeoutTime).get();
 					else
@@ -117,7 +118,7 @@ public class Main {
 		Document doc;
 		String teamid = teamids.get(teamtypeid).get(schoolName);
 		try {
-			if (year < 16)
+			if (year < END_OF_CURRENT_SEASON-1)
 				doc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/statsPrevYears/team_record.asp?teamtypeid="
 						+ teamtypeid + "&teamid={" + teamid + "}&py=" + year).timeout(timeoutTime).get();
 			else
