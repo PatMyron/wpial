@@ -199,60 +199,6 @@ public class Main {
 		return new Date(year + 100, month, day, hrs, min);
 	}
 
-	public static void teamIdsFiller(TreeMap<Integer, TreeMap<String, String>> teamids, PrintWriter errorWriter) { // for new data
-		// only call when getting new data
-		Document lookupDoc;
-
-		for (int sportNum : sportEnums.keySet()) {
-			teamids.put(sportNum, new TreeMap<>());
-			try {
-				lookupDoc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_lookup.asp?teamtypeid=" + sportNum).get();
-			} catch (IOException e) {
-				errorWriter.println("Missed entire sport for getting allSchoolNames. Sport #: " + sportNum);
-				System.out.println("Missed entire sport for getting allSchoolNames. Sport #: " + sportNum);
-				continue;
-			}
-			Element table = lookupDoc.select("table").first();
-			Elements trs = table.select("tr");
-			String[][] trtd = new String[trs.size()][];
-			for (int r = 0; r < trs.size(); r++) {
-				Elements tds = trs.get(r).select("td");
-				trtd[r] = new String[tds.size()];
-				for (int c = 0; c < tds.size(); c++) {
-					trtd[r][c] = tds.get(c).html();
-					String teamName = tds.get(c).text();
-					if (teamName.length() < 3) continue; //skips blanks
-					String delims = "[{}]+";
-					String[] splitupTeamId = trtd[r][c].split(delims);
-					String teamid = splitupTeamId[1];
-					teamids.get(sportNum).put(teamName, teamid);
-					allSchoolNames.add(teamName);
-				}
-			}
-		}
-	}
-
-	public static Element getTable(int year, TreeMap<Integer, TreeMap<String, String>> teamids, int teamtypeid, String schoolName, PrintWriter eWriter) { // for new data
-		// gets Table from site.. only use when there is new data
-		// // called this way
-		//		table = getTable(year,teamids,teamtypeid,schoolName,eWriter);
-		Document doc;
-		String teamid = teamids.get(teamtypeid).get(schoolName);
-		try {
-			if (year < 10)
-				doc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/statsPrevYears/team_record.asp?teamtypeid=" + teamtypeid + "&teamid={" + teamid + "}&py=200" + year).timeout(10 * 4000).get();
-			else if (year < 14)
-				doc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/statsPrevYears/team_record.asp?teamtypeid=" + teamtypeid + "&teamid={" + teamid + "}&py=20" + year).timeout(10 * 4000).get();
-			else
-				doc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_record.asp?teamtypeid=" + teamtypeid + "&teamid={" + teamid + "}&py=20" + year).timeout(10 * 4000).get();
-		} catch (IOException e) {
-			eWriter.println("error message: " + e.getMessage() + " school: " + schoolName + " year: " + year + " sport: " + teamtypeid);
-			System.out.println("error message: " + e.getMessage() + " school: " + schoolName + " year: " + year + " sport: " + teamtypeid);
-			return null;
-		}
-		return doc.select("table").first();
-	}
-
 	private static void setupOpponentAlphabetically(ArrayList<Game> g, TreeMap<String, SeasonTemplate> teamMap) {
 		for (Game games : g) {
 			teamMap.get(games.opponent).addGame(games);
