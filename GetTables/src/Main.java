@@ -12,13 +12,12 @@ public class Main {
 
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws IOException {
-		Map<Integer, String> sportNumbers = new TreeMap<>();                     // enum 1=FOOTBALL etc.
+		Map<Integer, String> sportNumbers = new TreeMap<>(); // enum 1=FOOTBALL etc.
 		TreeMap<Integer, TreeMap<String, String>> teamids = new TreeMap<>();     // Keys: sport#,school   V: website code
-		TreeSet<String> allSchoolNames = new TreeSet<>();                             // all WPIAL schools (142 of them)
-		Date date = new Date();
-		PrintWriter eWriter = new PrintWriter("errors/errors" + date.getMonth() + date.getDate() + date.getHours() + date.getMinutes() + ".txt");
+		TreeSet<String> allSchoolNames = new TreeSet<>();  // all WPIAL schools (142 of them)
+		PrintWriter eWriter = new PrintWriter("errors/errors" + new Date().toInstant() + ".txt");
 		teamIdsFiller(teamids, allSchoolNames, eWriter);                              // fills schools set and teamids double map ( for new data)
-		fillSportsNumber(sportNumbers);                        // fills enum map sport #
+		fillSportsNumber(sportNumbers);
 		Element table;
 		PrintWriter schoolWriter = new PrintWriter("WPIAL schools.txt");
 		for (String schoolName : allSchoolNames) {        // iterates through all schools
@@ -74,10 +73,9 @@ public class Main {
 
 	private static void teamIdsFiller(TreeMap<Integer, TreeMap<String, String>> teamids, TreeSet<String> allSchoolNames, PrintWriter errorWriter) { // for new data
 		// only call when getting new data
-		double pctDone = 0;
 		Document lookupDoc;
 		for (int sportNum = 1; sportNum < 10; sportNum++) {
-			if (sportNum == 6 || sportNum == 7) continue; //dont know why... but no sports for #6 or #7
+			if (sportNum == 6 || sportNum == 7) continue; // no sports for #6 or #7
 			teamids.put(sportNum, new TreeMap<>());
 			try {
 				lookupDoc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_lookup.asp?teamtypeid=" + sportNum).timeout(timeoutTime).get();
@@ -104,8 +102,6 @@ public class Main {
 				}
 			}
 			for (int year = 3; year < 15; year++) {
-				System.out.printf("%3.1f", pctDone += 1.1);
-				System.out.println(" % teamidsfiller");
 				try {
 					if (year < 10) {
 						lookupDoc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/statsPrevYears/team_lookup.asp?teamtypeid=" + sportNum + "&py=200" + year).timeout(timeoutTime).get();
