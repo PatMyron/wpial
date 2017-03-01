@@ -122,8 +122,7 @@ public class Main {
 
 	private static Game gameInformation(String[][] trtd, int i, int[] gameRow) {
 		//  OPPONENT
-		String delims = "[*]+";
-		String[] tokenOpponent = trtd[gameRow[i]][1].split(delims)[0].split("at ");
+		String[] tokenOpponent = trtd[gameRow[i]][1].split("[*]+")[0].split("at ");
 		String opponent = tokenOpponent[tokenOpponent.length - 1];
 		if (opponent.contains("Seton-La")) opponent = "Seton-La Salle";
 
