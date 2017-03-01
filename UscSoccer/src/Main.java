@@ -11,8 +11,6 @@ public class Main {
 	private static final TreeSet<String> allSchoolNames = new TreeSet<>(); // all WPIAL schools (142 of them)
 
 	public static void main(String[] args) throws IOException {
-		// TreeMap<Integer,TreeMap<String,String>> teamids  = new TreeMap<Integer,TreeMap<String,String>>(); // Keys: sport#,school   V: website code
-		// teamIdsFiller(teamids,allSchoolNames,eWriter); // fills schools set and teamids double map ( for new data)
 		fillSportEnumsAndSchoolNames();
 		Element table;
 		for (String schoolName : allSchoolNames) {
