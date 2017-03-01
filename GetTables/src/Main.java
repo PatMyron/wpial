@@ -19,10 +19,10 @@ public class Main {
 		PrintWriter errorWriter = new PrintWriter("errors/errors" + new Date().toInstant() + ".txt");
 		teamIdsFiller(teamids, allSchoolNames, errorWriter); // fills schools set and teamids double map (for new data)
 		PrintWriter schoolWriter = new PrintWriter("WPIAL schools.txt");
-		for (String schoolName : allSchoolNames) {        // iterates through all schools
+		for (String schoolName : allSchoolNames) {
 			schoolWriter.println(schoolName);
-			for (Integer teamtypeid : sportNumbers.keySet()) {        // iterates through all sports
-				for (int year = 3; year < 15; year++) { // go from '03-'04 to '14-'15
+			for (Integer teamtypeid : sportNumbers.keySet()) {
+				for (int year = 3; year < 17; year++) { // from '03-'04
 					if (tableExists(year, teamids, teamtypeid, schoolName, errorWriter)) {
 						Element table = getTable(year, teamids, teamtypeid, schoolName, errorWriter);
 						PrintWriter tWriter = new PrintWriter("tables/" + schoolName + sportNumbers.get(teamtypeid) + year + ".html");
