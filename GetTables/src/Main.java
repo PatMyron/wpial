@@ -42,21 +42,6 @@ public class Main {
 		}            // end outer for loop
 		schoolWriter.close();
 		errorWriter.close();
-	}            // end main
-
-	private static int getTableData(Elements trs, String[][] trtd, int[] gameRow) {
-		int gameRowCounter = 0;
-		for (int i = 0; i < trs.size(); i++) {
-			Elements tds = trs.get(i).select("td");
-			trtd[i] = new String[tds.size()];
-			for (int j = 0; j < tds.size(); j++) {
-				trtd[i][j] = tds.get(j).text();
-				if (!tds.get(j).text().isEmpty() && j == 0) {
-					gameRow[gameRowCounter++] = i; // skip <th> columns and checks to make sure game not already in gameRow[]
-				}
-			}
-		}
-		return gameRowCounter;
 	}
 
 	private static void fillSportsNumber() {
@@ -160,7 +145,7 @@ public class Main {
 		return true;
 	}
 
-	private static Element getTable(int year, TreeMap<Integer, TreeMap<String, String>> teamids, int teamtypeid, String schoolName, PrintWriter eWriter) { // for new data
+	private static Element getTable(int year, TreeMap<Integer, TreeMap<String, String>> teamids, int teamtypeid, String schoolName, PrintWriter eWriter) {
 		// gets Table from site.. only use when there is new data
 		//		table = getTable(year,teamids,teamtypeid,schoolName,eWriter);
 		Document doc;
