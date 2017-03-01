@@ -3,7 +3,7 @@ import java.io.PrintWriter;
 class TotalRecord extends SeasonTemplate {
 	private final String schoolName;
 
-	TotalRecord(String name) {
+	TotalRecord(String schoolName_) {
 		GP = 0;
 		w = 0;
 		t = 0;
@@ -11,7 +11,7 @@ class TotalRecord extends SeasonTemplate {
 		GF = 0;
 		GA = 0;
 		goalDifferential = 0;
-		schoolName = name;
+		schoolName = schoolName_;
 	}
 
 	void printSeasonToTable(PrintWriter writer, String firstColumnData) {
