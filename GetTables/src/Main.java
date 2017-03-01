@@ -124,8 +124,8 @@ public class Main {
 						String teamName = tds.get(c).text();
 						if (teamName.length() < 3) continue; //skips blanks
 						String delims = "[{}]+";
-						String[] splitupTeamId = trtd[r][c].split(delims);
-						String teamid = splitupTeamId[1];
+						String[] splitUpTeamId = trtd[r][c].split(delims);
+						String teamid = splitUpTeamId[1];
 						teamids.get(sportNum).put(teamName, teamid);
 						allSchoolNames.add(teamName);
 					}
