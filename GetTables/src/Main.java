@@ -22,11 +22,11 @@ public class Main {
 		PrintWriter schoolWriter = new PrintWriter("WPIAL schools.txt");
 		for (String schoolName : allSchoolNames) {        // iterates through all schools
 			schoolWriter.println(schoolName);
-			for (Integer teamTypeId : sportNumbers.keySet()) {        // iterates through all sports
+			for (Integer teamtypeid : sportNumbers.keySet()) {        // iterates through all sports
 				for (int year = 3; year < 15; year++) { // go from '03-'04 to '14-'15
-					if (tableExists(year, teamids, teamTypeId, schoolName, errorWriter)) {
-						table = getTable(year, teamids, teamTypeId, schoolName, errorWriter);
-						PrintWriter tWriter = new PrintWriter("tables/" + schoolName + sportNumbers.get(teamTypeId) + year + ".html");
+					if (tableExists(year, teamids, teamtypeid, schoolName, errorWriter)) {
+						table = getTable(year, teamids, teamtypeid, schoolName, errorWriter);
+						PrintWriter tWriter = new PrintWriter("tables/" + schoolName + sportNumbers.get(teamtypeid) + year + ".html");
 						tWriter.println(table);
 						tWriter.close();
 					} else
@@ -93,8 +93,8 @@ public class Main {
 					String teamName = tds.get(c).text();
 					if (teamName.length() < 3) continue; //skips blanks
 					String delims = "[{}]+";
-					String[] splitupTeamId = trtd[r][c].split(delims);
-					String teamid = splitupTeamId[1];
+					String[] splitUpTeamId = trtd[r][c].split(delims);
+					String teamid = splitUpTeamId[1];
 					teamids.get(sportNum).put(teamName, teamid);
 					allSchoolNames.add(teamName);
 				}
