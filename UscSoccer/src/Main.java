@@ -66,11 +66,6 @@ public class Main {
 					sortOpponentsByGP(opposingTeams); // sorts by games played into opposingTeams
 				}
 			} // end inner for loop
-			/*
-			sortTotalRecords(totalRecords);
-			for(TotalRecord tr: totalRecords)
-				tr.printSeasonToTable(writerSportSorted,tr.schoolName);
-			*/
 			writerSchool.println("</table>");
 			writerSchool.close();
 		}
