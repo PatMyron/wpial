@@ -137,7 +137,7 @@ public class Main {
 		delims = "[ -]+";
 		tokens3 = tokens3[0].split(delims);
 		result = tokens3[0];
-		if (tokens3[0].contains("PPD")) {
+		if (result.contains("PPD")) {
 			goalsFor = 0;
 			goalsAgainst = 0;
 		} else {
