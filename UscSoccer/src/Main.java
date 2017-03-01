@@ -206,11 +206,4 @@ public class Main {
 	private static void sortOpponentsByGP(List<SeasonTemplate> teams) {
 		teams.sort((o1, o2) -> o2.GP - o1.GP); // TODO private
 	}
-
-	private static void sortTotalRecords(List<SeasonTemplate> totalRecords) {
-		totalRecords.sort((o1, o2) -> {
-			if (o1.winPct == o2.winPct) return 0; // TODO private
-			return (o1.winPct > o2.winPct) ? -1 : 1;
-		});
-	}
 }
