@@ -12,16 +12,15 @@ public class Main {
 	private static final int timeoutTime = 70000;
 	private static final int END_OF_CURRENT_SEASON = 2017;
 	private static final Map<Integer, String> sportNumbers = new TreeMap<>(); // enum 1=FOOTBALL etc.
-	private static final File errorFile = new File("errors/" + new Date().toInstant() + ".txt");
 	private static PrintWriter errorWriter;
+	private static final TreeSet<String> allSchoolNames = new TreeSet<>();  // all WPIAL schools (142 of them)
 
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws IOException {
 		fillSportsNumber();
-		errorWriter = new PrintWriter(errorFile);
+		errorWriter = new PrintWriter(new File("errors/" + new Date().toInstant() + ".txt"));
 		TreeMap<Integer, TreeMap<String, String>> teamids = new TreeMap<>(); // Keys: sport#,school   V: website code
-		TreeSet<String> allSchoolNames = new TreeSet<>();  // all WPIAL schools (142 of them)
-		teamIdsFiller(teamids, allSchoolNames); // fills schools set and teamids double map (for new data)
+		teamIdsFiller(teamids); // fills schools set and teamids double map (for new data)
 		PrintWriter schoolWriter = new PrintWriter("WPIAL schools.txt");
 		for (String schoolName : allSchoolNames) {
 			schoolWriter.println(schoolName);
@@ -32,8 +31,7 @@ public class Main {
 						log("table is null. " + " school: " + schoolName + " year: " + year + " sport: " + teamtypeid);
 						continue;
 					}
-					File tableFile = new File("tables/" + schoolName + sportNumbers.get(teamtypeid) + year + ".html");
-					PrintWriter tWriter = new PrintWriter(tableFile);
+					PrintWriter tWriter = new PrintWriter(new File("tables/" + schoolName + sportNumbers.get(teamtypeid) + year + ".html"));
 					tWriter.println(table);
 					tWriter.close();
 				}
@@ -53,7 +51,7 @@ public class Main {
 		sportNumbers.put(9, "WOMENS SOCCER");
 	}
 
-	private static void teamIdsFiller(TreeMap<Integer, TreeMap<String, String>> teamids, TreeSet<String> allSchoolNames) {
+	private static void teamIdsFiller(TreeMap<Integer, TreeMap<String, String>> teamids) {
 		Document lookupDoc;
 		for (int sportNum : sportNumbers.keySet()) {
 			teamids.put(sportNum, new TreeMap<>());
@@ -63,22 +61,7 @@ public class Main {
 				log("MISSED ENTIRE SPORT for getting allSchoolNames+teamids. Sport #: " + sportNum);
 				continue;
 			}
-			Element table = lookupDoc.select("table").first();
-			Elements trs = table.select("tr");
-			String[][] trtd = new String[trs.size()][];
-			for (int r = 0; r < trs.size(); r++) {
-				Elements tds = trs.get(r).select("td");
-				trtd[r] = new String[tds.size()];
-				for (int c = 0; c < tds.size(); c++) {
-					trtd[r][c] = tds.get(c).html();
-					String teamName = tds.get(c).text();
-					if (teamName.length() < 3) continue; // skips blanks
-					String[] splitUpTeamId = trtd[r][c].split("[{}]+");
-					String teamid = splitUpTeamId[1];
-					teamids.get(sportNum).put(teamName, teamid);
-					allSchoolNames.add(teamName);
-				}
-			}
+			actuallyFill(teamids, lookupDoc, sportNum);
 			for (int year = 2003; year < END_OF_CURRENT_SEASON; year++) {
 				try {
 					if (year < END_OF_CURRENT_SEASON - 1)
@@ -91,23 +74,24 @@ public class Main {
 					log("MISSED teamids for Sport #: " + sportNum + " and year: " + year);
 					continue;
 				}
-				// do it for all of them
-				table = lookupDoc.select("table").first();
-				trs = table.select("tr");
-				trtd = new String[trs.size()][];
-				for (int r = 0; r < trs.size(); r++) {
-					Elements tds = trs.get(r).select("td");
-					trtd[r] = new String[tds.size()];
-					for (int c = 0; c < tds.size(); c++) {
-						trtd[r][c] = tds.get(c).html();
-						String teamName = tds.get(c).text();
-						if (teamName.length() < 3) continue; // skips blanks
-						String[] splitUpTeamId = trtd[r][c].split("[{}]+");
-						String teamid = splitUpTeamId[1];
-						teamids.get(sportNum).put(teamName, teamid);
-						allSchoolNames.add(teamName);
-					}
-				}
+				actuallyFill(teamids, lookupDoc, sportNum);
+			}
+		}
+	}
+
+	private static void actuallyFill(TreeMap<Integer, TreeMap<String, String>> teamids, Document lookupDoc, int sportNum) {
+		Elements trs = lookupDoc.select("table").first().select("tr");
+		String[][] trtd = new String[trs.size()][];
+		for (int r = 0; r < trs.size(); r++) {
+			Elements tds = trs.get(r).select("td");
+			trtd[r] = new String[tds.size()];
+			for (int c = 0; c < tds.size(); c++) {
+				trtd[r][c] = tds.get(c).html();
+				String teamName = tds.get(c).text();
+				if (teamName.length() < 3) continue; // skips blanks
+				String teamid = trtd[r][c].split("[{}]+")[1];
+				teamids.get(sportNum).put(teamName, teamid);
+				allSchoolNames.add(teamName);
 			}
 		}
 	}
