@@ -76,7 +76,7 @@ public class Main {
 		for (int i = 0; i < gamesInSeason; i++) {
 			if (trtd[gameRow[i]][3].contains("W") || trtd[gameRow[i]][3].contains("T") || trtd[gameRow[i]][3].contains("L")) {
 				if (!trtd[gameRow[i]][3].contains("PPD")) {
-					g.add(gameInformation(trtd, i, year, gameRow));
+					g.add(gameInformation(trtd, i, gameRow));
 					seasons[year].addGame(g.get(totalGameCounter));
 					totalRecords.get(schoolNum).addGame(g.get(totalGameCounter)); // for total count
 					totalGameCounter++;
@@ -120,9 +120,7 @@ public class Main {
 		reader.close();
 	}
 
-	private static Game gameInformation(String[][] trtd, int i, int year,
-										int[] gameRow) {
-		Date d1 = DateTimeGetter(trtd, i, year, gameRow);
+	private static Game gameInformation(String[][] trtd, int i, int[] gameRow) {
 		////  OPPONENT ///////////////////////////////////////////////////////////////////////////
 		String delims = "[*]+";
 		String[] tokenOpponent = trtd[gameRow[i]][1].split(delims);
@@ -165,33 +163,6 @@ public class Main {
 		String site = trtd[gameRow[i]][2]; // SITE
 
 		return new Game(opponent, result, goalsFor, goalsAgainst); // MISSING MATCHTYPE
-	}
-
-	private static Date DateTimeGetter(String[][] trtd, int i, int year, int[] gameRow) {
-		String delims = "[ /]+";
-		String[] tokens0 = trtd[gameRow[i]][0].split(delims);
-		int hrs, month, day;
-		int min = 0;
-		if (trtd[gameRow[i]][0].equals("TBA")) {
-			month = 0;
-			day = 0;
-			hrs = 0;
-			min = 0;
-		} else {
-			if (!tokens0[2].contains(":")) {
-				if (tokens0[2].contains("TBA")) hrs = 0;
-				else hrs = Integer.parseInt(tokens0[2]);
-			} else { // not on the hour
-				delims = "[: ]+";
-				String[] timeToken = tokens0[2].split(delims);
-				hrs = Integer.parseInt(timeToken[0]);
-				min = Integer.parseInt(timeToken[1]);
-			}
-			month = Integer.parseInt(tokens0[0]) - 1;
-			day = Integer.parseInt(tokens0[1]);
-		}
-		//noinspection deprecation
-		return new Date(year + 100, month, day, hrs, min);
 	}
 
 	private static void setupOpponentAlphabetically(ArrayList<Game> g, TreeMap<String, SeasonTemplate> teamMap) {
