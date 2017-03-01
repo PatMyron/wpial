@@ -8,7 +8,7 @@ import java.io.PrintWriter;
 import java.util.*;
 
 public class Main {
-	static int timeoutTime = 60000;
+	private static final int timeoutTime = 60000;
 
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws IOException {
@@ -20,14 +20,9 @@ public class Main {
 		teamIdsFiller(teamids, allSchoolNames, eWriter);                              // fills schools set and teamids double map ( for new data)
 		fillSportsNumber(sportNumbers);                        // fills enum map sport #
 		Element table;
-		double pctDone = 0;
 		PrintWriter schoolWriter = new PrintWriter("WPIAL schools.txt");
 		for (String schoolName : allSchoolNames) {        // iterates through all schools
 			schoolWriter.println(schoolName);
-
-			System.out.printf("%3.1f", pctDone += 0.7);
-			System.out.println(" %");
-			continue;
 			for (Integer teamtypeid : sportNumbers.keySet()) {        // iterates through all sports
 				for (int year = 3; year < 15; year++) { // go from '03-'04 to '14-'15
 					if (year == 14 && teamtypeid != 1 && teamtypeid != 8 && teamtypeid != 9) // hasn't happened yet
