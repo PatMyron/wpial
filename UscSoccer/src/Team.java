@@ -1,5 +1,5 @@
 class Team extends SeasonTemplate {
-	private String name;
+	private final String schoolName;
 
 	Team(String opponent) {
 		GP = 0;
@@ -8,8 +8,7 @@ class Team extends SeasonTemplate {
 		l = 0;
 		GF = 0;
 		GA = 0;
-		name = "";
 		goalDifferential = 0;
-		name = opponent;
+		schoolName = opponent;
 	}
 }
