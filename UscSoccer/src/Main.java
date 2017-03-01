@@ -121,12 +121,10 @@ public class Main {
 	}
 
 	private static Game gameInformation(String[][] trtd, int i, int[] gameRow) {
-		////  OPPONENT ///////////////////////////////////////////////////////////////////////////
+		//  OPPONENT
 		String delims = "[*]+";
-		String[] tokenOpponent = trtd[gameRow[i]][1].split(delims);
-		String[] tokenOpponent2 = tokenOpponent[0].split("at ");
-		String opponent = tokenOpponent2[tokenOpponent2.length - 1]; // OPPONENT
-
+		String[] tokenOpponent = trtd[gameRow[i]][1].split(delims)[0].split("at ");
+		String opponent = tokenOpponent[tokenOpponent.length - 1];
 		if (opponent.contains("Seton-La")) opponent = "Seton-La Salle";
 
 		// RESULT GOALS FOR/AGAINST      // /////////////////////////////////////
