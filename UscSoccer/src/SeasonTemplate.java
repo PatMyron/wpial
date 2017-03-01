@@ -2,18 +2,41 @@ import java.io.PrintWriter;
 
 class SeasonTemplate {
 	int GP;
-	int w;
-	int t;
-	int l;
-	int GF;
-	int GA;
-	int goalDifferential;
+	private int w;
+	private int t;
+	private int l;
+	private int GF;
+	private int GA;
+	private int goalDifferential;
 	double winPct;
-	double goalsForPerGame;
-	double goalsAgainstPerGame;
-	double goalDiffPerGame;
+	private double goalsForPerGame;
+	private double goalsAgainstPerGame;
+	private double goalDiffPerGame;
 
-	static void writeDoublesToHTMLTable(PrintWriter writer, final double[] arr) {
+	private String schoolName;
+	private int year;
+
+	private SeasonTemplate() {
+		GP = 0;
+		w = 0;
+		t = 0;
+		l = 0;
+		GF = 0;
+		GA = 0;
+		goalDifferential = 0;
+	}
+
+	SeasonTemplate(String schoolName_) {
+		this();
+		schoolName = schoolName_;
+	}
+
+	SeasonTemplate(int year_) {
+		this();
+		year = year_;
+	}
+
+	private static void writeDoublesToHTMLTable(PrintWriter writer, final double[] arr) {
 		for (double d : arr) {
 			writer.println("<td>");
 			writer.printf("%6.2f", d);
@@ -21,7 +44,7 @@ class SeasonTemplate {
 		}
 	}
 
-	static void writeDataToHTMLTable(PrintWriter writer, final Object[] arr) {
+	private static void writeDataToHTMLTable(PrintWriter writer, final Object[] arr) {
 		for (Object o : arr) {
 			writer.println("<td>");
 			writer.println(o);

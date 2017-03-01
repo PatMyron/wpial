@@ -18,20 +18,20 @@ public class Main {
 		for (String schoolName : allSchoolNames) {
 			PrintWriter writerSchool = new PrintWriter("dataBySchool/" + schoolName + ".html", "UTF-8");
 			tableBeginning(writerSchool, "Sport");
-			List<TotalRecord> totalRecords = new ArrayList<>();
+			List<SeasonTemplate> totalRecords = new ArrayList<>();
 			for (Integer teamtypeid : sportEnums.keySet()) { // iterates through all sports
 				if (schoolName.contains("Apollo") && teamtypeid == 9) // idk whats up with this team
 					continue;
 				// PrintWriter writerSort = new PrintWriter("specificData/"+schoolName+"+"+sportEnums.get(teamtypeid)+"/opponentsGP.html", "UTF-8");
 				// writerSpecificSeasons.println(schoolName+" "+sportEnums.get(teamtypeid));writerSpecificSeasons.println();
 				ArrayList<Game> g = new ArrayList<>(); // all games a team has played
-				Season seasons[] = new Season[15];
-				totalRecords.add(new TotalRecord(schoolName));
+				SeasonTemplate seasons[] = new SeasonTemplate[15];
+				totalRecords.add(new SeasonTemplate(schoolName));
 				int totalGameCounter = 0;
 				for (int year = 3; year < 15; year++) { // go from '03-'04 to '14-'15
 					if (year == 14 && teamtypeid != 1 && teamtypeid != 8 && teamtypeid != 9) // hasn't happened yet
 						continue;
-					seasons[year] = new Season(year + 2000);
+					seasons[year] = new SeasonTemplate(year + 2000);
 					File f = new File("tables/" + schoolName + sportEnums.get(teamtypeid) + year + ".html");
 					if (f.exists() && !f.isDirectory()) {
 						Document doc = Jsoup.parse(f, "UTF-8");
@@ -55,10 +55,10 @@ public class Main {
 						if (!games.result.contains("PPD"))
 							opponents.add(games.opponent); // initializing with all opponents
 					}
-					TreeMap<String, Team> teamMap = new TreeMap<>();
-					List<Team> opposingTeams = new ArrayList<>(opponents.size());
+					TreeMap<String, SeasonTemplate> teamMap = new TreeMap<>();
+					List<SeasonTemplate> opposingTeams = new ArrayList<>(opponents.size());
 					for (String opponent : opponents) {
-						Team t = new Team(opponent);
+						SeasonTemplate t = new SeasonTemplate(opponent);
 						opposingTeams.add(t);
 						teamMap.put(opponent, t);
 					}
@@ -76,8 +76,8 @@ public class Main {
 		}
 	}
 
-	private static int addGames(String[][] trtd, int[] gameRow, int year, Season[] seasons, ArrayList<Game> g, int gamesInSeason,
-								List<TotalRecord> totalRecords, int schoolNum, int totalGameCounter) {
+	private static int addGames(String[][] trtd, int[] gameRow, int year, SeasonTemplate[] seasons, ArrayList<Game> g, int gamesInSeason,
+								List<SeasonTemplate> totalRecords, int schoolNum, int totalGameCounter) {
 		for (int i = 0; i < gamesInSeason; i++) {
 			if (trtd[gameRow[i]][3].contains("W") || trtd[gameRow[i]][3].contains("T") || trtd[gameRow[i]][3].contains("L")) {
 				if (!trtd[gameRow[i]][3].contains("PPD")) {
@@ -253,20 +253,20 @@ public class Main {
 		return doc.select("table").first();
 	}
 
-	private static void setupOpponentAlphabetically(ArrayList<Game> g, TreeMap<String, Team> teamMap) {
+	private static void setupOpponentAlphabetically(ArrayList<Game> g, TreeMap<String, SeasonTemplate> teamMap) {
 		for (Game games : g) {
 			teamMap.get(games.opponent).addGame(games);
 		}
-		for (Map.Entry<String, Team> entry : teamMap.entrySet()) {
+		for (Map.Entry<String, SeasonTemplate> entry : teamMap.entrySet()) {
 			entry.getValue().endOfSeason();
 		}
 	}
 
-	private static void sortOpponentsByGP(List<Team> teams) {
+	private static void sortOpponentsByGP(List<SeasonTemplate> teams) {
 		teams.sort((o1, o2) -> o2.GP - o1.GP); // TODO private
 	}
 
-	private static void sortTotalRecords(List<TotalRecord> totalRecords) {
+	private static void sortTotalRecords(List<SeasonTemplate> totalRecords) {
 		totalRecords.sort((o1, o2) -> {
 			if (o1.winPct == o2.winPct) return 0; // TODO private
 			return (o1.winPct > o2.winPct) ? -1 : 1;
