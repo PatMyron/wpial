@@ -74,7 +74,7 @@ public class Main {
 	private static int addGames(String[][] trtd, int[] gameRow, int year, SeasonTemplate[] seasons, ArrayList<Game> g, int gamesInSeason,
 								List<SeasonTemplate> totalRecords, int schoolNum, int totalGameCounter) {
 		for (int i = 0; i < gamesInSeason; i++) {
-			if (trtd[gameRow[i]][3].contains("W") || trtd[gameRow[i]][3].contains("T") || trtd[gameRow[i]][3].contains("L")) {
+			if (trtd[gameRow[i]][3].matches(".*[WTL].*")) {
 				if (!trtd[gameRow[i]][3].contains("PPD")) {
 					g.add(gameInformation(trtd, gameRow[i]));
 					seasons[year].addGame(g.get(totalGameCounter));
