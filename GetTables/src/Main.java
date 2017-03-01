@@ -28,14 +28,7 @@ public class Main {
 						PrintWriter tWriter = new PrintWriter("tables/" + schoolName + sportNumbers.get(teamtypeid) + year + ".html");
 						tWriter.println(table);
 						tWriter.close();
-					} else
-						continue;
-					/*
-					int[] gameRow = new int[60];
-					Elements trs = table.select("tr");
-					String[][] trtd = new String[trs.size()][];
-					int gamesInSeason = getTableData(trs,trtd,gameRow);   // puts table in trtd[][] and gameRow[] give rows where games are
-					 */
+					}
 				}
 			}
 		}
