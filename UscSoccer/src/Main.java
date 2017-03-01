@@ -21,7 +21,7 @@ public class Main {
 				if (schoolName.contains("Apollo") && teamtypeid == 9) // idk whats up with this team
 					continue;
 				// PrintWriter writerSort = new PrintWriter("specificData/"+schoolName+"+"+sportEnums.get(teamtypeid)+"/opponentsGP.html", "UTF-8");
-				// writerSpecificSeasons.println(schoolName+" "+sportEnums.get(teamtypeid));writerSpecificSeasons.println();
+				// writerSpecificSeasons.println(schoolName+" "+sportEnums.get(teamtypeid) + "\n");
 				ArrayList<Game> g = new ArrayList<>(); // all games a team has played
 				SeasonTemplate seasons[] = new SeasonTemplate[15];
 				totalRecords.add(new SeasonTemplate(schoolName));
