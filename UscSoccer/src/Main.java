@@ -127,8 +127,7 @@ public class Main {
 		String opponent = tokenOpponent[tokenOpponent.length - 1];
 		if (opponent.contains("Seton-La")) opponent = "Seton-La Salle";
 
-		// RESULT GOALS FOR/AGAINST      // /////////////////////////////////////
-		String result;
+		// RESULT GOALS FOR/AGAINST
 		int goalsFor, goalsAgainst;
 		delims = "[(]";
 		String[] tokens3 = trtd[gameRow[i]][3].split(delims);
