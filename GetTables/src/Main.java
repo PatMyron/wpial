@@ -27,7 +27,7 @@ public class Main {
 			schoolWriter.println(schoolName);
 			for (Integer teamtypeid : sportNumbers.keySet()) {
 				for (int year = 2003; year < END_OF_CURRENT_SEASON; year++) { // from '03-'04
-					Element table = getTable(year, teamids, teamtypeid, schoolName);
+					Element table = getTable(year, teamids.get(teamtypeid).get(schoolName), teamtypeid, schoolName);
 					if (table == null) {
 						log("table is null. " + " school: " + schoolName + " year: " + year + " sport: " + teamtypeid);
 						continue;
@@ -72,7 +72,7 @@ public class Main {
 				for (int c = 0; c < tds.size(); c++) {
 					trtd[r][c] = tds.get(c).html();
 					String teamName = tds.get(c).text();
-					if (teamName.length() < 3) continue; //skips blanks
+					if (teamName.length() < 3) continue; // skips blanks
 					String delims = "[{}]+";
 					String[] splitUpTeamId = trtd[r][c].split(delims);
 					String teamid = splitUpTeamId[1];
@@ -114,9 +114,8 @@ public class Main {
 		}
 	}
 
-	private static Element getTable(int year, TreeMap<Integer, TreeMap<String, String>> teamids, int teamtypeid, String schoolName) {
+	private static Element getTable(int year, String teamid, int teamtypeid, String schoolName) {
 		Document doc;
-		String teamid = teamids.get(teamtypeid).get(schoolName);
 		try {
 			if (year < END_OF_CURRENT_SEASON-1)
 				doc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/statsPrevYears/team_record.asp?teamtypeid="
