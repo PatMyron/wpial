@@ -18,14 +18,13 @@ public class Main {
 		TreeSet<String> allSchoolNames = new TreeSet<>();  // all WPIAL schools (142 of them)
 		PrintWriter errorWriter = new PrintWriter("errors/errors" + new Date().toInstant() + ".txt");
 		teamIdsFiller(teamids, allSchoolNames, errorWriter); // fills schools set and teamids double map (for new data)
-		Element table;
 		PrintWriter schoolWriter = new PrintWriter("WPIAL schools.txt");
 		for (String schoolName : allSchoolNames) {        // iterates through all schools
 			schoolWriter.println(schoolName);
 			for (Integer teamtypeid : sportNumbers.keySet()) {        // iterates through all sports
 				for (int year = 3; year < 15; year++) { // go from '03-'04 to '14-'15
 					if (tableExists(year, teamids, teamtypeid, schoolName, errorWriter)) {
-						table = getTable(year, teamids, teamtypeid, schoolName, errorWriter);
+						Element table = getTable(year, teamids, teamtypeid, schoolName, errorWriter);
 						PrintWriter tWriter = new PrintWriter("tables/" + schoolName + sportNumbers.get(teamtypeid) + year + ".html");
 						tWriter.println(table);
 						tWriter.close();
@@ -37,9 +36,9 @@ public class Main {
 					String[][] trtd = new String[trs.size()][];
 					int gamesInSeason = getTableData(trs,trtd,gameRow);   // puts table in trtd[][] and gameRow[] give rows where games are
 					 */
-				}        // END YEAR LOOP
-			}            // end inner for loop
-		}            // end outer for loop
+				}
+			}
+		}
 		schoolWriter.close();
 		errorWriter.close();
 	}
