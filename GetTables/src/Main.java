@@ -12,8 +12,8 @@ public class Main {
 	private static final int timeoutTime = 70000;
 	private static final int END_OF_CURRENT_SEASON = 2017;
 	private static final Map<Integer, String> sportNumbers = new TreeMap<>(); // enum 1=FOOTBALL etc.
-	private static PrintWriter errorWriter;
 	private static final TreeSet<String> allSchoolNames = new TreeSet<>();  // all WPIAL schools (142 of them)
+	private static PrintWriter errorWriter;
 
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws IOException {
@@ -52,29 +52,27 @@ public class Main {
 	}
 
 	private static void teamIdsFiller(TreeMap<Integer, TreeMap<String, String>> teamids) {
-		Document lookupDoc;
 		for (int sportNum : sportNumbers.keySet()) {
 			teamids.put(sportNum, new TreeMap<>());
 			try {
-				lookupDoc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_lookup.asp?teamtypeid=" + sportNum).timeout(timeoutTime).get();
+				Document lookupDoc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_lookup.asp?teamtypeid=" + sportNum).timeout(timeoutTime).get();
+				actuallyFill(teamids, lookupDoc, sportNum);
 			} catch (IOException e) {
 				log("MISSED ENTIRE SPORT for getting allSchoolNames+teamids. Sport #: " + sportNum);
-				continue;
 			}
-			actuallyFill(teamids, lookupDoc, sportNum);
 			for (int year = 2003; year < END_OF_CURRENT_SEASON; year++) {
 				try {
+					Document lookupDoc;
 					if (year < END_OF_CURRENT_SEASON - 1)
 						lookupDoc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/statsPrevYears/team_lookup.asp?teamtypeid="
 								+ sportNum + "&py=" + year).timeout(timeoutTime).get();
 					else
 						lookupDoc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_lookup.asp?teamtypeid="
 								+ sportNum + "&py=" + year).timeout(timeoutTime).get();
+					actuallyFill(teamids, lookupDoc, sportNum);
 				} catch (IOException e) {
 					log("MISSED teamids for Sport #: " + sportNum + " and year: " + year);
-					continue;
 				}
-				actuallyFill(teamids, lookupDoc, sportNum);
 			}
 		}
 	}
