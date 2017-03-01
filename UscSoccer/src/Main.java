@@ -23,13 +23,11 @@ public class Main {
 				// PrintWriter writerSort = new PrintWriter("specificData/"+schoolName+"+"+sportEnums.get(teamtypeid)+"/opponentsGP.html", "UTF-8");
 				// writerSpecificSeasons.println(schoolName+" "+sportEnums.get(teamtypeid) + "\n");
 				ArrayList<Game> g = new ArrayList<>(); // all games a team has played
-				SeasonTemplate seasons[] = new SeasonTemplate[15];
+				SeasonTemplate seasons[] = new SeasonTemplate[3000];
 				totalRecords.add(new SeasonTemplate(schoolName));
 				int totalGameCounter = 0;
-				for (int year = 3; year < 15; year++) { // go from '03-'04 to '14-'15
-					if (year == 14 && teamtypeid != 1 && teamtypeid != 8 && teamtypeid != 9) // hasn't happened yet
-						continue;
-					seasons[year] = new SeasonTemplate(year + 2000);
+				for (int year = 2003; year < 2015; year++) { // from '03-'04
+					seasons[year] = new SeasonTemplate(year);
 					File f = new File("tables/" + schoolName + sportEnums.get(teamtypeid) + year + ".html");
 					if (f.exists() && !f.isDirectory()) {
 						Document doc = Jsoup.parse(f, "UTF-8");
@@ -42,7 +40,7 @@ public class Main {
 					int gamesInSeason = getTableData(trs, trtd, gameRow); // puts table in trtd[][] and gameRow[] give rows where games are
 					totalGameCounter = addGames(trtd, gameRow, year, seasons, g, gamesInSeason, totalRecords, totalRecords.size() - 1, totalGameCounter); // adds to g, individual season, and total record
 					seasons[year].endOfSeason();
-				} // END YEAR LOOP
+				}
 				if (totalRecords.get(totalRecords.size() - 1).GP == 0) { // TODO private
 					totalRecords.remove(totalRecords.size() - 1);
 				} else {
