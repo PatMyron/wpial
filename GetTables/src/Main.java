@@ -88,7 +88,7 @@ public class Main {
 						lookupDoc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_lookup.asp?teamtypeid="
 								+ sportNum + "&py=" + year).timeout(timeoutTime).get();
 				} catch (IOException e) {
-					log("Missed teamids for Sport #: " + sportNum + " and year: " + year);
+					log("MISSED teamids for Sport #: " + sportNum + " and year: " + year);
 					continue;
 				}
 				// do it for all of them
@@ -101,7 +101,7 @@ public class Main {
 					for (int c = 0; c < tds.size(); c++) {
 						trtd[r][c] = tds.get(c).html();
 						String teamName = tds.get(c).text();
-						if (teamName.length() < 3) continue; //skips blanks
+						if (teamName.length() < 3) continue; // skips blanks
 						String[] splitUpTeamId = trtd[r][c].split("[{}]+");
 						String teamid = splitUpTeamId[1];
 						teamids.get(sportNum).put(teamName, teamid);
