@@ -28,7 +28,8 @@ public class Main {
 				for (int year = 3; year < 17; year++) { // from '03-'04
 					if (tableExists(year, teamids, teamtypeid, schoolName)) {
 						Element table = getTable(year, teamids, teamtypeid, schoolName);
-						PrintWriter tWriter = new PrintWriter("tables/" + schoolName + sportNumbers.get(teamtypeid) + year + ".html");
+						File tableFile = new File("tables/" + schoolName + sportNumbers.get(teamtypeid) + year + ".html");
+						PrintWriter tWriter = new PrintWriter(tableFile);
 						tWriter.println(table);
 						tWriter.close();
 					}
@@ -56,8 +57,7 @@ public class Main {
 			try {
 				lookupDoc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_lookup.asp?teamtypeid=" + sportNum).timeout(timeoutTime).get();
 			} catch (IOException e) {
-				errorWriter.println("MISSED ENTIRE SPORT for getting allSchoolNames+teamids. Sport #: " + sportNum);
-				System.out.println("MISSED ENTIRE SPORT for getting allSchoolNames+teamids. Sport #: " + sportNum);
+				log("MISSED ENTIRE SPORT for getting allSchoolNames+teamids. Sport #: " + sportNum);
 				continue;
 			}
 			Element table = lookupDoc.select("table").first();
@@ -86,8 +86,7 @@ public class Main {
 					else
 						lookupDoc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_lookup.asp?teamtypeid=" + sportNum + "&py=20" + year).timeout(timeoutTime).get();
 				} catch (IOException e) {
-					errorWriter.println("Missed teamids for Sport #: " + sportNum + " and year: " + year);
-					System.out.println("Missed teamids for Sport #: " + sportNum + " and year: " + year);
+					log("Missed teamids for Sport #: " + sportNum + " and year: " + year);
 					continue;
 				}
 				// do it for all of them
@@ -126,14 +125,12 @@ public class Main {
 				doc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_record.asp?teamtypeid=" + teamtypeid + "&teamid={" + teamid + "}&py=20"
 						+ year).timeout(timeoutTime).get();
 		} catch (IOException e) {
-			errorWriter.println("error message: " + e.getMessage() + " school: " + schoolName + " year: " + year + " sport: " + teamtypeid);
-			System.out.println("error message: " + e.getMessage() + " school: " + schoolName + " year: " + year + " sport: " + teamtypeid);
+			log("error message: " + e.getMessage() + " school: " + schoolName + " year: " + year + " sport: " + teamtypeid);
 			return false;
 		}
 		Element table = doc.select("table").first();
 		if (table == null) {
-			errorWriter.println("table is null. " + " school: " + schoolName + " year: " + year + " sport: " + teamtypeid);
-			System.out.println("table is null. " + " school: " + schoolName + " year: " + year + " sport: " + teamtypeid);
+			log("table is null. " + " school: " + schoolName + " year: " + year + " sport: " + teamtypeid);
 			return false;
 		}
 		return true;
@@ -153,10 +150,14 @@ public class Main {
 				doc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_record.asp?teamtypeid="
 						+ teamtypeid + "&teamid={" + teamid + "}&py=20" + year).timeout(timeoutTime).get();
 		} catch (IOException e) {
-			// errorWriter.println("error message: "+e.getMessage()+" school: "+schoolName+" year: "+year+" sport: "+teamtypeid);
-			// System.out.println("error message: "+e.getMessage()+" school: "+schoolName+" year: "+year+" sport: "+teamtypeid);
+			log("error message: "+e.getMessage()+" school: "+schoolName+" year: "+year+" sport: "+teamtypeid);
 			return null;
 		}
 		return doc.select("table").first();
+	}
+
+	private static void log(String s) {
+		errorWriter.println(s);
+		System.out.println(s);
 	}
 }
