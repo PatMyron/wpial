@@ -17,7 +17,7 @@ public class Main {
 		Element table;
 		for (String schoolName : allSchoolNames) {
 			PrintWriter writerSchool = new PrintWriter("dataBySchool/" + schoolName + ".html", "UTF-8");
-			tableBeginning(writerSchool, "Sport");
+			writeTableHeader(writerSchool, "Sport");
 			List<SeasonTemplate> totalRecords = new ArrayList<>();
 			for (Integer teamtypeid : sportEnums.keySet()) { // iterates through all sports
 				if (schoolName.contains("Apollo") && teamtypeid == 9) // idk whats up with this team
@@ -86,7 +86,7 @@ public class Main {
 		return totalGameCounter;
 	}
 
-	private static void tableBeginning(PrintWriter writer, String firstColumnTitle) {
+	private static void writeTableHeader(PrintWriter writer, String firstColumnTitle) {
 		writer.print("<table style=\"width:100%\">\n  <tr>\n    <th>" + firstColumnTitle + "</th>\n    <th>Games</th>\n    <th>W</th>\n    <th>T</th>\n    <th>L</th>\n    <th>Pct</th>\n    <th>For</th>\n    <th>Against</th>\n    <th>Diff</th>\n    <th>F/GP</th>\n    <th>A/GP</th>\n    <th>+/-</th>\n  </tr>");
 	}
 
