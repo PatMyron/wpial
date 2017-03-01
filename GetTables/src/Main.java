@@ -81,7 +81,7 @@ public class Main {
 			}
 			for (int year = 2003; year < END_OF_CURRENT_SEASON; year++) {
 				try {
-					if (year < END_OF_CURRENT_SEASON-1)
+					if (year < END_OF_CURRENT_SEASON - 1)
 						lookupDoc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/statsPrevYears/team_lookup.asp?teamtypeid="
 								+ sportNum + "&py=" + year).timeout(timeoutTime).get();
 					else
@@ -115,7 +115,7 @@ public class Main {
 	private static Element getTable(int year, String teamid, int teamtypeid, String schoolName) {
 		Document doc;
 		try {
-			if (year < END_OF_CURRENT_SEASON-1)
+			if (year < END_OF_CURRENT_SEASON - 1)
 				doc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/statsPrevYears/team_record.asp?teamtypeid="
 						+ teamtypeid + "&teamid={" + teamid + "}&py=" + year).timeout(timeoutTime).get();
 			else
