@@ -129,11 +129,8 @@ public class Main {
 
 		// RESULT GOALS FOR/AGAINST
 		int goalsFor, goalsAgainst;
-		delims = "[(]";
-		String[] tokens3 = trtd[gameRow[i]][3].split(delims);
-		delims = "[ -]+";
-		tokens3 = tokens3[0].split(delims);
-		result = tokens3[0];
+		String[] tokens3 = trtd[gameRow[i]][3].split("[(]")[0].split("[ -]+");
+		String result = tokens3[0];
 		if (result.contains("PPD")) {
 			goalsFor = 0;
 			goalsAgainst = 0;
