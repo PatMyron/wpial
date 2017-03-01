@@ -163,20 +163,19 @@ public class Main {
 
 	private static Element getTable(int year, TreeMap<Integer, TreeMap<String, String>> teamids, int teamtypeid, String schoolName, PrintWriter eWriter) { // for new data
 		// gets Table from site.. only use when there is new data
-		// // called this way
 		//		table = getTable(year,teamids,teamtypeid,schoolName,eWriter);
 		Document doc;
 		String teamid = teamids.get(teamtypeid).get(schoolName);
 		try {
 			if (year < 10)
-				doc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/statsPrevYears/team_record.asp?teamtypeid=" + teamtypeid + "&teamid={" + teamid + "}&py=200"
-						+ year).timeout(timeoutTime).get();
+				doc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/statsPrevYears/team_record.asp?teamtypeid="
+						+ teamtypeid + "&teamid={" + teamid + "}&py=200" + year).timeout(timeoutTime).get();
 			else if (year < 14)
-				doc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/statsPrevYears/team_record.asp?teamtypeid=" + teamtypeid + "&teamid={" + teamid + "}&py=20"
-						+ year).timeout(timeoutTime).get();
+				doc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/statsPrevYears/team_record.asp?teamtypeid="
+						+ teamtypeid + "&teamid={" + teamid + "}&py=20" + year).timeout(timeoutTime).get();
 			else
-				doc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_record.asp?teamtypeid=" + teamtypeid + "&teamid={" + teamid + "}&py=20"
-						+ year).timeout(timeoutTime).get();
+				doc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_record.asp?teamtypeid="
+						+ teamtypeid + "&teamid={" + teamid + "}&py=20" + year).timeout(timeoutTime).get();
 		} catch (IOException e) {
 			// eWriter.println("error message: "+e.getMessage()+" school: "+schoolName+" year: "+year+" sport: "+teamtypeid);
 			// System.out.println("error message: "+e.getMessage()+" school: "+schoolName+" year: "+year+" sport: "+teamtypeid);
