@@ -141,19 +141,14 @@ public class Main {
 			goalsFor = 0;
 			goalsAgainst = 0;
 		} else {
+			int goals1 = Integer.parseInt(tokens3[1]);
+			int goals2 = Integer.parseInt(tokens3[2]);
 			if (result.contains("W")) {
-				int goals1 = Integer.parseInt(tokens3[1]);
-				int goals2 = Integer.parseInt(tokens3[2]);
 				goalsFor = Math.max(goals1, goals2);
 				goalsAgainst = Math.min(goals1, goals2);
-			} else if (result.contains("L")) {
-				int goals1 = Integer.parseInt(tokens3[1]);
-				int goals2 = Integer.parseInt(tokens3[2]);
+			} else { // tie or loss
 				goalsFor = Math.min(goals1, goals2);
 				goalsAgainst = Math.max(goals1, goals2);
-			} else {
-				goalsFor = Integer.parseInt(tokens3[1]);
-				goalsAgainst = Integer.parseInt(tokens3[2]);
 			}
 		}
 
