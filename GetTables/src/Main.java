@@ -69,7 +69,7 @@ public class Main {
 		sportNumbers.put(9, "WOMENS SOCCER");
 	}
 
-	private static void teamIdsFiller(TreeMap<Integer, TreeMap<String, String>> teamids, TreeSet<String> allSchoolNames, PrintWriter errorWriter) { // for new data
+	private static void teamIdsFiller(TreeMap<Integer, TreeMap<String, String>> teamids, TreeSet<String> allSchoolNames, PrintWriter errorWriter) {
 		// only call when getting new data
 		Document lookupDoc;
 		for (int sportNum : sportNumbers.keySet()) {
@@ -77,8 +77,8 @@ public class Main {
 			try {
 				lookupDoc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_lookup.asp?teamtypeid=" + sportNum).timeout(timeoutTime).get();
 			} catch (IOException e) {
-				errorWriter.println("Missed entire sport for getting allSchoolNames+teamids. Sport #: " + sportNum);
-				System.out.println("Missed entire sport for getting allSchoolNames+teamids. Sport #: " + sportNum);
+				errorWriter.println("MISSED ENTIRE SPORT for getting allSchoolNames+teamids. Sport #: " + sportNum);
+				System.out.println("MISSED ENTIRE SPORT for getting allSchoolNames+teamids. Sport #: " + sportNum);
 				continue;
 			}
 			Element table = lookupDoc.select("table").first();
