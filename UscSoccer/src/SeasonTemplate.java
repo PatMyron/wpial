@@ -77,15 +77,11 @@ class SeasonTemplate {
 
 	void printSeasonToTable(PrintWriter writer, String firstColumnData) {
 		writer.println("<tr>");
-
 		writeDataToHTMLTable(writer, new Object[]{firstColumnData, GP, w, t, l, GF, GA, goalDifferential});
-
 		writer.println("<td>");
 		writer.printf("%5.1f %%", winPct);
 		writer.println("</td>");
-
 		writeDoublesToHTMLTable(writer, new double[]{goalsForPerGame, goalsAgainstPerGame, goalDiffPerGame});
-
 		writer.println("</tr>");
 	}
 }
