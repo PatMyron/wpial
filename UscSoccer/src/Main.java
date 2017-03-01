@@ -76,7 +76,7 @@ public class Main {
 		for (int i = 0; i < gamesInSeason; i++) {
 			if (trtd[gameRow[i]][3].matches(".*[WTL].*")) {
 				if (!trtd[gameRow[i]][3].contains("PPD")) {
-					g.add(gameInformation(trtd, gameRow[i]));
+					g.add(gameInformation(trtd[gameRow[i]]));
 					seasons[year].addGame(g.get(totalGameCounter));
 					totalRecords.get(schoolNum).addGame(g.get(totalGameCounter)); // for total count
 					totalGameCounter++;
@@ -120,15 +120,15 @@ public class Main {
 		reader.close();
 	}
 
-	private static Game gameInformation(String[][] trtd, int gameRow) {
+	private static Game gameInformation(String[] actualGameRow) {
 		//  OPPONENT
-		String[] tokenOpponent = trtd[gameRow][1].split("[*]+")[0].split("at ");
+		String[] tokenOpponent = actualGameRow[1].split("[*]+")[0].split("at ");
 		String opponent = tokenOpponent[tokenOpponent.length - 1];
 		if (opponent.contains("Seton-La")) opponent = "Seton-La Salle";
 
 		// RESULT GOALS FOR/AGAINST
 		int goalsFor, goalsAgainst;
-		String[] tokens3 = trtd[gameRow][3].split("[(]")[0].split("[ -]+");
+		String[] tokens3 = actualGameRow[3].split("[(]")[0].split("[ -]+");
 		String result = tokens3[0];
 		if (result.contains("PPD")) {
 			goalsFor = 0;
