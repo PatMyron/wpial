@@ -15,20 +15,18 @@ public class Main {
 		Map<Integer, String> sportNumbers = new TreeMap<>(); // enum 1=FOOTBALL etc.
 		TreeMap<Integer, TreeMap<String, String>> teamids = new TreeMap<>();     // Keys: sport#,school   V: website code
 		TreeSet<String> allSchoolNames = new TreeSet<>();  // all WPIAL schools (142 of them)
-		PrintWriter eWriter = new PrintWriter("errors/errors" + new Date().toInstant() + ".txt");
-		teamIdsFiller(teamids, allSchoolNames, eWriter);                              // fills schools set and teamids double map ( for new data)
+		PrintWriter errorWriter = new PrintWriter("errors/errors" + new Date().toInstant() + ".txt");
+		teamIdsFiller(teamids, allSchoolNames, errorWriter); // fills schools set and teamids double map (for new data)
 		fillSportsNumber(sportNumbers);
 		Element table;
 		PrintWriter schoolWriter = new PrintWriter("WPIAL schools.txt");
 		for (String schoolName : allSchoolNames) {        // iterates through all schools
 			schoolWriter.println(schoolName);
-			for (Integer teamtypeid : sportNumbers.keySet()) {        // iterates through all sports
+			for (Integer teamTypeId : sportNumbers.keySet()) {        // iterates through all sports
 				for (int year = 3; year < 15; year++) { // go from '03-'04 to '14-'15
-					if (year == 14 && teamtypeid != 1 && teamtypeid != 8 && teamtypeid != 9) // hasn't happened yet
-						continue;
-					if (tableExists(year, teamids, teamtypeid, schoolName, eWriter)) {
-						table = getTable(year, teamids, teamtypeid, schoolName, eWriter);
-						PrintWriter tWriter = new PrintWriter("tables/" + schoolName + sportNumbers.get(teamtypeid) + year + ".html");
+					if (tableExists(year, teamids, teamTypeId, schoolName, errorWriter)) {
+						table = getTable(year, teamids, teamTypeId, schoolName, errorWriter);
+						PrintWriter tWriter = new PrintWriter("tables/" + schoolName + sportNumbers.get(teamTypeId) + year + ".html");
 						tWriter.println(table);
 						tWriter.close();
 					} else
@@ -43,7 +41,7 @@ public class Main {
 			}            // end inner for loop
 		}            // end outer for loop
 		schoolWriter.close();
-		eWriter.close();
+		errorWriter.close();
 	}            // end main
 
 	private static int getTableData(Elements trs, String[][] trtd, int[] gameRow) {
