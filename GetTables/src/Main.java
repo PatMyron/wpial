@@ -18,7 +18,7 @@ public class Main {
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws IOException {
 		fillSportsNumber();
-		errorWriter = new PrintWriter(new File("errors/" + new Date().toInstant() + ".txt"));
+		errorWriter = new PrintWriter(new File("errors/" + new Date().toLocaleString() + ".txt"));
 		TreeMap<Integer, TreeMap<String, String>> teamids = new TreeMap<>(); // Keys: sport#,school   V: website code
 		teamIdsFiller(teamids); // fills schools set and teamids double map (for new data)
 		PrintWriter schoolWriter = new PrintWriter("WPIAL schools.txt");
