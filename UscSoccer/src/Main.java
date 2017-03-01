@@ -157,11 +157,6 @@ public class Main {
 			}
 		}
 
-		// /////////////////////////////////////////////////////////////////////
-
-		boolean conferenceGame = (trtd[gameRow[i]][1].contains("*")); // CONFERENCE GAME
-		String site = trtd[gameRow[i]][2]; // SITE
-
 		return new Game(opponent, result, goalsFor, goalsAgainst); // MISSING MATCHTYPE
 	}
 

@@ -2,13 +2,13 @@ import java.io.PrintWriter;
 
 class SeasonTemplate {
 	int GP;
+	double winPct;
 	private int w;
 	private int t;
 	private int l;
 	private int GF;
 	private int GA;
 	private int goalDifferential;
-	double winPct;
 	private double goalsForPerGame;
 	private double goalsAgainstPerGame;
 	private double goalDiffPerGame;
