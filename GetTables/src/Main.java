@@ -9,15 +9,15 @@ import java.util.*;
 
 public class Main {
 	private static final int timeoutTime = 70000;
+	private static final Map<Integer, String> sportNumbers = new TreeMap<>(); // enum 1=FOOTBALL etc.
 
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws IOException {
-		Map<Integer, String> sportNumbers = new TreeMap<>(); // enum 1=FOOTBALL etc.
+		fillSportsNumber();
 		TreeMap<Integer, TreeMap<String, String>> teamids = new TreeMap<>();     // Keys: sport#,school   V: website code
 		TreeSet<String> allSchoolNames = new TreeSet<>();  // all WPIAL schools (142 of them)
 		PrintWriter errorWriter = new PrintWriter("errors/errors" + new Date().toInstant() + ".txt");
 		teamIdsFiller(teamids, allSchoolNames, errorWriter); // fills schools set and teamids double map (for new data)
-		fillSportsNumber(sportNumbers);
 		Element table;
 		PrintWriter schoolWriter = new PrintWriter("WPIAL schools.txt");
 		for (String schoolName : allSchoolNames) {        // iterates through all schools
@@ -59,7 +59,7 @@ public class Main {
 		return gameRowCounter;
 	}
 
-	private static void fillSportsNumber(Map<Integer, String> sportNumbers) {
+	private static void fillSportsNumber() {
 		sportNumbers.put(1, "FOOTBALL");
 		sportNumbers.put(2, "BASEBALL");
 		sportNumbers.put(3, "BASKETBALL");
@@ -72,8 +72,7 @@ public class Main {
 	private static void teamIdsFiller(TreeMap<Integer, TreeMap<String, String>> teamids, TreeSet<String> allSchoolNames, PrintWriter errorWriter) { // for new data
 		// only call when getting new data
 		Document lookupDoc;
-		for (int sportNum = 1; sportNum < 10; sportNum++) {
-			if (sportNum == 6 || sportNum == 7) continue; // no sports for #6 or #7
+		for (int sportNum : sportNumbers.keySet()) {
 			teamids.put(sportNum, new TreeMap<>());
 			try {
 				lookupDoc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_lookup.asp?teamtypeid=" + sportNum).timeout(timeoutTime).get();
