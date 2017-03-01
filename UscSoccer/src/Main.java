@@ -151,8 +151,7 @@ public class Main {
 				goalsAgainst = Math.max(goals1, goals2);
 			}
 		}
-
-		return new Game(opponent, result, goalsFor, goalsAgainst); // MISSING MATCHTYPE
+		return new Game(opponent, result, goalsFor, goalsAgainst);
 	}
 
 	private static void setupOpponentAlphabetically(ArrayList<Game> g, TreeMap<String, SeasonTemplate> teamMap) {
