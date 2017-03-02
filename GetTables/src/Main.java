@@ -59,7 +59,8 @@ public class Main {
 		sportNumbers.keySet().parallelStream().forEach(teamtypeid -> {
 			teamids.put(teamtypeid, new TreeMap<>());
 			try {
-				Document lookupDoc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_lookup.asp?teamtypeid=" + teamtypeid).timeout(TIMEOUT_TIME).get();
+				Document lookupDoc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_lookup.asp?teamtypeid="
+						+ teamtypeid).timeout(TIMEOUT_TIME).get();
 				actuallyFill(teamids, lookupDoc, teamtypeid);
 			} catch (IOException e) {
 				log("MISSED ENTIRE SPORT for getting allSchoolNames+teamids. Sport #: " + teamtypeid);
