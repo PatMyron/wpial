@@ -8,7 +8,7 @@ import java.util.*;
 import java.util.stream.IntStream;
 
 public class Main {
-	private static final int timeoutTime = 70000;
+	private static final int TIMEOUT_TIME = 70000;
 	private static final int END_OF_CURRENT_SEASON = 2017;
 	private static final Map<Integer, String> sportNumbers = new TreeMap<>(); // enum 1=FOOTBALL etc.
 	private static final TreeSet<String> allSchoolNames = new TreeSet<>();  // all WPIAL schools (142 of them)
@@ -59,7 +59,7 @@ public class Main {
 		sportNumbers.keySet().parallelStream().forEach(teamtypeid -> {
 			teamids.put(teamtypeid, new TreeMap<>());
 			try {
-				Document lookupDoc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_lookup.asp?teamtypeid=" + teamtypeid).timeout(timeoutTime).get();
+				Document lookupDoc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_lookup.asp?teamtypeid=" + teamtypeid).timeout(TIMEOUT_TIME).get();
 				actuallyFill(teamids, lookupDoc, teamtypeid);
 			} catch (IOException e) {
 				log("MISSED ENTIRE SPORT for getting allSchoolNames+teamids. Sport #: " + teamtypeid);
@@ -69,10 +69,10 @@ public class Main {
 					Document lookupDoc;
 					if (year < END_OF_CURRENT_SEASON - 1)
 						lookupDoc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/statsPrevYears/team_lookup.asp?teamtypeid="
-								+ teamtypeid + "&py=" + year).timeout(timeoutTime).get();
+								+ teamtypeid + "&py=" + year).timeout(TIMEOUT_TIME).get();
 					else
 						lookupDoc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_lookup.asp?teamtypeid="
-								+ teamtypeid + "&py=" + year).timeout(timeoutTime).get();
+								+ teamtypeid + "&py=" + year).timeout(TIMEOUT_TIME).get();
 					actuallyFill(teamids, lookupDoc, teamtypeid);
 				} catch (IOException e) {
 					log("MISSED teamids for Sport #: " + teamtypeid + " and year: " + year);
@@ -103,10 +103,10 @@ public class Main {
 		try {
 			if (year < END_OF_CURRENT_SEASON - 1)
 				doc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/statsPrevYears/team_record.asp?teamtypeid="
-						+ teamtypeid + "&teamid={" + teamid + "}&py=" + year).timeout(timeoutTime).get();
+						+ teamtypeid + "&teamid={" + teamid + "}&py=" + year).timeout(TIMEOUT_TIME).get();
 			else
 				doc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_record.asp?teamtypeid="
-						+ teamtypeid + "&teamid={" + teamid + "}&py=" + year).timeout(timeoutTime).get();
+						+ teamtypeid + "&teamid={" + teamid + "}&py=" + year).timeout(TIMEOUT_TIME).get();
 		} catch (IOException e) {
 			log("error message: " + e.getMessage() + " year: " + year + " sport: " + teamtypeid + " school: " + schoolName + " sportName: " + sportNumbers.get(teamtypeid));
 			return null;
