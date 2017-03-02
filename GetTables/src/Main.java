@@ -28,7 +28,7 @@ public class Main {
 				for (int year = 2003; year < END_OF_CURRENT_SEASON; year++) { // from '03-'04
 					Element table = getTable(year, teamids.get(teamtypeid).get(schoolName), teamtypeid, schoolName);
 					if (table == null) {
-						log("table is null. " + " school: " + schoolName + " year: " + year + " sport: " + teamtypeid);
+						log("table is null. " + " year: " + year + " sport: " + teamtypeid + " school: " + schoolName + " sportName: " + sportNumbers.get(teamtypeid));
 						continue;
 					}
 					PrintWriter tWriter = new PrintWriter(new File("tables/" + schoolName + sportNumbers.get(teamtypeid) + year + ".html"));
@@ -104,7 +104,7 @@ public class Main {
 				doc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_record.asp?teamtypeid="
 						+ teamtypeid + "&teamid={" + teamid + "}&py=" + year).timeout(timeoutTime).get();
 		} catch (IOException e) {
-			log("error message: " + e.getMessage() + " school: " + schoolName + " year: " + year + " sport: " + teamtypeid);
+			log("error message: " + e.getMessage() + " year: " + year + " sport: " + teamtypeid + " school: " + schoolName + " sportName: " + sportNumbers.get(teamtypeid));
 			return null;
 		}
 		return doc.select("table").first();
