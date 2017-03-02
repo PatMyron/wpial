@@ -56,29 +56,29 @@ public class Main {
 	}
 
 	private static void teamIdsFiller(TreeMap<Integer, TreeMap<String, String>> teamids) {
-		for (int sportNum : sportNumbers.keySet()) {
-			teamids.put(sportNum, new TreeMap<>());
+		sportNumbers.keySet().parallelStream().forEach(teamtypeid -> {
+			teamids.put(teamtypeid, new TreeMap<>());
 			try {
-				Document lookupDoc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_lookup.asp?teamtypeid=" + sportNum).timeout(timeoutTime).get();
-				actuallyFill(teamids, lookupDoc, sportNum);
+				Document lookupDoc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_lookup.asp?teamtypeid=" + teamtypeid).timeout(timeoutTime).get();
+				actuallyFill(teamids, lookupDoc, teamtypeid);
 			} catch (IOException e) {
-				log("MISSED ENTIRE SPORT for getting allSchoolNames+teamids. Sport #: " + sportNum);
+				log("MISSED ENTIRE SPORT for getting allSchoolNames+teamids. Sport #: " + teamtypeid);
 			}
-			for (int year = 2003; year < END_OF_CURRENT_SEASON; year++) {
+			IntStream.range(2003, END_OF_CURRENT_SEASON).parallel().forEach(year -> {
 				try {
 					Document lookupDoc;
 					if (year < END_OF_CURRENT_SEASON - 1)
 						lookupDoc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/statsPrevYears/team_lookup.asp?teamtypeid="
-								+ sportNum + "&py=" + year).timeout(timeoutTime).get();
+								+ teamtypeid + "&py=" + year).timeout(timeoutTime).get();
 					else
 						lookupDoc = Jsoup.connect("http://old.post-gazette.com/highschoolsports/stats/team_lookup.asp?teamtypeid="
-								+ sportNum + "&py=" + year).timeout(timeoutTime).get();
-					actuallyFill(teamids, lookupDoc, sportNum);
+								+ teamtypeid + "&py=" + year).timeout(timeoutTime).get();
+					actuallyFill(teamids, lookupDoc, teamtypeid);
 				} catch (IOException e) {
-					log("MISSED teamids for Sport #: " + sportNum + " and year: " + year);
+					log("MISSED teamids for Sport #: " + teamtypeid + " and year: " + year);
 				}
-			}
-		}
+			});
+		});
 	}
 
 	private static void actuallyFill(TreeMap<Integer, TreeMap<String, String>> teamids, Document lookupDoc, int sportNum) {
