@@ -5,6 +5,7 @@ import org.jsoup.select.Elements;
 
 import java.io.*;
 import java.util.*;
+import java.util.stream.IntStream;
 
 public class Main {
 	private static final int timeoutTime = 70000;
@@ -12,30 +13,35 @@ public class Main {
 	private static final Map<Integer, String> sportNumbers = new TreeMap<>(); // enum 1=FOOTBALL etc.
 	private static final TreeSet<String> allSchoolNames = new TreeSet<>();  // all WPIAL schools (142 of them)
 	private static PrintWriter errorWriter;
+	private static PrintWriter schoolWriter;
 
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws IOException {
-		fillSportsNumber();
 		errorWriter = new PrintWriter(new File("errors/" + new Date().toLocaleString() + ".txt"));
+		schoolWriter = new PrintWriter("WPIAL schools.txt");
+		fillSportsNumber();
 		TreeMap<Integer, TreeMap<String, String>> teamids = new TreeMap<>(); // Keys: sport#,school   V: website code
 		teamIdsFiller(teamids); // fills schools set and teamids double map (for new data)
-		PrintWriter schoolWriter = new PrintWriter("WPIAL schools.txt");
 		for (String schoolName : allSchoolNames) {
 			schoolWriter.println(schoolName);
-			for (Integer teamtypeid : sportNumbers.keySet()) {
-				for (int year = 2003; year < END_OF_CURRENT_SEASON; year++) { // from '03-'04
-					Element table = getTable(year, teamids.get(teamtypeid).get(schoolName), teamtypeid, schoolName);
-					if (table == null) {
-						log("table is null. " + " year: " + year + " sport: " + teamtypeid + " school: " + schoolName + " sportName: " + sportNumbers.get(teamtypeid));
-						continue;
-					}
-					PrintWriter tWriter = new PrintWriter(new File("tables/" + schoolName + sportNumbers.get(teamtypeid) + year + ".html"));
-					tWriter.println(table);
-					tWriter.close();
-				}
-			}
 		}
 		schoolWriter.close();
+		allSchoolNames.parallelStream().forEach(schoolName ->
+				sportNumbers.keySet().parallelStream().forEach(teamtypeid ->
+						IntStream.range(2003, END_OF_CURRENT_SEASON).parallel().forEach(year -> {
+							Element table = getTable(year, teamids.get(teamtypeid).get(schoolName), teamtypeid, schoolName);
+							if (table == null) {
+								log("table is null. " + " year: " + year + " sport: " + teamtypeid + " school: " + schoolName + " sportName: " + sportNumbers.get(teamtypeid));
+								return;
+							}
+							try {
+								PrintWriter tableWriter = new PrintWriter(new File("tables/" + schoolName + sportNumbers.get(teamtypeid) + year + ".html"));
+								tableWriter.println(table);
+								tableWriter.close();
+							} catch (FileNotFoundException e) {
+								log("MISSED writing a table. " + " year: " + year + " sport: " + teamtypeid + " school: " + schoolName + " sportName: " + sportNumbers.get(teamtypeid));
+							}
+						})));
 		errorWriter.close();
 	}
 
