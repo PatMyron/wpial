@@ -8,7 +8,7 @@ import java.util.*;
 import java.util.stream.IntStream;
 
 public class Main {
-	private static final int TIMEOUT_TIME = 120000;
+	private static final int TIMEOUT_TIME = 200000;
 	private static final int END_OF_CURRENT_SEASON = 2017;
 	private static final String OLD_BASE_URL = "http://old.post-gazette.com/highschoolsports/statsPrevYears/team_lookup.asp";
 	private static final String NEW_BASE_URL = "http://old.post-gazette.com/highschoolsports/stats/team_lookup.asp";
