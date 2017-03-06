@@ -91,6 +91,8 @@ public class Main {
 				trtd[r][c] = tds.get(c).html();
 				String teamName = tds.get(c).text();
 				if (teamName.length() < 3) continue; // skips blanks
+				if (teamName.contains("201")) continue;
+				if (teamName.contains(" Ohio")) continue;
 				String teamid = trtd[r][c].split("[{}]+")[1];
 				teamids.get(sportNum).put(teamName, teamid);
 				allSchoolNames.add(teamName);
