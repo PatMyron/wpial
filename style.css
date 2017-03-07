@@ -8,210 +8,194 @@
  *   email: info@jmholding.ru
  *  twitter: @jmholding
  */
- select {
- 	width: 200px;
- }
- html, body {
- 	margin: 0;
- 	padding: 0;
- 	width: 100%;
- 	height: 100%; 
- }
-
- .content {
- 	min-height: 100%;
- 	max-height: 100%;
- 	height: 100%;
- 	position: relative;
- 	overflow: auto;
- 	z-index: 0; 
- }
-
- .background {
- 	position: absolute;
- 	z-index: -1;
- 	top: 0;
- 	bottom: 0;
- 	margin: 0;
- 	padding: 0;
- }
-
- .left_block {
- 	display: block;
- 	float: left; 
- }
-
- .right_block {
- 	display: block;
- 	float: right; 
- }
-
- .background.block_1 {
- 	height: 100%;
- 	padding-bottom: 0;
- 	left: 0;
- 	width: auto;
- 	background-color: #F0F0F0;
- }
-
- .block_1 {
- 	height: 100%;
- 	width: auto;
- 	padding-bottom: 0px;
- 	position: fixed;
- }
-
- .background.block_2 {
- 	height: 100%;
- 	padding-bottom: 0;
- 	left: 0;
- 	width: 200px;
- 	margin-left: 200px; 
- 	background-color: #F0F0F0;
- }
-
- .block_2 {
- 	height: auto;
- 	width: 200px;
- 	padding-bottom: 0px;
- 	rheight: 328;
- 	margin-left: 200px;
- 	position: fixed;
- 	background-color: #F0F0F0;
- 	height: 100%;
- }
-
- .right {
- 	margin-left: 400px;
- 	
- }
- table, th, td {
- 	border: 1px solid black;
- 	border-collapse: collapse;
- }
- th, td {
- 	padding: 5px;
- }
- th {
- 	text-align: center;
- }
- td {
- 	text-align: right;
- }
-
-iframe.social {
-	width: 56px !important;
-	height: 20px !important;
+select {
+    width: 200px;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
 
- /*  ---       MEDIA QUERIES         ----   */
+.content {
+    min-height: 100%;
+    max-height: 100%;
+    height: 100%;
+    position: relative;
+    overflow: auto;
+    z-index: 0;
+}
 
- /* --------- phone portrait -----------  */
+.background {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+}
 
- @media screen and (max-width: 320px) {
+.left_block {
+    display: block;
+    float: left;
+}
 
- 	.background.block_1 {
- 		width: 50%;
- 	}
+.right_block {
+    display: block;
+    float: right;
+}
 
- 	.block_1 {
- 		width: 50%;
- 		background-color: transparent;
- 	}
- 	.background.block_2 {
- 		width: 50%;
- 		margin-left: 50%;
- 		background-color: #FFF;
- 	}
+.background.block_1 {
+    height: 100%;
+    padding-bottom: 0;
+    left: 0;
+    width: auto;
+    background-color: #F0F0F0;
+}
 
- 	.block_2 {
- 		width: 50%;
- 		margin-left: 50%;
- 		background-color: transparent;
- 	}
- 	.block_2 p {
- 		color: transparent;
- 		font-size: 0;
- 	}
- 	.right {
- 		margin-left: 0%;
- 	}
- 	select {
- 		width: 100%;
- 	}
- 	iframe.social {
- 		height: 0 !important;
- 		width: 0 !important;
- 	}
- }
+.block_1 {
+    height: 100%;
+    width: auto;
+    padding-bottom: 0;
+    position: fixed;
+}
 
- /* --------  phone landscape-----------  */
+.background.block_2 {
+    height: 100%;
+    padding-bottom: 0;
+    left: 0;
+    width: 200px;
+    margin-left: 200px;
+    background-color: #F0F0F0;
+}
 
- @media screen and (min-width: 321px) and (max-width: 641px) {
+.block_2 {
+    height: auto;
+    width: 200px;
+    padding-bottom: 0;
+    rheight: 328;
+    margin-left: 200px;
+    position: fixed;
+    background-color: #F0F0F0;
+    height: 100%;
+}
 
- 	.background.block_1 {
- 		width: 50%;
- 	}
+.right {
+    margin-left: 400px;
 
- 	.block_1 {
- 		width: 50%;
- 		background-color: transparent;
- 	}
- 	.background.block_2 {
- 		width: 50%;
- 		margin-left: 50%;
- 		background-color: #FFF;
- 	}
+}
 
- 	.block_2 {
- 		width: 50%;
- 		margin-left: 50%;
- 		background-color: transparent;
- 	}
- 	.block_2 p {
- 		color: transparent;
- 		font-size: 0;
- 	}
- 	.right {
- 		margin-left: 0%;
- 	}
- 	select {
- 		width: 100%;
- 		height: auto;
- 	}
- 	iframe.social {
- 		height: 0 !important;
- 		width: 0 !important;
- 	}
- }
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
 
+th, td {
+    padding: 5px;
+}
 
- /* --------- ipad portrait -------------  */
-/*
+th {
+    text-align: center;
+}
 
- @media screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+td {
+    text-align: right;
+}
 
- 	.background.block_1 {
- 		width: 25%;
- 	}
+iframe.social {
+    width: 56px !important;
+    height: 20px !important;
+}
 
- 	.block_1 {
- 		width: 25%;
- 	}
- 	.background.block_2 {
- 		width: 25%;
- 		margin-left: 25%;
- 	}
+/*  ---       MEDIA QUERIES         ----   */
 
- 	.block_2 {
- 		width: 25%;
- 		margin-left: 25%;
- 	}
- 	.right {
- 		margin-left: 50%;
- 		
- 	}
+/* --------- phone portrait -----------  */
 
- }
- */
+@media screen and (max-width: 320px) {
+
+    .background.block_1 {
+        width: 50%;
+    }
+
+    .block_1 {
+        width: 50%;
+        background-color: transparent;
+    }
+
+    .background.block_2 {
+        width: 50%;
+        margin-left: 50%;
+        background-color: #FFF;
+    }
+
+    .block_2 {
+        width: 50%;
+        margin-left: 50%;
+        background-color: transparent;
+    }
+
+    .block_2 p {
+        color: transparent;
+        font-size: 0;
+    }
+
+    .right {
+        margin-left: 0;
+    }
+
+    select {
+        width: 100%;
+    }
+
+    iframe.social {
+        height: 0 !important;
+        width: 0 !important;
+    }
+}
+
+/* --------  phone landscape-----------  */
+
+@media screen and (min-width: 321px) and (max-width: 641px) {
+
+    .background.block_1 {
+        width: 50%;
+    }
+
+    .block_1 {
+        width: 50%;
+        background-color: transparent;
+    }
+
+    .background.block_2 {
+        width: 50%;
+        margin-left: 50%;
+        background-color: #FFF;
+    }
+
+    .block_2 {
+        width: 50%;
+        margin-left: 50%;
+        background-color: transparent;
+    }
+
+    .block_2 p {
+        color: transparent;
+        font-size: 0;
+    }
+
+    .right {
+        margin-left: 0;
+    }
+
+    select {
+        width: 100%;
+        height: auto;
+    }
+
+    iframe.social {
+        height: 0 !important;
+        width: 0 !important;
+    }
+}
