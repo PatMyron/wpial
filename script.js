@@ -4,67 +4,29 @@ function populatePre(school, sport) {
     document.getElementById('contentsOpponentTable2').textContent = "";
     document.getElementById('contents').textContent = "";
     if (school === "all" && sport === "all") {
-        var url;
-        url = "data/all.html";
-        var xhr = new XMLHttpRequest();
-        xhr.onload = function () {
-            document.getElementById('contentsP').innerHTML = this.responseText;
-        };
-        xhr.open('GET', url);
-        xhr.send();
+        ajaxHelper("data/all.html", 'contentsP');
     }
     else {
         if (school === "all") { // sport
-            populateSportP(sport);
+            ajaxHelper("data/dataBySport/" + sport + ".html", 'contentsP');
         } else if (sport === "all") { // school
-            populateSchoolP(school);
+            ajaxHelper("data/dataBySchool/" + school + ".html", 'contentsP');
         } else { // specific team
-            populateP(school, sport);
+            ajaxHelper("data/specificData/" + school + "+" + sport + "/seasons.html", 'contentsP');
+            ajaxHelper("data/specificData/" + school + "+" + sport + "/opponentsGP.html", 'contentsOpponentTable1');
         }
     }
 }
 
-function populateSportP(sport) {
-    var url;
-    url = "data/dataBySport/" + sport + ".html";
-
+function ajaxHelper(url, elementId) {
     var xhr = new XMLHttpRequest();
     xhr.onload = function () {
-        document.getElementById('contentsP').innerHTML = this.responseText;
+        document.getElementById(elementId).innerHTML = this.responseText;
     };
     xhr.open('GET', url);
     xhr.send();
 }
-function populateSchoolP(school) {
-    var url;
-    url = "data/dataBySchool/" + school + ".html";
 
-    var xhr = new XMLHttpRequest();
-    xhr.onload = function () {
-        document.getElementById('contentsP').innerHTML = this.responseText;
-    };
-    xhr.open('GET', url);
-    xhr.send();
-}
-function populateP(school, sport) {
-    var url;
-    url = "data/specificData/" + school + "+" + sport + "/seasons.html";
-
-    var xhr = new XMLHttpRequest();
-    xhr.onload = function () {
-        document.getElementById('contentsP').innerHTML = this.responseText;
-    };
-    xhr.open('GET', url);
-    xhr.send();
-
-    url = "data/specificData/" + school + "+" + sport + "/opponentsGP.html";
-    xhr = new XMLHttpRequest();
-    xhr.onload = function () {
-        document.getElementById('contentsOpponentTable1').innerHTML = this.responseText;
-    };
-    xhr.open('GET', url);
-    xhr.send();
-}
 // media query event handler
 if (matchMedia) {
     var mq = window.matchMedia("(max-width: 641px)");
