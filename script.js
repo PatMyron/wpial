@@ -1,8 +1,6 @@
 function populatePre(school, sport) {
     document.getElementById('contentsP').textContent = "";
     document.getElementById('contentsOpponentTable1').textContent = "";
-    document.getElementById('contentsOpponentTable2').textContent = "";
-    document.getElementById('contents').textContent = "";
     if (school === "all" && sport === "all") {
         ajaxHelper("data/all.html", 'contentsP');
     }
