@@ -37,8 +37,7 @@ function WidthChange(mq) {
     if (mq.matches) { // window width is less than 641px
         document.getElementById("schoolSelect").size = "1";
         document.getElementById("sportSelect").size = "1";
-    }
-    else { 	// window width is over 641px
+    } else { 	// window width is over 641px
         document.getElementById("schoolSelect").size = "100";
         document.getElementById("sportSelect").size = "9";
     }
