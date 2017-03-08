@@ -10,8 +10,8 @@ function populatePre(school, sport) {
         } else if (sport === "all") { // school
             ajaxHelper("data/dataBySchool/" + school + ".html", 'contentsP');
         } else { // specific team
-            ajaxHelper("data/specificData/" + school + "+" + sport + "/seasons.html", 'contentsP');
-            ajaxHelper("data/specificData/" + school + "+" + sport + "/opponentsGP.html", 'contentsOpponentTable1');
+            ajaxHelper("data/specificData/" + school + " " + sport + " seasons.html", 'contentsP');
+            ajaxHelper("data/specificData/" + school + " " + sport + " opponents.html", 'contentsOpponentTable1');
         }
     }
 }
