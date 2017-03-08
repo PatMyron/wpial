@@ -3,16 +3,13 @@ function populatePre(school, sport) {
     document.getElementById('contentsOpponentTable1').textContent = "";
     if (school === "all" && sport === "all") {
         ajaxHelper("data/all.html", 'contentsP');
-    }
-    else {
-        if (school === "all") { // sport
-            ajaxHelper("data/dataBySport/" + sport + ".html", 'contentsP');
-        } else if (sport === "all") { // school
-            ajaxHelper("data/dataBySchool/" + school + ".html", 'contentsP');
-        } else { // specific team
-            ajaxHelper("data/specificData/" + school + " " + sport + " seasons.html", 'contentsP');
-            ajaxHelper("data/specificData/" + school + " " + sport + " opponents.html", 'contentsOpponentTable1');
-        }
+    } else if (school === "all") { // sport
+        ajaxHelper("data/dataBySport/" + sport + ".html", 'contentsP');
+    } else if (sport === "all") { // school
+        ajaxHelper("data/dataBySchool/" + school + ".html", 'contentsP');
+    } else { // specific team
+        ajaxHelper("data/specificData/" + school + " " + sport + " seasons.html", 'contentsP');
+        ajaxHelper("data/specificData/" + school + " " + sport + " opponents.html", 'contentsOpponentTable1');
     }
 }
 
