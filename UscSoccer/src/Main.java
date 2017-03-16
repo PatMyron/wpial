@@ -58,7 +58,7 @@ public class Main {
 						opposingTeams.add(t);
 						teamMap.put(opponent, t);
 					}
-					setupOpponentAlphabetically(g, teamMap); // alphabetical into opposingTeams
+					setupOpponents(g, teamMap); // alphabetical into opposingTeams
 					sortOpponentsByGP(opposingTeams); // sorts by games played into opposingTeams
 				}
 			} // end inner for loop
@@ -143,12 +143,12 @@ public class Main {
 		return new Game(opponent, result, goalsFor, goalsAgainst);
 	}
 
-	private static void setupOpponentAlphabetically(ArrayList<Game> g, TreeMap<String, SeasonTemplate> teamMap) {
-		for (Game games : g) {
-			teamMap.get(games.opponent).addGame(games);
+	private static void setupOpponents(ArrayList<Game> games, TreeMap<String, SeasonTemplate> teamMap) {
+		for (Game g : games) {
+			teamMap.get(g.opponent).addGame(g);
 		}
-		for (Map.Entry<String, SeasonTemplate> entry : teamMap.entrySet()) {
-			entry.getValue().endOfSeason();
+		for (SeasonTemplate season : teamMap.values()) {
+			season.endOfSeason();
 		}
 	}
 
