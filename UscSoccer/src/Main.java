@@ -9,6 +9,7 @@ import java.util.*;
 public class Main {
 	private static final Map<Integer, String> sportEnums = new TreeMap<>(); // enum 1=FOOTBALL etc.
 	private static final TreeSet<String> allSchoolNames = new TreeSet<>(); // all WPIAL schools (142 of them)
+	private static final int END_OF_CURRENT_SEASON = 2017;
 
 	public static void main(String[] args) throws IOException {
 		fillSportEnumsAndSchoolNames();
@@ -26,7 +27,7 @@ public class Main {
 				SeasonTemplate seasons[] = new SeasonTemplate[3000];
 				totalRecords.add(new SeasonTemplate(schoolName));
 				int totalGameCounter = 0;
-				for (int year = 2003; year < 2015; year++) { // from '03-'04
+				for (int year = 2003; year < END_OF_CURRENT_SEASON; year++) { // from '03-'04
 					seasons[year] = new SeasonTemplate(year);
 					File f = new File("tables/" + schoolName + sportEnums.get(teamtypeid) + year + ".html");
 					if (f.exists() && !f.isDirectory()) {
