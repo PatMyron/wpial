@@ -17,7 +17,6 @@ public class Main {
 			writeTableHeader(writerSchool, "Sport");
 			List<SeasonTemplate> totalRecords = new ArrayList<>();
 			for (int sportNum : sportEnums.keySet()) {
-				// PrintWriter writerSort = new PrintWriter("specificData/"+schoolName+"+"+sportEnums.get(sportNum)+"/opponentsGP.html", "UTF-8");
 				ArrayList<Game> g = new ArrayList<>(); // all games a team has played
 				SeasonTemplate seasons[] = new SeasonTemplate[3000];
 				totalRecords.add(new SeasonTemplate(schoolName));
