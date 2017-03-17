@@ -119,6 +119,8 @@ public class Main {
 		String[] tokenOpponent = actualGameRow[1].split("[*]+")[0].split("at ");
 		String opponent = tokenOpponent[tokenOpponent.length - 1];
 		if (opponent.contains("Seton-La")) opponent = "Seton-La Salle";
+		if (opponent.contains("Quigley")) opponent = "Quigley Catholic";
+		if (opponent.contains("Geibel")) opponent = "Geibel Catholic";
 
 		// RESULT GOALS FOR/AGAINST
 		int goalsFor, goalsAgainst;
