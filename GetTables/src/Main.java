@@ -35,7 +35,7 @@ public class Main {
 							if (teamid == null) {
 								return;
 							}
-							Element table = getTable(year, teamid, teamtypeid, schoolName);
+							Element table = getTable(year, teamid, teamtypeid);
 							if (table == null) {
 								log(String.format("table is null." + " school: " + "%-32s" + " sportName: " + "%-20s" + " sport: " + teamtypeid + " year: " + year, schoolName, sportNumbers.get(teamtypeid)));
 								return;
@@ -103,7 +103,7 @@ public class Main {
 		}
 	}
 
-	private static Element getTable(int year, String teamid, int teamtypeid, String schoolName) {
+	private static Element getTable(int year, String teamid, int teamtypeid) {
 		try {
 			Document doc;
 			if (year < END_OF_CURRENT_SEASON - 1)
