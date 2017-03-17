@@ -58,7 +58,6 @@ local.properties
 .texlipse
 */.texlipse
 
-*/tables/*.html
 */UscSoccer/all/*.txt
 */UscSoccer/data*
 */UscSoccer/tablesOLD/*
