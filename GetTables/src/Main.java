@@ -37,7 +37,7 @@ public class Main {
 							}
 							Element table = getTable(year, teamid, teamtypeid, schoolName);
 							if (table == null) {
-								log("table is null." + " year: " + year + " sport: " + teamtypeid + " school: " + schoolName + " sportName: " + sportNumbers.get(teamtypeid));
+								log(String.format("table is null." + " school: " + "%-32s" + " sportName: " + "%-20s" + " sport: " + teamtypeid + " year: " + year, schoolName, sportNumbers.get(teamtypeid)));
 								return;
 							}
 							try {
@@ -111,7 +111,6 @@ public class Main {
 			else
 				doc = Jsoup.connect(NEW_BASE_URL + "team_record.asp?teamtypeid=" + teamtypeid + "&teamid=" + teamid + "&py=" + year).timeout(TIMEOUT_TIME).get();
 		} catch (IOException e) {
-			log("error message: " + e.getMessage() + " year: " + year + " sport: " + teamtypeid + " school: " + schoolName + " sportName: " + sportNumbers.get(teamtypeid));
 			return null;
 		}
 		return doc.select("table").first();
