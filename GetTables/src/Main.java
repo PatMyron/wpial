@@ -22,30 +22,30 @@ public class Main {
 		errorWriter = new PrintWriter(new File("errors/" + new Date().toLocaleString() + ".txt"));
 		schoolWriter = new PrintWriter("WPIAL schools.txt");
 		fillSportsNumber();
-		TreeMap<Integer, TreeMap<String, String>> teamids = new TreeMap<>(); // Keys: sport#,school   V: website code
-		teamIdsFiller(teamids); // fills schools set and teamids double map (for new data)
+		TreeMap<String, String> teamids = new TreeMap<>(); // Keys: sport#,school,year    V: teamid
+		fillTeamIds(teamids); // fills schools set and teamids map
 		for (String schoolName : allSchoolNames) {
 			schoolWriter.println(schoolName);
 		}
 		schoolWriter.close();
 		allSchoolNames.parallelStream().forEach(schoolName ->
-				sportNumbers.keySet().parallelStream().forEach(teamtypeid ->
+				sportNumbers.keySet().parallelStream().forEach(sportNum ->
 						IntStream.range(2003, END_OF_CURRENT_SEASON).parallel().forEach(year -> {
-							String teamid = teamids.get(teamtypeid).get(schoolName);
+							String teamid = teamids.get(sportNum + schoolName + year);
 							if (teamid == null) {
 								return;
 							}
-							Element table = getTable(year, teamid, teamtypeid);
+							Element table = getTable(year, teamid, sportNum);
 							if (table == null) {
-								log(String.format("table is null." + " school: " + "%-32s" + " sportName: " + "%-20s" + " sport: " + teamtypeid + " year: " + year, schoolName, sportNumbers.get(teamtypeid)));
+								log(String.format("table is null." + " school: " + "%-32s" + " sportName: " + "%-20s" + " sport: " + sportNum + " year: " + year, schoolName, sportNumbers.get(sportNum)));
 								return;
 							}
 							try {
-								PrintWriter tableWriter = new PrintWriter(new File("tables/" + schoolName + sportNumbers.get(teamtypeid) + year + ".html"));
+								PrintWriter tableWriter = new PrintWriter(new File("tables/" + schoolName + sportNumbers.get(sportNum) + year + ".html"));
 								tableWriter.println(table);
 								tableWriter.close();
 							} catch (FileNotFoundException e) {
-								log("MISSED writing a table." + " year: " + year + " sport: " + teamtypeid + " school: " + schoolName + " sportName: " + sportNumbers.get(teamtypeid));
+								log(String.format("MISSED writing table." + " school: " + "%-32s" + " sportName: " + "%-20s" + " sport: " + sportNum + " year: " + year, schoolName, sportNumbers.get(sportNum)));
 							}
 						})));
 		errorWriter.close();
@@ -61,44 +61,36 @@ public class Main {
 		sportNumbers.put(9, "WOMENS SOCCER");
 	}
 
-	private static void teamIdsFiller(TreeMap<Integer, TreeMap<String, String>> teamids) {
-		sportNumbers.keySet().parallelStream().forEach(teamtypeid -> {
-			teamids.put(teamtypeid, new TreeMap<>());
-			try {
-				Document lookupDoc = Jsoup.connect(NEW_BASE_URL + "team_lookup.asp?teamtypeid=" + teamtypeid).timeout(TIMEOUT_TIME).get();
-				actuallyFill(teamids, lookupDoc, teamtypeid);
-			} catch (IOException e) {
-				log("MISSED ENTIRE SPORT for getting allSchoolNames+teamids. Sport #: " + teamtypeid);
-			}
-			IntStream.range(2003, END_OF_CURRENT_SEASON).parallel().forEach(year -> {
-				try {
-					Document lookupDoc;
-					if (year < END_OF_CURRENT_SEASON - 1)
-						lookupDoc = Jsoup.connect(OLD_BASE_URL + "team_lookup.asp?teamtypeid=" + teamtypeid + "&py=" + year).timeout(TIMEOUT_TIME).get();
-					else
-						lookupDoc = Jsoup.connect(NEW_BASE_URL + "team_lookup.asp?teamtypeid=" + teamtypeid + "&py=" + year).timeout(TIMEOUT_TIME).get();
-					actuallyFill(teamids, lookupDoc, teamtypeid);
-				} catch (IOException e) {
-					log("MISSED teamids for Sport #: " + teamtypeid + " and year: " + year);
-				}
-			});
-		});
+	private static void fillTeamIds(TreeMap<String, String> teamids) {
+		sportNumbers.keySet().parallelStream().forEach(sportNum ->
+				IntStream.range(2003, END_OF_CURRENT_SEASON).parallel().forEach(year -> {
+					try {
+						Document doc;
+						if (year < END_OF_CURRENT_SEASON - 1)
+							doc = Jsoup.connect(OLD_BASE_URL + "team_lookup.asp?teamtypeid=" + sportNum + "&py=" + year).timeout(TIMEOUT_TIME).get();
+						else
+							doc = Jsoup.connect(NEW_BASE_URL + "team_lookup.asp?teamtypeid=" + sportNum + "&py=" + year).timeout(TIMEOUT_TIME).get();
+						actuallyFillTeamIds(teamids, doc, sportNum, year);
+					} catch (IOException e) {
+						log("MISSED teamids for Sport #: " + sportNum + " and year: " + year);
+					}
+				}));
 	}
 
-	private static void actuallyFill(TreeMap<Integer, TreeMap<String, String>> teamids, Document lookupDoc, int sportNum) {
-		Elements trs = lookupDoc.select("table").first().select("tr");
+	private static void actuallyFillTeamIds(TreeMap<String, String> teamids, Document doc, int sportNum, int year) {
+		Elements trs = doc.select("table").first().select("tr");
 		String[][] trtd = new String[trs.size()][];
 		for (int r = 0; r < trs.size(); r++) {
 			Elements tds = trs.get(r).select("td");
 			trtd[r] = new String[tds.size()];
 			for (int c = 0; c < tds.size(); c++) {
 				trtd[r][c] = tds.get(c).html();
-				String teamName = tds.get(c).text();
-				if (teamName.length() < 3) continue; // skips blanks
-				if (teamName.contains("201") || teamName.contains(" Ohio") || teamName.contains(", La.")) continue;
+				String schoolName = tds.get(c).text();
+				if (schoolName.length() < 3) continue; // skips blanks
+				if (schoolName.contains("201") || schoolName.contains(" Ohio") || schoolName.contains(", La.")) continue;
 				String teamid = trtd[r][c].split("[{}]+")[1];
-				teamids.get(sportNum).put(teamName, teamid);
-				allSchoolNames.add(teamName);
+				teamids.put(sportNum + schoolName + year, teamid);
+				allSchoolNames.add(schoolName);
 			}
 		}
 	}
