@@ -103,13 +103,13 @@ public class Main {
 		}
 	}
 
-	private static Element getTable(int year, String teamid, int teamtypeid) {
+	private static Element getTable(int year, String teamid, int sportNum) {
 		try {
 			Document doc;
 			if (year < END_OF_CURRENT_SEASON - 1)
-				doc = Jsoup.connect(OLD_BASE_URL + "team_record.asp?teamtypeid=" + teamtypeid + "&teamid=" + teamid + "&py=" + year).timeout(TIMEOUT_TIME).get();
+				doc = Jsoup.connect(OLD_BASE_URL + "team_record.asp?teamtypeid=" + sportNum + "&teamid=" + teamid + "&py=" + year).timeout(TIMEOUT_TIME).get();
 			else
-				doc = Jsoup.connect(NEW_BASE_URL + "team_record.asp?teamtypeid=" + teamtypeid + "&teamid=" + teamid + "&py=" + year).timeout(TIMEOUT_TIME).get();
+				doc = Jsoup.connect(NEW_BASE_URL + "team_record.asp?teamtypeid=" + sportNum + "&teamid=" + teamid + "&py=" + year).timeout(TIMEOUT_TIME).get();
 			return doc.select("table").first();
 		} catch (IOException e) {
 			return null;
