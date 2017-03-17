@@ -14,7 +14,7 @@ public class Main {
 		fillSportEnumsAndSchoolNames();
 		Element table;
 		for (String schoolName : allSchoolNames) {
-			PrintWriter writerSchool = new PrintWriter("dataBySchool/" + schoolName + ".html", "UTF-8");
+			PrintWriter writerSchool = new PrintWriter(new File("dataBySchool/" + schoolName + ".html"));
 			writeTableHeader(writerSchool, "Sport");
 			List<SeasonTemplate> totalRecords = new ArrayList<>();
 			for (Integer teamtypeid : sportEnums.keySet()) { // iterates through all sports
