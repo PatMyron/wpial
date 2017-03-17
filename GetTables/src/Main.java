@@ -33,7 +33,7 @@ public class Main {
 						IntStream.range(2003, END_OF_CURRENT_SEASON).parallel().forEach(year -> {
 							Element table = getTable(year, teamids.get(teamtypeid).get(schoolName), teamtypeid, schoolName);
 							if (table == null) {
-								log("table is null. " + " year: " + year + " sport: " + teamtypeid + " school: " + schoolName + " sportName: " + sportNumbers.get(teamtypeid));
+								log("table is null." + " year: " + year + " sport: " + teamtypeid + " school: " + schoolName + " sportName: " + sportNumbers.get(teamtypeid));
 								return;
 							}
 							try {
@@ -41,7 +41,7 @@ public class Main {
 								tableWriter.println(table);
 								tableWriter.close();
 							} catch (FileNotFoundException e) {
-								log("MISSED writing a table. " + " year: " + year + " sport: " + teamtypeid + " school: " + schoolName + " sportName: " + sportNumbers.get(teamtypeid));
+								log("MISSED writing a table." + " year: " + year + " sport: " + teamtypeid + " school: " + schoolName + " sportName: " + sportNumbers.get(teamtypeid));
 							}
 						})));
 		errorWriter.close();
