@@ -18,7 +18,7 @@ public class Main {
 			PrintWriter writerSchool = new PrintWriter(new File("dataBySchool/" + schoolName + ".html"));
 			writeTableHeader(writerSchool, "Sport");
 			List<SeasonTemplate> totalRecords = new ArrayList<>();
-			for (int sportNum : sportEnums.keySet()) { // iterates through all sports
+			for (int sportNum : sportEnums.keySet()) {
 				// PrintWriter writerSort = new PrintWriter("specificData/"+schoolName+"+"+sportEnums.get(sportNum)+"/opponentsGP.html", "UTF-8");
 				// writerSpecificSeasons.println(schoolName+" "+sportEnums.get(sportNum) + "\n");
 				ArrayList<Game> g = new ArrayList<>(); // all games a team has played
