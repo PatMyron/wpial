@@ -31,7 +31,11 @@ public class Main {
 		allSchoolNames.parallelStream().forEach(schoolName ->
 				sportNumbers.keySet().parallelStream().forEach(teamtypeid ->
 						IntStream.range(2003, END_OF_CURRENT_SEASON).parallel().forEach(year -> {
-							Element table = getTable(year, teamids.get(teamtypeid).get(schoolName), teamtypeid, schoolName);
+							String teamid = teamids.get(teamtypeid).get(schoolName);
+							if (teamid == null) {
+								return;
+							}
+							Element table = getTable(year, teamid, teamtypeid, schoolName);
 							if (table == null) {
 								log("table is null." + " year: " + year + " sport: " + teamtypeid + " school: " + schoolName + " sportName: " + sportNumbers.get(teamtypeid));
 								return;
