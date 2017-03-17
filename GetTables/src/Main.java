@@ -104,8 +104,8 @@ public class Main {
 	}
 
 	private static Element getTable(int year, String teamid, int teamtypeid, String schoolName) {
-		Document doc;
 		try {
+			Document doc;
 			if (year < END_OF_CURRENT_SEASON - 1)
 				doc = Jsoup.connect(OLD_BASE_URL + "team_record.asp?teamtypeid=" + teamtypeid + "&teamid=" + teamid + "&py=" + year).timeout(TIMEOUT_TIME).get();
 			else
