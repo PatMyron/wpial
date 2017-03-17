@@ -18,18 +18,16 @@ public class Main {
 			PrintWriter writerSchool = new PrintWriter(new File("dataBySchool/" + schoolName + ".html"));
 			writeTableHeader(writerSchool, "Sport");
 			List<SeasonTemplate> totalRecords = new ArrayList<>();
-			for (Integer teamtypeid : sportEnums.keySet()) { // iterates through all sports
-				if (schoolName.contains("Apollo") && teamtypeid == 9) // idk whats up with this team
-					continue;
-				// PrintWriter writerSort = new PrintWriter("specificData/"+schoolName+"+"+sportEnums.get(teamtypeid)+"/opponentsGP.html", "UTF-8");
-				// writerSpecificSeasons.println(schoolName+" "+sportEnums.get(teamtypeid) + "\n");
+			for (int sportNum : sportEnums.keySet()) { // iterates through all sports
+				// PrintWriter writerSort = new PrintWriter("specificData/"+schoolName+"+"+sportEnums.get(sportNum)+"/opponentsGP.html", "UTF-8");
+				// writerSpecificSeasons.println(schoolName+" "+sportEnums.get(sportNum) + "\n");
 				ArrayList<Game> g = new ArrayList<>(); // all games a team has played
 				SeasonTemplate seasons[] = new SeasonTemplate[3000];
 				totalRecords.add(new SeasonTemplate(schoolName));
 				int totalGameCounter = 0;
 				for (int year = 2003; year < END_OF_CURRENT_SEASON; year++) { // from '03-'04
 					seasons[year] = new SeasonTemplate(year);
-					File f = new File("tables/" + schoolName + sportEnums.get(teamtypeid) + year + ".html");
+					File f = new File("tables/" + schoolName + sportEnums.get(sportNum) + year + ".html");
 					if (f.exists() && !f.isDirectory()) {
 						Document doc = Jsoup.parse(f, "UTF-8");
 						table = doc.select("table").first();
@@ -46,7 +44,7 @@ public class Main {
 					totalRecords.remove(totalRecords.size() - 1);
 				} else {
 					totalRecords.get(totalRecords.size() - 1).endOfSeason();
-					totalRecords.get(totalRecords.size() - 1).printSeasonToTable(writerSchool, sportEnums.get(teamtypeid));
+					totalRecords.get(totalRecords.size() - 1).printSeasonToTable(writerSchool, sportEnums.get(sportNum));
 					TreeSet<String> opponents = new TreeSet<>();
 					for (Game games : g) {
 						if (!games.result.contains("PPD"))
