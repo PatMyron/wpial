@@ -83,7 +83,7 @@ public class Main {
 	}
 
 	private static void writeTableHeader(PrintWriter writer, String firstColumnTitle) {
-		writer.print("<table style=\"width:100%\">\n  <tr>\n    <th>" + firstColumnTitle + "</th>\n    <th>Games</th>\n    <th>W</th>\n    <th>T</th>\n    <th>L</th>\n    <th>Pct</th>\n    <th>For</th>\n    <th>Against</th>\n    <th>Diff</th>\n    <th>F/GP</th>\n    <th>A/GP</th>\n    <th>+/-</th>\n  </tr>");
+		writer.print("<table>\n  <tr>\n    <th>" + firstColumnTitle + "</th>\n    <th>Games</th>\n    <th>W</th>\n    <th>T</th>\n    <th>L</th>\n    <th>Pct</th>\n    <th>For</th>\n    <th>Against</th>\n    <th>Diff</th>\n    <th>F/GP</th>\n    <th>A/GP</th>\n    <th>+/-</th>\n  </tr>");
 	}
 
 	private static int getTableData(Elements trs, String[][] trtd, int[] gameRow) {
