@@ -62,8 +62,8 @@ public class Main {
 	}
 
 	private static void fillTeamIds(TreeMap<String, String> teamids) {
-		sportNumbers.keySet().parallelStream().forEach(sportNum ->
-				IntStream.range(2003, END_OF_CURRENT_SEASON).parallel().forEach(year -> {
+		sportNumbers.keySet().forEach(sportNum ->
+				IntStream.range(2003, END_OF_CURRENT_SEASON).forEach(year -> {
 					try {
 						Document doc;
 						if (year < END_OF_CURRENT_SEASON - 1)
