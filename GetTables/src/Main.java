@@ -110,10 +110,10 @@ public class Main {
 				doc = Jsoup.connect(OLD_BASE_URL + "team_record.asp?teamtypeid=" + teamtypeid + "&teamid=" + teamid + "&py=" + year).timeout(TIMEOUT_TIME).get();
 			else
 				doc = Jsoup.connect(NEW_BASE_URL + "team_record.asp?teamtypeid=" + teamtypeid + "&teamid=" + teamid + "&py=" + year).timeout(TIMEOUT_TIME).get();
+			return doc.select("table").first();
 		} catch (IOException e) {
 			return null;
 		}
-		return doc.select("table").first();
 	}
 
 	private static void log(String s) {
