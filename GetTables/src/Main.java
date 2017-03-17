@@ -13,7 +13,7 @@ public class Main {
 	private static final String OLD_BASE_URL = "http://old.post-gazette.com/highschoolsports/statsPrevYears/";
 	private static final String NEW_BASE_URL = "http://old.post-gazette.com/highschoolsports/stats/";
 	private static final Map<Integer, String> sportNumbers = new TreeMap<>(); // enum 1=FOOTBALL etc.
-	private static final TreeSet<String> allSchoolNames = new TreeSet<>();  // all WPIAL schools (142 of them)
+	private static final TreeSet<String> allSchoolNames = new TreeSet<>();  // all WPIAL schools
 	private static PrintWriter errorWriter;
 	private static PrintWriter schoolWriter;
 
