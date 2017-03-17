@@ -88,6 +88,9 @@ public class Main {
 				String schoolName = tds.get(c).text();
 				if (schoolName.length() < 3) continue; // skips blanks
 				if (schoolName.contains("201") || schoolName.contains(" Ohio") || schoolName.contains(", La.")) continue;
+				if (schoolName.contains("Seton-La")) schoolName = "Seton-La Salle";
+				if (schoolName.contains("Quigley")) schoolName = "Quigley Catholic";
+				if (schoolName.contains("Geibel")) schoolName = "Geibel Catholic";
 				String teamid = trtd[r][c].split("[{}]+")[1];
 				teamids.put(sportNum + schoolName + year, teamid);
 				allSchoolNames.add(schoolName);

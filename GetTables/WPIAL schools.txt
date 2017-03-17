@@ -54,7 +54,6 @@ Frazier
 Freedom
 Freeport
 Gateway
-Geibel
 Geibel Catholic
 Greater Works Academy
 Greensburg Central Catholic
@@ -110,7 +109,6 @@ Peters Township
 Pine-Richland
 Plum
 Quaker Valley
-Quigley
 Quigley Catholic
 Ringgold
 Riverside
@@ -120,7 +118,6 @@ Schenley
 Seneca Valley
 Serra Catholic
 Seton-La Salle
-Seton-LaSalle
 Sewickley Academy
 Shady Side Academy
 Shaler
