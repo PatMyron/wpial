@@ -56,7 +56,7 @@ public class Main {
 					setupOpponents(g, teamMap); // alphabetical into opposingTeams
 					sortOpponentsByGP(opposingTeams); // sorts by games played into opposingTeams
 				}
-			} // end inner for loop
+			}
 			writerSchool.println("</table>");
 			writerSchool.close();
 		}
