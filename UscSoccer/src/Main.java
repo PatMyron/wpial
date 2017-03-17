@@ -13,14 +13,12 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		fillSportEnumsAndSchoolNames();
-		Element table;
 		for (String schoolName : allSchoolNames) {
 			PrintWriter writerSchool = new PrintWriter(new File("dataBySchool/" + schoolName + ".html"));
 			writeTableHeader(writerSchool, "Sport");
 			List<SeasonTemplate> totalRecords = new ArrayList<>();
 			for (int sportNum : sportEnums.keySet()) {
 				// PrintWriter writerSort = new PrintWriter("specificData/"+schoolName+"+"+sportEnums.get(sportNum)+"/opponentsGP.html", "UTF-8");
-				// writerSpecificSeasons.println(schoolName+" "+sportEnums.get(sportNum) + "\n");
 				ArrayList<Game> g = new ArrayList<>(); // all games a team has played
 				SeasonTemplate seasons[] = new SeasonTemplate[3000];
 				totalRecords.add(new SeasonTemplate(schoolName));
@@ -29,16 +27,15 @@ public class Main {
 					seasons[year] = new SeasonTemplate(year);
 					File f = new File("tables/" + schoolName + sportEnums.get(sportNum) + year + ".html");
 					if (f.exists() && !f.isDirectory()) {
-						Document doc = Jsoup.parse(f, "UTF-8");
-						table = doc.select("table").first();
-					} else continue;
-					if (table == null) continue;
-					int[] gameRow = new int[60];
-					Elements trs = table.select("tr");
-					String[][] trtd = new String[trs.size()][];
-					int gamesInSeason = getTableData(trs, trtd, gameRow); // puts table in trtd[][] and gameRow[] give rows where games are
-					totalGameCounter = addGames(trtd, gameRow, year, seasons, g, gamesInSeason, totalRecords, totalRecords.size() - 1, totalGameCounter); // adds to g, individual season, and total record
-					seasons[year].endOfSeason();
+						Element table = Jsoup.parse(f, "UTF-8").select("table").first();
+						if (table == null) continue;
+						int[] gameRow = new int[60];
+						Elements trs = table.select("tr");
+						String[][] trtd = new String[trs.size()][];
+						int gamesInSeason = getTableData(trs, trtd, gameRow); // puts table in trtd[][] and gameRow[] give rows where games are
+						totalGameCounter = addGames(trtd, gameRow, year, seasons, g, gamesInSeason, totalRecords, totalRecords.size() - 1, totalGameCounter); // adds to g, individual season, and total record
+						seasons[year].endOfSeason();
+					}
 				}
 				if (totalRecords.get(totalRecords.size() - 1).GP == 0) { // TODO private
 					totalRecords.remove(totalRecords.size() - 1);
