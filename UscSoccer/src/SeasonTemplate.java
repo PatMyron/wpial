@@ -36,6 +36,32 @@ class SeasonTemplate {
 		year = year_;
 	}
 
+	static void writeDataToHTMLTable(PrintWriter writer, final Object[] arr) {
+		for (Object o : arr) {
+			writer.println("<td>");
+			writer.println(o);
+			writer.println("</td>");
+		}
+	}
+
+	private void writeDoublesToHTMLTable(PrintWriter writer, final double[] arr) {
+		for (double d : arr) {
+			writer.println("<td>");
+			writer.printf("%6.2f", d);
+			writer.println("</td>");
+		}
+	}
+
+	void printSeasonToTable(PrintWriter writer, String firstColumnData) {
+		writer.println("<tr>");
+		writeDataToHTMLTable(writer, new Object[]{firstColumnData, GP, w, t, l, GF, GA, goalDifferential});
+		writer.println("<td>");
+		writer.printf("%5.1f %%", winPct);
+		writer.println("</td>");
+		writeDoublesToHTMLTable(writer, new double[]{goalsForPerGame, goalsAgainstPerGame, goalDiffPerGame});
+		writer.println("</tr>");
+	}
+	
 	void endOfSeason() {
 		GP = w + t + l;
 		winPct = (w + 0.5 * t) / (GP) * 100;
@@ -57,31 +83,5 @@ class SeasonTemplate {
 			t++;
 		if (g.result.contains("L"))
 			l++;
-	}
-
-	void printSeasonToTable(PrintWriter writer, String firstColumnData) {
-		writer.println("<tr>");
-		writeDataToHTMLTable(writer, new Object[]{firstColumnData, GP, w, t, l, GF, GA, goalDifferential});
-		writer.println("<td>");
-		writer.printf("%5.1f %%", winPct);
-		writer.println("</td>");
-		writeDoublesToHTMLTable(writer, new double[]{goalsForPerGame, goalsAgainstPerGame, goalDiffPerGame});
-		writer.println("</tr>");
-	}
-
-	private void writeDoublesToHTMLTable(PrintWriter writer, final double[] arr) {
-		for (double d : arr) {
-			writer.println("<td>");
-			writer.printf("%6.2f", d);
-			writer.println("</td>");
-		}
-	}
-
-	private void writeDataToHTMLTable(PrintWriter writer, final Object[] arr) {
-		for (Object o : arr) {
-			writer.println("<td>");
-			writer.println(o);
-			writer.println("</td>");
-		}
 	}
 }

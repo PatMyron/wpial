@@ -83,7 +83,10 @@ public class Main {
 	}
 
 	private static void writeTableHeader(PrintWriter writer, String firstColumnTitle) {
-		writer.print("<table>\n  <tr>\n    <th>" + firstColumnTitle + "</th>\n    <th>Games</th>\n    <th>W</th>\n    <th>T</th>\n    <th>L</th>\n    <th>Pct</th>\n    <th>For</th>\n    <th>Against</th>\n    <th>Diff</th>\n    <th>F/GP</th>\n    <th>A/GP</th>\n    <th>+/-</th>\n  </tr>");
+		writer.println("<table>");
+		writer.println("<tr>");
+		SeasonTemplate.writeDataToHTMLTable(writer, new Object[]{firstColumnTitle, "Games", "W", "T", "L", "For", "Against", "Diff", "Pct", "F/GP", "A/GP", "+/-"});
+		writer.println("</tr>");
 	}
 
 	private static int getTableData(Elements trs, String[][] trtd, int[] gameRow) {
