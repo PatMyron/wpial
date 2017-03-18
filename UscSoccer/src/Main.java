@@ -17,6 +17,10 @@ public class Main {
 			writeTableHeader(writerSchool, "Sport");
 			List<SeasonTemplate> totalRecords = new ArrayList<>();
 			for (int sportNum : sportEnums.keySet()) {
+				PrintWriter writerSpecificSeasons = new PrintWriter(new File("specificData/" + schoolName + " " + sportEnums.get(sportNum) + " " + "seasons.html"));
+				PrintWriter writerSpecificOpponents = new PrintWriter(new File("specificData/" + schoolName + " " + sportEnums.get(sportNum) + " " + "opponents.html"));
+				writeTableHeader(writerSpecificSeasons, "Year");
+				writeTableHeader(writerSpecificOpponents, "Opponent");
 				ArrayList<Game> g = new ArrayList<>(); // all games a team has played
 				SeasonTemplate seasons[] = new SeasonTemplate[3000];
 				totalRecords.add(new SeasonTemplate(schoolName));
@@ -55,10 +59,16 @@ public class Main {
 					setupOpponents(g, teamMap); // alphabetical into opposingTeams
 					sortOpponentsByGP(opposingTeams); // sorts by games played into opposingTeams
 				}
+				endTableAndClose(writerSpecificSeasons);
+				endTableAndClose(writerSpecificOpponents);
 			}
-			writerSchool.println("</table>");
-			writerSchool.close();
+			endTableAndClose(writerSchool);
 		}
+	}
+
+	private static void endTableAndClose(PrintWriter writer) {
+		writer.println("</table>");
+		writer.close();
 	}
 
 	private static int addGames(String[][] trtd, int[] gameRow, int year, SeasonTemplate[] seasons, ArrayList<Game> g, int gamesInSeason,
