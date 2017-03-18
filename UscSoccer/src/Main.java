@@ -25,10 +25,10 @@ public class Main {
 					File f = new File("tables/" + schoolName + sportName + year + ".html");
 					if (!f.exists() || f.isDirectory()) continue;
 					Elements trs = Jsoup.parse(f, "UTF-8").select("table").first().select("tr");
-					int[] gameRow = new int[100];
+					TreeSet<Integer> gameRows = new TreeSet<>();
 					String[][] trtd = new String[trs.size()][];
-					int gamesInSeason = getTableData(trs, trtd, gameRow); // puts table in trtd[][] and gameRow[] give rows where games are
-					totalGameCounter = addGames(trtd, gameRow, season, games, gamesInSeason, totalRecordsForEachSport, totalRecordsForEachSport.size() - 1, totalGameCounter); // adds to games, individual season, and total record
+					getTableData(trs, trtd, gameRows); // puts table in trtd[][] and gameRows give rows where games are
+					totalGameCounter = addGames(trtd, gameRows, season, games, totalRecordsForEachSport, totalRecordsForEachSport.size() - 1, totalGameCounter); // adds to games, individual season, and total record
 					season.printSeasonToTable(writerSpecificSeasons, String.valueOf(year));
 				}
 				totalRecordsForEachSport.get(totalRecordsForEachSport.size() - 1).printSeasonToTable(writerSpecificSeasons, "TOTAL");
@@ -51,12 +51,11 @@ public class Main {
 		writer.close();
 	}
 
-	private static int addGames(String[][] trtd, int[] gameRow, SeasonTemplate season, ArrayList<Game> games, int gamesInSeason,
-								List<SeasonTemplate> totalRecords, int schoolNum, int totalGameCounter) {
-		for (int i = 0; i < gamesInSeason; i++) {
-			if (trtd[gameRow[i]][3].matches(".*[WTL].*")) {
-				if (!trtd[gameRow[i]][3].contains("PPD")) {
-					games.add(gameInformation(trtd[gameRow[i]]));
+	private static int addGames(String[][] trtd, TreeSet<Integer> gameRows, SeasonTemplate season, ArrayList<Game> games, List<SeasonTemplate> totalRecords, int schoolNum, int totalGameCounter) {
+		for (int gameRow : gameRows) {
+			if (trtd[gameRow][3].matches(".*[WTL].*")) {
+				if (!trtd[gameRow][3].contains("PPD")) {
+					games.add(gameInformation(trtd[gameRow]));
 					season.addGame(games.get(totalGameCounter));
 					totalRecords.get(schoolNum).addGame(games.get(totalGameCounter)); // for total count
 					totalGameCounter++;
@@ -73,19 +72,17 @@ public class Main {
 		writer.println("</tr>");
 	}
 
-	private static int getTableData(Elements trs, String[][] trtd, int[] gameRow) {
-		int gameRowCounter = 0;
+	private static void getTableData(Elements trs, String[][] trtd, TreeSet<Integer> gameRows) {
 		for (int i = 0; i < trs.size(); i++) {
 			Elements tds = trs.get(i).select("td");
 			trtd[i] = new String[tds.size()];
 			for (int j = 0; j < tds.size(); j++) {
 				trtd[i][j] = tds.get(j).text();
 				if (!tds.get(j).text().isEmpty() && j == 0) {
-					gameRow[gameRowCounter++] = i; // skip <th> columns and checks to make sure game not already in gameRow[]
+					gameRows.add(i); // skip <th> columns and checks to make sure game not already in gameRow[]
 				}
 			}
 		}
-		return gameRowCounter;
 	}
 
 	private static void fillSportEnumsAndSchoolNames() throws IOException {
