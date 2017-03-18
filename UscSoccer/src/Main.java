@@ -20,7 +20,7 @@ public class Main {
 				ArrayList<Game> g = new ArrayList<>(); // all games a team has played
 				totalRecordsForEachSport.add(new SeasonTemplate(schoolName));
 				int totalGameCounter = 0;
-				for (int year = 2003; year < END_OF_CURRENT_SEASON; year++) { // from '03-'04
+				for (int year = 2003; year < END_OF_CURRENT_SEASON; year++) {
 					SeasonTemplate season = new SeasonTemplate(schoolName);
 					File f = new File("tables/" + schoolName + sportName + year + ".html");
 					if (!f.exists() || f.isDirectory()) continue;
