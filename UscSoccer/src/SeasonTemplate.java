@@ -2,6 +2,7 @@ import java.io.PrintWriter;
 
 class SeasonTemplate {
 	int GP;
+	String schoolName;
 	private int w;
 	private int t;
 	private int l;
@@ -12,8 +13,6 @@ class SeasonTemplate {
 	private double goalsForPerGame;
 	private double goalsAgainstPerGame;
 	private double goalDiffPerGame;
-
-	private String schoolName;
 	private int year;
 
 	private SeasonTemplate() {
