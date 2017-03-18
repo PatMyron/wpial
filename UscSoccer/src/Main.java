@@ -53,7 +53,7 @@ public class Main {
 	private static void addGames(String[][] trtd, TreeSet<Integer> gameRows, ArrayList<Game> games, SeasonTemplate season, List<SeasonTemplate> totalRecordsForEachSport) {
 		for (int gameRow : gameRows) {
 			if (trtd[gameRow][3].matches(".*[WTL].*")) {
-				Game g = gameInformation(trtd[gameRow]);
+				Game g = createGameByParsingRow(trtd[gameRow]);
 				games.add(g);
 				season.addGame(g);
 				totalRecordsForEachSport.get(totalRecordsForEachSport.size() - 1).addGame(g);
@@ -96,7 +96,7 @@ public class Main {
 		reader.close();
 	}
 
-	private static Game gameInformation(String[] actualGameRow) {
+	private static Game createGameByParsingRow(String[] actualGameRow) {
 		//  OPPONENT
 		String[] tokenOpponent = actualGameRow[1].split("[*]+")[0].split("at ");
 		String opponent = tokenOpponent[tokenOpponent.length - 1];
