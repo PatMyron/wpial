@@ -44,14 +44,14 @@ public class Main {
 					if (!games.result.contains("PPD"))
 						opponents.add(games.opponent); // initializing with all opponents
 				}
-				TreeMap<String, SeasonTemplate> teamMap = new TreeMap<>();
+				TreeMap<String, SeasonTemplate> opponentMap = new TreeMap<>();
 				List<SeasonTemplate> opposingTeams = new ArrayList<>(opponents.size());
 				for (String opponent : opponents) {
 					SeasonTemplate t = new SeasonTemplate(opponent);
 					opposingTeams.add(t);
-					teamMap.put(opponent, t);
+					opponentMap.put(opponent, t);
 				}
-				setupOpponentMap(g, teamMap); // alphabetical into opposingTeams
+				setupOpponentMap(g, opponentMap); // alphabetical into opposingTeams
 				sortOpponentsByGP(opposingTeams); // sorts by games played into opposingTeams
 				endTableAndClose(writerSpecificSeasons);
 				endTableAndClose(writerSpecificOpponents);
