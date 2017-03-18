@@ -27,7 +27,7 @@ public class Main {
 					TreeSet<Integer> gameRows = new TreeSet<>();
 					String[][] trtd = new String[trs.size()][];
 					getTableData(trs, trtd, gameRows); // puts table in trtd[][] and gameRows give rows where games are
-					addGames(trtd, gameRows, season, games, totalRecordsForEachSport); // adds to games, individual season, and total record
+					addGames(trtd, gameRows, games, season, totalRecordsForEachSport); // adds to games, individual season, and total record
 					season.printSeasonToTable(writerSpecificSeasons, String.valueOf(year));
 				}
 				totalRecordsForEachSport.get(totalRecordsForEachSport.size() - 1).printSeasonToTable(writerSpecificSeasons, "TOTAL");
@@ -50,7 +50,7 @@ public class Main {
 		writer.close();
 	}
 
-	private static void addGames(String[][] trtd, TreeSet<Integer> gameRows, SeasonTemplate season, ArrayList<Game> games, List<SeasonTemplate> totalRecordsForEachSport) {
+	private static void addGames(String[][] trtd, TreeSet<Integer> gameRows, ArrayList<Game> games, SeasonTemplate season, List<SeasonTemplate> totalRecordsForEachSport) {
 		for (int gameRow : gameRows) {
 			if (trtd[gameRow][3].matches(".*[WTL].*")) {
 				if (!trtd[gameRow][3].contains("PPD")) {
