@@ -25,15 +25,14 @@ public class Main {
 				for (int year = 2003; year < END_OF_CURRENT_SEASON; year++) { // from '03-'04
 					seasons[year] = new SeasonTemplate(year);
 					File f = new File("tables/" + schoolName + sportEnums.get(sportNum) + year + ".html");
-					if (f.exists() && !f.isDirectory()) {
-						Element table = Jsoup.parse(f, "UTF-8").select("table").first();
-						if (table == null) continue;
-						int[] gameRow = new int[100];
-						Elements trs = table.select("tr");
-						String[][] trtd = new String[trs.size()][];
-						int gamesInSeason = getTableData(trs, trtd, gameRow); // puts table in trtd[][] and gameRow[] give rows where games are
-						totalGameCounter = addGames(trtd, gameRow, year, seasons, g, gamesInSeason, totalRecords, totalRecords.size() - 1, totalGameCounter); // adds to g, individual season, and total record
-					}
+					if (!f.exists() || f.isDirectory()) continue;
+					Element table = Jsoup.parse(f, "UTF-8").select("table").first();
+					if (table == null) continue;
+					int[] gameRow = new int[100];
+					Elements trs = table.select("tr");
+					String[][] trtd = new String[trs.size()][];
+					int gamesInSeason = getTableData(trs, trtd, gameRow); // puts table in trtd[][] and gameRow[] give rows where games are
+					totalGameCounter = addGames(trtd, gameRow, year, seasons, g, gamesInSeason, totalRecords, totalRecords.size() - 1, totalGameCounter); // adds to g, individual season, and total record
 				}
 				totalRecords.get(totalRecords.size() - 1).printSeasonToTable(writerSchool, sportEnums.get(sportNum));
 				TreeSet<String> opponents = new TreeSet<>();
