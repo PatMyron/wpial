@@ -27,7 +27,7 @@ public class Main {
 					if (f.exists() && !f.isDirectory()) {
 						Element table = Jsoup.parse(f, "UTF-8").select("table").first();
 						if (table == null) continue;
-						int[] gameRow = new int[60];
+						int[] gameRow = new int[100];
 						Elements trs = table.select("tr");
 						String[][] trtd = new String[trs.size()][];
 						int gamesInSeason = getTableData(trs, trtd, gameRow); // puts table in trtd[][] and gameRow[] give rows where games are
