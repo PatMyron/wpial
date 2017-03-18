@@ -132,13 +132,13 @@ public class Main {
 		return new Game(opponent, result, goalsFor, goalsAgainst);
 	}
 
-	private static void createOpponentsTable(ArrayList<Game> g, String schoolName, int sportNum) throws IOException {
+	private static void createOpponentsTable(ArrayList<Game> games, String schoolName, int sportNum) throws IOException {
 		TreeMap<String, SeasonTemplate> opponents = new TreeMap<>();
-		for (Game games : g) {
-			if (!games.result.contains("PPD")) {
-				String opponent = games.opponent;
+		for (Game game : games) {
+			if (!game.result.contains("PPD")) {
+				String opponent = game.opponent;
 				opponents.computeIfAbsent(opponent, k -> new SeasonTemplate(opponent));
-				opponents.get(opponent).addGame(games);
+				opponents.get(opponent).addGame(game);
 			}
 		}
 		sortOpponentsByGPAndReallyWriteOpponentsTable(new ArrayList<>(opponents.values()), schoolName, sportNum);
