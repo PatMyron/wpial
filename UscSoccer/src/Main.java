@@ -13,14 +13,11 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		fillSportEnumsAndSchoolNames();
 		for (String schoolName : allSchoolNames) {
-			PrintWriter writerSchool = new PrintWriter(new File("dataBySchool/" + schoolName + ".html"));
-			writeTableHeader(writerSchool, "Sport");
+			PrintWriter writerSchool = newPrintWriter("dataBySchool/" + schoolName + ".html", "Sport");
 			List<SeasonTemplate> totalRecords = new ArrayList<>();
 			for (int sportNum : sportEnums.keySet()) {
-				PrintWriter writerSpecificSeasons = new PrintWriter(new File("specificData/" + schoolName + " " + sportEnums.get(sportNum) + " " + "seasons.html"));
-				PrintWriter writerSpecificOpponents = new PrintWriter(new File("specificData/" + schoolName + " " + sportEnums.get(sportNum) + " " + "opponents.html"));
-				writeTableHeader(writerSpecificSeasons, "Year");
-				writeTableHeader(writerSpecificOpponents, "Opponent");
+				PrintWriter writerSpecificSeasons = newPrintWriter("specificData/" + schoolName + " " + sportEnums.get(sportNum) + " " + "seasons.html", "Year");
+				PrintWriter writerSpecificOpponents = newPrintWriter("specificData/" + schoolName + " " + sportEnums.get(sportNum) + " " + "opponents.html", "Opponent");
 				ArrayList<Game> g = new ArrayList<>(); // all games a team has played
 				SeasonTemplate seasons[] = new SeasonTemplate[3000];
 				totalRecords.add(new SeasonTemplate(schoolName));
@@ -58,6 +55,12 @@ public class Main {
 			}
 			endTableAndClose(writerSchool);
 		}
+	}
+
+	private static PrintWriter newPrintWriter(String fileName, String firstColumnTitle) throws FileNotFoundException {
+		PrintWriter writerSchool = new PrintWriter(new File(fileName));
+		writeTableHeader(writerSchool, firstColumnTitle);
+		return writerSchool;
 	}
 
 	private static void endTableAndClose(PrintWriter writer) {
