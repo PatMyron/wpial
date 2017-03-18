@@ -26,8 +26,8 @@ public class Main {
 					Elements trs = Jsoup.parse(f, "UTF-8").select("table").first().select("tr");
 					TreeSet<Integer> gameRows = new TreeSet<>();
 					String[][] trtd = new String[trs.size()][];
-					getTableData(trs, trtd, gameRows); // puts table in trtd[][] and gameRows give rows where games are
-					addGames(trtd, gameRows, games, season, totalRecordsForEachSport); // adds to games, individual season, and total record
+					fillInTRTDandGameRows(trs, trtd, gameRows);
+					addGames(trtd, gameRows, games, season, totalRecordsForEachSport); // adds to games, season, and total record
 					season.printSeasonToTable(writerSpecificSeasons, String.valueOf(year));
 				}
 				totalRecordsForEachSport.get(totalRecordsForEachSport.size() - 1).printSeasonToTable(writerSpecificSeasons, "TOTAL");
@@ -68,7 +68,7 @@ public class Main {
 		writer.println("</tr>");
 	}
 
-	private static void getTableData(Elements trs, String[][] trtd, TreeSet<Integer> gameRows) {
+	private static void fillInTRTDandGameRows(Elements trs, String[][] trtd, TreeSet<Integer> gameRows) {
 		for (int i = 0; i < trs.size(); i++) {
 			Elements tds = trs.get(i).select("td");
 			trtd[i] = new String[tds.size()];
