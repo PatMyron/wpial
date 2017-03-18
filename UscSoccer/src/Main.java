@@ -19,7 +19,6 @@ public class Main {
 				PrintWriter writerSpecificSeasons = newPrintWriter("specificData/" + schoolName + " " + sportName + " " + "seasons.html", "Year");
 				ArrayList<Game> games = new ArrayList<>(); // all games a team has played
 				totalRecordsForEachSport.add(new SeasonTemplate(schoolName));
-				int totalGameCounter = 0;
 				for (int year = 2003; year < END_OF_CURRENT_SEASON; year++) {
 					SeasonTemplate season = new SeasonTemplate(schoolName);
 					File f = new File("tables/" + schoolName + sportName + year + ".html");
@@ -28,7 +27,7 @@ public class Main {
 					TreeSet<Integer> gameRows = new TreeSet<>();
 					String[][] trtd = new String[trs.size()][];
 					getTableData(trs, trtd, gameRows); // puts table in trtd[][] and gameRows give rows where games are
-					totalGameCounter = addGames(trtd, gameRows, season, games, totalRecordsForEachSport, totalRecordsForEachSport.size() - 1, totalGameCounter); // adds to games, individual season, and total record
+					addGames(trtd, gameRows, season, games, totalRecordsForEachSport); // adds to games, individual season, and total record
 					season.printSeasonToTable(writerSpecificSeasons, String.valueOf(year));
 				}
 				totalRecordsForEachSport.get(totalRecordsForEachSport.size() - 1).printSeasonToTable(writerSpecificSeasons, "TOTAL");
@@ -51,18 +50,17 @@ public class Main {
 		writer.close();
 	}
 
-	private static int addGames(String[][] trtd, TreeSet<Integer> gameRows, SeasonTemplate season, ArrayList<Game> games, List<SeasonTemplate> totalRecords, int schoolNum, int totalGameCounter) {
+	private static void addGames(String[][] trtd, TreeSet<Integer> gameRows, SeasonTemplate season, ArrayList<Game> games, List<SeasonTemplate> totalRecordsForEachSport) {
 		for (int gameRow : gameRows) {
 			if (trtd[gameRow][3].matches(".*[WTL].*")) {
 				if (!trtd[gameRow][3].contains("PPD")) {
-					games.add(gameInformation(trtd[gameRow]));
-					season.addGame(games.get(totalGameCounter));
-					totalRecords.get(schoolNum).addGame(games.get(totalGameCounter)); // for total count
-					totalGameCounter++;
+					Game g = gameInformation(trtd[gameRow]);
+					games.add(g);
+					season.addGame(g);
+					totalRecordsForEachSport.get(totalRecordsForEachSport.size() - 1).addGame(g);
 				}
 			}
 		}
-		return totalGameCounter;
 	}
 
 	private static void writeTableHeader(PrintWriter writer, String firstColumnTitle) {
