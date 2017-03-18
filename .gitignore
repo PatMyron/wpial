@@ -60,12 +60,12 @@ local.properties
 
 */UscSoccer/all/*.txt
 */UscSoccer/data*
-*/UscSoccer/tablesOLD/*
+*/UscSoccer/tables/*
 */UscSoccer/specificData/*
 
 *UscSoccer/all/*.txt
 *UscSoccer/data*
-*UscSoccer/tablesOLD/*
+*UscSoccer/tables/*
 *UscSoccer/specificData/*
 */errors/*.txt
 *errors.txt
