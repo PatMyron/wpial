@@ -38,7 +38,7 @@ public class Main {
 				TreeSet<String> opponents = new TreeSet<>();
 				for (Game games : g) {
 					if (!games.result.contains("PPD"))
-						opponents.add(games.opponent); // initializing with all opponents
+						opponents.add(games.opponent);
 				}
 				TreeMap<String, SeasonTemplate> opponentMap = new TreeMap<>();
 				List<SeasonTemplate> opposingTeams = new ArrayList<>(opponents.size());
