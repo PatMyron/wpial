@@ -17,7 +17,7 @@ public class Main {
 			for (int sportNum : sportEnums.keySet()) {
 				String sportName = sportEnums.get(sportNum);
 				PrintWriter writerSpecificSeasons = newPrintWriter("specificData/" + schoolName + " " + sportName + " " + "seasons.html", "Year");
-				ArrayList<Game> g = new ArrayList<>(); // all games a team has played
+				ArrayList<Game> games = new ArrayList<>(); // all games a team has played
 				totalRecordsForEachSport.add(new SeasonTemplate(schoolName));
 				int totalGameCounter = 0;
 				for (int year = 2003; year < END_OF_CURRENT_SEASON; year++) {
@@ -28,12 +28,12 @@ public class Main {
 					int[] gameRow = new int[100];
 					String[][] trtd = new String[trs.size()][];
 					int gamesInSeason = getTableData(trs, trtd, gameRow); // puts table in trtd[][] and gameRow[] give rows where games are
-					totalGameCounter = addGames(trtd, gameRow, season, g, gamesInSeason, totalRecordsForEachSport, totalRecordsForEachSport.size() - 1, totalGameCounter); // adds to g, individual season, and total record
+					totalGameCounter = addGames(trtd, gameRow, season, games, gamesInSeason, totalRecordsForEachSport, totalRecordsForEachSport.size() - 1, totalGameCounter); // adds to games, individual season, and total record
 					season.printSeasonToTable(writerSpecificSeasons, String.valueOf(year));
 				}
 				totalRecordsForEachSport.get(totalRecordsForEachSport.size() - 1).printSeasonToTable(writerSpecificSeasons, "TOTAL");
 				totalRecordsForEachSport.get(totalRecordsForEachSport.size() - 1).printSeasonToTable(writerSchool, sportName);
-				createOpponentsTable(g, schoolName, sportNum);
+				createOpponentsTable(games, schoolName, sportNum);
 				endTableAndClose(writerSpecificSeasons);
 			}
 			endTableAndClose(writerSchool);
@@ -51,14 +51,14 @@ public class Main {
 		writer.close();
 	}
 
-	private static int addGames(String[][] trtd, int[] gameRow, SeasonTemplate season, ArrayList<Game> g, int gamesInSeason,
+	private static int addGames(String[][] trtd, int[] gameRow, SeasonTemplate season, ArrayList<Game> games, int gamesInSeason,
 								List<SeasonTemplate> totalRecords, int schoolNum, int totalGameCounter) {
 		for (int i = 0; i < gamesInSeason; i++) {
 			if (trtd[gameRow[i]][3].matches(".*[WTL].*")) {
 				if (!trtd[gameRow[i]][3].contains("PPD")) {
-					g.add(gameInformation(trtd[gameRow[i]]));
-					season.addGame(g.get(totalGameCounter));
-					totalRecords.get(schoolNum).addGame(g.get(totalGameCounter)); // for total count
+					games.add(gameInformation(trtd[gameRow[i]]));
+					season.addGame(games.get(totalGameCounter));
+					totalRecords.get(schoolNum).addGame(games.get(totalGameCounter)); // for total count
 					totalGameCounter++;
 				}
 			}
