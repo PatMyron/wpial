@@ -17,7 +17,6 @@ public class Main {
 			List<SeasonTemplate> totalRecords = new ArrayList<>();
 			for (int sportNum : sportEnums.keySet()) {
 				PrintWriter writerSpecificSeasons = newPrintWriter("specificData/" + schoolName + " " + sportEnums.get(sportNum) + " " + "seasons.html", "Year");
-				PrintWriter writerSpecificOpponents = newPrintWriter("specificData/" + schoolName + " " + sportEnums.get(sportNum) + " " + "opponents.html", "Opponent");
 				ArrayList<Game> g = new ArrayList<>(); // all games a team has played
 				SeasonTemplate seasons[] = new SeasonTemplate[3000];
 				totalRecords.add(new SeasonTemplate(schoolName));
@@ -35,22 +34,8 @@ public class Main {
 					totalGameCounter = addGames(trtd, gameRow, year, seasons, g, gamesInSeason, totalRecords, totalRecords.size() - 1, totalGameCounter); // adds to g, individual season, and total record
 				}
 				totalRecords.get(totalRecords.size() - 1).printSeasonToTable(writerSchool, sportEnums.get(sportNum));
-				TreeSet<String> opponents = new TreeSet<>();
-				for (Game games : g) {
-					if (!games.result.contains("PPD"))
-						opponents.add(games.opponent);
-				}
-				TreeMap<String, SeasonTemplate> opponentMap = new TreeMap<>();
-				List<SeasonTemplate> opposingTeams = new ArrayList<>(opponents.size());
-				for (String opponent : opponents) {
-					SeasonTemplate t = new SeasonTemplate(opponent);
-					opposingTeams.add(t);
-					opponentMap.put(opponent, t);
-				}
-				setupOpponentMap(g, opponentMap); // alphabetical into opposingTeams
-				sortOpponentsByGP(opposingTeams); // sorts by games played into opposingTeams
+				createOpponentsTable(g, schoolName, sportNum);
 				endTableAndClose(writerSpecificSeasons);
-				endTableAndClose(writerSpecificOpponents);
 			}
 			endTableAndClose(writerSchool);
 		}
@@ -148,13 +133,24 @@ public class Main {
 		return new Game(opponent, result, goalsFor, goalsAgainst);
 	}
 
-	private static void setupOpponentMap(ArrayList<Game> games, TreeMap<String, SeasonTemplate> opponentMap) {
-		for (Game g : games) {
-			opponentMap.get(g.opponent).addGame(g);
+	private static void createOpponentsTable(ArrayList<Game> g, String schoolName, int sportNum) throws IOException {
+		TreeMap<String, SeasonTemplate> opponents = new TreeMap<>();
+		for (Game games : g) {
+			if (!games.result.contains("PPD")) {
+				String opponent = games.opponent;
+				opponents.computeIfAbsent(opponent, k -> new SeasonTemplate(opponent));
+				opponents.get(opponent).addGame(games);
+			}
 		}
+		sortOpponentsByGPAndReallyWriteOpponentsTable(new ArrayList<>(opponents.values()), schoolName, sportNum);
 	}
 
-	private static void sortOpponentsByGP(List<SeasonTemplate> teams) {
-		teams.sort((o1, o2) -> o2.GP - o1.GP); // TODO private
+	private static void sortOpponentsByGPAndReallyWriteOpponentsTable(List<SeasonTemplate> opponents, String schoolName, int sportNum) throws IOException {
+		opponents.sort((o1, o2) -> o2.GP - o1.GP); // TODO private
+		PrintWriter writerSpecificOpponents = newPrintWriter("specificData/" + schoolName + " " + sportEnums.get(sportNum) + " " + "opponents.html", "Opponent");
+		for (SeasonTemplate opponent : opponents) {
+			opponent.printSeasonToTable(writerSpecificOpponents, opponent.schoolName);
+		}
+		endTableAndClose(writerSpecificOpponents);
 	}
 }
