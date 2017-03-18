@@ -36,10 +36,8 @@ public class Main {
 						String[][] trtd = new String[trs.size()][];
 						int gamesInSeason = getTableData(trs, trtd, gameRow); // puts table in trtd[][] and gameRow[] give rows where games are
 						totalGameCounter = addGames(trtd, gameRow, year, seasons, g, gamesInSeason, totalRecords, totalRecords.size() - 1, totalGameCounter); // adds to g, individual season, and total record
-						seasons[year].endOfSeason();
 					}
 				}
-				totalRecords.get(totalRecords.size() - 1).endOfSeason();
 				totalRecords.get(totalRecords.size() - 1).printSeasonToTable(writerSchool, sportEnums.get(sportNum));
 				TreeSet<String> opponents = new TreeSet<>();
 				for (Game games : g) {
@@ -151,9 +149,6 @@ public class Main {
 	private static void setupOpponents(ArrayList<Game> games, TreeMap<String, SeasonTemplate> teamMap) {
 		for (Game g : games) {
 			teamMap.get(g.opponent).addGame(g);
-		}
-		for (SeasonTemplate season : teamMap.values()) {
-			season.endOfSeason();
 		}
 	}
 

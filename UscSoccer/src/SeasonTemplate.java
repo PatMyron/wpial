@@ -53,6 +53,7 @@ class SeasonTemplate {
 	}
 
 	void printSeasonToTable(PrintWriter writer, String firstColumnData) {
+		endOfSeason();
 		if (GP == 0) return;
 		writer.println("<tr>");
 		writeDataToHTMLTable(writer, new Object[]{firstColumnData, GP, w, t, l, GF, GA, goalDifferential});
@@ -63,7 +64,7 @@ class SeasonTemplate {
 		writer.println("</tr>");
 	}
 
-	void endOfSeason() {
+	private void endOfSeason() {
 		GP = w + t + l;
 		winPct = (w + 0.5 * t) / (GP) * 100;
 		goalDifferential = GF - GA;
