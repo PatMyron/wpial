@@ -14,26 +14,25 @@ public class Main {
 		fillSportEnumsAndSchoolNames();
 		for (String schoolName : allSchoolNames) {
 			PrintWriter writerSchool = newPrintWriter("dataBySchool/" + schoolName + ".html", "Sport");
-			List<SeasonTemplate> totalRecords = new ArrayList<>();
+			List<SeasonTemplate> totalRecordsForEachSport = new ArrayList<>();
 			for (int sportNum : sportEnums.keySet()) {
-				PrintWriter writerSpecificSeasons = newPrintWriter("specificData/" + schoolName + " " + sportEnums.get(sportNum) + " " + "seasons.html", "Year");
+				String sportName = sportEnums.get(sportNum);
+				PrintWriter writerSpecificSeasons = newPrintWriter("specificData/" + schoolName + " " + sportName + " " + "seasons.html", "Year");
 				ArrayList<Game> g = new ArrayList<>(); // all games a team has played
 				SeasonTemplate seasons[] = new SeasonTemplate[3000];
-				totalRecords.add(new SeasonTemplate(schoolName));
+				totalRecordsForEachSport.add(new SeasonTemplate());
 				int totalGameCounter = 0;
 				for (int year = 2003; year < END_OF_CURRENT_SEASON; year++) { // from '03-'04
 					seasons[year] = new SeasonTemplate(year);
-					File f = new File("tables/" + schoolName + sportEnums.get(sportNum) + year + ".html");
+					File f = new File("tables/" + schoolName + sportName + year + ".html");
 					if (!f.exists() || f.isDirectory()) continue;
-					Element table = Jsoup.parse(f, "UTF-8").select("table").first();
-					if (table == null) continue;
+					Elements trs = Jsoup.parse(f, "UTF-8").select("table").first().select("tr");
 					int[] gameRow = new int[100];
-					Elements trs = table.select("tr");
 					String[][] trtd = new String[trs.size()][];
 					int gamesInSeason = getTableData(trs, trtd, gameRow); // puts table in trtd[][] and gameRow[] give rows where games are
-					totalGameCounter = addGames(trtd, gameRow, year, seasons, g, gamesInSeason, totalRecords, totalRecords.size() - 1, totalGameCounter); // adds to g, individual season, and total record
+					totalGameCounter = addGames(trtd, gameRow, year, seasons, g, gamesInSeason, totalRecordsForEachSport, totalRecordsForEachSport.size() - 1, totalGameCounter); // adds to g, individual season, and total record
 				}
-				totalRecords.get(totalRecords.size() - 1).printSeasonToTable(writerSchool, sportEnums.get(sportNum));
+				totalRecordsForEachSport.get(totalRecordsForEachSport.size() - 1).printSeasonToTable(writerSchool, sportName);
 				createOpponentsTable(g, schoolName, sportNum);
 				endTableAndClose(writerSpecificSeasons);
 			}

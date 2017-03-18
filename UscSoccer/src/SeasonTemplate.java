@@ -15,7 +15,7 @@ class SeasonTemplate {
 	private double goalDiffPerGame;
 	private int year;
 
-	private SeasonTemplate() {
+	SeasonTemplate() {
 		GP = 0;
 		w = 0;
 		t = 0;
