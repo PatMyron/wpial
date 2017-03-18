@@ -6,7 +6,7 @@ import java.util.*;
 
 public class Main {
 	private static final Map<Integer, String> sportEnums = new TreeMap<>(); // enum 1=FOOTBALL etc.
-	private static final TreeSet<String> allSchoolNames = new TreeSet<>(); // all WPIAL schools (142 of them)
+	private static final TreeSet<String> allSchoolNames = new TreeSet<>(); // all WPIAL schools
 	private static final int END_OF_CURRENT_SEASON = 2017;
 
 	public static void main(String[] args) throws IOException {
