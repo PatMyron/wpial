@@ -31,7 +31,9 @@ public class Main {
 					String[][] trtd = new String[trs.size()][];
 					int gamesInSeason = getTableData(trs, trtd, gameRow); // puts table in trtd[][] and gameRow[] give rows where games are
 					totalGameCounter = addGames(trtd, gameRow, year, seasons, g, gamesInSeason, totalRecordsForEachSport, totalRecordsForEachSport.size() - 1, totalGameCounter); // adds to g, individual season, and total record
+					seasons[year].printSeasonToTable(writerSpecificSeasons, String.valueOf(year));
 				}
+				totalRecordsForEachSport.get(totalRecordsForEachSport.size() - 1).printSeasonToTable(writerSpecificSeasons, "TOTAL");
 				totalRecordsForEachSport.get(totalRecordsForEachSport.size() - 1).printSeasonToTable(writerSchool, sportName);
 				createOpponentsTable(g, schoolName, sportNum);
 				endTableAndClose(writerSpecificSeasons);
