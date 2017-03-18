@@ -67,11 +67,9 @@ class SeasonTemplate {
 	}
 
 	void addGame(Game g) {
-		if (!g.result.contains("PPD")) {
-			GP++;
-			GF += g.goalsFor;
-			GA += g.goalsAgainst;
-		}
+		GP++;
+		GF += g.goalsFor;
+		GA += g.goalsAgainst;
 		if (g.result.contains("W"))
 			w++;
 		if (g.result.contains("T"))

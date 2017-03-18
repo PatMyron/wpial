@@ -123,11 +123,8 @@ public class Main {
 	private static void createOpponentsTable(ArrayList<Game> games, String schoolName, int sportNum) throws IOException {
 		TreeMap<String, SeasonTemplate> opponents = new TreeMap<>();
 		for (Game game : games) {
-			if (!game.result.contains("PPD")) {
-				String opponent = game.opponent;
-				opponents.computeIfAbsent(opponent, k -> new SeasonTemplate(opponent));
-				opponents.get(opponent).addGame(game);
-			}
+			opponents.computeIfAbsent(game.opponent, k -> new SeasonTemplate(game.opponent));
+			opponents.get(game.opponent).addGame(game);
 		}
 		sortOpponentsByGPAndReallyWriteOpponentsTable(new ArrayList<>(opponents.values()), schoolName, sportNum);
 	}
