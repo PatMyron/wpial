@@ -13,9 +13,8 @@ class SeasonTemplate {
 	private double goalsForPerGame;
 	private double goalsAgainstPerGame;
 	private double goalDiffPerGame;
-	private int year;
 
-	SeasonTemplate() {
+	private SeasonTemplate() {
 		GP = 0;
 		w = 0;
 		t = 0;
@@ -28,11 +27,6 @@ class SeasonTemplate {
 	SeasonTemplate(String schoolName_) {
 		this();
 		schoolName = schoolName_;
-	}
-
-	SeasonTemplate(int year_) {
-		this();
-		year = year_;
 	}
 
 	static void writeDataToHTMLTable(PrintWriter writer, final Object[] arr) {
