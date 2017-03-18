@@ -53,6 +53,7 @@ class SeasonTemplate {
 	}
 
 	void printSeasonToTable(PrintWriter writer, String firstColumnData) {
+		if (GP == 0) return;
 		writer.println("<tr>");
 		writeDataToHTMLTable(writer, new Object[]{firstColumnData, GP, w, t, l, GF, GA, goalDifferential});
 		writer.println("<td>");

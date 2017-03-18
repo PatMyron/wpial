@@ -39,26 +39,22 @@ public class Main {
 						seasons[year].endOfSeason();
 					}
 				}
-				if (totalRecords.get(totalRecords.size() - 1).GP == 0) { // TODO private
-					totalRecords.remove(totalRecords.size() - 1);
-				} else {
-					totalRecords.get(totalRecords.size() - 1).endOfSeason();
-					totalRecords.get(totalRecords.size() - 1).printSeasonToTable(writerSchool, sportEnums.get(sportNum));
-					TreeSet<String> opponents = new TreeSet<>();
-					for (Game games : g) {
-						if (!games.result.contains("PPD"))
-							opponents.add(games.opponent); // initializing with all opponents
-					}
-					TreeMap<String, SeasonTemplate> teamMap = new TreeMap<>();
-					List<SeasonTemplate> opposingTeams = new ArrayList<>(opponents.size());
-					for (String opponent : opponents) {
-						SeasonTemplate t = new SeasonTemplate(opponent);
-						opposingTeams.add(t);
-						teamMap.put(opponent, t);
-					}
-					setupOpponents(g, teamMap); // alphabetical into opposingTeams
-					sortOpponentsByGP(opposingTeams); // sorts by games played into opposingTeams
+				totalRecords.get(totalRecords.size() - 1).endOfSeason();
+				totalRecords.get(totalRecords.size() - 1).printSeasonToTable(writerSchool, sportEnums.get(sportNum));
+				TreeSet<String> opponents = new TreeSet<>();
+				for (Game games : g) {
+					if (!games.result.contains("PPD"))
+						opponents.add(games.opponent); // initializing with all opponents
 				}
+				TreeMap<String, SeasonTemplate> teamMap = new TreeMap<>();
+				List<SeasonTemplate> opposingTeams = new ArrayList<>(opponents.size());
+				for (String opponent : opponents) {
+					SeasonTemplate t = new SeasonTemplate(opponent);
+					opposingTeams.add(t);
+					teamMap.put(opponent, t);
+				}
+				setupOpponents(g, teamMap); // alphabetical into opposingTeams
+				sortOpponentsByGP(opposingTeams); // sorts by games played into opposingTeams
 				endTableAndClose(writerSpecificSeasons);
 				endTableAndClose(writerSpecificOpponents);
 			}
