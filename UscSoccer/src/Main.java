@@ -53,12 +53,10 @@ public class Main {
 	private static void addGames(String[][] trtd, TreeSet<Integer> gameRows, ArrayList<Game> games, SeasonTemplate season, List<SeasonTemplate> totalRecordsForEachSport) {
 		for (int gameRow : gameRows) {
 			if (trtd[gameRow][3].matches(".*[WTL].*")) {
-				if (!trtd[gameRow][3].contains("PPD")) {
-					Game g = gameInformation(trtd[gameRow]);
-					games.add(g);
-					season.addGame(g);
-					totalRecordsForEachSport.get(totalRecordsForEachSport.size() - 1).addGame(g);
-				}
+				Game g = gameInformation(trtd[gameRow]);
+				games.add(g);
+				season.addGame(g);
+				totalRecordsForEachSport.get(totalRecordsForEachSport.size() - 1).addGame(g);
 			}
 		}
 	}
