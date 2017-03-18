@@ -61,7 +61,7 @@ class SeasonTemplate {
 		writeDoublesToHTMLTable(writer, new double[]{goalsForPerGame, goalsAgainstPerGame, goalDiffPerGame});
 		writer.println("</tr>");
 	}
-	
+
 	void endOfSeason() {
 		GP = w + t + l;
 		winPct = (w + 0.5 * t) / (GP) * 100;
