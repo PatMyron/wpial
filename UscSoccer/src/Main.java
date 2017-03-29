@@ -2,6 +2,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.select.Elements;
 
 import java.io.*;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.*;
 
 public class Main {
@@ -11,9 +13,11 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		fillSportEnumsAndSchoolNames();
+		TreeMap<String, List<SeasonTemplate>> allTotalRecords = new TreeMap<>();
 		for (String schoolName : allSchoolNames) {
 			PrintWriter writerSchool = newPrintWriter("dataBySchool/" + schoolName + ".html", "Sport");
 			List<SeasonTemplate> totalRecordsForEachSport = new ArrayList<>();
+			allTotalRecords.put(schoolName, totalRecordsForEachSport);
 			for (int sportNum : sportEnums.keySet()) {
 				String sportName = sportEnums.get(sportNum);
 				PrintWriter writerSpecificSeasons = newPrintWriter("specificData/" + schoolName + " " + sportName + " " + "seasons.html", "Year");
@@ -32,11 +36,12 @@ public class Main {
 				}
 				totalRecordsForEachSport.get(totalRecordsForEachSport.size() - 1).printSeasonToTable(writerSpecificSeasons, "TOTAL");
 				totalRecordsForEachSport.get(totalRecordsForEachSport.size() - 1).printSeasonToTable(writerSchool, sportName);
-				createOpponentsTable(games, schoolName, sportNum);
+				sortAndWriteOpponentsTable(games, schoolName, sportNum);
 				endTableAndClose(writerSpecificSeasons);
 			}
 			endTableAndClose(writerSchool);
 		}
+		sortAndWriteDataBySportTables(allTotalRecords);
 	}
 
 	private static PrintWriter newPrintWriter(String fileName, String firstColumnTitle) throws FileNotFoundException {
@@ -120,16 +125,36 @@ public class Main {
 		return new Game(opponent, result, goalsFor, goalsAgainst);
 	}
 
-	private static void createOpponentsTable(ArrayList<Game> games, String schoolName, int sportNum) throws IOException {
+	private static void sortAndWriteDataBySportTables(TreeMap<String, List<SeasonTemplate>> allTotalRecords) throws FileNotFoundException {
+		int i = 0;
+		for (int sportNum : sportEnums.keySet()) {
+			PrintWriter writerSport = newPrintWriter("dataBySport/" + sportEnums.get(sportNum) + ".html", "Team");
+			List<SeasonTemplate> schools = new ArrayList<>();
+			for (String schoolName : allSchoolNames) {
+				SeasonTemplate schoolsAllTimeRecordInSport = allTotalRecords.get(schoolName).get(i);
+				if (schoolsAllTimeRecordInSport.GP != 0) {
+					schools.add(schoolsAllTimeRecordInSport);
+				}
+			}
+			schools.sort((o1, o2) -> new BigDecimal(o2.winPct - o1.winPct).setScale(0, RoundingMode.UP).intValue()); // TODO private
+			for (SeasonTemplate school : schools) {
+				school.printSeasonToTable(writerSport, school.schoolName);
+			}
+			endTableAndClose(writerSport);
+			i++;
+		}
+	}
+
+	private static void sortAndWriteOpponentsTable(ArrayList<Game> games, String schoolName, int sportNum) throws IOException {
 		TreeMap<String, SeasonTemplate> opponents = new TreeMap<>();
 		for (Game game : games) {
 			opponents.computeIfAbsent(game.opponent, k -> new SeasonTemplate(game.opponent));
 			opponents.get(game.opponent).addGame(game);
 		}
-		sortOpponentsByGPAndReallyWriteOpponentsTable(new ArrayList<>(opponents.values()), schoolName, sportNum);
+		sortAndWriteOpponentsTableActually(new ArrayList<>(opponents.values()), schoolName, sportNum);
 	}
 
-	private static void sortOpponentsByGPAndReallyWriteOpponentsTable(List<SeasonTemplate> opponents, String schoolName, int sportNum) throws IOException {
+	private static void sortAndWriteOpponentsTableActually(List<SeasonTemplate> opponents, String schoolName, int sportNum) throws IOException {
 		opponents.sort((o1, o2) -> o2.GP - o1.GP); // TODO private
 		PrintWriter writerSpecificOpponents = newPrintWriter("specificData/" + schoolName + " " + sportEnums.get(sportNum) + " " + "opponents.html", "Opponent");
 		for (SeasonTemplate opponent : opponents) {
