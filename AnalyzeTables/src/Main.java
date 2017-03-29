@@ -20,7 +20,7 @@ public class Main {
 		sportEnums.put(5, "WOMENS SOFTBALL");
 		sportEnums.put(9, "WOMENS SOCCER");
 
-		BufferedReader reader = new BufferedReader(new FileReader("WPIAL schools.txt"));
+		BufferedReader reader = new BufferedReader(new FileReader("../GetTables/WPIAL schools.txt"));
 		for (String line; (line = reader.readLine()) != null; )
 			allSchoolNames.add(line);
 		reader.close();
