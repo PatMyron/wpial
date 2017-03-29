@@ -58,15 +58,7 @@ local.properties
 .texlipse
 */.texlipse
 
-*/UscSoccer/all/*.txt
-*/UscSoccer/data*
-*/UscSoccer/tables/*
-*/UscSoccer/specificData/*
-
-*UscSoccer/all/*.txt
-*UscSoccer/data*
-*UscSoccer/tables/*
-*UscSoccer/specificData/*
+*/data/
 */errors/*.txt
 *errors.txt
 

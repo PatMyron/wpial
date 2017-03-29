@@ -30,12 +30,12 @@ public class Main {
 		fillSportEnumsAndSchoolNames();
 		TreeMap<String, List<SeasonTemplate>> allTotalRecords = new TreeMap<>();
 		for (String schoolName : allSchoolNames) {
-			PrintWriter writerSchool = newPrintWriter("dataBySchool/" + schoolName + ".html", "Sport");
+			PrintWriter writerSchool = newPrintWriter("data/dataBySchool/" + schoolName + ".html", "Sport");
 			List<SeasonTemplate> totalRecordsForEachSport = new ArrayList<>();
 			allTotalRecords.put(schoolName, totalRecordsForEachSport);
 			for (int sportNum : sportEnums.keySet()) {
 				String sportName = sportEnums.get(sportNum);
-				PrintWriter writerSpecificSeasons = newPrintWriter("specificData/" + schoolName + " " + sportName + " " + "seasons.html", "Year");
+				PrintWriter writerSpecificSeasons = newPrintWriter("data/specificData/" + schoolName + " " + sportName + " " + "seasons.html", "Year");
 				ArrayList<Game> games = new ArrayList<>(); // all games a team has played
 				totalRecordsForEachSport.add(new SeasonTemplate(schoolName));
 				for (int year = 2003; year < END_OF_CURRENT_SEASON; year++) {
@@ -128,7 +128,7 @@ public class Main {
 	private static void sortAndWriteDataBySportTables(TreeMap<String, List<SeasonTemplate>> allTotalRecords) throws FileNotFoundException {
 		int i = 0;
 		for (int sportNum : sportEnums.keySet()) {
-			PrintWriter writerSport = newPrintWriter("dataBySport/" + sportEnums.get(sportNum) + ".html", "Team");
+			PrintWriter writerSport = newPrintWriter("data/dataBySport/" + sportEnums.get(sportNum) + ".html", "Team");
 			List<SeasonTemplate> schools = new ArrayList<>();
 			for (String schoolName : allSchoolNames) {
 				SeasonTemplate schoolsAllTimeRecordInSport = allTotalRecords.get(schoolName).get(i);
@@ -156,7 +156,7 @@ public class Main {
 
 	private static void sortAndWriteOpponentsTableActually(List<SeasonTemplate> opponents, String schoolName, int sportNum) throws IOException {
 		opponents.sort((o1, o2) -> o2.GP - o1.GP); // TODO private
-		PrintWriter writerSpecificOpponents = newPrintWriter("specificData/" + schoolName + " " + sportEnums.get(sportNum) + " " + "opponents.html", "Opponent");
+		PrintWriter writerSpecificOpponents = newPrintWriter("data/specificData/" + schoolName + " " + sportEnums.get(sportNum) + " " + "opponents.html", "Opponent");
 		for (SeasonTemplate opponent : opponents) {
 			opponent.printSeasonToTable(writerSpecificOpponents, opponent.schoolName);
 		}
