@@ -9,7 +9,7 @@ class SeasonTemplate {
 	private int GF;
 	private int GA;
 	private int goalDifferential;
-	private double winPct;
+	double winPct;
 	private double goalsForPerGame;
 	private double goalsAgainstPerGame;
 	private double goalDiffPerGame;
