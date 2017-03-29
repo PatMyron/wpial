@@ -21,7 +21,7 @@ public class Main {
 				totalRecordsForEachSport.add(new SeasonTemplate(schoolName));
 				for (int year = 2003; year < END_OF_CURRENT_SEASON; year++) {
 					SeasonTemplate season = new SeasonTemplate(schoolName);
-					File f = new File("tables/" + schoolName + sportName + year + ".html");
+					File f = new File("../GetTables/tables/" + schoolName + sportName + year + ".html");
 					if (!f.exists() || f.isDirectory()) continue;
 					Elements trs = Jsoup.parse(f, "UTF-8").select("table").first().select("tr");
 					TreeSet<Integer> gameRows = new TreeSet<>();
