@@ -11,6 +11,21 @@ public class Main {
 	private static final TreeSet<String> allSchoolNames = new TreeSet<>(); // all WPIAL schools
 	private static final int END_OF_CURRENT_SEASON = 2017;
 
+	private static void fillSportEnumsAndSchoolNames() throws IOException {
+		sportEnums.put(1, "FOOTBALL");
+		sportEnums.put(2, "BASEBALL");
+		sportEnums.put(3, "BASKETBALL");
+		sportEnums.put(8, "SOCCER");
+		sportEnums.put(4, "WOMENS BASKETBALL");
+		sportEnums.put(5, "WOMENS SOFTBALL");
+		sportEnums.put(9, "WOMENS SOCCER");
+
+		BufferedReader reader = new BufferedReader(new FileReader("WPIAL schools.txt"));
+		for (String line; (line = reader.readLine()) != null; )
+			allSchoolNames.add(line);
+		reader.close();
+	}
+
 	public static void main(String[] args) throws IOException {
 		fillSportEnumsAndSchoolNames();
 		TreeMap<String, List<SeasonTemplate>> allTotalRecords = new TreeMap<>();
@@ -84,21 +99,6 @@ public class Main {
 				}
 			}
 		}
-	}
-
-	private static void fillSportEnumsAndSchoolNames() throws IOException {
-		sportEnums.put(1, "FOOTBALL");
-		sportEnums.put(2, "BASEBALL");
-		sportEnums.put(3, "BASKETBALL");
-		sportEnums.put(8, "SOCCER");
-		sportEnums.put(4, "WOMENS BASKETBALL");
-		sportEnums.put(5, "WOMENS SOFTBALL");
-		sportEnums.put(9, "WOMENS SOCCER");
-
-		BufferedReader reader = new BufferedReader(new FileReader("WPIAL schools.txt"));
-		for (String line; (line = reader.readLine()) != null; )
-			allSchoolNames.add(line);
-		reader.close();
 	}
 
 	private static Game createGameByParsingRow(String[] actualGameRow) {
