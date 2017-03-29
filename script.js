@@ -2,7 +2,6 @@ function populatePre(school, sport) {
     document.getElementById('contentsP').textContent = "";
     document.getElementById('contentsOpponentTable1').textContent = "";
     if (school === "all" && sport === "all") {
-        ajaxHelper("data/all.html", 'contentsP');
     } else if (school === "all") { // sport
         ajaxHelper("data/dataBySport/" + sport + ".html", 'contentsP');
     } else if (sport === "all") { // school
