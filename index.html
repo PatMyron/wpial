@@ -26,10 +26,10 @@
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
             i[r] = i[r] || function () {
-                        (i[r].q = i[r].q || []).push(arguments)
-                    }, i[r].l = 1 * new Date();
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
             a = s.createElement(o),
-                    m = s.getElementsByTagName(o)[0];
+                m = s.getElementsByTagName(o)[0];
             a.async = 1;
             a.src = g;
             m.parentNode.insertBefore(a, m)
@@ -49,7 +49,7 @@
 <div class="content">
     <div class="left_block block_1">
         <select id="schoolSelect" name="school" onchange="school=this.value;populatePre(school,sport);" size="100"
-                style="max-height: 100%; font-size: 18; overflow-y: scroll;">
+                style="max-height: 100%; overflow-y: scroll;">
             <option value="all">
                 ALL SCHOOLS
             </option>
@@ -685,8 +685,7 @@
     </div>
 
     <div class="block_2">
-        <select id="sportSelect" name="sport" onchange="sport=this.value;populatePre(school,sport);" size="9"
-                style="font-size: 18;">
+        <select id="sportSelect" name="sport" onchange="sport=this.value;populatePre(school,sport);" size="9">
             <option value="all">
                 all sports
             </option>
