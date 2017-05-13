@@ -1,2 +1,1 @@
-# workspace
-java workspace
+# wpial-backend
