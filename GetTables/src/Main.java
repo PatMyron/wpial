@@ -1,3 +1,5 @@
+import com.google.common.collect.ImmutableMap;
+import lombok.Cleanup;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -12,22 +14,27 @@ public class Main {
 	private static final int END_OF_CURRENT_SEASON = 2017;
 	private static final String OLD_BASE_URL = "http://old.post-gazette.com/highschoolsports/statsPrevYears/";
 	private static final String NEW_BASE_URL = "http://old.post-gazette.com/highschoolsports/stats/";
-	private static final Map<Integer, String> sportNumbers = new TreeMap<>(); // enum 1=FOOTBALL etc.
+	private static final Map<Integer, String> sportNumbers = new TreeMap<>(ImmutableMap.<Integer, String>builder()
+			.put(1, "FOOTBALL")
+			.put(2, "BASEBALL")
+			.put(3, "BASKETBALL")
+			.put(8, "SOCCER")
+			.put(4, "WOMENS BASKETBALL")
+			.put(5, "WOMENS SOFTBALL")
+			.put(9, "WOMENS SOCCER")
+			.build());
 	private static final TreeSet<String> allSchoolNames = new TreeSet<>();  // all WPIAL schools
 	private static PrintWriter errorWriter;
-	private static PrintWriter schoolWriter;
 
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws IOException {
 		errorWriter = new PrintWriter(new File("errors/" + new Date().toLocaleString() + ".txt"));
-		schoolWriter = new PrintWriter("WPIAL schools.txt");
-		fillSportsNumber();
+		@Cleanup PrintWriter schoolWriter = new PrintWriter("WPIAL schools.txt");
 		TreeMap<String, String> teamids = new TreeMap<>(); // Keys: sport#,school,year    V: teamid
 		fillTeamIds(teamids); // fills schools set and teamids map
 		for (String schoolName : allSchoolNames) {
 			schoolWriter.println(schoolName);
 		}
-		schoolWriter.close();
 		allSchoolNames.parallelStream().forEach(schoolName ->
 				sportNumbers.keySet().parallelStream().forEach(sportNum ->
 						IntStream.range(2003, END_OF_CURRENT_SEASON).parallel().forEach(year -> {
@@ -41,24 +48,13 @@ public class Main {
 								return;
 							}
 							try {
-								PrintWriter tableWriter = new PrintWriter(new File("tables/" + schoolName + sportNumbers.get(sportNum) + year + ".html"));
+								@Cleanup PrintWriter tableWriter = new PrintWriter(new File("tables/" + schoolName + sportNumbers.get(sportNum) + year + ".html"));
 								tableWriter.println(table);
-								tableWriter.close();
 							} catch (FileNotFoundException e) {
 								log(String.format("MISSED writing table." + " school: " + "%-32s" + " sportName: " + "%-20s" + " sport: " + sportNum + " year: " + year, schoolName, sportNumbers.get(sportNum)));
 							}
 						})));
 		errorWriter.close();
-	}
-
-	private static void fillSportsNumber() {
-		sportNumbers.put(1, "FOOTBALL");
-		sportNumbers.put(2, "BASEBALL");
-		sportNumbers.put(3, "BASKETBALL");
-		sportNumbers.put(8, "SOCCER");
-		sportNumbers.put(4, "WOMENS BASKETBALL");
-		sportNumbers.put(5, "WOMENS SOFTBALL");
-		sportNumbers.put(9, "WOMENS SOCCER");
 	}
 
 	private static void fillTeamIds(TreeMap<String, String> teamids) {
@@ -86,8 +82,7 @@ public class Main {
 			for (int c = 0; c < tds.size(); c++) {
 				trtd[r][c] = tds.get(c).html();
 				String schoolName = tds.get(c).text();
-				if (schoolName.length() < 3) continue; // skips blanks
-				if (schoolName.contains("201") || schoolName.contains(" Ohio") || schoolName.contains(", La.")) continue;
+				if (schoolName.length() < 3 || schoolName.contains("201") || schoolName.contains(" Ohio") || schoolName.contains(", La.")) continue;
 				if (schoolName.contains("Seton-La")) schoolName = "Seton-La Salle";
 				if (schoolName.contains("Quigley")) schoolName = "Quigley Catholic";
 				if (schoolName.contains("Geibel")) schoolName = "Geibel Catholic";

@@ -1,3 +1,5 @@
+import com.google.common.collect.ImmutableMap;
+import lombok.Cleanup;
 import org.jsoup.Jsoup;
 import org.jsoup.select.Elements;
 
@@ -7,34 +9,33 @@ import java.math.RoundingMode;
 import java.util.*;
 
 public class Main {
-	private static final Map<Integer, String> sportEnums = new TreeMap<>(); // enum 1=FOOTBALL etc.
+	private static final Map<Integer, String> sportNumbers = new TreeMap<>(ImmutableMap.<Integer, String>builder()
+			.put(1, "FOOTBALL")
+			.put(2, "BASEBALL")
+			.put(3, "BASKETBALL")
+			.put(8, "SOCCER")
+			.put(4, "WOMENS BASKETBALL")
+			.put(5, "WOMENS SOFTBALL")
+			.put(9, "WOMENS SOCCER")
+			.build());
 	private static final TreeSet<String> allSchoolNames = new TreeSet<>(); // all WPIAL schools
 	private static final int END_OF_CURRENT_SEASON = 2017;
 
-	private static void fillSportEnumsAndSchoolNames() throws IOException {
-		sportEnums.put(1, "FOOTBALL");
-		sportEnums.put(2, "BASEBALL");
-		sportEnums.put(3, "BASKETBALL");
-		sportEnums.put(8, "SOCCER");
-		sportEnums.put(4, "WOMENS BASKETBALL");
-		sportEnums.put(5, "WOMENS SOFTBALL");
-		sportEnums.put(9, "WOMENS SOCCER");
-
-		BufferedReader reader = new BufferedReader(new FileReader("../GetTables/WPIAL schools.txt"));
+	private static void fillSchoolNames() throws IOException {
+		@Cleanup BufferedReader reader = new BufferedReader(new FileReader("../GetTables/WPIAL schools.txt"));
 		for (String line; (line = reader.readLine()) != null; )
 			allSchoolNames.add(line);
-		reader.close();
 	}
 
 	public static void main(String[] args) throws IOException {
-		fillSportEnumsAndSchoolNames();
+		fillSchoolNames();
 		TreeMap<String, List<SeasonTemplate>> allTotalRecords = new TreeMap<>();
 		for (String schoolName : allSchoolNames) {
 			PrintWriter writerSchool = newPrintWriter("data/dataBySchool/" + schoolName + ".html", "Sport");
 			List<SeasonTemplate> totalRecordsForEachSport = new ArrayList<>();
 			allTotalRecords.put(schoolName, totalRecordsForEachSport);
-			for (int sportNum : sportEnums.keySet()) {
-				String sportName = sportEnums.get(sportNum);
+			for (int sportNum : sportNumbers.keySet()) {
+				String sportName = sportNumbers.get(sportNum);
 				PrintWriter writerSpecificSeasons = newPrintWriter("data/specificData/" + schoolName + " " + sportName + " " + "seasons.html", "Year");
 				ArrayList<Game> games = new ArrayList<>(); // all games a team has played
 				totalRecordsForEachSport.add(new SeasonTemplate(schoolName));
@@ -127,8 +128,8 @@ public class Main {
 
 	private static void sortAndWriteDataBySportTables(TreeMap<String, List<SeasonTemplate>> allTotalRecords) throws FileNotFoundException {
 		int i = 0;
-		for (int sportNum : sportEnums.keySet()) {
-			PrintWriter writerSport = newPrintWriter("data/dataBySport/" + sportEnums.get(sportNum) + ".html", "Team");
+		for (int sportNum : sportNumbers.keySet()) {
+			PrintWriter writerSport = newPrintWriter("data/dataBySport/" + sportNumbers.get(sportNum) + ".html", "Team");
 			List<SeasonTemplate> schools = new ArrayList<>();
 			for (String schoolName : allSchoolNames) {
 				SeasonTemplate schoolsAllTimeRecordInSport = allTotalRecords.get(schoolName).get(i);
@@ -156,7 +157,7 @@ public class Main {
 
 	private static void sortAndWriteOpponentsTableActually(List<SeasonTemplate> opponents, String schoolName, int sportNum) throws IOException {
 		opponents.sort((o1, o2) -> o2.GP - o1.GP); // TODO private
-		PrintWriter writerSpecificOpponents = newPrintWriter("data/specificData/" + schoolName + " " + sportEnums.get(sportNum) + " " + "opponents.html", "Opponent");
+		PrintWriter writerSpecificOpponents = newPrintWriter("data/specificData/" + schoolName + " " + sportNumbers.get(sportNum) + " " + "opponents.html", "Opponent");
 		for (SeasonTemplate opponent : opponents) {
 			opponent.printSeasonToTable(writerSpecificOpponents, opponent.schoolName);
 		}
