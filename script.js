@@ -2,9 +2,9 @@ function populatePre(school, sport) {
     document.getElementById('contentsP').textContent = "";
     document.getElementById('contentsOpponentTable1').textContent = "";
     if (school === "all" && sport === "all") {
-    } else if (school === "all") { // sport
+    } else if (school === "all") {
         ajaxHelper("data/dataBySport/" + sport + ".html", 'contentsP');
-    } else if (sport === "all") { // school
+    } else if (sport === "all") {
         ajaxHelper("data/dataBySchool/" + school + ".html", 'contentsP');
     } else { // specific team
         ajaxHelper("data/specificData/" + school + " " + sport + " seasons.html", 'contentsP');
@@ -33,7 +33,7 @@ function WidthChange(mq) {
     if (mq.matches) { // window width is less than 641px
         document.getElementById("schoolSelect").size = "1";
         document.getElementById("sportSelect").size = "1";
-    } else { 	// window width is over 641px
+    } else {
         document.getElementById("schoolSelect").size = "100";
         document.getElementById("sportSelect").size = "9";
     }
