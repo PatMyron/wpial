@@ -102,9 +102,9 @@ iframe.social {
 
 /*  ---       MEDIA QUERIES         ----   */
 
-/* --------- phone portrait -----------  */
+/* --------- phone -----------  */
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 641px) {
     .background.block_1 {
         width: 50%;
     }
@@ -137,50 +137,6 @@ iframe.social {
 
     select {
         width: 100%;
-    }
-
-    iframe.social {
-        height: 0 !important;
-        width: 0 !important;
-    }
-}
-
-/* --------  phone landscape-----------  */
-
-@media screen and (min-width: 321px) and (max-width: 641px) {
-    .background.block_1 {
-        width: 50%;
-    }
-
-    .block_1 {
-        width: 50%;
-        background-color: transparent;
-    }
-
-    .background.block_2 {
-        width: 50%;
-        margin-left: 50%;
-        background-color: #FFF;
-    }
-
-    .block_2 {
-        width: 50%;
-        margin-left: 50%;
-        background-color: transparent;
-    }
-
-    .block_2 p {
-        color: transparent;
-        font-size: 0;
-    }
-
-    .right {
-        margin-left: 0;
-    }
-
-    select {
-        width: 100%;
-        height: auto;
     }
 
     iframe.social {
