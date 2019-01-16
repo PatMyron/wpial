@@ -11,7 +11,7 @@ website to display WPIAL statistics
     In addition, the user can choose "all" for schools or sports.
 </p>
 
-<img src="https://raw.githubusercontent.com/PatMyron/wpial/master/example.png" alt="wpial statistics website screenshot" width="100%" height="auto">
+![website screenshot](example.png)
 
 Technical Details
 -----------------
