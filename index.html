@@ -45,7 +45,7 @@
 <script>
     var sport = "all";
     var school = "all";
-    $.get("WPIAL-schools.txt", function( data ) {
+    $.get("backend/GetTables/WPIAL schools.txt", function( data ) {
         $.trim(data).split('\n').forEach(function (line) {
             $('#schoolSelect').append(new Option(line, line));
         });
