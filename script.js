@@ -38,3 +38,12 @@ function WidthChange(mq) {
         document.getElementById("sportSelect").size = "9";
     }
 }
+
+var sport = "all";
+var school = "all";
+$.get("backend/GetTables/WPIAL schools.txt", function( data ) {
+    $.trim(data).split('\n').forEach(function (line) {
+        $('#schoolSelect').append(new Option(line, line));
+    });
+});
+populatePre(school, sport);
