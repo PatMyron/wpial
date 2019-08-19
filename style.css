@@ -95,11 +95,6 @@ td {
     text-align: right;
 }
 
-iframe.social {
-    width: 56px !important;
-    height: 20px !important;
-}
-
 /*  ---       MEDIA QUERIES         ----   */
 
 /* --------- phone -----------  */
@@ -137,10 +132,5 @@ iframe.social {
 
     select {
         width: 100%;
-    }
-
-    iframe.social {
-        height: 0 !important;
-        width: 0 !important;
     }
 }
