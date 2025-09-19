@@ -27,9 +27,9 @@ html, body {
     padding: 0;
 }
 
-.left_block {
+.left_block, .dataTables_filter {
     display: block;
-    float: left;
+    float: left !important;
 }
 
 .right_block {
