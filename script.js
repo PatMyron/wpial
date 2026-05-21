@@ -31,14 +31,21 @@ if (matchMedia) {
     WidthChange(mq);
 }
 
+function setSelectSize(select) {
+    select.size = Math.max(select.options.length, 1);
+}
+
 // media query change
 function WidthChange(mq) {
+    var schoolSelect = document.getElementById("schoolSelect");
+    var sportSelect = document.getElementById("sportSelect");
+
     if (mq.matches) { // window width is less than 641px
-        document.getElementById("schoolSelect").size = "1";
-        document.getElementById("sportSelect").size = "1";
+        schoolSelect.size = "1";
+        sportSelect.size = "1";
     } else {
-        document.getElementById("schoolSelect").size = "100";
-        document.getElementById("sportSelect").size = "9";
+        setSelectSize(schoolSelect);
+        setSelectSize(sportSelect);
     }
 }
 
@@ -48,5 +55,6 @@ $.get("backend/GetTables/WPIAL schools.txt", function( data ) {
     $.trim(data).split('\n').forEach(function (line) {
         $('#schoolSelect').append(new Option(line, line));
     });
+    WidthChange(window.matchMedia("(max-width: 641px)"));
 });
 populatePre(school, sport);
